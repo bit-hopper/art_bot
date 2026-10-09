@@ -33,6 +33,10 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(classifyRecord("Architectural fragment", "Stela of Amenemhat and Yatu", profile)).toBe("sculpture");
     expect(classifyRecord("Scarabs", "Scarab", profile)).toBe("other");
     expect(classifyRecord("Funerary Equipment", "Shawabty of Ditamenpaankh", profile)).toBe("other");
+    expect(classifyRecord("Religious/Ritual Object", "Pair of Staffs (Edan)", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Furniture and woodwork", "Prestige stool (Kuo fo)", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Tapper", "Ifa Divination Tapper", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Neckrest", "Neckrest", profile)).toBe("other-carved-cast");
   });
 
   it("regional grouping covers Coptic and Carthage wording", () => {

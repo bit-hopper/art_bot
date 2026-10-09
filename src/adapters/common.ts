@@ -18,12 +18,16 @@ export function regionGroupFromPlace(place: string | null | undefined, opts: { e
 // Carved objects the owner ranks as sculpture (2026-10-09) even when the museum files them under a generic type.
 const SCULPTURE_TITLE = /\b(coffin|sarcophag\w*|sarkophag\w*|cercueil|stela|stelae|stele|stèle)\b/i;
 
-/** Structured object type first (spec 4.1); a title that says "mask" rescues a generically typed object, and one that names a coffin or stela is sculpture. */
+// Carved or cast furniture and ritual implements whose museum type is generic ("Religious/Ritual Object", "Furniture and woodwork").
+const CARVED_TITLE = /\b(edan|tapper|neckrest|headrest|stool)s?\b/i;
+
+/** Structured object type first (spec 4.1); a title that says "mask" rescues a generically typed object, one that names a coffin or stela is sculpture, and one that names a stool, headrest, neckrest, tapper or edan is a carved object. */
 export function classifyRecord(type: string | null | undefined, title: string | null | undefined, profile: FilterProfile, fallback?: string | null): ObjectClass {
   let cls = classify(type, profile);
   if (cls === "other" && fallback) cls = classify(fallback, profile);
   if (cls === "other" && classify(title, profile) === "mask") cls = "mask";
   if (cls === "other" && title && SCULPTURE_TITLE.test(title)) cls = "sculpture";
+  if (cls === "other" && title && CARVED_TITLE.test(title)) cls = "other-carved-cast";
   return cls;
 }
 
