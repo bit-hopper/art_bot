@@ -1,0 +1,23 @@
+# Per-source switches and settings (spec 3, 5.2, 9). `enabled: false` is the per-source kill switch.
+sources:
+  smb:
+    enabled: true
+    kind: scrape
+    rights_mode: attributed-nc     # owner decision 2026-10-08: post each image under its own licence
+    source_weight: 2.0             # largest collection; tune once real posting data exists (spec 5.2)
+    min_interval_ms: 1000          # <= 1 request per second (spec 7.3)
+    # The portal's geography filter is a term match with no continent hierarchy, so Africa is enumerated
+    # country by country and unioned by id (spike result 2026-10-08).
+    org_units_africa: ["Ethnologisches Museum"]
+    org_units_egypt: ["Ägyptisches Museum und Papyrussammlung"]
+    africa_terms: [Afrika, Algerien, Angola, Äquatorialguinea, Äthiopien, Benin, Botswana, Burkina Faso, Burundi, Dschibuti, Elfenbeinküste, Eritrea, Eswatini, Swasiland, Gabun, Gambia, Ghana, Guinea, Guinea-Bissau, Kamerun, Kap Verde, Kenia, Komoren, Kongo, Zaire, Lesotho, Liberia, Libyen, Madagaskar, Malawi, Mali, Marokko, Mauretanien, Mauritius, Mosambik, Namibia, Niger, Nigeria, Ruanda, Sambia, Senegal, Seychellen, Sierra Leone, Simbabwe, Somalia, Südafrika, Südsudan, Sudan, Tansania, Togo, Tschad, Tunesien, Uganda, Zentralafrikanische Republik, Sao Tomé, Sansibar, Westsahara, Obervolta, Dahomey, Deutsch-Ostafrika, Deutsch-Südwestafrika, Rhodesien, Belgisch-Kongo, Nubien, Abessinien, Ägypten]
+    # region_group mapping for Ethnologisches Museum records, from the country term that matched (spec 4).
+    # The Egyptian Museum is always `egypt`. Anything else that matched a country is `sub-saharan`; objects found
+    # only through the generic "Afrika" term are `unspecified-africa`.
+    egypt_terms: [Ägypten]
+    north_africa_terms: [Algerien, Libyen, Marokko, Tunesien, Westsahara]
+    # Licences that may be posted. Anything else, or no licence at all, is `blocked`.
+    allowed_licenses:
+      open: ["Public Domain Mark 1.0", "CC0 1.0"]
+      attributed: ["CC BY-SA 4.0", "CC BY-SA 3.0", "CC BY 4.0"]
+      attributed-nc: ["CC BY-NC-SA 4.0", "CC BY-NC 4.0", "CC BY-NC-ND 4.0"]

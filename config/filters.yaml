@@ -1,0 +1,29 @@
+# Filter profiles (spec 4). The default profile includes Egypt as Africana.
+profiles:
+  africana-masks-and-sculpture:
+    enabled: true
+    region_share_caps:        # max fraction of the last 24 posts
+      egypt: 0.33
+    require_image: true
+    classes:                  # object_class -> weight
+      mask: 100
+      sculpture: 90
+      carved-instrument: 70
+      other-carved-cast: 40
+      other: 10
+      specimen: 0             # natural-history reference objects; never posted
+      archive: 0              # photographs, slides, sound recordings; never posted
+    # Matching is on word tokens, at either end of a German compound ("Mumienmaske", "Blashorn"),
+    # with plurals folded. Entries containing a space are matched as phrases.
+    # Check order: archive -> specimen -> mask (unless not_mask) -> carved-instrument -> other-carved-cast
+    #              -> sculpture -> other. Bells (glocke) are not carved and stay `other`.
+    keywords:
+      archive: [positiv, negativ, dia, schellackplatte, schallplatte, tonband, walze, walzensammlung, postkarte, cd, kassette, film, foto, fotografie, abzug, glasplatte]   # first word of the object type only
+      specimen: [xylarium, "wood sample", "echantillon de bois", herbarium, "botanical specimen", holzprobe, xylothek, herbar]
+      mask: [mask, masque, maske, helmmaske, aufsatzmaske, gesichtsmaske, kopfaufsatz, "face mask"]
+      not_mask: [gewand, klapper, rassel]
+      carved-instrument: [drum, tambour, trommel, schlitztrommel, "slit drum", "tambour à fente", lamellophone, lamellophon, sanza, sansa, mbira, xylophone, xylophon, harp, harpe, harfe, horn, trompe, trompete, zither, cithare, laute, leier, flöte, rassel, "musical instrument", musikinstrument]
+      other-carved-cast: [hocker, stuhl, stab, szepter, zepter, gefäß, schale, löffel, kamm, kopfstütze, tür, pfosten, becher, dose, behälter, tabakpfeife, pfeifenkopf]
+      sculpture: [figure, figurine, statue, statuette, sculpture, skulptur, figur, bust, büste, plastik, puppe, "power figure", reliquary, reliquiar, effigy, relief]
+      sculpture_whole_word: [kopf, head]   # only as a standalone word, never inside "Tabakpfeifenkopf"
+    exclude_keywords: []
