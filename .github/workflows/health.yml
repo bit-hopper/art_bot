@@ -1,0 +1,27 @@
+name: health
+on:
+  schedule:
+    - cron: "47 * * * *"
+  workflow_dispatch:
+# Separate from the hourly job, which may be the thing that is broken (spec 10).
+permissions:
+  contents: write   # the state worktree needs a writable checkout; this job never pushes
+  issues: write
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      STATE_DIR: ${{ github.workspace }}/state
+      PAUSED: ${{ vars.PAUSED }}
+      LIVE: ${{ vars.LIVE }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: bash scripts/state-checkout.sh
+      - run: npx tsx scripts/health-check.ts

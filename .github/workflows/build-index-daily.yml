@@ -1,0 +1,41 @@
+name: build-index-daily
+on:
+  schedule:
+    - cron: "40 3 * * *"
+  workflow_dispatch:
+# Its own group: a long index build must not hold up the hourly post. The two touch different files on the state branch.
+concurrency:
+  group: art-bot-index
+  cancel-in-progress: false
+permissions:
+  contents: write
+  issues: write
+jobs:
+  index:
+    runs-on: ubuntu-latest
+    timeout-minutes: 340
+    env:
+      STATE_DIR: ${{ github.workspace }}/state
+      STATE_GIT: "1"
+      BOT_USER_AGENT: ${{ vars.BOT_USER_AGENT }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check out the state branch
+        run: bash scripts/state-checkout.sh
+      - name: Rebuild every enabled source (a failing source keeps yesterday's index)
+        run: npx tsx src/build-index.ts
+      - name: Push any unpushed state
+        if: always()
+        run: npx tsx scripts/state-push.ts "index run ${{ github.run_id }}"
+      - name: Clear the failure alert
+        if: success()
+        run: npx tsx scripts/alert.ts clear index-failed
+      - name: Raise a failure alert
+        if: failure()
+        run: 'npx tsx scripts/alert.ts raise index-failed "build-index-daily failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"'

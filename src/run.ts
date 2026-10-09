@@ -10,9 +10,11 @@ import { HttpClient } from "./http.js";
 import { downloadImage, prepareImage, type PreparedImage } from "./image.js";
 import { claimRow, Ledger } from "./ledger.js";
 import { login, publish } from "./publishers/bluesky.js";
+import { fetchRecentPosts, reconcile } from "./reconcile.js";
 import { LIMITS, measure, renderPost } from "./render.js";
 import { selectArtwork } from "./selector.js";
 import { ledgerFile, readIndex } from "./state.js";
+import { pushState } from "./state-sync.js";
 import type { Artwork, IndexRow, MuseumAdapter } from "./types.js";
 
 const log = (o: Record<string, unknown>) => console.error(JSON.stringify(o));
@@ -64,6 +66,20 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
 }
 
 let failures = 0;
+let agent: Awaited<ReturnType<typeof login>> | null = null;
+if (!dryRun) {
+  const identifier = process.env.BSKY_IDENTIFIER;
+  const password = process.env.BSKY_APP_PASSWORD;
+  if (!identifier || !password) throw new Error("BSKY_IDENTIFIER and BSKY_APP_PASSWORD are required for a live run");
+  agent = await login(identifier, password);
+  // Spec 8.3 step 4: repair claims a crashed run left behind before picking anything new.
+  if (ledger.stuckClaims().length > 0) {
+    const outcome = reconcile(ledger, await fetchRecentPosts(agent, agent.session!.did));
+    log({ event: "reconcile", ...outcome });
+    pushState("reconcile claims");
+    if (outcome.ambiguous.length > 0) failures++;
+  }
+}
 for (let i = 0; i < (dryRun ? count : 1); i++) {
   const picked = await pickOne();
   if (!picked) {
@@ -86,21 +102,19 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
     continue;
   }
 
-  const identifier = process.env.BSKY_IDENTIFIER;
-  const password = process.env.BSKY_APP_PASSWORD;
-  if (!identifier || !password) throw new Error("BSKY_IDENTIFIER and BSKY_APP_PASSWORD are required for a live run");
-
-  // Spec 8.3: the claim is recorded before anything is published.
+  // Spec 8.3: the claim is recorded, and pushed to the state branch, before anything is published.
   const claim = claimRow(artwork, artwork.objectClass);
   ledger.append(claim);
+  pushState(`claim ${artwork.key}`);
   try {
-    const result = await publish(await login(identifier, password), {
+    const result = await publish(agent!, {
       rootText: bsky.root, replyText: bsky.reply, alt: bsky.alt, image,
     });
     ledger.append({
       ...claim, status: "posted_bluesky", blueskyUri: result.root.uri, blueskyCid: result.root.cid,
       postedAt: new Date().toISOString(), ...(result.replyError ? { error: `reply failed: ${result.replyError}` } : {}),
     });
+    pushState(`posted ${artwork.key}`);
     log({ event: "posted", key: artwork.key, uri: result.root.uri, replyError: result.replyError });
     if (result.replyError) failures++;
   } catch (e) {

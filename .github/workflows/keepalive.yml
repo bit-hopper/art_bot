@@ -1,0 +1,19 @@
+name: keepalive
+on:
+  schedule:
+    - cron: "0 6 1 * *"
+  workflow_dispatch:
+# GitHub disables scheduled workflows in a public repository after about 60 days without repository activity (spec 8.2).
+# Whether the bot's own commits to `state` count is unverified, so once a month this re-enables the scheduled workflows.
+permissions:
+  actions: write
+jobs:
+  keepalive:
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          for wf in post-hourly build-index-daily health; do
+            gh workflow enable "$wf.yml" --repo "${{ github.repository }}"
+          done

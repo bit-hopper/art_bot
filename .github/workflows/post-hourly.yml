@@ -1,0 +1,56 @@
+name: post-hourly
+on:
+  schedule:
+    - cron: "17 * * * *"   # minute 17: the top of the hour is the most delayed
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render only; nothing is posted or written to the ledger"
+        type: boolean
+        default: true
+concurrency:
+  group: art-bot
+  cancel-in-progress: false
+permissions:
+  contents: write
+  issues: write
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      STATE_DIR: ${{ github.workspace }}/state
+      STATE_GIT: "1"
+      PAUSED: ${{ vars.PAUSED }}
+      BOT_USER_AGENT: ${{ vars.BOT_USER_AGENT }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Check out the state branch
+        run: bash scripts/state-checkout.sh
+      - name: Post
+        env:
+          LIVE: ${{ vars.LIVE }}
+          EVENT: ${{ github.event_name }}
+          DRY_INPUT: ${{ inputs.dry_run }}
+          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+          BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+        run: |
+          # A real post needs the repository variable LIVE=true, so nothing goes out before the owner switches it on.
+          if [ "$LIVE" != "true" ] && [ "$EVENT" = "schedule" ]; then echo "LIVE is not true; skipping the scheduled run"; exit 0; fi
+          if [ "$LIVE" = "true" ] && { [ "$EVENT" = "schedule" ] || [ "$DRY_INPUT" = "false" ]; }; then export DRY_RUN=0; else export DRY_RUN=1; fi
+          npx tsx src/run.ts
+      - name: Push any unpushed state
+        if: always()
+        run: npx tsx scripts/state-push.ts "hourly run ${{ github.run_id }}"
+      - name: Clear the failure alert
+        if: success()
+        run: npx tsx scripts/alert.ts clear run-failed
+      - name: Raise a failure alert
+        if: failure()
+        run: 'npx tsx scripts/alert.ts raise run-failed "post-hourly failed: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"'
