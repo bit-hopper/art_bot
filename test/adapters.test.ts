@@ -66,7 +66,7 @@ describe("Met", () => {
     });
     const rows = await collect(new MetAdapter(cfg, profile, http).buildIndex());
     expect(rows.map((r) => r.key)).toEqual(["met:329767"]);
-    expect(rows[0]).toMatchObject({ regionGroup: "egypt", objectClass: "other", score: 10 });
+    expect(rows[0]).toMatchObject({ regionGroup: "egypt", objectClass: "other-carved-cast", score: 40 });   // object name says "jewelry-case"
     const searches = urls.filter((u) => u.includes("/v1.1/search"));
     expect(searches.some((u) => u.includes("departmentId=5") && u.includes("geoLocation=Africa"))).toBe(true);
     expect(searches.some((u) => u.includes("departmentId=10") && !u.includes("geoLocation"))).toBe(true);

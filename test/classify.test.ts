@@ -23,8 +23,8 @@ const cases: Array<[string, ObjectClass]> = [
   ["Tabakpfeifenkopf", "other-carved-cast"],     // pipe bowl, not a carved head
   ["Pfeifenkopf", "other-carved-cast"],
   ["Kopfstütze", "other-carved-cast"],           // headrest
-  ["Kopfschmuck", "other"],                      // jewellery stays other until audited
-  ["Ohrschmuck (Kleinkunst / Schmuck / Kopfschmuck)", "other"],
+  ["Kopfschmuck", "other-carved-cast"],           // ornaments rank at least 40 (owner 2026-10-09)
+  ["Ohrschmuck (Kleinkunst / Schmuck / Kopfschmuck)", "other-carved-cast"],
   ["Hocker", "other-carved-cast"],
   ["Schlitztrommel mit Schlegel", "carved-instrument"],
   ["Röhrentrommeln", "carved-instrument"],       // plural
@@ -40,7 +40,7 @@ const cases: Array<[string, ObjectClass]> = [
   ["Holzprobe", "specimen"],
   ["Korb", "other"],
   ["Kalebasse (bemalt)", "other"],
-  ["Armring", "other"],
+  ["Armring", "other-carved-cast"],
   ["", "other"],
 ];
 

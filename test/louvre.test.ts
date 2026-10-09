@@ -118,7 +118,7 @@ describe("Louvre denylist and classifier", () => {
     expect(cls("statuette de Ptah")).toBe("sculpture");
     expect(cls("stèle")).toBe("sculpture");
     expect(cls("tête de roi")).toBe("sculpture");
-    expect(cls("amulette")).toBe("other");
+    expect(cls("amulette")).toBe("other-carved-cast");
     expect(cls("ostracon")).toBe("other");
     expect(cls("papyrus")).toBe("other");
   });

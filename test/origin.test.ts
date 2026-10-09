@@ -31,11 +31,11 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(metOriginOk({ objectID: 3, department: "Egyptian Art" })).toBe(true);
   });
 
-  it("a coffin or stela is sculpture even under a generic type; a scarab is not", () => {
+  it("a coffin or stela is sculpture even under a generic type; ornaments, coins and weapons are carved-cast", () => {
     const profile = loadProfile();
     expect(classifyRecord("Funerary Equipment", "Coffin of Senbi", profile)).toBe("sculpture");
     expect(classifyRecord("Architectural fragment", "Stela of Amenemhat and Yatu", profile)).toBe("sculpture");
-    expect(classifyRecord("Scarabs", "Scarab", profile)).toBe("other");
+    expect(classifyRecord("Funerary Equipment", "Book of the Dead vignette", profile)).toBe("other");
     expect(classifyRecord("Funerary Equipment", "Shawabty of Ditamenpaankh", profile)).toBe("other");
     expect(classifyRecord("Religious/Ritual Object", "Pair of Staffs (Edan)", profile)).toBe("other-carved-cast");
     expect(classifyRecord("Furniture and woodwork", "Prestige stool (Kuo fo)", profile)).toBe("other-carved-cast");
@@ -43,6 +43,10 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(classifyRecord("Neckrest", "Neckrest", profile)).toBe("other-carved-cast");
     for (const type of ["Coins", "Münze", "Dagger", "Sword", "Spear", "Shield", "Helmet", "Arms and Armor", "Dolch", "Speer"])
       expect(classifyRecord(type, "x", profile)).toBe("other-carved-cast");
+    for (const [type, title] of [["Jewelry", "Finger Ring of Shoshenq I"], ["Amulets", "Son of Horus Amulet"], ["Scarabs", "Scarab"], ["Costume and Accessories", "Ring: Figure of Seated Cat"],
+      ["Costume and Accessories", "Amulet of the God Bes"], ["Costume and Accessories", "String of Beads"], ["Armreif", "Armreif"], ["Halsschmuck", "x"]] as const)
+      expect(classifyRecord(type, title, profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Costume and Accessories", "Curling Iron or Hair Crimper", profile)).toBe("other");
     expect(classifyRecord("Textile", "Fragment of a Clavus", profile)).toBe("other");
   });
 

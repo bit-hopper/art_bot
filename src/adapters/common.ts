@@ -19,7 +19,8 @@ export function regionGroupFromPlace(place: string | null | undefined, opts: { e
 const SCULPTURE_TITLE = /\b(coffin|sarcophag\w*|sarkophag\w*|cercueil|stela|stelae|stele|stèle)\b/i;
 
 // Carved or cast furniture and ritual implements whose museum type is generic ("Religious/Ritual Object", "Furniture and woodwork").
-const CARVED_TITLE = /\b(edan|tapper|neckrest|headrest|stool)s?\b/i;
+// Ornaments (owner 2026-10-09: jewellery, rings and amulets rank at least 40) that AIC files under "Costume and Accessories".
+const CARVED_TITLE = /\b(edan|tapper|neckrest|headrest|stool|amulet|scarab|ring|necklace|bracelet|pendant|beads?|earring|anklet|armlet|fibula|brooch|diadem|collar|jewel(?:ry|lery)|jewellery)s?\b/i;
 
 /** Structured object type first (spec 4.1); a title that says "mask" rescues a generically typed object, one that names a coffin or stela is sculpture, and one that names a stool, headrest, neckrest, tapper or edan is a carved object. */
 export function classifyRecord(type: string | null | undefined, title: string | null | undefined, profile: FilterProfile, fallback?: string | null): ObjectClass {
