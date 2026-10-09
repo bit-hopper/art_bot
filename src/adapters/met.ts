@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
-import { africanOrigin, classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://collectionapi.metmuseum.org/public/collection";
 const PAGE = 500;
@@ -185,7 +185,7 @@ export class MetAdapter implements MuseumAdapter {
               ? null
               : {
                   key: a.key, source: "met", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass,
-                  regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { highlight: o.isHighlight }),
+                  regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { highlight: o.isHighlight, fragment: isFlatFragment(a.objectType, a.title) }),
                 };
           const entry = { day: today, row };
           if (cache) cache.set(String(id), entry);

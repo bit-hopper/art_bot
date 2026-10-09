@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { DEFAULT_USER_AGENT, HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RightsStatus } from "../types.js";
-import { classifyRecord, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { classifyRecord, isFlatFragment, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://api.artic.edu/api/v1/artworks";
 const PAGE = 100;
@@ -134,7 +134,7 @@ export class AicAdapter implements MuseumAdapter {
           yield {
             key: `aic:${r.id}`, source: "aic", sourceObjectId: String(r.id), objectClass: cls,
             regionGroup: regionGroupFromPlace(`${r.place_of_origin ?? ""} ${r.style_title ?? ""}`),
-            culture: cultureOf(r.style_title), score: scoreFor(weight),
+            culture: cultureOf(r.style_title), score: scoreFor(weight, { fragment: isFlatFragment(r.artwork_type_title, r.title) }),
           };
         }
         if (res.data.length < PAGE) break;

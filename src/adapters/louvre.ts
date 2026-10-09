@@ -4,7 +4,7 @@ import { denyReason } from "../denylist.js";
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
-import { classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { classifyRecord, isFlatFragment, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const SITE = "https://collections.louvre.fr";
 const SITEMAP_INDEX = `${SITE}/sitemap.xml`;
@@ -300,7 +300,7 @@ export class LouvreAdapter implements MuseumAdapter {
           const row: IndexRow | null =
             !wanted || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
               ? null
-              : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight) };
+              : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { fragment: isFlatFragment(a.objectType, a.title) }) };
           remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, row, retry: true } : { day: today, v: CACHE_VERSION, row });
         });
         if (budget <= 0) {

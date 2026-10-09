@@ -31,9 +31,23 @@ export function classifyRecord(type: string | null | undefined, title: string | 
   return cls;
 }
 
+const FRAGMENT = /fragment|bruchst/i;
+const FLAT = /textil|papyr|kelim|gewebe|stoff|tapestry|tunic|tunika|clavus|segment|curtain|vorhang|behang|hanging|linen|leinen|wool|wolle|cloth|garment|kleidung|seide|silk|weav|woven/i;
+export const FLAT_FRAGMENT_FACTOR = 0.3;
+
+/**
+ * Owner ruling 2026-10-09: textile and papyrus fragments rank lower; ceramic, wooden and other non-woven fragments keep
+ * their class weight. True when the type or title names a fragment of something woven or written on papyrus.
+ */
+export function isFlatFragment(...texts: Array<string | null | undefined>): boolean {
+  const t = texts.filter(Boolean).join(" ");
+  return FRAGMENT.test(t) && FLAT.test(t);
+}
+
 /** Spec 4.2: class weight x 0.5 if the image's long edge is under 600 px, x 1.2 for a museum highlight. */
-export function scoreFor(weight: number, q: { longEdge?: number | null; highlight?: boolean } = {}): number {
+export function scoreFor(weight: number, q: { longEdge?: number | null; highlight?: boolean; fragment?: boolean } = {}): number {
   let s = weight;
+  if (q.fragment) s *= FLAT_FRAGMENT_FACTOR;
   if (q.longEdge != null && q.longEdge < 600) s *= 0.5;
   if (q.highlight) s *= 1.2;
   return s;

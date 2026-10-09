@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { africanOrigin, classifyRecord, regionGroupFromPlace } from "../src/adapters/common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, regionGroupFromPlace, scoreFor } from "../src/adapters/common.js";
 import { metOriginOk, normaliseMetObject } from "../src/adapters/met.js";
 import { loadProfile } from "../src/config.js";
 
@@ -41,6 +41,20 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(classifyRecord("Furniture and woodwork", "Prestige stool (Kuo fo)", profile)).toBe("other-carved-cast");
     expect(classifyRecord("Tapper", "Ifa Divination Tapper", profile)).toBe("other-carved-cast");
     expect(classifyRecord("Neckrest", "Neckrest", profile)).toBe("other-carved-cast");
+    for (const type of ["Coins", "Münze", "Dagger", "Sword", "Spear", "Shield", "Helmet", "Arms and Armor", "Dolch", "Speer"])
+      expect(classifyRecord(type, "x", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Textile", "Fragment of a Clavus", profile)).toBe("other");
+  });
+
+  it("textile and papyrus fragments score lower; ceramic and wooden fragments do not", () => {
+    expect(isFlatFragment("Textile", "Fragment of a Clavus")).toBe(true);
+    expect(isFlatFragment("Fragment (Textilien)", null)).toBe(true);
+    expect(isFlatFragment("Papyrus", "Papyrus fragment")).toBe(true);
+    expect(isFlatFragment("Fragment (Schale)", "Fragment (Schale)")).toBe(false);
+    expect(isFlatFragment("Fragment (Möbel)", null)).toBe(false);
+    expect(isFlatFragment("Textile", "Roundel from a Tunic")).toBe(false);
+    expect(scoreFor(10, { fragment: true })).toBeCloseTo(3);
+    expect(scoreFor(40)).toBe(40);
   });
 
   it("regional grouping covers Coptic and Carthage wording", () => {
