@@ -65,3 +65,15 @@ sources:
     timeout_ms: 30000              # about 1 call in 15 timed out at 19 s (M0)
     retries: 3
     query: "continent:Africa"      # Egypt is inside continent:Africa; no rights filter (spec 7.1)
+  louvre:
+    enabled: false                 # off until the production gate (spec 11.4) passes
+    kind: scrape
+    rights_mode: attributed        # owner 2026-10-08: educational use falls under the terms' teaching use; credit + permalink are its only condition
+    source_weight: 1.0
+    min_interval_ms: 1100          # <= 1 request per second (spec 7.3); the JSON endpoint answered 100 of 100 at 1.1 s (2026-10-08)
+    # Egyptian Antiquities only (the Louvre's African art went to the Quai Branly). The department is not in the sitemap, so
+    # every object under these ark prefixes is fetched once and cached; the first full index fills over several daily runs.
+    egypt_collections: ["Département des Antiquités égyptiennes"]
+    ark_prefixes: ["cl01"]         # cl02 is prints and drawings (0 of 21 Egyptian in the 2026-10-08 sample)
+    max_new_per_run: 3000
+    exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)

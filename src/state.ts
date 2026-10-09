@@ -47,4 +47,6 @@ export class JsonCache<V> {
   }
 }
 
+export const louvreCacheFile = () => path.join(stateDir(), "index", "louvre.cache.json");
+export const louvreIdsFile = () => path.join(stateDir(), "index", "louvre.ids.json");
 export const metCacheFile = () => path.join(stateDir(), "index", "met.cache.json");

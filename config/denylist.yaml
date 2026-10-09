@@ -5,10 +5,14 @@
 provenance_flags: [punitive expedition, looted, loot, seized, confiscated, restitution, claim, raubgut, beute, strafexpedition]
 
 # Matched in title, object type, description and provenance. The museum's own wording, not our inference.
-blocked_terms: [and mummy, mummy of, mummified, human remains, skeletal remains, human bone, menschliche überreste, menschliche knochen, gender-restricted, secret/sacred, sacred/secret, restricted viewing, not for public display, culturally sensitive]
+blocked_terms: [and mummy, mummy of, mummified, human remains, skeletal remains, human bone, menschliche überreste, menschliche knochen, momie de, et momie, momifi, restes humains, ossements humains, gender-restricted, secret/sacred, sacred/secret, restricted viewing, not for public display, culturally sensitive]
 
 # Matched as whole tokens of the object type only, so "Mumienmaske" (a mask) is not caught.
-blocked_type_tokens: [mummy, mumie, skull, schädel, skeleton, skelett, bone, knochen]
+blocked_type_tokens: [mummy, mumie, momie, skull, schädel, crâne, skeleton, skelett, squelette, bone, knochen]
+
+# Phrases that contain a blocked word but are not remains: removed from the text before the checks above (owner, 2026-10-08:
+# human remains and bodies are never posted; a label tied to a mummy is a tag, not a body).
+allowed_phrases: [étiquette de momie, etiquette de momie, mummy label]
 
 # Manual overrides, e.g. "met:12345".
 blocked_keys: []

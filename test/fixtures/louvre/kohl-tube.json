@@ -1,0 +1,116 @@
+{
+ "arkId": "cl010006850",
+ "url": "https://collections.louvre.fr/ark:/53355/cl010006850",
+ "modified ": "2025-08-19",
+ "title": "étui à kohol",
+ "titleComplement": "",
+ "denominationTitle": [
+  {
+   "type": "Dénomination",
+   "value": "étui à kohol"
+  }
+ ],
+ "displayDateCreated": "",
+ "currentLocation": "Sully, [AE] Salle 330 - La parure, Vitrine 2",
+ "room": "Salle 330, Aile Aile Sully, Niveau 0",
+ "isMuseesNationauxRecuperation": false,
+ "dateCreated": [],
+ "creator": [],
+ "objectNumber": [
+  {
+   "value": "E 207",
+   "type": "Numéro principal"
+  },
+  {
+   "value": "N 1349",
+   "type": "Autre numéro d'inventaire"
+  },
+  {
+   "value": "AF 690",
+   "type": "Autre numéro d'inventaire"
+  },
+  {
+   "value": "Clot bey C 22 n°57",
+   "type": "N° anc. coll."
+  }
+ ],
+ "collection": "Département des Antiquités égyptiennes",
+ "printsDrawingsEntity": "",
+ "printsDrawingsCollection": "",
+ "objectType": "",
+ "originalObject": "",
+ "printState": "",
+ "description": "colonne palmiforme ; couvercle manquant\r\n\r\nDécor : en bas ; frise en façade de palais",
+ "inscriptions": "",
+ "namesAndTitles": "",
+ "onomastics": "",
+ "dimension": [
+  {
+   "type": "Hauteur",
+   "value": "9,2",
+   "displayDimension": "9,2 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 1,
+   "note": ""
+  },
+  {
+   "type": "Diamètre",
+   "value": "3,5",
+   "displayDimension": "3,5 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 4,
+   "note": ""
+  }
+ ],
+ "shape": "",
+ "materialsAndTechniques": "Matériau : bois (Dalbergia melanoxylon. Examens CTFT, Alain Mariaux, 1971. Anciennement enregistré, de manière erronée, comme \"ébène\".)\r\nMatériau secondaire : ivoire\r\nTechnique : gravure, incrustation",
+ "placeOfCreation": "",
+ "dateOfDiscovery": "",
+ "placeOfDiscovery": "",
+ "provenance": "",
+ "historicalContext": [],
+ "objectHistory": "",
+ "jabachInventory": "",
+ "napoleonInventory": "",
+ "previousOwner": [
+  {
+   "value": "Clot, Antoine Barthélémy",
+   "note": "",
+   "role": ", Vendeur ; Collectionneur"
+  }
+ ],
+ "acquisitionDetails": [
+  {
+   "mode": "achat",
+   "doubt": "",
+   "dates": [
+    {
+     "type": "date de l'inscription sur l'inventaire",
+     "value": "1852",
+     "startYear": 1852,
+     "endYear": 1852
+    }
+   ]
+  }
+ ],
+ "ownedBy": "Etat",
+ "heldBy": "Musée du Louvre, Département des Antiquités égyptiennes",
+ "longTermLoanTo": "",
+ "index": [],
+ "bibliography": [],
+ "exhibition": [],
+ "relatedWork": [],
+ "image": [
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000006850/0000058526_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000006850/0000058526_OG.JPG",
+   "copyright": "© 2002 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+   "type": "",
+   "position": 0
+  }
+ ]
+}

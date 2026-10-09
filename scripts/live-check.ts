@@ -4,13 +4,14 @@
  * and can be made to fit Bluesky's limit.
  *
  * Usage: npx tsx scripts/live-check.ts <source> <out_dir> [sample_size=20] [--max-index=N]
- *   --max-index=N  Met only: index just the first N objects (a full Met build is ~17,000 requests).
+ *   --max-index=N  Met or Louvre: index just the first N objects (a full Met build is ~17,000 requests, the Louvre ~90,000).
  *   --reuse-index  Sample from the <out_dir>/<source>-index.jsonl of an earlier run instead of rebuilding it.
  *   --region=G     Sample only rows whose region group is G (e.g. sub-saharan), so a small group is not drowned out.
  * Respects each source's pacing through its HttpClient. Writes index + results to <out_dir>, never to the repo.
  */
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
+import { LouvreAdapter, type LouvreCacheEntry, type LouvreIdsEntry } from "../src/adapters/louvre.js";
 import { MetAdapter } from "../src/adapters/met.js";
 import { createAdapter } from "../src/adapters/index.js";
 import { loadDenylist } from "../src/config.js";
@@ -18,6 +19,7 @@ import { denyReason } from "../src/denylist.js";
 import { HttpClient } from "../src/http.js";
 import { downloadImage, prepareImage } from "../src/image.js";
 import { LIMITS, measure, renderPost } from "../src/render.js";
+import { JsonCache, louvreCacheFile, louvreIdsFile } from "../src/state.js";
 import type { IndexRow } from "../src/types.js";
 
 const args = process.argv.slice(2).filter((a) => !a.startsWith("--"));
@@ -31,7 +33,16 @@ const region = process.argv.find((a) => a.startsWith("--region="))?.slice(9);
 const reuseIndex = process.argv.includes("--reuse-index");
 const indexFile = path.join(out, `${source}-index.jsonl`);
 
-const adapter = source === "met" && maxIndex ? new MetAdapter(undefined, undefined, undefined, { maxObjects: maxIndex }) : createAdapter(source);
+const adapter =
+  source === "met" && maxIndex
+    ? new MetAdapter(undefined, undefined, undefined, { maxObjects: maxIndex })
+    : source === "louvre" && maxIndex
+      ? new LouvreAdapter(undefined, undefined, undefined, {
+          maxObjects: maxIndex,
+          cache: new JsonCache<LouvreCacheEntry>(louvreCacheFile()),
+          idsCache: new JsonCache<LouvreIdsEntry>(louvreIdsFile()),
+        })
+      : createAdapter(source);
 const deny = loadDenylist();
 const t0 = Date.now();
 const rows: IndexRow[] = [];

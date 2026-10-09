@@ -2,10 +2,11 @@ import type { MuseumAdapter } from "../types.js";
 import { enabledSourceIds } from "../config.js";
 import { AicAdapter } from "./aic.js";
 import { ClevelandAdapter } from "./cleveland.js";
+import { LouvreAdapter, type LouvreCacheEntry, type LouvreIdsEntry } from "./louvre.js";
 import { MetAdapter, type MetCacheEntry } from "./met.js";
 import { MiaAdapter } from "./mia.js";
 import { SmbAdapter } from "./smb.js";
-import { JsonCache, metCacheFile } from "../state.js";
+import { JsonCache, louvreCacheFile, louvreIdsFile, metCacheFile } from "../state.js";
 
 const FACTORIES: Record<string, () => MuseumAdapter> = {
   smb: () => new SmbAdapter(),
@@ -13,6 +14,7 @@ const FACTORIES: Record<string, () => MuseumAdapter> = {
   cleveland: () => new ClevelandAdapter(),
   aic: () => new AicAdapter(),
   mia: () => new MiaAdapter(),
+  louvre: () => new LouvreAdapter(undefined, undefined, undefined, { cache: new JsonCache<LouvreCacheEntry>(louvreCacheFile()), idsCache: new JsonCache<LouvreIdsEntry>(louvreIdsFile()) }),
 };
 
 export function createAdapter(id: string): MuseumAdapter {

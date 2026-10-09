@@ -1,0 +1,146 @@
+{
+ "arkId": "cl010084896",
+ "url": "https://collections.louvre.fr/ark:/53355/cl010084896",
+ "modified ": "2025-08-25",
+ "title": "amulette oudjat simple monoface",
+ "titleComplement": "",
+ "denominationTitle": [
+  {
+   "type": "Dénomination",
+   "value": "amulette oudjat simple monoface (fragment)"
+  }
+ ],
+ "displayDateCreated": "",
+ "currentLocation": "non exposé",
+ "room": "",
+ "isMuseesNationauxRecuperation": false,
+ "dateCreated": [],
+ "creator": [],
+ "objectNumber": [
+  {
+   "value": "E 23593",
+   "type": "Numéro principal"
+  }
+ ],
+ "collection": "Département des Antiquités égyptiennes",
+ "printsDrawingsEntity": "",
+ "printsDrawingsCollection": "",
+ "objectType": "",
+ "originalObject": "",
+ "printState": "",
+ "description": "oeil oudjat (oeil droit) ; percé dans la longueur",
+ "inscriptions": "",
+ "namesAndTitles": "",
+ "onomastics": "",
+ "dimension": [
+  {
+   "type": "Hauteur",
+   "value": "1,25",
+   "displayDimension": "1,25 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 1,
+   "note": ""
+  },
+  {
+   "type": "Longueur",
+   "value": "1,25",
+   "displayDimension": "1,25 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 2,
+   "note": ""
+  },
+  {
+   "type": "Epaisseur",
+   "value": "0,5",
+   "displayDimension": "0,5 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 3,
+   "note": ""
+  }
+ ],
+ "shape": "",
+ "materialsAndTechniques": "Matériau : faïence siliceuse (décolorée et déglaçurée)",
+ "placeOfCreation": "",
+ "dateOfDiscovery": "",
+ "placeOfDiscovery": "tombe E474 (Zaouiyet el-Mayetin->Moyenne Égypte->Égypte)",
+ "provenance": "",
+ "historicalContext": [],
+ "objectHistory": "",
+ "jabachInventory": "",
+ "napoleonInventory": "",
+ "previousOwner": [
+  {
+   "value": "M. Weill, Raymond Charles Isaac",
+   "note": "",
+   "role": ", Donateur"
+  }
+ ],
+ "acquisitionDetails": [
+  {
+   "mode": "legs sous réserve d'usufruit",
+   "doubt": "",
+   "dates": [
+    {
+     "type": "date de l'inscription sur l'inventaire",
+     "value": "1950",
+     "startYear": 1950,
+     "endYear": 1950
+    },
+    {
+     "type": "date de comité/commission",
+     "value": "01/02/1951",
+     "startYear": 1951,
+     "endYear": 1951
+    },
+    {
+     "type": "date du conseil",
+     "value": "08/02/1951",
+     "startYear": 1951,
+     "endYear": 1951
+    },
+    {
+     "type": "date d'arrivée au Musée",
+     "value": "1992",
+     "startYear": 1992,
+     "endYear": 1992
+    }
+   ]
+  }
+ ],
+ "ownedBy": "Etat",
+ "heldBy": "Musée du Louvre, Département des Antiquités égyptiennes",
+ "longTermLoanTo": "",
+ "index": [],
+ "bibliography": [],
+ "exhibition": [],
+ "relatedWork": [],
+ "image": [
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/original/0000000021/0000084896/0000151199_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000084896/0000151199_OG.JPG",
+   "copyright": "© 2012 Musée du Louvre / Département des Antiquités égyptiennes",
+   "type": "vue d'ensemble ; face, recto, avers, avant",
+   "position": 0
+  },
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000084896/0000760429_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000084896/0000760429_OG.JPG",
+   "copyright": "© 2017 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+   "type": "face, recto, avers, avant ; vue groupée",
+   "position": 1
+  },
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000084896/0000760433_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000084896/0000760433_OG.JPG",
+   "copyright": "© 2017 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+   "type": "dos, verso, revers, arrière ; vue groupée",
+   "position": 2
+  }
+ ]
+}

@@ -92,6 +92,7 @@ export interface Denylist {
   blocked_terms: string[];
   blocked_type_tokens: string[];
   blocked_keys: string[];
+  allowed_phrases?: string[];
 }
 
 export function loadDenylist(): Denylist {

@@ -13,6 +13,7 @@ export const MUSEUMS: Record<string, string> = {
   aic: "Art Institute of Chicago",
   mia: "Minneapolis Institute of Art",
   smb: "Staatliche Museen zu Berlin",
+  louvre: "Musée du Louvre",
 };
 
 const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });

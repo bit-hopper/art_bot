@@ -1,0 +1,130 @@
+{
+ "arkId": "cl010026595",
+ "url": "https://collections.louvre.fr/ark:/53355/cl010026595",
+ "modified ": "2026-08-11",
+ "title": "serviteur funéraire momiforme",
+ "titleComplement": "",
+ "denominationTitle": [
+  {
+   "type": "Dénomination",
+   "value": "serviteur funéraire momiforme"
+  }
+ ],
+ "displayDateCreated": "Date de création/fabrication : Senedjemibrê Nectanébo II (mention de personnage) (-359 - -341)",
+ "currentLocation": "non exposé",
+ "room": "",
+ "isMuseesNationauxRecuperation": false,
+ "dateCreated": [
+  {
+   "startYear": -359,
+   "endYear": -341,
+   "imprecision": "",
+   "text": "Senedjemibrê Nectanébo II",
+   "type": "Date de création/fabrication",
+   "doubt": ""
+  }
+ ],
+ "creator": [],
+ "objectNumber": [
+  {
+   "value": "N 3461 724",
+   "type": "Numéro principal"
+  }
+ ],
+ "collection": "Département des Antiquités égyptiennes",
+ "printsDrawingsEntity": "",
+ "printsDrawingsCollection": "",
+ "objectType": "",
+ "originalObject": "",
+ "printState": "",
+ "description": "homme (linceul, perruque tripartite, fausse barbe, bras croisés, tenant, pic, houe, sac)",
+ "inscriptions": "Écriture : \r ; hiéroglyphique\r ; Nature du texte : \r ; nom\r ; titre",
+ "namesAndTitles": "Ounnéfer (prêtre-hem-nétjer, directeur des conjurateurs de Selkis, celui qui dépose les offrandes) ; Tasatta (?, mère)",
+ "onomastics": "",
+ "dimension": [
+  {
+   "type": "Hauteur",
+   "value": "11,47",
+   "displayDimension": "11,47 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 1,
+   "note": ""
+  },
+  {
+   "type": "Largeur",
+   "value": "3,3",
+   "displayDimension": "3,3 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 3,
+   "note": ""
+  },
+  {
+   "type": "Profondeur",
+   "value": "2,3",
+   "displayDimension": "2,3 cm",
+   "unit": "cm",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 3,
+   "note": ""
+  }
+ ],
+ "shape": "",
+ "materialsAndTechniques": "Matériau : faïence siliceuse",
+ "placeOfCreation": "",
+ "dateOfDiscovery": "",
+ "placeOfDiscovery": "tombe d'Ounnéfer (Sérapéum de Memphis->Saqqara-Nord->Saqqara)",
+ "provenance": "",
+ "historicalContext": [],
+ "objectHistory": "",
+ "jabachInventory": "",
+ "napoleonInventory": "",
+ "previousOwner": [
+  {
+   "value": "Mariette Pacha, Auguste",
+   "note": "",
+   "role": ", Fouilleur/Archéologue"
+  }
+ ],
+ "acquisitionDetails": [
+  {
+   "mode": "partage après fouilles",
+   "doubt": "",
+   "dates": [
+    {
+     "type": "date de l'inscription sur l'inventaire",
+     "value": "16/02/1857",
+     "startYear": 1857,
+     "endYear": 1857
+    }
+   ]
+  }
+ ],
+ "ownedBy": "Etat",
+ "heldBy": "Musée du Louvre, Département des Antiquités égyptiennes",
+ "longTermLoanTo": "",
+ "index": [],
+ "bibliography": [],
+ "exhibition": [],
+ "relatedWork": [],
+ "image": [
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000026595/0001041624_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000026595/0001041624_OG.JPG",
+   "copyright": "© 2021 Musée du Louvre, Dist. GrandPalaisRmn / Christian Décamps",
+   "type": "",
+   "position": 0
+  },
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000026595/0000159195_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000026595/0000159195_OG.JPG",
+   "copyright": "© 2012 Musée du Louvre / Département des Antiquités égyptiennes",
+   "type": "",
+   "position": 1
+  }
+ ]
+}

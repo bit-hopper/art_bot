@@ -1,0 +1,173 @@
+{
+ "arkId": "cl010064393",
+ "url": "https://collections.louvre.fr/ark:/53355/cl010064393",
+ "modified ": "2026-07-22",
+ "title": "La Vierge et l'Enfant entourés de huit anges",
+ "titleComplement": "",
+ "denominationTitle": [
+  {
+   "type": "Titre",
+   "value": "La Vierge et l'Enfant entourés de huit anges"
+  }
+ ],
+ "displayDateCreated": "Date de création/fabrication : Fin du XIVe siècle - début du XVe siècle (1375 - 1425)",
+ "currentLocation": "non exposé",
+ "room": "",
+ "isMuseesNationauxRecuperation": false,
+ "dateCreated": [
+  {
+   "startYear": 1375,
+   "endYear": 1425,
+   "imprecision": "",
+   "text": "Fin du XIVe siècle - début du XVe siècle",
+   "type": "Date de création/fabrication",
+   "doubt": ""
+  }
+ ],
+ "creator": [
+  {
+   "label": "Vanni, Turino",
+   "attributionLevel": "Attribution actuelle",
+   "linkType": "",
+   "dates": [
+    {
+     "date": "1348 ?",
+     "place": "Pise ou Rigoli",
+     "type": "date de naissance"
+    },
+    {
+     "date": "1439",
+     "place": "?",
+     "type": "date de mort"
+    }
+   ],
+   "creatorRole": "",
+   "authenticationType": "",
+   "doubt": "",
+   "attributedBy": "",
+   "attributedYear": "",
+   "wikidata": "Q3542305"
+  },
+  {
+   "label": "Italie",
+   "attributionLevel": "Attribution actuelle",
+   "linkType": "École de",
+   "creatorRole": "",
+   "authenticationType": "",
+   "doubt": "",
+   "attributedBy": "",
+   "attributedYear": "",
+   "wikidata": ""
+  }
+ ],
+ "objectNumber": [
+  {
+   "value": "INV 711",
+   "type": "Numéro principal"
+  },
+  {
+   "value": "MR 535",
+   "type": "Autre numéro d'inventaire"
+  }
+ ],
+ "collection": "Département des Peintures",
+ "printsDrawingsEntity": "",
+ "printsDrawingsCollection": "",
+ "objectType": "",
+ "originalObject": "",
+ "printState": "",
+ "description": "Panneau central d’un polyptyque.",
+ "inscriptions": "Signature : \r ; S.b.m. Turinus. vanniis de Pisis m. piqsit.  Inscription sur le phylactère de l’Enfant : ratione cunta guberno.",
+ "namesAndTitles": "",
+ "onomastics": "",
+ "dimension": [
+  {
+   "type": "Hauteur",
+   "value": "1,362",
+   "displayDimension": "1,362 m",
+   "unit": "m",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 1,
+   "note": ""
+  },
+  {
+   "type": "Hauteur avec accessoire",
+   "value": "1,57",
+   "displayDimension": "1,57 m",
+   "unit": "m",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 2,
+   "note": ""
+  },
+  {
+   "type": "Largeur",
+   "value": "0,745",
+   "displayDimension": "0,745 m",
+   "unit": "m",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 3,
+   "note": ""
+  },
+  {
+   "type": "Largeur avec accessoire",
+   "value": "0,955",
+   "displayDimension": "0,955 m",
+   "unit": "m",
+   "anteriorPrecision": "",
+   "posteriorPrecision": "",
+   "tri": 4,
+   "note": ""
+  }
+ ],
+ "shape": "",
+ "materialsAndTechniques": "tempera sur bois",
+ "placeOfCreation": "",
+ "dateOfDiscovery": "",
+ "placeOfDiscovery": "",
+ "provenance": "",
+ "historicalContext": [],
+ "objectHistory": "Couvent San Silvestro de Pise, 1811 ; chapelle du Campo Santo, Pise (cité en 1812) ; prélevé et emporté au Louvre, fin 1812 ou 1813.",
+ "jabachInventory": "",
+ "napoleonInventory": "",
+ "previousOwner": [],
+ "acquisitionDetails": [
+  {
+   "mode": "conquête militaire",
+   "doubt": "",
+   "dates": [
+    {
+     "type": "date",
+     "value": "1813",
+     "startYear": 1813,
+     "endYear": 1813
+    }
+   ]
+  }
+ ],
+ "ownedBy": "Etat",
+ "heldBy": "Musée du Louvre, Département des Peintures",
+ "longTermLoanTo": "",
+ "index": [],
+ "bibliography": [],
+ "exhibition": [],
+ "relatedWork": [],
+ "image": [
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000064393/0000139694_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000064393/0000139694_OG.JPG",
+   "copyright": "© 2012 GrandPalaisRmn (musée du Louvre) / Tony Querrec",
+   "type": "face, recto, avers, avant ; vue d'ensemble ; vue sans cadre",
+   "position": 0
+  },
+  {
+   "urlImage": "https://collections.louvre.fr/media/cache/large/0000000021/0000064393/0000147682_OG.JPG",
+   "urlThumbnail": "https://collections.louvre.fr/media/cache/small/0000000021/0000064393/0000147682_OG.JPG",
+   "copyright": "© 1974 GrandPalaisRmn (musée du Louvre) / RMN Agence photo",
+   "type": "face, recto, avers, avant ; vue d'ensemble ; vue avec cadre",
+   "position": 1
+  }
+ ]
+}
