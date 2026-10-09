@@ -165,12 +165,26 @@ describe("Cleveland", () => {
         ],
       };
     });
-    const rows = await collect(new ClevelandAdapter(cfg, profile, http).buildIndex());
+    const rows = await collect(new ClevelandAdapter({ ...cfg, origin_departments: [] }, profile, http).buildIndex());
     expect(rows.map((r) => [r.key, r.regionGroup, r.objectClass])).toEqual([
       ["cleveland:1", "sub-saharan", "mask"],
       ["cleveland:3", "egypt", "sculpture"],
     ]);
     expect(urls.every((u) => u.includes("has_image=1"))).toBe(true);
+  });
+
+  it("origin departments keep only records whose culture is wholly African (owner 2026-10-09)", async () => {
+    const img = { web: { url: "https://x/w.jpg", width: "800", height: "600" } };
+    const rec = (id: number, culture: string[], type = "Textile") => ({ id, type, title: `T${id}`, culture, images: img });
+    const { http } = fake((u) => {
+      if (u.includes("department=Textiles"))
+        return { data: [rec(10, ["Egypt, Byzantine period"]), rec(11, ["Egypt or Syria(?)"]), rec(12, ["Iran, Safavid"]), rec(13, ["Africa, West Africa, Ghana"])] };
+      return { data: [] };
+    });
+    const rows = await collect(new ClevelandAdapter({ ...cfg, departments: [], egypt_departments: [], origin_departments: ["Textiles"] }, profile, http).buildIndex());
+    expect(rows.map((r) => [r.key, r.regionGroup])).toEqual([["cleveland:10", "egypt"], ["cleveland:13", "sub-saharan"]]);
+    const ok = normaliseClevelandArtwork({ ...json("cleveland/buffalo-mask.json"), culture: ["Egypt or Syria(?)"] }, profile, false, true);
+    expect(ok.rightsStatus).toBe("blocked");
   });
 });
 

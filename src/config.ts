@@ -34,6 +34,12 @@ export interface SmbSourceConfig {
   min_interval_ms: number;
   org_units_africa: string[];
   org_units_egypt: string[];
+  /** Units filed by period (Islamic, Byzantine, Antiquities): kept when every place of origin they name is African (owner 2026-10-09). */
+  org_units_origin?: string[];
+  /** Non-African terms; an origin-unit object that also matches one is left out of the index (it is "Egypt or Syria"). */
+  origin_exclude_terms?: string[];
+  /** Egyptian towns that appear next to "Ägypten" in origin lines ("Ägypten" + "Fustat" is one origin, not two). */
+  origin_egypt_places?: string[];
   africa_terms: string[];
   egypt_terms: string[];
   north_africa_terms: string[];

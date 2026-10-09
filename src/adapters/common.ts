@@ -63,6 +63,8 @@ export function nonEmpty(s: string | null | undefined): string | null {
 const AFRICAN_PLACE =
   /\b(egypt|egyptian|coptic|nubia|kush|meroitic|alexandria|ethiopia|ethiopian|eritrea|sudan|libya|tunisia|algeria|morocco|maghreb|north africa|north african|carthage|carthaginian|cyrenaica|numidia|mauretania|berber|africa|african)\b/i;
 
+const PERIOD_ONLY = /^(?:(?:early|middle|late|abbasid|aghlabid|fatimid|mamluk|ayyubid|umayyad|ptolemaic|coptic|islamic|period|dynasty|sultanate|centur(?:y|ies)|bce|ce|\d+(?:st|nd|rd|th)?)[\s,-]*)+$/i;
+
 /**
  * Owner ruling 2026-10-08: origin decides, not travel. An object made in Africa stays African whoever ruled the place or
  * wherever it later went (Ptolemaic, Roman, Byzantine, Coptic, Islamic-period Egypt; Carthage; the Maghreb). A field
@@ -71,7 +73,9 @@ const AFRICAN_PLACE =
  */
 export function africanOrigin(...fields: Array<string | null | undefined>): boolean {
   return fields.some((f) => {
-    const pieces = (f ?? "").split(/\s+or\s+/i).map((x) => x.replace(/\(\?\)/g, "").trim()).filter(Boolean);
+    // A ruler or a dynasty on either side of "or" is not a rival place: "reign of Ptolemy V or Ptolemy VI", "Aghlabid or Abbasid".
+    const text = (f ?? "").replace(/,?\s*reign of\s.*$/i, "");
+    const pieces = text.split(/\s+or\s+/i).map((x) => x.replace(/\(\?\)/g, "").trim()).filter((x) => x && !PERIOD_ONLY.test(x));
     return pieces.length > 0 && pieces.every((x) => AFRICAN_PLACE.test(x));
   });
 }

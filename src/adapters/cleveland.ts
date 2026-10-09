@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RightsStatus } from "../types.js";
-import { classifyRecord, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { africanOrigin, classifyRecord, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://openaccess-api.clevelandart.org/api/artworks";
 const PAGE = 1000;
@@ -13,6 +13,8 @@ export interface ClevelandSourceConfig extends SourceConfig {
   departments: string[];
   egypt_departments: string[];
   egypt_culture_terms: string[];
+  /** Departments filed by period; a record is kept only when its culture field names an African origin (owner 2026-10-09). */
+  origin_departments?: string[];
 }
 
 /** The subset of an `/api/artworks` record this adapter reads. */
@@ -54,7 +56,7 @@ function rightsOf(status: string | null | undefined): { rights: RightsStatus; li
   return status === "CC0" ? { rights: "open", license: "CC0" } : { rights: "reserved", license: nonEmpty(status) };
 }
 
-export function normaliseClevelandArtwork(r: ClevelandArtwork, profile: FilterProfile, egyptDept: boolean): Artwork {
+export function normaliseClevelandArtwork(r: ClevelandArtwork, profile: FilterProfile, egyptDept: boolean, originDept = false): Artwork {
   const web = r.images?.web?.url ?? null;
   const { rights, license } = rightsOf(r.share_license_status);
   const loc = nonEmpty(r.current_location);
@@ -85,7 +87,7 @@ export function normaliseClevelandArtwork(r: ClevelandArtwork, profile: FilterPr
     imageUrl: web,
     imageLicense: license,
     photographer: null,
-    rightsStatus: web ? rights : "blocked",
+    rightsStatus: web && (!originDept || africanOrigin(...(r.culture ?? []))) ? rights : "blocked",
     objectUrl: r.url || `https://www.clevelandart.org/art/${r.accession_number ?? r.id}`,
   };
 }
@@ -115,14 +117,16 @@ export class ClevelandAdapter implements MuseumAdapter {
   }
 
   async *buildIndex(): AsyncIterable<IndexRow> {
-    const groups = [
+    const groups: Array<{ dept: string; egypt: boolean; origin?: boolean }> = [
       ...this.cfg.departments.map((d) => ({ dept: d, egypt: false })),
       ...this.cfg.egypt_departments.map((d) => ({ dept: d, egypt: true })),
+      ...(this.cfg.origin_departments ?? []).map((d) => ({ dept: d, egypt: false, origin: true })),
     ];
-    for (const { dept, egypt } of groups) {
+    for (const { dept, egypt, origin } of groups) {
       for await (const r of this.pages(dept)) {
         if (!r.images?.web?.url) continue;
         if (egypt && !cultureMatches(r.culture, this.cfg.egypt_culture_terms)) continue;
+        if (origin && !africanOrigin(...(r.culture ?? []))) continue;
         const cls = classifyRecord(r.type, r.title, this.profile);
         const weight = classWeight(cls, this.profile);
         if (weight <= 0) continue;
@@ -137,6 +141,7 @@ export class ClevelandAdapter implements MuseumAdapter {
 
   async fetchArtwork(sourceObjectId: string): Promise<Artwork> {
     const { data } = await this.http.getJson<{ data: ClevelandArtwork }>(`${API}/${sourceObjectId}`);
-    return normaliseClevelandArtwork(data, this.profile, this.cfg.egypt_departments.includes(data.department ?? ""));
+    const dept = data.department ?? "";
+    return normaliseClevelandArtwork(data, this.profile, this.cfg.egypt_departments.includes(dept), (this.cfg.origin_departments ?? []).includes(dept));
   }
 }

@@ -1,9 +1,10 @@
 import { unflatten } from "devalue";
-import { classify, classWeight } from "../classify.js";
+import { classWeight } from "../classify.js";
 import { loadProfile, loadSmbConfig, type FilterProfile, type SmbSourceConfig } from "../config.js";
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup, RightsStatus } from "../types.js";
+import { classifyRecord } from "./common.js";
 
 const SITE = "https://search.smb.museum";
 const PAGE_SIZE = 300; // server caps `limit` at 300 (M0 spike)
@@ -43,6 +44,7 @@ export interface SmbRecord {
 interface SearchRow {
   id: string;
   objekttyp?: string | null;
+  titel?: string | null;
   sammlung?: string | null;
 }
 
@@ -136,10 +138,39 @@ export function madeOutsideAfrica(country: string | null, cfg: SmbSourceConfig):
   return !!place && !cfg.africa_terms.some((t) => place.includes(t));
 }
 
+// Find-spots and places of purchase say where an object turned up, not where it was made (owner 2026-10-08: origin decides).
+const NOT_ORIGIN = /^(fundort|fundregion|erwerbungsort|verkaufsort|handelsort|aufbewahrungsort)\b/i;
+
+/**
+ * Places of origin of a unit filed by period: the geography lines minus find-spots and purchase places, label stripped
+ * ("Herkunft (Allgemein): Ägypten" -> "Ägypten").
+ */
+export function originPlaces(rec: SmbRecord): string[] {
+  const out: string[] = [];
+  for (const raw of lines(rec.geography)) {
+    const m = /^([^:]+):\s*(.+)$/.exec(raw);
+    if (m && NOT_ORIGIN.test(m[1]!.trim())) continue;
+    out.push((m ? m[2]! : raw).trim());
+  }
+  return out;
+}
+
+const africanTermOf = (place: string, cfg: SmbSourceConfig) =>
+  cfg.africa_terms.find((t) => place.includes(t)) ?? ((cfg.origin_egypt_places ?? []).some((t) => place.includes(t)) ? cfg.egypt_terms[0] : undefined);
+
+/** True when the unit is filed by period and the object does not state a wholly African origin ("Ägypten" + "Syrien" is out). */
+export function originUnitRejects(rec: SmbRecord, cfg: SmbSourceConfig): boolean {
+  if (!(cfg.org_units_origin ?? []).includes(rec.org_unit ?? "")) return false;
+  const places = originPlaces(rec);
+  return places.length === 0 || !places.every((p) => africanTermOf(p, cfg));
+}
+
 export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile: FilterProfile): Artwork {
   const numericId = rec.id.replace(/^obj-/, "");
   const image = chooseImage(rec.images, cfg);
-  const country = geo(rec, "Land", "Land/Region");
+  const originUnit = (cfg.org_units_origin ?? []).includes(rec.org_unit ?? "");
+  const places = originUnit ? originPlaces(rec) : [];
+  const country = originUnit ? (places.length === 1 ? places[0]! : null) : geo(rec, "Land", "Land/Region");
   const provenance = (rec.provenance ?? [])
     .map((p) => (typeof p === "string" ? p : p.nameLine ?? ""))
     .filter(Boolean)
@@ -153,11 +184,13 @@ export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile
     // Most ethnological records carry no title; the object type is the museum's own wording and the fallback.
     title: rec.title?.trim() || rec.term?.trim() || null,
     objectType: rec.term?.trim() || null,
-    objectClass: classify(rec.term, profile),
+    objectClass: classifyRecord(rec.term, rec.title, profile),
     culture: geo(rec, "Ethnie"),
     country,
     region: geo(rec, "Region"),
-    regionGroup: regionGroupFor(rec.org_unit ?? null, country, cfg),
+    regionGroup: originUnit
+      ? regionGroupFromTerms(places.map((p) => africanTermOf(p, cfg) ?? p), cfg)
+      : regionGroupFor(rec.org_unit ?? null, country, cfg),
     dateDisplay: pickDate(rec.dating),
     medium: rec.material_desc?.trim() || null,
     dimensions: pickDimensions(rec.dimensions),
@@ -171,7 +204,7 @@ export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile
     imageUrl: image ? `${SITE}/media${image.xl_path}` : null,
     imageLicense: image?.license ?? null,
     photographer: image?.photographer ?? null,
-    rightsStatus: !image || madeOutsideAfrica(country, cfg) ? "blocked" : licenseRights(image.license, cfg),
+    rightsStatus: !image || madeOutsideAfrica(country, cfg) || originUnitRejects(rec, cfg) ? "blocked" : licenseRights(image.license, cfg),
     objectUrl: rec.permalink ?? `${SITE}/en/object/${rec.id}`,
   };
 }
@@ -220,12 +253,13 @@ export class SmbAdapter implements MuseumAdapter {
    * objects (weight 0) are dropped here, never indexed.
    */
   async *buildIndex(): AsyncIterable<IndexRow> {
-    const byId = new Map<string, { cls: ReturnType<typeof classify>; terms: Set<string>; egypt: boolean }>();
+    const byId = new Map<string, { cls: ReturnType<typeof classifyRecord>; terms: Set<string>; egypt: boolean }>();
+    const clsOf = (row: SearchRow) => classifyRecord(row.objekttyp, row.titel, this.profile);
 
     for (const unit of this.cfg.org_units_africa) {
       for (const term of this.cfg.africa_terms) {
         for (const row of await this.drain({ org_units: unit, geographicalReferences: term })) {
-          const e = byId.get(row.id) ?? { cls: classify(row.objekttyp, this.profile), terms: new Set<string>(), egypt: false };
+          const e = byId.get(row.id) ?? { cls: clsOf(row), terms: new Set<string>(), egypt: false };
           e.terms.add(term);
           byId.set(row.id, e);
         }
@@ -233,10 +267,27 @@ export class SmbAdapter implements MuseumAdapter {
     }
     for (const unit of this.cfg.org_units_egypt) {
       for (const row of await this.drain({ org_units: unit })) {
-        const e = byId.get(row.id) ?? { cls: classify(row.objekttyp, this.profile), terms: new Set<string>(), egypt: true };
+        const e = byId.get(row.id) ?? { cls: clsOf(row), terms: new Set<string>(), egypt: true };
         e.egypt = true;
         byId.set(row.id, e);
       }
+    }
+
+    // Units filed by period: African terms as for the Ethnological Museum, minus anything that also names a non-African origin.
+    for (const unit of this.cfg.org_units_origin ?? []) {
+      const found = new Map<string, { cls: ReturnType<typeof classifyRecord>; terms: Set<string> }>();
+      for (const term of this.cfg.africa_terms) {
+        for (const row of await this.drain({ org_units: unit, geographicalReferences: term })) {
+          const e = found.get(row.id) ?? { cls: clsOf(row), terms: new Set<string>() };
+          e.terms.add(term);
+          found.set(row.id, e);
+        }
+      }
+      for (const term of this.cfg.origin_exclude_terms ?? []) {
+        if (found.size === 0) break;
+        for (const row of await this.drain({ org_units: unit, geographicalReferences: term })) found.delete(row.id);
+      }
+      for (const [id, e] of found) if (!byId.has(id)) byId.set(id, { cls: e.cls, terms: e.terms, egypt: false });
     }
 
     for (const [id, e] of byId) {

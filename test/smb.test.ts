@@ -7,6 +7,8 @@ import {
   licenseRights,
   madeOutsideAfrica,
   normaliseSmbRecord,
+  originPlaces,
+  originUnitRejects,
   parseObjectPage,
   regionGroupFromTerms,
   SmbAdapter,
@@ -182,5 +184,31 @@ describe("SmbAdapter.buildIndex", () => {
     expect(byKey["smb:5"]).toMatchObject({ objectClass: "other-carved-cast", regionGroup: "north-africa", score: 40 });
     expect(byKey["smb:6"]).toMatchObject({ objectClass: "sculpture", regionGroup: "egypt" });
     expect(byKey["smb:7"]).toMatchObject({ objectClass: "mask", regionGroup: "egypt", score: 100 });
+  });
+});
+
+describe("units filed by period (owner 2026-10-09: origin decides)", () => {
+  const unit = "Museum für Islamische Kunst";
+  const rec = (geography: Array<{ nameLine: string; role?: string }>, org_unit = unit) => ({ id: "obj-1", org_unit, term: "Flasche (Gefäß)", images: [], geography });
+  const L = (nameLine: string, role = "Land") => ({ nameLine, role });
+
+  it("keeps a record whose only origin is Egypt and drops Egypt + Syria", () => {
+    expect(originUnitRejects(rec([L("Herkunft (Allgemein): Ägypten")]), cfg)).toBe(false);
+    expect(originUnitRejects(rec([L("Herkunft (Allgemein): Syrien"), L("Herkunft (Allgemein): Ägypten")]), cfg)).toBe(true);
+    expect(originUnitRejects(rec([L("Herkunft (Allgemein): Ägypten"), L("Herkunft (Allgemein): Fustat", "Ort")]), cfg)).toBe(false);
+  });
+
+  it("ignores find-spots and purchase places, and rejects a record with no origin", () => {
+    expect(originPlaces(rec([L("Fundort: Syrien"), L("Herkunft (Allgemein): Ägypten", "Ort")]))).toEqual(["Ägypten"]);
+    expect(originUnitRejects(rec([L("Erwerbungsort: Ägypten", "")]), cfg)).toBe(true);
+    expect(originUnitRejects(rec([L("Entstehungsort stilistisch: Tunesien", "")]), cfg)).toBe(false);
+  });
+
+  it("does not touch the Ethnological Museum, and blocks a rejected record at fetch time", () => {
+    expect(originUnitRejects(rec([L("Syrien")], "Ethnologisches Museum"), cfg)).toBe(false);
+    const a = normaliseSmbRecord(rec([L("Herkunft (Allgemein): Syrien"), L("Herkunft (Allgemein): Ägypten")]) as never, cfg, loadProfile());
+    expect(a.rightsStatus).toBe("blocked");
+    const b = normaliseSmbRecord({ ...rec([L("Herkunft (Allgemein): Ägypten")]), images: [{ license: "CC BY-SA 4.0", xl_path: "/x.jpg" }] } as never, cfg, loadProfile());
+    expect(b).toMatchObject({ regionGroup: "egypt", country: "Ägypten", rightsStatus: "attributed" });
   });
 });

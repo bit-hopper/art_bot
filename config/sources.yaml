@@ -10,6 +10,12 @@ sources:
     # country by country and unioned by id (spike result 2026-10-08).
     org_units_africa: ["Ethnologisches Museum"]
     org_units_egypt: ["Ägyptisches Museum und Papyrussammlung"]
+    # Origin rule (owner 2026-10-09): units filed by period. Kept when every place of origin the record names is African
+    # (find-spots and purchase places are ignored); "Ägypten" + "Syrien" is "Egypt or Syria" and is out. Measured 2026-10-09:
+    # Islamic Art 2,025 hits for African terms (2,019 Ägypten, many also Syrien), Byzantine 294, Antikensammlung 0.
+    org_units_origin: ["Museum für Islamische Kunst", "Skulpturensammlung und Museum für Byzantinische Kunst", "Antikensammlung"]
+    origin_egypt_places: [Fustat, Fostat, Kairo, Alexandria, Alexandrien, Assuan, Luxor, Theben, Memphis, Fayum, Oxyrhynchos, Achmim, Antinoë, Sakkara, Giza, Abydos, Amarna, Tanis, Bahnasa]
+    origin_exclude_terms: [Syrien, Irak, Iran, Libanon, Jordanien, Israel, Palästinensische Gebiete, Türkei, Spanien, Zypern, Griechenland, Italien, Sizilien, Mesopotamien, Persien, Arabien, Jemen, Saudi-Arabien, Usbekistan, Indien, Afghanistan, Pakistan, Armenien, Georgien, Russland]
     africa_terms: [Afrika, Algerien, Angola, Äquatorialguinea, Äthiopien, Benin, Botswana, Burkina Faso, Burundi, Dschibuti, Elfenbeinküste, Eritrea, Eswatini, Swasiland, Gabun, Gambia, Ghana, Guinea, Guinea-Bissau, Kamerun, Kap Verde, Kenia, Komoren, Kongo, Zaire, Lesotho, Liberia, Libyen, Madagaskar, Malawi, Mali, Marokko, Mauretanien, Mauritius, Mosambik, Namibia, Niger, Nigeria, Ruanda, Sambia, Senegal, Seychellen, Sierra Leone, Simbabwe, Somalia, Südafrika, Südsudan, Sudan, Tansania, Togo, Tschad, Tunesien, Uganda, Zentralafrikanische Republik, Sao Tomé, Sansibar, Westsahara, Obervolta, Dahomey, Deutsch-Ostafrika, Deutsch-Südwestafrika, Rhodesien, Belgisch-Kongo, Nubien, Abessinien, Ägypten]
     # region_group mapping for Ethnologisches Museum records, from the country term that matched (spec 4).
     # The Egyptian Museum is always `egypt`. Anything else that matched a country is `sub-saharan`; objects found
@@ -60,6 +66,9 @@ sources:
     # Also holds Near Eastern works: keep only records whose culture mentions one of the terms.
     egypt_departments: ["Egyptian and Ancient Near Eastern Art"]
     egypt_culture_terms: [Egypt, Egyptian, Nubia, Nubian, Kush]
+    # Origin rule (owner 2026-10-09): works made in Africa but filed by period. Kept when `culture` names an African origin and
+    # no non-African alternative ("Egypt or Syria" is out). Survey 2026-10-09: Textiles 390, Islamic 31, Medieval 19, Greek and Roman 9.
+    origin_departments: ["Medieval Art", "Islamic Art", "Greek and Roman Art", "Textiles"]
   aic:
     enabled: true
     kind: api
