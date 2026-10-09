@@ -94,6 +94,22 @@ describe("Met", () => {
     void af;
   });
 
+  it("treats a 404 object as gone, caches that, and keeps going", async () => {
+    const eg = json("met/egypt-obj.json");
+    const cache = new JsonCache<MetCacheEntry>(null);
+    const { http, urls } = fake((u) => {
+      if (u.includes("/v1.1/search")) return { total: 2, objectIDs: [316484, 329767] };
+      return u.endsWith("/316484") ? new Response("{}", { status: 404 }) : eg;
+    });
+    const rows = await collect(new MetAdapter(cfg, profile, http, { cache }).buildIndex());
+    expect(rows.map((r) => r.key)).toEqual(["met:329767"]);
+    expect(cache.get("316484")?.row).toBeNull();
+    const again = fake((u) => (u.includes("/v1.1/search") ? { total: 2, objectIDs: [316484, 329767] } : eg));
+    await collect(new MetAdapter(cfg, profile, again.http, { cache }).buildIndex());
+    expect(again.urls.filter((u) => u.includes("/objects/"))).toHaveLength(0);
+    void urls;
+  });
+
   it("stops fetching at the per-run cap and says the index is incomplete", async () => {
     const eg = json("met/egypt-obj.json");
     const { http, urls } = fake((u) => (u.includes("/v1.1/search") ? { total: 5, objectIDs: [11, 12, 13, 14, 15] } : eg));

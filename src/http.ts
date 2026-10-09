@@ -9,6 +9,13 @@ export class StopCrawlError extends Error {
   }
 }
 
+export class HttpError extends Error {
+  constructor(public readonly status: number, url: string) {
+    super(`HTTP ${status} from ${url}`);
+    this.name = "HttpError";
+  }
+}
+
 export interface HttpOptions {
   userAgent?: string;
   /** Minimum gap between requests to the same client instance, in ms. 1000 = 1 req/s (SMB, spec 7.3). */
@@ -91,20 +98,20 @@ export class HttpClient {
     const res = await this.get(url, { Accept: "application/json", ...headers });
     // A JSON API answering with HTML is a WAF interstitial (the Met's Incapsula did this): back off, do not retry.
     if (/html/i.test(res.headers.get("content-type") ?? "")) throw new StopCrawlError(res.status, url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+    if (!res.ok) throw new HttpError(res.status, url);
     return (await res.json()) as T;
   }
 
   async postJson<T>(url: string, body: unknown, headers: Record<string, string> = {}): Promise<T> {
     const res = await this.request(url, { Accept: "application/json", "Content-Type": "application/json", ...headers }, { method: "POST", body: JSON.stringify(body) });
     if (/html/i.test(res.headers.get("content-type") ?? "")) throw new StopCrawlError(res.status, url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+    if (!res.ok) throw new HttpError(res.status, url);
     return (await res.json()) as T;
   }
 
   async getText(url: string): Promise<string> {
     const res = await this.get(url);
-    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+    if (!res.ok) throw new HttpError(res.status, url);
     return await res.text();
   }
 }

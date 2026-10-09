@@ -1,6 +1,6 @@
 import { classWeight } from "../classify.js";
 import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } from "../config.js";
-import { HttpClient, StopCrawlError } from "../http.js";
+import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter } from "../types.js";
 import { classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
@@ -145,7 +145,17 @@ export class MetAdapter implements MuseumAdapter {
         budget -= todo.length;
         if (todo.length < wanted.length) this.incomplete = true;
         await mapLimit(todo, this.cfg.concurrency, async (id) => {
-          const o = await this.object(id);
+          let o: MetObject;
+          try {
+            o = await this.object(id);
+          } catch (e) {
+            // The search still lists ids whose object record was removed (404): remember them as unpostable.
+            if (!(e instanceof HttpError && e.status === 404)) throw e;
+            const gone = { day: today, row: null };
+            if (cache) cache.set(String(id), gone);
+            else local.set(id, gone);
+            return;
+          }
           const a = normaliseMetObject(o, this.profile, egyptById.get(id) ?? false);
           const weight = classWeight(a.objectClass, this.profile);
           const row: IndexRow | null =
@@ -163,9 +173,10 @@ export class MetAdapter implements MuseumAdapter {
           this.incomplete = true;
           break;
         }
-        if (i % (CHUNK * 10) === 0) cache?.save();
+        if (i % (CHUNK * 5) === 0) cache?.save();
       }
     } catch (e) {
+      cache?.save();
       if (!(e instanceof StopCrawlError)) throw e;
       this.incomplete = true;
     }
