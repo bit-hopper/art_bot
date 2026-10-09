@@ -63,7 +63,7 @@ function agent(failReply = false) {
 const image: PreparedImage = { bytes: new Uint8Array([1, 2, 3]), mime: "image/jpeg", width: 800, height: 600, resized: false, originalBytes: 3 };
 
 describe("Bluesky publisher", () => {
-  const post = { rootText: "Buffalo Mask\nCleveland Museum of Art\n\n#AfricanArt #Africana", replyText: "Accession no. 1969.2\nhttps://clevelandart.org/art/1969.2", alt: "A buffalo mask.", image };
+  const post = { rootText: "Buffalo Mask\nCleveland Museum of Art\n\n#AfricanaArt #Africana", replyText: "Accession no. 1969.2\nhttps://clevelandart.org/art/1969.2", alt: "A buffalo mask.", image };
 
   it("posts the image with alt text and aspect ratio, then one reply threaded under the root", async () => {
     const { agent: a, calls } = agent();

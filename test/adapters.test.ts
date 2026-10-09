@@ -41,7 +41,7 @@ async function collect(it: AsyncIterable<IndexRow>): Promise<IndexRow[]> {
 }
 
 describe("Met", () => {
-  const cfg = loadSourceConfig<MetSourceConfig>("met");
+  const cfg = { ...loadSourceConfig<MetSourceConfig>("met"), extra_objects: [] };
 
   it("Egyptian Open Access object: CC0, image, egypt, on view", () => {
     const a = normaliseMetObject(json("met/egypt-obj.json"), profile, true);

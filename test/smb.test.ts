@@ -5,6 +5,7 @@ import { describe, expect, it } from "vitest";
 import {
   chooseImage,
   licenseRights,
+  madeOutsideAfrica,
   normaliseSmbRecord,
   parseObjectPage,
   regionGroupFromTerms,
@@ -71,6 +72,19 @@ describe("SMB object page -> Artwork (real fixtures, fetched 2026-10-08)", () =>
 
   it("throws a clear error on a page without a payload", () => {
     expect(() => parseObjectPage("<html></html>")).toThrow(/__NUXT_DATA__/);
+  });
+});
+
+describe("origin decides, not travel (owner 2026-10-08)", () => {
+  it.each([
+    ["Herstellungsort: Deutschland", true],
+    ["Herstellungsort: Nigeria", false],
+    ["Herstellungsort: Guinea (?)", false],
+    ["Kamerun", false],
+    ["Afrika", false],
+    [null, false],
+  ])("madeOutsideAfrica(%s) is %s", (country, expected) => {
+    expect(madeOutsideAfrica(country, cfg)).toBe(expected);
   });
 });
 

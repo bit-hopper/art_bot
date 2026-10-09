@@ -124,7 +124,16 @@ function regionGroupFor(orgUnit: string | null, country: string | null, cfg: Smb
   if (cfg.org_units_egypt.includes(orgUnit ?? "")) return "egypt";
   if (country && cfg.egypt_terms.includes(country)) return "egypt";
   if (country && cfg.north_africa_terms.includes(country)) return "north-africa";
-  return country ? "sub-saharan" : "unspecified-africa";
+  return country && country !== "Afrika" ? "sub-saharan" : "unspecified-africa";
+}
+
+/**
+ * Owner ruling 2026-10-08: origin decides, not where an object travelled. African-made pieces found abroad stay in, but a
+ * record whose stated place of manufacture is outside Africa (e.g. beads "Herstellungsort: Deutschland") is not African.
+ */
+export function madeOutsideAfrica(country: string | null, cfg: SmbSourceConfig): boolean {
+  const place = /^Herstellungsort:\s*(.+)$/.exec(country ?? "")?.[1];
+  return !!place && !cfg.africa_terms.some((t) => place.includes(t));
 }
 
 export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile: FilterProfile): Artwork {
@@ -162,7 +171,7 @@ export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile
     imageUrl: image ? `${SITE}/media${image.xl_path}` : null,
     imageLicense: image?.license ?? null,
     photographer: image?.photographer ?? null,
-    rightsStatus: image ? licenseRights(image.license, cfg) : "blocked",
+    rightsStatus: !image || madeOutsideAfrica(country, cfg) ? "blocked" : licenseRights(image.license, cfg),
     objectUrl: rec.permalink ?? `${SITE}/en/object/${rec.id}`,
   };
 }

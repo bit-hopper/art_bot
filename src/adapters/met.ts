@@ -2,8 +2,8 @@ import { classWeight } from "../classify.js";
 import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } from "../config.js";
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
-import type { Artwork, IndexRow, MuseumAdapter } from "../types.js";
-import { classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
+import { africanOrigin, classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://collectionapi.metmuseum.org/public/collection";
 const PAGE = 500;
@@ -21,7 +21,13 @@ export interface MetCacheEntry {
 export interface MetSourceConfig extends SourceConfig {
   concurrency: number;
   max_new_per_run: number;
-  departments: Array<{ id: number; geo_location: string | null; egypt: boolean }>;
+  /** `origin_check`: the department also holds non-African work, so each record must state an African place of origin. */
+  /**
+   * Hand-picked objects that depict Africans or draw on African sources but whose record names no African place (owner
+   * 2026-10-09; the Met's metadata cannot find these), e.g. the Nimrud ivory 325089. Not origin-checked.
+   */
+  extra_objects?: Array<{ id: number; region_group: RegionGroup }>;
+  departments: Array<{ id: number; geo_location: string | null; egypt: boolean; origin_check?: boolean }>;
 }
 
 /** The subset of `/v1/objects/{id}` this adapter reads. */
@@ -51,7 +57,14 @@ interface SearchResponse {
   objectIDs: number[] | null;
 }
 
-export function normaliseMetObject(o: MetObject, profile: FilterProfile, egyptDept: boolean): Artwork {
+/** Departments 5 and 10 are African by construction (Africa filter / Egyptian Art); the others are checked per record. */
+const SELF_AFRICAN_DEPARTMENTS = new Set(["Egyptian Art", "The Michael C. Rockefeller Wing"]);
+
+export function metOriginOk(o: MetObject): boolean {
+  return SELF_AFRICAN_DEPARTMENTS.has(o.department ?? "") || africanOrigin(o.country, o.culture, o.region);
+}
+
+export function normaliseMetObject(o: MetObject, profile: FilterProfile, egyptDept: boolean, regionOverride?: RegionGroup): Artwork {
   const country = nonEmpty(o.country);
   const hasImage = Boolean(o.primaryImageSmall) && o.isPublicDomain !== false;
   const gallery = nonEmpty(o.GalleryNumber);
@@ -66,7 +79,7 @@ export function normaliseMetObject(o: MetObject, profile: FilterProfile, egyptDe
     culture: nonEmpty(o.culture),
     country,
     region: nonEmpty(o.region),
-    regionGroup: regionGroupFromPlace([country, o.culture, o.department].filter(Boolean).join(" "), { egyptDept }),
+    regionGroup: regionOverride ?? regionGroupFromPlace([country, o.region, o.culture, o.department].filter(Boolean).join(" "), { egyptDept }),
     dateDisplay: nonEmpty(o.objectDate),
     medium: nonEmpty(o.medium),
     dimensions: nonEmpty(o.dimensions),
@@ -127,8 +140,17 @@ export class MetAdapter implements MuseumAdapter {
    */
   async *buildIndex(): AsyncIterable<IndexRow> {
     const egyptById = new Map<number, boolean>();
+    const checkById = new Map<number, boolean>();
     for (const dept of this.cfg.departments) {
-      for (const id of await this.ids(dept)) egyptById.set(id, (egyptById.get(id) ?? false) || dept.egypt);
+      for (const id of await this.ids(dept)) {
+        egyptById.set(id, (egyptById.get(id) ?? false) || dept.egypt);
+        checkById.set(id, (checkById.get(id) ?? true) && !!dept.origin_check);
+      }
+    }
+    const override = new Map((this.cfg.extra_objects ?? []).map((x) => [x.id, x.region_group]));
+    for (const id of override.keys()) {
+      egyptById.set(id, egyptById.get(id) ?? false);
+      checkById.set(id, false);
     }
     const all = [...egyptById.keys()].slice(0, this.opts.maxObjects ?? Infinity);
     const cache = this.opts.cache;
@@ -156,10 +178,10 @@ export class MetAdapter implements MuseumAdapter {
             else local.set(id, gone);
             return;
           }
-          const a = normaliseMetObject(o, this.profile, egyptById.get(id) ?? false);
+          const a = normaliseMetObject(o, this.profile, egyptById.get(id) ?? false, override.get(id));
           const weight = classWeight(a.objectClass, this.profile);
           const row: IndexRow | null =
-            !a.imageUrl || weight <= 0
+            !a.imageUrl || weight <= 0 || (checkById.get(id) && !metOriginOk(o))
               ? null
               : {
                   key: a.key, source: "met", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass,
@@ -190,6 +212,8 @@ export class MetAdapter implements MuseumAdapter {
 
   async fetchArtwork(sourceObjectId: string): Promise<Artwork> {
     const o = await this.object(sourceObjectId);
-    return normaliseMetObject(o, this.profile, o.department === "Egyptian Art");
+    const extra = (this.cfg.extra_objects ?? []).find((x) => x.id === o.objectID);
+    const a = normaliseMetObject(o, this.profile, o.department === "Egyptian Art", extra?.region_group);
+    return extra || metOriginOk(o) ? a : { ...a, rightsStatus: "blocked" };
   }
 }

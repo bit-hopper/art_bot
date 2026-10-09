@@ -85,9 +85,9 @@ describe("selector pieces", () => {
   });
 
   it("caps a region at its share of the last 24", () => {
-    const eight = Array.from({ length: 8 }, (_, i) => posted(row(i, "met", "mask", "egypt"), i));
-    expect(cappedRegions(eight, { egypt: 0.33 }).has("egypt")).toBe(true);
-    expect(cappedRegions(eight.slice(1), { egypt: 0.33 }).has("egypt")).toBe(false);
+    const ten = Array.from({ length: 10 }, (_, i) => posted(row(i, "met", "mask", "egypt"), i));
+    expect(cappedRegions(ten, { egypt: 0.4 }).has("egypt")).toBe(true);
+    expect(cappedRegions(ten.slice(1), { egypt: 0.4 }).has("egypt")).toBe(false);
   });
 
   it("flags a culture only when both of the last 2 posts share it", () => {
@@ -165,9 +165,9 @@ describe("selectArtwork", () => {
     const l = new Ledger(null, rows.map((r, i) => posted(r, i)));
     expect(await selectArtwork({ ...base, rows, ledger: l, fetch: async (r) => art(r) })).toMatchObject({ ok: false, reason: "POOL_EMPTY" });
 
-    const egypt = Array.from({ length: 9 }, (_, i) => row(100 + i, "met", "mask", "egypt"));
-    const l2 = new Ledger(null, egypt.slice(0, 8).map((r, i) => posted(r, i)));
-    const sel = await selectArtwork({ ...base, rows: [egypt[8]!], ledger: l2, fetch: async (r) => art(r) });
+    const egypt = Array.from({ length: 11 }, (_, i) => row(100 + i, "met", "mask", "egypt"));
+    const l2 = new Ledger(null, egypt.slice(0, 10).map((r, i) => posted(r, i)));
+    const sel = await selectArtwork({ ...base, rows: [egypt[10]!], ledger: l2, fetch: async (r) => art(r) });
     expect(sel).toMatchObject({ ok: false, reason: "POOL_EMPTY" });
   });
 
@@ -218,7 +218,7 @@ describe("selector simulation: 1,000 runs on a toy index", () => {
     expect(meanPos("sculpture")).toBeLessThan(meanPos("other"));
 
     for (let i = 0; i + 24 <= regions.length; i++) {
-      expect(regions.slice(i, i + 24).filter((g) => g === "egypt").length).toBeLessThanOrEqual(8);
+      expect(regions.slice(i, i + 24).filter((g) => g === "egypt").length).toBeLessThanOrEqual(10); // 40% of 24 = 9.6, capped at 10
     }
     // Fairness is a soft halving, not a hard cap: the triple-weight source leads, but by less than its raw 3/5 share.
     const share = sources.filter((x) => x === "c").length / sources.length;

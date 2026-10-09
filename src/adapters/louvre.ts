@@ -3,8 +3,8 @@ import { loadDenylist, loadProfile, loadSourceConfig, type Denylist, type Filter
 import { denyReason } from "../denylist.js";
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
-import type { Artwork, IndexRow, MuseumAdapter } from "../types.js";
-import { classifyRecord, mapLimit, nonEmpty, scoreFor } from "./common.js";
+import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
+import { classifyRecord, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const SITE = "https://collections.louvre.fr";
 const SITEMAP_INDEX = `${SITE}/sitemap.xml`;
@@ -16,6 +16,11 @@ const CHUNK = 200;
 export interface LouvreSourceConfig extends SourceConfig {
   /** The Egyptian Antiquities department's `collection` value. */
   egypt_collections: string[];
+  /**
+   * Departments that hold African-made work among much else (Greek and Roman, Oriental Antiquities with Phoenician/Punic,
+   * Islamic Arts, Byzantine): only objects whose place of creation is African are kept (owner 2026-10-09, origin rule).
+   */
+  origin_collections?: string[];
   /** Ark id prefixes worth fetching (the other prefix holds prints and drawings). */
   ark_prefixes: string[];
   /** A denomination containing one of these is a broken piece and is not posted (owner, 2026-10-08). */
@@ -23,8 +28,12 @@ export interface LouvreSourceConfig extends SourceConfig {
   max_new_per_run: number;
 }
 
+/** Bumped when the selection rule changes, so ids rejected under an older rule are fetched again. */
+export const CACHE_VERSION = 2;
+
 export interface LouvreCacheEntry {
   day: number;
+  v?: number;
   row: IndexRow | null;
   /** Set on an Egyptian object that had no image yet. */
   retry?: true;
@@ -76,6 +85,30 @@ const ACQUISITION_MODES: Record<string, string> = {
 const arr = <T>(x: T[] | string | null | undefined): T[] => (Array.isArray(x) ? x : []);
 const lines = (s: string | undefined): string[] => (s ?? "").split(/\r?\n/).map((l) => l.trim()).filter(Boolean);
 const upperFirst = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+
+const EGYPTIAN_ANTIQUITIES = "Département des Antiquités égyptiennes";
+const strip = (s: string): string => s.normalize("NFD").replace(/\p{M}/gu, "").toLowerCase();
+// Stems on diacritic-stripped text, French and English, plus the ancient and Roman names the Louvre uses in `placeOfCreation`
+// ("Cuicul = Djemila"). Only a leading boundary: "egypte", "tunisie", "copte" end in different letters.
+const EGYPT_STEMS = "egypt|copt|fayoum|fayum|alexandri|le caire|caire|cairo|fustat|fostat|oxyrhynch|antinoe|hermopolis|karanis";
+const NORTH_STEMS =
+  "libya|libye|tunis|alger|morocc|maroc|maghreb|mauretan|numid|cartha|cyren|djemila|cuicul|timgad|thamugadi|tipasa|volubilis|leptis|sabratha|utique|utica|hadrumet|thysdrus|el jem|dougga|thugga|cherchel|cirta|kairouan|fes\\b|fez\\b|marrakech|tlemcen";
+const OTHER_STEMS = "nubi|kush|meroit|ethiop|sudan|soudan|afri";
+const AFRICAN_STEMS = new RegExp(`\\b(${EGYPT_STEMS}|${NORTH_STEMS}|${OTHER_STEMS})`);
+
+/**
+ * Region group of a Louvre `placeOfCreation` that is wholly African, else null. Several places separated by ";" are
+ * alternatives (or both): all must be African, as for the Met ("Liban (?) ; Syrie (?)" is not). "A = B" gives the same
+ * place under two names and counts once. Find-spots are not read: origin decides (owner 2026-10-09).
+ */
+export function louvreAfricanPlace(place: string | undefined | null): RegionGroup | null {
+  const pieces = strip(place ?? "").split(";").map((x) => x.replace(/\(\?\)/g, "").trim()).filter(Boolean);
+  if (pieces.length === 0 || !pieces.every((x) => AFRICAN_STEMS.test(x))) return null;
+  const text = pieces.join(" ");
+  if (new RegExp(`\\b(${EGYPT_STEMS})`).test(text)) return "egypt";
+  if (new RegExp(`\\b(${NORTH_STEMS})`).test(text)) return "north-africa";
+  return regionGroupFromPlace(text);
+}
 
 /** "serviteur funéraire momiforme (fragment)" and the like: every denomination, since `title` leaves the note out. */
 export function denominations(r: LouvreRecord): string[] {
@@ -140,13 +173,15 @@ function galleryOf(r: LouvreRecord): string | null {
   return m ? `Room ${m[1]}` : null;
 }
 
-export function normaliseLouvreRecord(r: LouvreRecord, profile: FilterProfile, excludeTerms: string[] = []): Artwork {
+export function normaliseLouvreRecord(r: LouvreRecord, profile: FilterProfile, excludeTerms: string[] = [], egyptCollections: string[] = [EGYPTIAN_ANTIQUITIES]): Artwork {
   const names = denominations(r);
   const type = names.join(" ; ") || nonEmpty(r.title);
   const img = pickImage(r.image);
   const { credit, photographer } = splitCopyright(img?.copyright);
   const gallery = galleryOf(r);
   const broken = isExcludedPiece(r, excludeTerms);
+  const egyptian = egyptCollections.includes(r.collection ?? "");
+  const place = louvreAfricanPlace(r.placeOfCreation);
   const number = arr(r.objectNumber).find((n) => n.type === "Numéro principal") ?? arr(r.objectNumber)[0];
   return {
     key: `louvre:${r.arkId}`,
@@ -157,9 +192,9 @@ export function normaliseLouvreRecord(r: LouvreRecord, profile: FilterProfile, e
     objectType: type,
     objectClass: classifyRecord(type, r.title, profile),
     culture: nonEmpty(r.placeOfCreation),
-    country: "Egypt",
+    country: egyptian ? "Egypt" : nonEmpty(r.placeOfCreation?.split(";")[0]?.replace(/\(\?\)/g, "").split("=")[0]),
     region: null,
-    regionGroup: "egypt",
+    regionGroup: egyptian ? "egypt" : place ?? "unspecified-africa",
     dateDisplay: dateOf(r),
     medium: mediumOf(r),
     dimensions: dimensionsOf(r),
@@ -241,7 +276,7 @@ export class LouvreAdapter implements MuseumAdapter {
     const cache = this.opts.cache;
     const local = new Map<string, LouvreCacheEntry>();
     const known = (id: string) => cache?.get(id) ?? local.get(id);
-    const stale = (e: LouvreCacheEntry | undefined) => !e || (e.retry === true && today - e.day > NO_IMAGE_RECHECK_DAYS);
+    const stale = (e: LouvreCacheEntry | undefined) => !e || e.v !== CACHE_VERSION || (e.retry === true && today - e.day > NO_IMAGE_RECHECK_DAYS);
     const remember = (id: string, entry: LouvreCacheEntry) => (cache ? cache.set(id, entry) : void local.set(id, entry));
 
     let budget = this.cfg.max_new_per_run;
@@ -259,14 +294,14 @@ export class LouvreAdapter implements MuseumAdapter {
             if (!(e instanceof HttpError && e.status === 404)) throw e;
             return remember(id, { day: today, row: null });
           }
-          const a = normaliseLouvreRecord(r, this.profile, this.cfg.exclude_terms);
+          const a = normaliseLouvreRecord(r, this.profile, this.cfg.exclude_terms, this.cfg.egypt_collections);
           const weight = classWeight(a.objectClass, this.profile);
-          const egyptian = this.cfg.egypt_collections.includes(a.department ?? "");
+          const wanted = this.wanted(a, r);
           const row: IndexRow | null =
-            !egyptian || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
+            !wanted || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
               ? null
-              : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: "egypt", culture: a.culture, score: scoreFor(weight) };
-          remember(id, egyptian && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, row, retry: true } : { day: today, row });
+              : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight) };
+          remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, row, retry: true } : { day: today, v: CACHE_VERSION, row });
         });
         if (budget <= 0) {
           this.incomplete = true;
@@ -287,7 +322,15 @@ export class LouvreAdapter implements MuseumAdapter {
     }
   }
 
+  /** Egyptian Antiquities in full; the mixed departments only when the place of creation is African. */
+  private wanted(a: Artwork, r: LouvreRecord): boolean {
+    const dept = a.department ?? "";
+    return this.cfg.egypt_collections.includes(dept) || ((this.cfg.origin_collections ?? []).includes(dept) && louvreAfricanPlace(r.placeOfCreation) !== null);
+  }
+
   async fetchArtwork(sourceObjectId: string): Promise<Artwork> {
-    return normaliseLouvreRecord(await this.record(sourceObjectId), this.profile, this.cfg.exclude_terms);
+    const r = await this.record(sourceObjectId);
+    const a = normaliseLouvreRecord(r, this.profile, this.cfg.exclude_terms, this.cfg.egypt_collections);
+    return this.wanted(a, r) ? a : { ...a, rightsStatus: "blocked" };
   }
 }

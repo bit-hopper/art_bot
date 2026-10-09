@@ -12,7 +12,7 @@ export type RegionGroup = "sub-saharan" | "north-africa" | "egypt" | "unspecifie
 /**
  * `reserved`: no open licence (missing, "all rights reserved", in copyright); still posted, with the museum's own
  * rights statement and credit (owner decision 2026-10-08). `blocked` is only for objects with nothing to post
- * (no image) or that the sensitive-object denylist rejects.
+ * (no image), that the sensitive-object denylist rejects, or whose stated place of manufacture is outside Africa.
  */
 export type RightsStatus = "open" | "attributed" | "attributed-nc" | "reserved" | "blocked";
 

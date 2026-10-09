@@ -24,7 +24,7 @@ const platforms: Platform[] = ["bluesky", "threads"];
 describe("render: the spec 6.4 Cleveland example", () => {
   it("root matches the template", () => {
     expect(renderRoot(base, "bluesky")).toBe(
-      "Buffalo Mask\nBurkina Faso, Bwa-style · early–mid 1900s\nCleveland Museum of Art · Gallery 108A\n\n#AfricanArt #Africana",
+      "Buffalo Mask\nBurkina Faso, Bwa-style · early–mid 1900s\nCleveland Museum of Art · Gallery 108A\n\n#AfricanaArt #Africana",
     );
   });
   it("reply carries accession, credit, licence and link", () => {
@@ -39,10 +39,10 @@ describe("render: the spec 6.4 Cleveland example", () => {
       ].join("\n"),
     );
   });
-  it("omits the gallery when the object is not on view, and tags Egyptian objects", () => {
+  it("omits the gallery when the object is not on view; Egyptian objects carry the same tags", () => {
     const r = renderRoot({ ...base, onView: false, regionGroup: "egypt" }, "bluesky");
     expect(r).not.toContain("Gallery");
-    expect(r.endsWith("#AfricanArt #Africana #AncientEgypt")).toBe(true);
+    expect(r.endsWith("#AfricanaArt #Africana")).toBe(true);
   });
 });
 
@@ -158,7 +158,7 @@ describe("render: property test, no output over the limits", () => {
         expect(measure(post.reply, p), `reply ${i} ${p}`).toBeLessThanOrEqual(LIMITS[p]);
         expect(measure(post.alt, "threads")).toBeLessThanOrEqual(1000);
         expect(post.reply).toContain(a.objectUrl);
-        expect(post.root).toContain("#AfricanArt #Africana");
+        expect(post.root).toContain("#AfricanaArt #Africana");
         if (a.accessionNumber) expect(post.reply).toContain("Accession no. ");
       }
     }

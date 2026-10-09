@@ -39,6 +39,17 @@ sources:
     departments:
       - { id: 5, geo_location: Africa, egypt: false }    # also holds non-African objects: geoLocation=Africa is required
       - { id: 10, geo_location: null, egypt: true }
+      # Origin rule (owner 2026-10-08): objects made in Africa under Greek, Roman, Byzantine, Coptic or Islamic rule, filed
+      # by period in other departments. The search matches any African place, so each record must state an African origin.
+      - { id: 13, geo_location: Africa, egypt: false, origin_check: true }    # Greek and Roman Art (114 hits for Egypt)
+      - { id: 14, geo_location: Africa, egypt: false, origin_check: true }    # Islamic Art (~3,800: Egypt, Morocco, Algeria, Tunisia)
+      - { id: 17, geo_location: Africa, egypt: false, origin_check: true }    # Medieval Art incl. Byzantine and Coptic (35)
+      # Owner 2026-10-09: Egyptian or African origin *or influence* is wanted, so no origin check here: everything the
+      # Met files under an Egyptian place (Egyptian seals, but also Achaemenid and Sasanian pieces recorded as Egypt).
+      - { id: 3, geo_location: Egypt, egypt: false }                          # Ancient West Asian Art (26)
+    # Depictions of Africans and African-sourced work that no field marks (owner 2026-10-09); add ids as they are found.
+    extra_objects:
+      - { id: 325089, region_group: unspecified-africa }   # Neo-Assyrian ivory, Nimrud: man with an oryx, a monkey and a leopard skin
   cleveland:
     enabled: true
     kind: api
@@ -74,6 +85,15 @@ sources:
     # Egyptian Antiquities only (the Louvre's African art went to the Quai Branly). The department is not in the sitemap, so
     # every object under these ark prefixes is fetched once and cached; the first full index fills over several daily runs.
     egypt_collections: ["Département des Antiquités égyptiennes"]
+    # Origin rule (owner 2026-10-09): African-made work under Greek, Roman, Phoenician/Punic (Carthage), Byzantine or Islamic
+    # rule sits in the other antiquities departments; kept only when `placeOfCreation` is African (find-spots are ignored).
+    # The European-art departments (Paintings, Sculptures, Objets d'art) are out: a European painter's work made in
+    # Africa is not African-made by origin.
+    origin_collections:
+      - "Département des Antiquités grecques, étrusques et romaines"
+      - "Département des Antiquités orientales"
+      - "Département des Arts de l'Islam"
+      - "Département des Arts de Byzance et des chrétientés en Orient"
     ark_prefixes: ["cl01"]         # cl02 is prints and drawings (0 of 21 Egyptian in the 2026-10-08 sample)
     max_new_per_run: 3000
     exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)

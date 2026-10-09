@@ -72,9 +72,8 @@ function placeLine(a: Artwork): string | null {
   return [where || null, clean(a.dateDisplay)].filter(Boolean).join(" · ") || null;
 }
 
-function hashtags(a: Artwork): string {
-  return a.regionGroup === "egypt" ? "#AfricanArt #Africana #AncientEgypt" : "#AfricanArt #Africana";
-}
+// Owner 2026-10-09: the same two tags on every post; no #AncientEgypt (Egypt is Africana by origin, not a separate theme).
+const HASHTAGS = "#AfricanaArt #Africana";
 
 function composeRoot(title: string, place: string | null, museum: string, gallery: string | null, tags: string): string {
   const museumLine = gallery ? `${museum} · ${gallery}` : museum;
@@ -87,7 +86,7 @@ export function renderRoot(a: Artwork, platform: Platform): string {
   let place = placeLine(a);
   const gallery = a.onView ? clean(a.gallery) : null;
   const museum = museumName(a);
-  const tags = hashtags(a);
+  const tags = HASHTAGS;
 
   for (const g of [gallery, null]) {
     const full = composeRoot(title, place, museum, g, tags);

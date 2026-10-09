@@ -2,9 +2,9 @@ import { classify } from "../classify.js";
 import type { FilterProfile } from "../config.js";
 import type { ObjectClass, RegionGroup } from "../types.js";
 
-const NORTH_AFRICA = /\b(morocco|algeria|tunisia|libya|western sahara|maghreb)\b/i;
+const NORTH_AFRICA = /\b(morocco|algeria|tunisia|libya|western sahara|maghreb|north africa|north african|carthage|carthaginian|cyrenaica|numidia|mauretania)\b/i;
 // AIC and others give a city or a dynasty instead of "Egypt" ("Thebes", "twenty-second dynasty").
-const EGYPT = /\b(egypt|egyptian|thebes|luxor|karnak|saqqara|giza|abydos|amarna|fayum|dynasty|ptolemaic|pharaonic|predynastic)\b/i;
+const EGYPT = /\b(egypt|egyptian|thebes|luxor|karnak|saqqara|giza|abydos|amarna|fayum|dynasty|ptolemaic|pharaonic|predynastic|coptic|alexandria|byzantine egypt)\b/i;
 
 /** Region group from the museum's own place wording (spec 4). `egyptDept` forces `egypt` for Egyptian departments. */
 export function regionGroupFromPlace(place: string | null | undefined, opts: { egyptDept?: boolean } = {}): RegionGroup {
@@ -50,4 +50,20 @@ export async function mapLimit<T, R>(items: T[], n: number, fn: (t: T, i: number
 export function nonEmpty(s: string | null | undefined): string | null {
   const t = (s ?? "").trim();
   return t.length > 0 ? t : null;
+}
+
+const AFRICAN_PLACE =
+  /\b(egypt|egyptian|coptic|nubia|kush|meroitic|alexandria|ethiopia|ethiopian|eritrea|sudan|libya|tunisia|algeria|morocco|maghreb|north africa|north african|carthage|carthaginian|cyrenaica|numidia|mauretania|berber|africa|african)\b/i;
+
+/**
+ * Owner ruling 2026-10-08: origin decides, not travel. An object made in Africa stays African whoever ruled the place or
+ * wherever it later went (Ptolemaic, Roman, Byzantine, Coptic, Islamic-period Egypt; Carthage; the Maghreb). A field
+ * qualifies when every alternative the museum names is African: "Egypt", "probably Morocco" pass, "Egypt or Syria (?)" and
+ * "Egyptian or Levantine" do not (origin not established). Any one qualifying field is enough.
+ */
+export function africanOrigin(...fields: Array<string | null | undefined>): boolean {
+  return fields.some((f) => {
+    const pieces = (f ?? "").split(/\s+or\s+/i).map((x) => x.replace(/\(\?\)/g, "").trim()).filter(Boolean);
+    return pieces.length > 0 && pieces.every((x) => AFRICAN_PLACE.test(x));
+  });
 }
