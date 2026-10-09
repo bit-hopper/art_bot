@@ -9,9 +9,9 @@ New-Item -ItemType Directory -Force $out | Out-Null
 $log = Join-Path $out "overnight.log"
 function Say($m) { "$(Get-Date -Format 'yyyy-MM-dd HH:mm:ss') $m" | Tee-Object -FilePath $log -Append }
 
-# Keep the machine awake while this script runs (earlier runs died when the PC slept).
+# Keep the machine and display awake while this script runs (the PC slept through the first overnight attempt).
 Add-Type -Namespace Win -Name Power -MemberDefinition '[DllImport("kernel32.dll")] public static extern uint SetThreadExecutionState(uint f);'
-[void][Win.Power]::SetThreadExecutionState(0x80000001)
+[void][Win.Power]::SetThreadExecutionState([uint32]2147483651)
 
 function CacheCount {
   $f = "state\index\met.cache.json"
@@ -37,4 +37,4 @@ Say "origin audit, 10 per department"
 npx tsx scripts/audit-met-origin.ts $out 10 2>&1 | Select-Object -Last 5 | ForEach-Object { Say "  $_" }
 Say "DONE"
 "done $(Get-Date)" | Set-Content (Join-Path $out "DONE")
-[void][Win.Power]::SetThreadExecutionState(0x80000000)
+[void][Win.Power]::SetThreadExecutionState([uint32]2147483648)
