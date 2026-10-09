@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { africanOrigin, regionGroupFromPlace } from "../src/adapters/common.js";
+import { africanOrigin, classifyRecord, regionGroupFromPlace } from "../src/adapters/common.js";
 import { metOriginOk, normaliseMetObject } from "../src/adapters/met.js";
 import { loadProfile } from "../src/config.js";
 
@@ -25,6 +25,14 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(metOriginOk({ objectID: 1, department: "Greek and Roman Art", culture: "Egyptian, Ptolemaic" })).toBe(true);
     expect(metOriginOk({ objectID: 2, department: "Greek and Roman Art", culture: "Greek, Attic", country: "Greece" })).toBe(false);
     expect(metOriginOk({ objectID: 3, department: "Egyptian Art" })).toBe(true);
+  });
+
+  it("a coffin or stela is sculpture even under a generic type; a scarab is not", () => {
+    const profile = loadProfile();
+    expect(classifyRecord("Funerary Equipment", "Coffin of Senbi", profile)).toBe("sculpture");
+    expect(classifyRecord("Architectural fragment", "Stela of Amenemhat and Yatu", profile)).toBe("sculpture");
+    expect(classifyRecord("Scarabs", "Scarab", profile)).toBe("other");
+    expect(classifyRecord("Funerary Equipment", "Shawabty of Ditamenpaankh", profile)).toBe("other");
   });
 
   it("regional grouping covers Coptic and Carthage wording", () => {

@@ -15,11 +15,15 @@ export function regionGroupFromPlace(place: string | null | undefined, opts: { e
   return p.trim() ? "sub-saharan" : "unspecified-africa";
 }
 
-/** Structured object type first (spec 4.1); a title that says "mask" rescues a generically typed object. */
+// Carved objects the owner ranks as sculpture (2026-10-09) even when the museum files them under a generic type.
+const SCULPTURE_TITLE = /\b(coffin|sarcophag\w*|sarkophag\w*|cercueil|stela|stelae|stele|stèle)\b/i;
+
+/** Structured object type first (spec 4.1); a title that says "mask" rescues a generically typed object, and one that names a coffin or stela is sculpture. */
 export function classifyRecord(type: string | null | undefined, title: string | null | undefined, profile: FilterProfile, fallback?: string | null): ObjectClass {
   let cls = classify(type, profile);
   if (cls === "other" && fallback) cls = classify(fallback, profile);
   if (cls === "other" && classify(title, profile) === "mask") cls = "mask";
+  if (cls === "other" && title && SCULPTURE_TITLE.test(title)) cls = "sculpture";
   return cls;
 }
 
