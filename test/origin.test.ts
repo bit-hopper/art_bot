@@ -29,6 +29,8 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
 
   it("regional grouping covers Coptic and Carthage wording", () => {
     expect(regionGroupFromPlace("Coptic")).toBe("egypt");
+    expect(regionGroupFromPlace("Old Cairo")).toBe("egypt");
+    expect(regionGroupFromPlace("Fostat")).toBe("egypt");
     expect(regionGroupFromPlace("North African (Carthage)")).toBe("north-africa");
   });
 

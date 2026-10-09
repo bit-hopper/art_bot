@@ -4,7 +4,7 @@ import type { ObjectClass, RegionGroup } from "../types.js";
 
 const NORTH_AFRICA = /\b(morocco|algeria|tunisia|libya|western sahara|maghreb|north africa|north african|carthage|carthaginian|cyrenaica|numidia|mauretania)\b/i;
 // AIC and others give a city or a dynasty instead of "Egypt" ("Thebes", "twenty-second dynasty").
-const EGYPT = /\b(egypt|egyptian|thebes|luxor|karnak|saqqara|giza|abydos|amarna|fayum|dynasty|ptolemaic|pharaonic|predynastic|coptic|alexandria|byzantine egypt)\b/i;
+const EGYPT = /\b(egypt|egyptian|thebes|luxor|karnak|saqqara|giza|abydos|amarna|fayum|dynasty|ptolemaic|pharaonic|predynastic|coptic|alexandria|byzantine egypt|cairo|fostat|fustat|memphis|tanis|meir|akhmim)\b/i;
 
 /** Region group from the museum's own place wording (spec 4). `egyptDept` forces `egypt` for Egyptian departments. */
 export function regionGroupFromPlace(place: string | null | undefined, opts: { egyptDept?: boolean } = {}): RegionGroup {

@@ -70,7 +70,7 @@ export function normaliseMiaRecord(r: MiaRecord, profile: FilterProfile): Artwor
     culture: nonEmpty(r.culture),
     country: nonEmpty(r.country),
     region: nonEmpty(r.continent),
-    regionGroup: regionGroupFromPlace([r.country, r.culture].filter(Boolean).join(" ") || r.continent),
+    regionGroup: regionGroupFromPlace([r.country, r.culture].filter(Boolean).join(" ")),
     dateDisplay: nonEmpty(r.dated),
     medium: nonEmpty(r.medium),
     dimensions: nonEmpty(r.dimension),
@@ -119,7 +119,7 @@ export class MiaAdapter implements MuseumAdapter {
         if (weight <= 0) continue;
         yield {
           key: `mia:${r.id}`, source: "mia", sourceObjectId: String(r.id), objectClass: cls,
-          regionGroup: regionGroupFromPlace([r.country, r.culture].filter(Boolean).join(" ") || r.continent),
+          regionGroup: regionGroupFromPlace([r.country, r.culture].filter(Boolean).join(" ")),
           culture: nonEmpty(r.culture), score: scoreFor(weight, { longEdge: longEdge(r), highlight: isHighlight(r) }),
         };
       }

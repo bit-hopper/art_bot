@@ -98,7 +98,7 @@ sources:
     max_new_per_run: 3000
     exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)
   nmafa:
-    enabled: false                 # off until the production gate (spec 11.4) passes
+    enabled: true                  # audit passed 2026-10-09 (111 rows read, see spec 0)
     kind: api
     rights_mode: open
     source_weight: 1.0
