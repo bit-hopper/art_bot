@@ -21,3 +21,47 @@ sources:
       open: ["Public Domain Mark 1.0", "CC0 1.0"]
       attributed: ["CC BY-SA 4.0", "CC BY-SA 3.0", "CC BY 4.0"]
       attributed-nc: ["CC BY-NC-SA 4.0", "CC BY-NC 4.0", "CC BY-NC-ND 4.0"]
+  # Index rows for the four API sources carry class, region and culture straight from the museum's own fields.
+  # `rights_mode` says how a typical object is credited; each record's rights are still read per object (spec 7.1).
+  met:
+    enabled: true
+    kind: api
+    rights_mode: open
+    source_weight: 1.0
+    # The API documents 80 req/s, but the Met's WAF (Incapsula) answers 403 well below that. Measured 2026-10-08 from one
+    # IP: blocked after ~60 requests at 2 req/s and after fewer at 4-30 req/s; 100 requests at 1 req/s passed.
+    min_interval_ms: 1100
+    concurrency: 1
+    # Objects are fetched once and cached (type + image availability), so only new ids cost requests. This caps one run;
+    # the first full index (~17,000 objects) therefore fills over several daily runs, Africa department first.
+    max_new_per_run: 3000
+    # `isPublicDomain=true` in the search is ignored by the API; image availability is read from each record.
+    departments:
+      - { id: 5, geo_location: Africa, egypt: false }    # also holds non-African objects: geoLocation=Africa is required
+      - { id: 10, geo_location: null, egypt: true }
+  cleveland:
+    enabled: true
+    kind: api
+    rights_mode: open
+    source_weight: 1.0
+    min_interval_ms: 250
+    departments: ["African Art"]
+    # Also holds Near Eastern works: keep only records whose culture mentions one of the terms.
+    egypt_departments: ["Egyptian and Ancient Near Eastern Art"]
+    egypt_culture_terms: [Egypt, Egyptian, Nubia, Nubian, Kush]
+  aic:
+    enabled: true
+    kind: api
+    rights_mode: open
+    source_weight: 1.0
+    min_interval_ms: 1100          # anonymous limit 60 req/min
+    departments: ["Arts of Africa"]    # already includes Egyptian objects
+  mia:
+    enabled: true
+    kind: api
+    rights_mode: open
+    source_weight: 1.0
+    min_interval_ms: 500
+    timeout_ms: 30000              # about 1 call in 15 timed out at 19 s (M0)
+    retries: 3
+    query: "continent:Africa"      # Egypt is inside continent:Africa; no rights filter (spec 7.1)

@@ -1,0 +1,310 @@
+{
+ "id": 144495,
+ "accession_number": "1969.2",
+ "share_license_status": "CC0",
+ "tombstone": "Buffalo Mask, early to mid-1900s. Africa, West Africa, Burkina Faso, possibly Bwa-style maker. Wood, plant fibers, paint, and iron; overall: 69.8 cm (27 1/2 in.). The Cleveland Museum of Art, Gift of Katherine C. White, 1969.2",
+ "current_location": "108A African",
+ "title": "Buffalo Mask",
+ "creation_date": "early to mid-1900s",
+ "creation_date_earliest": 1900,
+ "creation_date_latest": 1970,
+ "artists_tags": [],
+ "culture": [
+  "Africa, West Africa, Burkina Faso, possibly Bwa-style maker"
+ ],
+ "technique": "Wood, plant fibers, paint, and iron",
+ "support_materials": [],
+ "department": "African Art",
+ "collection": "African Art",
+ "type": "Mask",
+ "measurements": "Overall: 69.8 cm (27 1/2 in.)",
+ "dimensions": {
+  "overall": {
+   "height": 0.698,
+   "height_inch": 27,
+   "height_inch_fraction": 0.5
+  }
+ },
+ "state_of_the_work": null,
+ "edition_of_the_work": null,
+ "copyright": null,
+ "inscriptions": [],
+ "exhibitions": {
+  "current": [
+   {
+    "id": 301313,
+    "title": "Year in Review: 1969",
+    "description": "<i>Year in Review: 1969</i>. The Cleveland Museum of Art, Cleveland, OH (organizer) (January 27-February 22, 1970).",
+    "opening_date": "1970-01-27T05:00:00"
+   },
+   {
+    "id": 304550,
+    "title": "A Cleveland Bestiary",
+    "description": "<i>A Cleveland Bestiary</i>. The Cleveland Museum of Art, Cleveland, OH (organizer) (October 15-December 16, 1981).",
+    "opening_date": "1981-10-15T04:00:00"
+   }
+  ],
+  "legacy": [
+   {
+    "description": "CMA 1968: African Tribal Images: The Katherine White Reswick Collection, cat. no. 31, repr.",
+    "opening_date": "1968-01-01T00:00:00"
+   },
+   {
+    "description": "CMA 1970: \"Year in Review 1969,\" CMA Bulletin LVII (Jan., 1970), p. 47, no. 128, repr. p. 41.",
+    "opening_date": "1970-01-01T00:00:00"
+   },
+   {
+    "description": "CMA 1981: A Cleveland Bestiary, October 14-December 9, 1981, cat. no. 11, repr. p, 17.",
+    "opening_date": "1981-10-14T00:00:00"
+   }
+  ]
+ },
+ "provenance": [
+  {
+   "description": "Katherine C. White [1929-1980], Gates Mills, OH, given to the Cleveland Museum of Art",
+   "citations": [],
+   "footnotes": [
+    "<div><!--block-->Exhibited at CMA in 1968, <em>African Tribal Images: The Katherine White Reswick Collection</em>; published as fig. 31</div>"
+   ],
+   "date": "at least 1968–1969",
+   "sortorder": null
+  },
+  {
+   "description": "The Cleveland Museum of Art, Cleveland, OH",
+   "citations": [],
+   "footnotes": [
+    "<div><!--block-->CMA Bulletin January 1970, figure 128.</div>"
+   ],
+   "date": "1969–",
+   "sortorder": 2
+  }
+ ],
+ "find_spot": null,
+ "related_works": [],
+ "former_accession_numbers": [
+  "933.68"
+ ],
+ "did_you_know": "Once broken, the right horn of this mask was repaired; this indicates that it was valued.",
+ "early_education_description": null,
+ "artlens_description": null,
+ "description": "Among the Bwa people, masks with human, animal, and fantastic traits typically represent protective bush spirits. This mask’s horns and muzzle identify it as a bush buffalo. Masked dancers appear during the dry season for initiations, funerals of elders, market days, harvest celebrations, and annual renewal rituals to protect the well-being of the community.",
+ "external_resources": {
+  "wikidata": [],
+  "internet_archive": [
+   "https://archive.org/details/clevelandart-1969.2-buffalo-mask"
+  ]
+ },
+ "citations": [
+  {
+   "citation": "Fagg, William. <em>African Tribal Images: the Katherine White Reswick Collection</em>. Cleveland: Cleveland Museum of Art, 1968.",
+   "page_number": "Reproduced: cat. no. 31",
+   "url": ""
+  },
+  {
+   "citation": "Lee, Sherman E. “The Year in Review for 1969.” <em>The Bulletin of the Cleveland Museum of Art</em> 57, no. 1 (January 1970): 2–50.",
+   "page_number": "Reproduced:  p. 41, fig. 128; mentioned:  p. 147",
+   "url": "http://www.jstor.org/stable/25152307"
+  },
+  {
+   "citation": "The Cleveland Museum of Art. <em>Handbook of the Cleveland Museum of Art/1978</em>. Cleveland, OH: The Cleveland Museum of Art, 1978.",
+   "page_number": "Reproduced: p. 411",
+   "url": "https://archive.org/details/CMAHandbook1978/page/n431"
+  },
+  {
+   "citation": "Kathman, Barbara A. <em>A Cleveland Bestiary</em>. Cleveland, OH; Cleveland Museum of Art, 1981.",
+   "page_number": "Mentioned: p. 16, p. 60; Reproduced: p. 17",
+   "url": null
+  },
+  {
+   "citation": "Henry John Drewal. <em>African Art: A Brief Guide to the Collection : the Cleveland Museum of Art</em>. Cleveland, OH: The Cleveland Museum of Art, 1989.",
+   "page_number": "fig. 17",
+   "url": ""
+  },
+  {
+   "citation": "Cleveland Museum of Art. <em>Handbook of the Cleveland Museum of Art</em>. Cleveland, OH: The Cleveland Museum of Art, 1991.",
+   "page_number": "p. 153",
+   "url": ""
+  },
+  {
+   "citation": "Connell, Timothy C., and Jackson J. Spielvogel. <em>World Art Transparencies</em>. Cincinnati: West Educational Pub, 1998.",
+   "page_number": "Acetate 43",
+   "url": ""
+  },
+  {
+   "citation": "May, Sally Ruth, Jane Takac, and Barbara J. Bradley. <em>Knockouts: A Pocket Guide</em>. Cleveland: Cleveland Museum of Art, 2001.",
+   "page_number": "Mentioned and Reproduced:  pp.67-8. no. 70; listed: p. 118.",
+   "url": ""
+  },
+  {
+   "citation": "Donley, Gregory M., \"A New Face for African Art\", Cleveland Museum of Art. <em>Cleveland Art: The Cleveland Museum of Art Members Magazine</em>. Vol. 42 no. 04, April 2002",
+   "page_number": "Mentioned & reproduced: p. 6-7",
+   "url": "https://archive.org/details/CMAMM2002-04/page/n5"
+  },
+  {
+   "citation": "Petridis, Constantijn. <em>South of the Sahara: selected works of African art. </em>Cleveland: Cleveland Museum of Art, 2003.",
+   "page_number": "Reproduced: cat. 5, p. 40 - 41",
+   "url": ""
+  },
+  {
+   "citation": "Cleveland Museum of Art. <em>Cleveland Art: The Cleveland Museum of Art Members Magazine</em>. Vol. 43 no. 09, November 2003",
+   "page_number": "Reproduced: cover",
+   "url": "https://archive.org/details/CMAMM2003-09"
+  },
+  {
+   "citation": "Petridis, Constantine. \"A New Installation for African Art in Cleveland.\" <em>Tribal: the Magaine of Tribal Art</em>. 9 (3) no. 36 (Autumn-Winter 2004): 68-73.",
+   "page_number": "",
+   "url": ""
+  },
+  {
+   "citation": "Franklin, David and C. Griffith Mann. <em>Treasures from the Cleveland Museum of Art</em>. Cleveland, OH: Cleveland Museum of Art; London, Scala Publishers Ltd, 2012.",
+   "page_number": "pp. 288-9.",
+   "url": ""
+  },
+  {
+   "citation": "Basquiat, Jean-Michel, Sam Keller, and Iris Hasler. Basquiat: The Modena Paintings.Berlin : Hatje Cantz ; Riehen/Basel : Fondation Beyeler, 2023.",
+   "page_number": "Mentioned and reproduced: p. 35, fig. 2",
+   "url": ""
+  }
+ ],
+ "url": "https://clevelandart.org/art/1969.2",
+ "images": {
+  "annotation": null,
+  "web": {
+   "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_web.jpg",
+   "width": "600",
+   "height": "900",
+   "filesize": "117240",
+   "filename": "1969.2_web.jpg"
+  },
+  "print": {
+   "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_print.jpg",
+   "width": "2267",
+   "height": "3400",
+   "filesize": "966765",
+   "filename": "1969.2_print.jpg"
+  },
+  "full": {
+   "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_full.tif",
+   "width": "4096",
+   "height": "6144",
+   "filesize": "151023476",
+   "filename": "1969.2_full.tif"
+  }
+ },
+ "alternate_images": [
+  {
+   "web": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt0_web.jpg",
+    "width": "595",
+    "height": "893",
+    "filesize": "273113"
+   },
+   "print": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt0_print.jpg",
+    "width": "2267",
+    "height": "3400",
+    "filesize": "3768208"
+   },
+   "full": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt0_full.tif",
+    "width": "4096",
+    "height": "6144",
+    "filesize": "75529648"
+   },
+   "date_created": "2009-11-03T15:23:12",
+   "annotation": ""
+  },
+  {
+   "web": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt1_web.jpg",
+    "width": "595",
+    "height": "893",
+    "filesize": "259287"
+   },
+   "print": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt1_print.jpg",
+    "width": "2267",
+    "height": "3400",
+    "filesize": "3676604"
+   },
+   "full": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt1_full.tif",
+    "width": "4096",
+    "height": "6144",
+    "filesize": "75528060"
+   },
+   "date_created": "2009-11-03T15:24:12",
+   "annotation": ""
+  },
+  {
+   "web": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt2_web.jpg",
+    "width": "646",
+    "height": "893",
+    "filesize": "278307"
+   },
+   "print": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt2_print.jpg",
+    "width": "2461",
+    "height": "3400",
+    "filesize": "4080017"
+   },
+   "full": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt2_full.tif",
+    "width": "4096",
+    "height": "5658",
+    "filesize": "69556112"
+   },
+   "date_created": "2009-11-03T15:35:17",
+   "annotation": ""
+  },
+  {
+   "web": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt3_web.jpg",
+    "width": "604",
+    "height": "893",
+    "filesize": "285889"
+   },
+   "print": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt3_print.jpg",
+    "width": "2321",
+    "height": "3400",
+    "filesize": "3496226"
+   },
+   "full": {
+    "url": "https://openaccess-cdn.clevelandart.org/1969.2/1969.2_alt3_full.tif",
+    "width": "3413",
+    "height": "5000",
+    "filesize": "51210696"
+   },
+   "annotation": ""
+  }
+ ],
+ "creditline": "Gift of Katherine C. White",
+ "image_credit": null,
+ "sketchfab_id": null,
+ "sketchfab_url": null,
+ "gallery_donor_text": null,
+ "athena_id": 144495,
+ "creators": [],
+ "legal_status": "accessioned",
+ "accession_date": "1969-01-22T00:00:00",
+ "sortable_date": 1900,
+ "date_added_to_oa": null,
+ "date_text": "early to mid-1900s",
+ "collapse_artists": false,
+ "on_loan": false,
+ "recently_acquired": false,
+ "record_type": "object",
+ "conservation_statement": null,
+ "has_conservation_images": false,
+ "cover_accession_number": null,
+ "is_nazi_era_provenance": false,
+ "impression": null,
+ "alternate_titles": [
+  "Bushcow Headdress",
+  "Bush Cow Mask"
+ ],
+ "is_highlight": false,
+ "updated_at": "2026-05-29 07:25:21.180000"
+}

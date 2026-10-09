@@ -40,14 +40,20 @@ export class HttpClient {
     };
   }
 
+  /** Reserves the next request slot synchronously, so concurrent callers are spaced too. */
   private async pace(): Promise<void> {
     const sleep = this.o.sleep ?? realSleep;
-    const wait = this.last + this.o.minIntervalMs - Date.now();
-    if (wait > 0) await sleep(wait);
-    this.last = Date.now();
+    const now = Date.now();
+    const at = Math.max(now, this.last + this.o.minIntervalMs);
+    this.last = at;
+    if (at > now) await sleep(at - now);
   }
 
   async get(url: string, headers: Record<string, string> = {}): Promise<Response> {
+    return this.request(url, headers);
+  }
+
+  private async request(url: string, headers: Record<string, string>, init: RequestInit = {}): Promise<Response> {
     const doFetch = this.o.fetchImpl ?? fetch;
     const sleep = this.o.sleep ?? realSleep;
     for (let attempt = 0; ; attempt++) {
@@ -56,6 +62,7 @@ export class HttpClient {
       let failure: unknown;
       try {
         res = await doFetch(url, {
+          ...init,
           headers: { "User-Agent": this.o.userAgent, ...headers },
           signal: AbortSignal.timeout(this.o.timeoutMs),
         });
@@ -80,8 +87,17 @@ export class HttpClient {
     }
   }
 
-  async getJson<T>(url: string): Promise<T> {
-    const res = await this.get(url, { Accept: "application/json" });
+  async getJson<T>(url: string, headers: Record<string, string> = {}): Promise<T> {
+    const res = await this.get(url, { Accept: "application/json", ...headers });
+    // A JSON API answering with HTML is a WAF interstitial (the Met's Incapsula did this): back off, do not retry.
+    if (/html/i.test(res.headers.get("content-type") ?? "")) throw new StopCrawlError(res.status, url);
+    if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
+    return (await res.json()) as T;
+  }
+
+  async postJson<T>(url: string, body: unknown, headers: Record<string, string> = {}): Promise<T> {
+    const res = await this.request(url, { Accept: "application/json", "Content-Type": "application/json", ...headers }, { method: "POST", body: JSON.stringify(body) });
+    if (/html/i.test(res.headers.get("content-type") ?? "")) throw new StopCrawlError(res.status, url);
     if (!res.ok) throw new Error(`HTTP ${res.status} from ${url}`);
     return (await res.json()) as T;
   }

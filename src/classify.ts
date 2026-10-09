@@ -11,14 +11,20 @@ function tokens(text: string): string[] {
 
 /**
  * German compounds put the head noun last ("Mumienmaske", "Blashorn"), so a keyword matches at either end of a
- * token. Keywords containing a space are matched as phrases against the whole text.
+ * token. Keywords containing a space or punctuation are matched as phrases against the whole text.
  */
 function hasAny(text: string, toks: string[], words: string[]): boolean {
   return words.some((raw) => {
     const w = raw.toLowerCase();
-    if (w.includes(" ")) return text.includes(w);
+    if (/[^\p{L}\p{N}]/u.test(w)) return text.includes(w);
     return toks.some((t) => t.startsWith(w) || t.endsWith(w));
   });
+}
+
+/** True when any term matches `text` by the same token rules the classifier uses (either end of a compound, phrases whole). */
+export function matchesTerms(text: string, words: string[]): boolean {
+  const lower = text.toLowerCase();
+  return hasAny(lower, tokens(lower), words);
 }
 
 /** Derive `object_class` from the museum's own object type wording (spec 4.1, steps 1 and 2). */

@@ -40,6 +40,18 @@ export interface SmbSourceConfig {
   allowed_licenses: Record<"open" | "attributed" | "attributed-nc", string[]>;
 }
 
+/** Settings every source shares; adapters add their own keys (spec 3, 5.2). */
+export interface SourceConfig {
+  enabled: boolean;
+  kind: "api" | "scrape";
+  rights_mode: "open" | "attributed" | "attributed-nc";
+  source_weight: number;
+  /** Minimum gap between requests to the source, in ms. */
+  min_interval_ms: number;
+  timeout_ms?: number;
+  retries?: number;
+}
+
 function load<T>(file: string): T {
   return parse(readFileSync(path.join(root, "config", file), "utf8")) as T;
 }
@@ -73,4 +85,35 @@ export function loadSmbConfig(): SmbSourceConfig {
     "sources.smb",
   );
   return s;
+}
+
+export interface Denylist {
+  provenance_flags: string[];
+  blocked_terms: string[];
+  blocked_type_tokens: string[];
+  blocked_keys: string[];
+}
+
+export function loadDenylist(): Denylist {
+  const d = load<Denylist>("denylist.yaml");
+  requireKeys(d, ["provenance_flags", "blocked_terms", "blocked_type_tokens", "blocked_keys"], "denylist.yaml");
+  return d;
+}
+
+export function loadSourceConfig<T extends SourceConfig = SourceConfig>(id: string): T {
+  const s = load<{ sources: Record<string, T> }>("sources.yaml").sources?.[id];
+  if (!s) throw new Error(`config error: sources.${id} not found`);
+  requireKeys(s, ["enabled", "kind", "rights_mode", "source_weight", "min_interval_ms"], `sources.${id}`);
+  return s;
+}
+
+/** Source id -> `source_weight` for the fairness step (spec 5.2). */
+export function loadSourceWeights(): Record<string, number> {
+  const all = load<{ sources: Record<string, SourceConfig> }>("sources.yaml").sources ?? {};
+  return Object.fromEntries(Object.entries(all).map(([id, s]) => [id, s.source_weight ?? 1]));
+}
+
+export function enabledSourceIds(): string[] {
+  const all = load<{ sources: Record<string, SourceConfig> }>("sources.yaml").sources ?? {};
+  return Object.entries(all).filter(([, s]) => s.enabled).map(([id]) => id);
 }

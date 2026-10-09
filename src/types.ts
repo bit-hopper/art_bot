@@ -42,6 +42,8 @@ export interface Artwork {
   onView: boolean;
   gallery: string | null;
   imageUrl: string | null;
+  /** The museum's own description of what the image shows (AIC supplies one); preferred for alt text. */
+  imageAlt?: string | null;
   imageLicense: string | null;
   photographer: string | null;
   rightsStatus: RightsStatus;

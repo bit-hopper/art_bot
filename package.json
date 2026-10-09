@@ -9,10 +9,15 @@
   },
   "scripts": {
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "vitest run",
+    "build-index": "tsx src/build-index.ts",
+    "dry-run": "tsx src/run.ts",
+    "live-check": "tsx scripts/live-check.ts"
   },
   "dependencies": {
+    "@atproto/api": "^0.24.3",
     "devalue": "^5.9.4",
+    "sharp": "^0.35.5",
     "yaml": "^2.9.1"
   },
   "devDependencies": {

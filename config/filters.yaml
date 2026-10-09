@@ -24,6 +24,6 @@ profiles:
       not_mask: [gewand, klapper, rassel]
       carved-instrument: [drum, tambour, trommel, schlitztrommel, "slit drum", "tambour à fente", lamellophone, lamellophon, sanza, sansa, mbira, xylophone, xylophon, harp, harpe, harfe, horn, trompe, trompete, zither, cithare, laute, leier, flöte, rassel, "musical instrument", musikinstrument]
       other-carved-cast: [hocker, stuhl, stab, szepter, zepter, gefäß, schale, löffel, kamm, kopfstütze, tür, pfosten, becher, dose, behälter, tabakpfeife, pfeifenkopf]
-      sculpture: [figure, figurine, statue, statuette, sculpture, skulptur, figur, bust, büste, plastik, puppe, "power figure", reliquary, reliquiar, effigy, relief]
+      sculpture: [figure, figurine, statue, statuette, sculpture, skulptur, figur, bust, büste, plastik, puppe, "power figure", reliquary, reliquiar, effigy, relief, shabti, ushabti, uschebti, stela, stele, sphinx, canopic, coffin, sarcophagus, sarkophag, "ka statue"]   # shabti onward: Egyptian vocabulary (spec 4)
       sculpture_whole_word: [kopf, head]   # only as a standalone word, never inside "Tabakpfeifenkopf"
     exclude_keywords: []

@@ -1,0 +1,14 @@
+# Sensitive-object rules (spec 7.4). Conservative starting lists: audit them against real records (gate step 3).
+# Terms use the classifier's token rules (either end of a compound); phrases match whole.
+
+# Sentences containing one of these become the reply's provenance note and are cut last. They never block a post.
+provenance_flags: [punitive expedition, looted, loot, seized, confiscated, restitution, claim, raubgut, beute, strafexpedition]
+
+# Matched in title, object type, description and provenance. The museum's own wording, not our inference.
+blocked_terms: [and mummy, mummy of, mummified, human remains, skeletal remains, human bone, menschliche überreste, menschliche knochen, gender-restricted, secret/sacred, sacred/secret, restricted viewing, not for public display, culturally sensitive]
+
+# Matched as whole tokens of the object type only, so "Mumienmaske" (a mask) is not caught.
+blocked_type_tokens: [mummy, mumie, skull, schädel, skeleton, skelett, bone, knochen]
+
+# Manual overrides, e.g. "met:12345".
+blocked_keys: []
