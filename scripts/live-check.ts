@@ -5,9 +5,11 @@
  *
  * Usage: npx tsx scripts/live-check.ts <source> <out_dir> [sample_size=20] [--max-index=N]
  *   --max-index=N  Met only: index just the first N objects (a full Met build is ~17,000 requests).
+ *   --reuse-index  Sample from the <out_dir>/<source>-index.jsonl of an earlier run instead of rebuilding it.
+ *   --region=G     Sample only rows whose region group is G (e.g. sub-saharan), so a small group is not drowned out.
  * Respects each source's pacing through its HttpClient. Writes index + results to <out_dir>, never to the repo.
  */
-import { mkdirSync, writeFileSync } from "node:fs";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { MetAdapter } from "../src/adapters/met.js";
 import { createAdapter } from "../src/adapters/index.js";
@@ -25,18 +27,26 @@ const maxIndex = Number(process.argv.find((a) => a.startsWith("--max-index="))?.
 if (!source || !out) throw new Error("usage: live-check.ts <source> <out_dir> [sample_size] [--max-index=N]");
 mkdirSync(out, { recursive: true });
 
+const region = process.argv.find((a) => a.startsWith("--region="))?.slice(9);
+const reuseIndex = process.argv.includes("--reuse-index");
+const indexFile = path.join(out, `${source}-index.jsonl`);
+
 const adapter = source === "met" && maxIndex ? new MetAdapter(undefined, undefined, undefined, { maxObjects: maxIndex }) : createAdapter(source);
 const deny = loadDenylist();
 const t0 = Date.now();
 const rows: IndexRow[] = [];
-for await (const r of adapter.buildIndex()) rows.push(r);
-writeFileSync(path.join(out, `${source}-index.jsonl`), rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
+if (reuseIndex) {
+  for (const line of readFileSync(indexFile, "utf8").split("\n")) if (line.trim()) rows.push(JSON.parse(line) as IndexRow);
+} else {
+  for await (const r of adapter.buildIndex()) rows.push(r);
+  writeFileSync(indexFile, rows.map((r) => JSON.stringify(r)).join("\n") + "\n");
+}
 
 const tally = (key: "objectClass" | "regionGroup") =>
   rows.reduce<Record<string, number>>((m, r) => ((m[r[key]] = (m[r[key]] ?? 0) + 1), m), {});
 console.log(`index: ${rows.length} rows in ${Math.round((Date.now() - t0) / 1000)}s`, { byClass: tally("objectClass"), byRegion: tally("regionGroup") });
 
-const picks = [...rows].sort(() => Math.random() - 0.5).slice(0, sampleSize);
+const picks = rows.filter((r) => !region || r.regionGroup === region).sort(() => Math.random() - 0.5).slice(0, sampleSize);
 const img = new HttpClient({ minIntervalMs: 1000 });
 const results: Array<Record<string, unknown>> = [];
 let bad = 0;
@@ -72,6 +82,6 @@ for (const row of picks) {
   console.log(JSON.stringify(res));
 }
 
-writeFileSync(path.join(out, `${source}-live-check.json`), JSON.stringify(results, null, 1));
+writeFileSync(path.join(out, `${source}${region ? `-${region}` : ""}-live-check.json`),JSON.stringify(results, null, 1));
 console.log(`done: ${picks.length - bad}/${picks.length} ok, ${bad} failed; classMismatch ${results.filter((r) => r.classMismatch).length}, denied ${results.filter((r) => r.denied).length}`);
 process.exit(bad > 0 ? 1 : 0);
