@@ -5,6 +5,7 @@ import { ClevelandAdapter } from "./cleveland.js";
 import { LouvreAdapter, type LouvreCacheEntry, type LouvreIdsEntry } from "./louvre.js";
 import { MetAdapter, type MetCacheEntry } from "./met.js";
 import { MiaAdapter } from "./mia.js";
+import { NmafaAdapter } from "./nmafa.js";
 import { SmbAdapter } from "./smb.js";
 import { JsonCache, louvreCacheFile, louvreIdsFile, metCacheFile } from "../state.js";
 
@@ -14,6 +15,7 @@ const FACTORIES: Record<string, () => MuseumAdapter> = {
   cleveland: () => new ClevelandAdapter(),
   aic: () => new AicAdapter(),
   mia: () => new MiaAdapter(),
+  nmafa: () => new NmafaAdapter(),
   louvre: () => new LouvreAdapter(undefined, undefined, undefined, { cache: new JsonCache<LouvreCacheEntry>(louvreCacheFile()), idsCache: new JsonCache<LouvreIdsEntry>(louvreIdsFile()) }),
 };
 

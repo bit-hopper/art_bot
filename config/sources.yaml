@@ -97,3 +97,15 @@ sources:
     ark_prefixes: ["cl01"]         # cl02 is prints and drawings (0 of 21 Egyptian in the 2026-10-08 sample)
     max_new_per_run: 3000
     exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)
+  nmafa:
+    enabled: false                 # off until the production gate (spec 11.4) passes
+    kind: api
+    rights_mode: open
+    source_weight: 1.0
+    min_interval_ms: 100
+    # Smithsonian Open Access bulk copy on AWS: public, no key. Only CC0 records are in it (113 on 2026-10-09, all with an
+    # image, 78 sculpture/figure/mask); the museum's full catalogue needs the EDAN API and a key, which we do not use.
+    bulk_url: "https://smithsonian-open-access.s3.amazonaws.com/metadata/edan/nmafa"
+    shards: 256                    # NN.txt for NN = 00..ff; about 94 are non-empty
+    # Origin rule (owner 2026-10-08): a place field naming one of these means made outside Africa -> blocked.
+    non_african_places: [Austria, Germany, France, Italy, England, United Kingdom, Netherlands, Belgium, Portugal, Spain, Denmark, Sweden, Switzerland, Czech Republic, Czechoslovakia, United States, India, China, Indonesia, Turkey]

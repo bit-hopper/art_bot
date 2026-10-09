@@ -14,6 +14,7 @@ export const MUSEUMS: Record<string, string> = {
   mia: "Minneapolis Institute of Art",
   smb: "Staatliche Museen zu Berlin",
   louvre: "Musée du Louvre",
+  nmafa: "Smithsonian National Museum of African Art",
 };
 
 const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });
