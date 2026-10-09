@@ -47,16 +47,15 @@ for (const row of picks) {
       rights: a.rightsStatus, license: a.imageLicense, accession: a.accessionNumber, objectUrl: a.objectUrl,
     });
     if (a.objectClass !== row.objectClass) res.classMismatch = true;
-    if (a.rightsStatus === "blocked") {
-      res.note = "blocked at fetch time (no usable licence): correctly excluded from posting";
-    } else if (a.imageUrl) {
+    if (a.rightsStatus === "reserved") res.note = "no open licence: posted with the museum's rights statement";
+    if (a.imageUrl) {
       const r = await img.get(a.imageUrl);
       const buf = new Uint8Array(await r.arrayBuffer());
       const jpeg = buf[0] === 0xff && buf[1] === 0xd8;
       Object.assign(res, { imageStatus: r.status, imageBytes: buf.length, jpeg });
       if (r.status !== 200 || !jpeg || buf.length > BLUESKY_MAX_BYTES) throw new Error("image check failed");
     } else {
-      throw new Error("no image url on a non-blocked artwork");
+      throw new Error("no image url");
     }
   } catch (e) {
     bad++;

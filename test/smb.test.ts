@@ -62,10 +62,11 @@ describe("SMB object page -> Artwork (real fixtures, fetched 2026-10-08)", () =>
     expect(a.photographer).toBe("Martin Franken"); // first image has no asset_content, i.e. the primary view
   });
 
-  it("record whose image has no licence is blocked", () => {
+  it("record whose image has no licence is still postable, as reserved with no licence string", () => {
     const a = art("obj-2041046");
-    expect(a.rightsStatus).toBe("blocked");
-    expect(a.imageUrl).toBeNull();
+    expect(a.rightsStatus).toBe("reserved");
+    expect(a.imageLicense).toBeNull();
+    expect(a.imageUrl).toMatch(/^https:\/\/search\.smb\.museum\/media\/images\//);
   });
 
   it("throws a clear error on a page without a payload", () => {
@@ -80,15 +81,15 @@ describe("rights", () => {
     ["CC BY-SA 4.0", "attributed"],
     ["CC BY-NC-SA 4.0", "attributed-nc"],
     ["CC BY-NC-ND 4.0", "attributed-nc"],
-    ["All rights reserved", "blocked"],
-    ["", "blocked"],
-    [null, "blocked"],
-    [undefined, "blocked"],
+    ["All rights reserved", "reserved"],
+    ["", "reserved"],
+    [null, "reserved"],
+    [undefined, "reserved"],
   ])("%s -> %s", (lic, expected) => {
     expect(licenseRights(lic as string | null | undefined, cfg)).toBe(expected);
   });
 
-  it("chooseImage skips unlicensed images and prefers a front view", () => {
+  it("chooseImage prefers licensed images, and a front view among them", () => {
     const img = chooseImage(
       [
         { xl_path: "/a.jpg", license: null },
@@ -100,9 +101,10 @@ describe("rights", () => {
     expect(img?.xl_path).toBe("/c.jpg");
   });
 
-  it("chooseImage falls back to the first postable image, and to null when none is postable", () => {
+  it("chooseImage falls back to the first licensed image, then to an unlicensed one, then to null", () => {
     expect(chooseImage([{ xl_path: "/b.jpg", license: "CC BY-NC-SA 4.0", asset_content: "Rückseite" }], cfg)?.xl_path).toBe("/b.jpg");
-    expect(chooseImage([{ xl_path: "/a.jpg", license: null }], cfg)).toBeNull();
+    expect(chooseImage([{ xl_path: "/a.jpg", license: null }], cfg)?.xl_path).toBe("/a.jpg");
+    expect(chooseImage([{ license: "CC BY-NC-SA 4.0" }], cfg)).toBeNull();
     expect(chooseImage(undefined, cfg)).toBeNull();
   });
 });

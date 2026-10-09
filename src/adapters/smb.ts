@@ -100,19 +100,24 @@ function geo(rec: SmbRecord, ...roles: string[]): string | null {
 }
 
 export function licenseRights(license: string | null | undefined, cfg: SmbSourceConfig): RightsStatus {
-  if (!license) return "blocked";
+  if (!license) return "reserved";
   for (const mode of ["open", "attributed", "attributed-nc"] as const) {
     if (cfg.allowed_licenses[mode].includes(license)) return mode;
   }
-  return "blocked";
+  return "reserved";
 }
 
 const FRONT = /vorder|gesamt|front|overall/i;
 
-/** Spec 3.3 image choice: prefer the primary/front view among postable images, else the first postable one. */
+/**
+ * Spec 3.3 image choice: among images with an open or Creative Commons licence prefer the primary/front view, else the
+ * first; only if none is licensed fall back to the same rule over all images (posted as `reserved`).
+ */
 export function chooseImage(images: SmbImage[] | undefined, cfg: SmbSourceConfig): SmbImage | null {
-  const postable = (images ?? []).filter((i) => i.xl_path && licenseRights(i.license, cfg) !== "blocked");
-  return postable.find((i) => !i.asset_content || FRONT.test(i.asset_content)) ?? postable[0] ?? null;
+  const withFile = (images ?? []).filter((i) => i.xl_path);
+  const licensed = withFile.filter((i) => licenseRights(i.license, cfg) !== "reserved");
+  const pool = licensed.length > 0 ? licensed : withFile;
+  return pool.find((i) => !i.asset_content || FRONT.test(i.asset_content)) ?? pool[0] ?? null;
 }
 
 function regionGroupFor(orgUnit: string | null, country: string | null, cfg: SmbSourceConfig): RegionGroup {

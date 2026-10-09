@@ -9,8 +9,12 @@ export type ObjectClass =
 
 export type RegionGroup = "sub-saharan" | "north-africa" | "egypt" | "unspecified-africa";
 
-/** `blocked` objects are never posted. `attributed-nc` is the spec 7.1 mode for non-commercial CC licences. */
-export type RightsStatus = "open" | "attributed" | "attributed-nc" | "blocked";
+/**
+ * `reserved`: no open licence (missing, "all rights reserved", in copyright); still posted, with the museum's own
+ * rights statement and credit (owner decision 2026-10-08). `blocked` is only for objects with nothing to post
+ * (no image) or that the sensitive-object denylist rejects.
+ */
+export type RightsStatus = "open" | "attributed" | "attributed-nc" | "reserved" | "blocked";
 
 export interface Artwork {
   /** `"{source}:{source_object_id}"`: the dedupe key. */
