@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RightsStatus } from "../types.js";
-import { classifyRecord, isFlatFragment, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { classifyRecord, isFlatFragment, isSherd, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const SEARCH = "https://search.artsmia.org";
 const PAGE = 100;
@@ -120,7 +120,7 @@ export class MiaAdapter implements MuseumAdapter {
         yield {
           key: `mia:${r.id}`, source: "mia", sourceObjectId: String(r.id), objectClass: cls,
           regionGroup: regionGroupFromPlace([r.country, r.culture].filter(Boolean).join(" ")),
-          culture: nonEmpty(r.culture), score: scoreFor(weight, { longEdge: longEdge(r), highlight: isHighlight(r), fragment: isFlatFragment(r.object_name, r.title) }),
+          culture: nonEmpty(r.culture), score: scoreFor(weight, { longEdge: longEdge(r), highlight: isHighlight(r), fragment: isFlatFragment(r.object_name, r.title), sherd: isSherd(cls, r.object_name, r.title) }),
         };
       }
       if (res.hits.hits.length < PAGE || from + PAGE >= res.hits.total.value) return;

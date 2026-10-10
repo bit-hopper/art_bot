@@ -13,6 +13,8 @@ export interface Keywords {
   not_mask: string[];
   "carved-instrument": string[];
   "other-carved-cast": string[];
+  pottery: string[];
+  pottery_whole_word: string[];
   sculpture: string[];
   sculpture_whole_word: string[];
 }
@@ -75,7 +77,7 @@ export function loadProfile(name = "africana-masks-and-sculpture"): FilterProfil
   requireKeys(p, ["classes", "keywords", "region_share_caps"], `profile ${name}`);
   requireKeys(
     p.keywords,
-    ["archive", "specimen", "mask", "not_mask", "carved-instrument", "other-carved-cast", "sculpture", "sculpture_whole_word"],
+    ["archive", "specimen", "mask", "not_mask", "carved-instrument", "other-carved-cast", "pottery", "pottery_whole_word", "sculpture", "sculpture_whole_word"],
     `profile ${name}.keywords`,
   );
   return p;

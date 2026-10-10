@@ -33,8 +33,10 @@ export function classifyRecord(type: string | null | undefined, title: string | 
 }
 
 const FRAGMENT = /fragment|bruchst/i;
+const SHERD = /fragment|bruchst|sherd|scherbe|tesson/i;
 const FLAT = /textil|papyr|kelim|gewebe|stoff|tapestry|tunic|tunika|clavus|segment|curtain|vorhang|behang|hanging|linen|leinen|wool|wolle|cloth|garment|kleidung|seide|silk|weav|woven/i;
 export const FLAT_FRAGMENT_FACTOR = 0.3;
+export const SHERD_FACTOR = 0.5;
 
 /**
  * Owner ruling 2026-10-09: textile and papyrus fragments rank lower; ceramic, wooden and other non-woven fragments keep
@@ -45,9 +47,15 @@ export function isFlatFragment(...texts: Array<string | null | undefined>): bool
   return FRAGMENT.test(t) && FLAT.test(t);
 }
 
+/** Owner ruling 2026-10-10: pottery fragments (sherds) rank at half the pottery weight (30: below ornaments at 40, above `other` at 10). */
+export function isSherd(cls: ObjectClass, ...texts: Array<string | null | undefined>): boolean {
+  return cls === "pottery" && SHERD.test(texts.filter(Boolean).join(" "));
+}
+
 /** Spec 4.2: class weight x 0.5 if the image's long edge is under 600 px, x 1.2 for a museum highlight. */
-export function scoreFor(weight: number, q: { longEdge?: number | null; highlight?: boolean; fragment?: boolean } = {}): number {
+export function scoreFor(weight: number, q: { longEdge?: number | null; highlight?: boolean; fragment?: boolean; sherd?: boolean } = {}): number {
   let s = weight;
+  if (q.sherd) s *= SHERD_FACTOR;
   if (q.fragment) s *= FLAT_FRAGMENT_FACTOR;
   if (q.longEdge != null && q.longEdge < 600) s *= 0.5;
   if (q.highlight) s *= 1.2;

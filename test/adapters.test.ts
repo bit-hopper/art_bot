@@ -4,7 +4,7 @@ import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
 import { AicAdapter, aicImageUrl, normaliseAicArtwork, type AicSourceConfig } from "../src/adapters/aic.js";
 import { ClevelandAdapter, cultureMatches, normaliseClevelandArtwork, type ClevelandSourceConfig } from "../src/adapters/cleveland.js";
-import { MetAdapter, normaliseMetObject, type MetCacheEntry, type MetSourceConfig } from "../src/adapters/met.js";
+import { CLASS_VERSION, MetAdapter, normaliseMetObject, type MetCacheEntry, type MetSourceConfig } from "../src/adapters/met.js";
 import { hasPublicImage, MiaAdapter, normaliseMiaRecord, type MiaRecord, type MiaSourceConfig } from "../src/adapters/mia.js";
 import { loadDenylist, loadProfile, loadSourceConfig } from "../src/config.js";
 import { denyReason } from "../src/denylist.js";
@@ -79,7 +79,7 @@ describe("Met", () => {
     const cache = new JsonCache<MetCacheEntry>(null);
     const day = Math.floor(Date.now() / 86_400_000);
     const row: IndexRow = { key: "met:1", source: "met", sourceObjectId: "1", objectClass: "mask", regionGroup: "sub-saharan", culture: null, score: 100 };
-    cache.set("1", { day, row });
+    cache.set("1", { day, row, v: CLASS_VERSION });
     cache.set("314439", { day, row: null }); // known to have no image: not re-fetched
 
     const ok = fake((u) => (u.includes("/v1.1/search") ? { total: 3, objectIDs: [1, 314439, 329767] } : eg));
@@ -92,6 +92,18 @@ describe("Met", () => {
     expect((await collect(b.buildIndex())).map((r) => r.key)).toContain("met:1");
     expect(b.incomplete).toBe(true);
     void af;
+  });
+
+  it("fetches a cached row again when it was classified by an older rule set", async () => {
+    const eg = json("met/egypt-obj.json");
+    const cache = new JsonCache<MetCacheEntry>(null);
+    const day = Math.floor(Date.now() / 86_400_000);
+    const row: IndexRow = { key: "met:329767", source: "met", sourceObjectId: "329767", objectClass: "other", regionGroup: "egypt", culture: null, score: 10 };
+    cache.set("329767", { day, row, v: CLASS_VERSION - 1 });
+    const { http, urls } = fake((u) => (u.includes("/v1.1/search") ? { total: 1, objectIDs: [329767] } : eg));
+    await collect(new MetAdapter(cfg, profile, http, { cache }).buildIndex());
+    expect(urls.filter((u) => u.includes("/objects/"))).toHaveLength(1);
+    expect(cache.get("329767")?.v).toBe(CLASS_VERSION);
   });
 
   it("treats a 404 object as gone, caches that, and keeps going", async () => {

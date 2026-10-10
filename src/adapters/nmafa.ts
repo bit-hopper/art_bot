@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RightsStatus } from "../types.js";
-import { classifyRecord, isFlatFragment, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { classifyRecord, isFlatFragment, isSherd, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 export interface NmafaSourceConfig extends SourceConfig {
   bulk_url: string;
@@ -128,7 +128,7 @@ export class NmafaAdapter implements MuseumAdapter {
         const img = nmafaImage(r);
         yield {
           key: `nmafa:${name}/${a.sourceObjectId}`, source: "nmafa", sourceObjectId: `${name}/${a.sourceObjectId}`, objectClass: a.objectClass,
-          regionGroup: a.regionGroup, culture: a.culture ?? a.country, score: scoreFor(weight, { longEdge: img?.longEdge, fragment: isFlatFragment(a.objectType, a.title) }),
+          regionGroup: a.regionGroup, culture: a.culture ?? a.country, score: scoreFor(weight, { longEdge: img?.longEdge, fragment: isFlatFragment(a.objectType, a.title), sherd: isSherd(a.objectClass, a.objectType, a.title) }),
         };
       }
     }

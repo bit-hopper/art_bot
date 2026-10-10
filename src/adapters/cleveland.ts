@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RightsStatus } from "../types.js";
-import { africanOrigin, classifyRecord, isFlatFragment, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, isSherd, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://openaccess-api.clevelandart.org/api/artworks";
 const PAGE = 1000;
@@ -133,7 +133,7 @@ export class ClevelandAdapter implements MuseumAdapter {
         yield {
           key: `cleveland:${r.id}`, source: "cleveland", sourceObjectId: String(r.id), objectClass: cls,
           regionGroup: regionGroupFromPlace((r.culture ?? []).join(" "), { egyptDept: egypt }),
-          culture: cultureOf(r.culture), score: scoreFor(weight, { longEdge: Math.max(Number(r.images.web.width) || 0, Number(r.images.web.height) || 0) || null, fragment: isFlatFragment(r.type, r.title) }),
+          culture: cultureOf(r.culture), score: scoreFor(weight, { longEdge: Math.max(Number(r.images.web.width) || 0, Number(r.images.web.height) || 0) || null, fragment: isFlatFragment(r.type, r.title), sherd: isSherd(cls, r.type, r.title) }),
         };
       }
     }

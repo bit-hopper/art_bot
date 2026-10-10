@@ -9,6 +9,7 @@ profiles:
       mask: 100
       sculpture: 90
       carved-instrument: 70
+      pottery: 60               # pottery and other vessels (owner 2026-10-10): jars, bowls, vases, lamps, flasks
       other-carved-cast: 40
       other: 10
       specimen: 0             # natural-history reference objects; never posted
@@ -16,14 +17,17 @@ profiles:
     # Matching is on word tokens, at either end of a German compound ("Mumienmaske", "Blashorn"),
     # with plurals folded. Entries containing a space are matched as phrases.
     # Check order: archive -> specimen -> mask (unless not_mask) -> carved-instrument -> other-carved-cast (carved, cast or smelted: also metalwork, weapons, armor, coins)
-    #              -> sculpture -> other. Bells (glocke) are not carved and stay `other`.
+    #              -> sculpture -> pottery -> other. Bells (glocke) are not carved and stay `other`.
     keywords:
       archive: [positiv, negativ, dia, schellackplatte, schallplatte, tonband, walze, walzensammlung, postkarte, cd, kassette, film, foto, fotografie, abzug, glasplatte]   # first word of the object type only
       specimen: [xylarium, "wood sample", "echantillon de bois", herbarium, "botanical specimen", holzprobe, xylothek, herbar]
       mask: [mask, masque, maske, helmmaske, aufsatzmaske, gesichtsmaske, kopfaufsatz, "face mask"]
       not_mask: [gewand, klapper, rassel]
       carved-instrument: [drum, tambour, trommel, schlitztrommel, "slit drum", "tambour à fente", lamellophone, lamellophon, zupfidiophon,sanza, sansa, mbira, xylophone, xylophon, harp, harpe, harfe, horn, trompe, trompete, zither, cithare, laute, leier, flöte, rassel, "musical instrument", musikinstrument]
-      other-carved-cast: [hocker, stuhl, stab, szepter, zepter, gefäß, schale, löffel, kamm, kopfstütze, tür, pfosten, becher, dose, behälter, tabakpfeife, pfeifenkopf, tabouret, sceptre, bâton, cuillère, peigne, appui-tête, jarre, coupe, boîte, étui, headrest, neckrest, "head rest", "neck rest", tapper, münze, coin, monnaie, jewelry, jewellery, amulet, amulett, scarab, skarabäus, necklace, bracelet, pendant, earring, anklet, armlet, fibula, fibel, schmuck, armreif, perle, perlen, anhänger, halskette, armband, ohrring, fingerring, armring, halsring, siegelring, "finger ring", "signet ring", bijou, collier, bague,dagger, sword, spear, lance, knife, blade, axe, shield, helmet, armor, armour, cuirass, scabbard, sheath, knobkerrie, "arms and armor", dolch, schwert, speer, lanze, messer, klinge, axt, beil, schild, helm, rüstung, panzer, épée, poignard, bouclier, casque, couteau, lance]   # metalwork and weapons/armor: owner 2026-10-09 ("smelted"); coins too   # French (Louvre); "vase" and "bol" left out: "vase" is English too and "symbol" ends in "bol"
+      other-carved-cast: [hocker, stuhl, stab, szepter, zepter, löffel, kamm, kopfstütze, tür, pfosten, dose, behälter, tabakpfeife, pfeifenkopf, tabouret, sceptre, bâton, cuillère, peigne, appui-tête, boîte, étui, headrest, neckrest, "head rest", "neck rest", tapper, münze, coin, monnaie, jewelry, jewellery, amulet, amulett, scarab, skarabäus, necklace, bracelet, pendant, earring, anklet, armlet, fibula, fibel, schmuck, armreif, perle, perlen, anhänger, halskette, armband, ohrring, fingerring, armring, halsring, siegelring, "finger ring", "signet ring", bijou, collier, bague,seal, siegel, sceau, dagger, sword, spear, lance, knife, blade, axe, shield, helmet, armor, armour, cuirass, scabbard, sheath, knobkerrie, "arms and armor", dolch, schwert, speer, lanze, messer, klinge, axt, beil, schild, helm, rüstung, panzer, épée, poignard, bouclier, casque, couteau, lance]   # metalwork and weapons/armor: owner 2026-10-09 ("smelted"); coins too; seals (stamp, cylinder, scaraboid) 2026-10-10   # French (Louvre); "vase" and "bol" left out: "vase" is English too and "symbol" ends in "bol"
+      pottery: [vessel, amphora, juglet, flask, beaker, pitcher, krater, kylix, pyxis, ceramic, pottery, potsherd, sherd, keramik, gefäß, schale, becher, céramique, poterie, jarre, coupe, unguent, "water filter"]   # vessels and ceramics; German/French as for the Staatliche Museen and the Louvre
+      pottery_whole_word: [jar, pot, bowl, vase, cup, jug, dish, bottle, plate, lamp, urn, ewer, bol, lampe]   # whole words only (plural folded): "pot" must not match "potential"
+
       sculpture: [figure, figurine, statue, statuette, sculpture, skulptur, figur, bust, büste, plastik, puppe, "power figure", reliquary, reliquiar, effigy, relief, shabti, ushabti, uschebti, stela, stele, sphinx, canopic, coffin, sarcophagus, sarkophag, "ka statue", serviteur, oushebti, ouchebti, chaouabti, stèle, sarcophage, cercueil, naos, canope]   # shabti onward: Egyptian vocabulary (spec 4); serviteur onward: French (Louvre, "serviteur funéraire" = shabti)
       sculpture_whole_word: [kopf, head, tête]   # only as a standalone word, never inside "Tabakpfeifenkopf"
-    exclude_keywords: []
+    exclude_keywords: [sealing]   # clay sealings are impressions, not seals

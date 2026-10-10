@@ -50,11 +50,12 @@ sources:
       - { id: 13, geo_location: Africa, egypt: false, origin_check: true }    # Greek and Roman Art (114 hits for Egypt)
       - { id: 14, geo_location: Africa, egypt: false, origin_check: true }    # Islamic Art (~3,800: Egypt, Morocco, Algeria, Tunisia)
       - { id: 17, geo_location: Africa, egypt: false, origin_check: true }    # Medieval Art incl. Byzantine and Coptic (35)
-      # Owner 2026-10-09: Egyptian or African origin *or influence* is wanted, so no origin check here: everything the
-      # Met files under an Egyptian place (Egyptian seals, but also Achaemenid and Sasanian pieces recorded as Egypt).
+      # Owner 2026-10-09: Egyptian or African origin *or influence* is wanted: everything the Met files under an Egyptian
+      # place (Egyptian seals, but also Achaemenid and Sasanian pieces recorded as Egypt). Owner 2026-10-10: origin check on,
+      # so "Egypt or Levant" is out; any one African field (country, culture or region) still qualifies the record.
       # Owner 2026-10-09: smelted metalwork counts, so weapons and armor are in; the record must state an African origin.
       - { id: 1, geo_location: Africa, egypt: false, origin_check: true }     # Arms and Armor
-      - { id: 3, geo_location: Egypt, egypt: false }                          # Ancient West Asian Art (26)
+      - { id: 3, geo_location: Egypt, egypt: false, origin_check: true }                        # Ancient West Asian Art (26)
     # Depictions of Africans and African-sourced work that no field marks (owner 2026-10-09); add ids as they are found.
     extra_objects:
       - { id: 325089, region_group: unspecified-africa }   # Neo-Assyrian ivory, Nimrud: man with an oryx, a monkey and a leopard skin

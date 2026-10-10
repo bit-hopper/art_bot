@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
-import { africanOrigin, classifyRecord, isFlatFragment, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, isSherd, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://collectionapi.metmuseum.org/public/collection";
 const PAGE = 500;
@@ -15,7 +15,12 @@ const NO_IMAGE_RECHECK_DAYS = 30;
 export interface MetCacheEntry {
   day: number;
   row: IndexRow | null;
+  /** Classifier version the row was computed with; absent means 0. */
+  v?: number;
 }
+
+/** Bump when the class rules change: cached rows older than this are fetched again, or re-derived from the Met's open-data CSV (`scripts/met-reclass.ts`). */
+export const CLASS_VERSION = 3;
 
 
 export interface MetSourceConfig extends SourceConfig {
@@ -157,7 +162,10 @@ export class MetAdapter implements MuseumAdapter {
     const today = Math.floor(Date.now() / 86_400_000);
     const local = new Map<number, MetCacheEntry>();
     const known = (id: number) => cache?.get(String(id)) ?? local.get(id);
-    const stale = (e: MetCacheEntry | undefined) => !e || (e.row === null && today - e.day > NO_IMAGE_RECHECK_DAYS);
+    const stale = (e: MetCacheEntry | undefined) =>
+      !e ||
+      (e.row === null && today - e.day > NO_IMAGE_RECHECK_DAYS) ||
+      (e.row !== null && (e.v ?? 0) < CLASS_VERSION);
 
     let budget = this.cfg.max_new_per_run;
     try {
@@ -185,9 +193,9 @@ export class MetAdapter implements MuseumAdapter {
               ? null
               : {
                   key: a.key, source: "met", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass,
-                  regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { highlight: o.isHighlight, fragment: isFlatFragment(a.objectType, a.title) }),
+                  regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { highlight: o.isHighlight, fragment: isFlatFragment(a.objectType, a.title), sherd: isSherd(a.objectClass, a.objectType, a.title) }),
                 };
-          const entry = { day: today, row };
+          const entry = { day: today, row, v: CLASS_VERSION };
           if (cache) cache.set(String(id), entry);
           else local.set(id, entry);
         });

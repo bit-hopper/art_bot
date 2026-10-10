@@ -9,7 +9,7 @@ import { mkdirSync, writeFileSync } from "node:fs";
 import path from "node:path";
 import { loadDenylist, loadProfile, loadSourceConfig } from "../src/config.js";
 import { denyReason } from "../src/denylist.js";
-import { HttpClient } from "../src/http.js";
+import { HttpClient, HttpError } from "../src/http.js";
 import { metOriginOk, normaliseMetObject, type MetObject, type MetSourceConfig } from "../src/adapters/met.js";
 
 const [out, perArg] = process.argv.slice(2);
@@ -36,7 +36,13 @@ for (const dept of added) {
   stats[dept.id] = { in: 0, out: 0 };
   console.log(`dept ${dept.id}: ${s.total} hits, sampling ${ids.length}`);
   for (const id of ids) {
-    const o = await http.getJson<MetObject & { geographyType?: string }>(`${API}/v1/objects/${id}`);
+    let o: MetObject & { geographyType?: string };
+    try {
+      o = await http.getJson<MetObject & { geographyType?: string }>(`${API}/v1/objects/${id}`);
+    } catch (e) {
+      if (e instanceof HttpError && e.status === 404) continue;
+      throw e;
+    }
     const a = normaliseMetObject(o, profile, false);
     const ok = dept.origin_check ? metOriginOk(o) : true;
     stats[dept.id]![ok ? "in" : "out"]++;

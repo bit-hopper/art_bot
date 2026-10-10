@@ -4,7 +4,7 @@ import { loadProfile, loadSmbConfig, type FilterProfile, type SmbSourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup, RightsStatus } from "../types.js";
-import { classifyRecord, isFlatFragment, scoreFor } from "./common.js";
+import { classifyRecord, isFlatFragment, isSherd, scoreFor } from "./common.js";
 
 const SITE = "https://search.smb.museum";
 const PAGE_SIZE = 300; // server caps `limit` at 300 (M0 spike)
@@ -255,9 +255,12 @@ export class SmbAdapter implements MuseumAdapter {
   async *buildIndex(): AsyncIterable<IndexRow> {
     const byId = new Map<string, { cls: ReturnType<typeof classifyRecord>; terms: Set<string>; egypt: boolean }>();
     const flat = new Set<string>();
+    const sherds = new Set<string>();
     const clsOf = (row: SearchRow) => {
       if (isFlatFragment(row.objekttyp, row.titel)) flat.add(row.id);
-      return classifyRecord(row.objekttyp, row.titel, this.profile);
+      const cls = classifyRecord(row.objekttyp, row.titel, this.profile);
+      if (isSherd(cls, row.objekttyp, row.titel)) sherds.add(row.id);
+      return cls;
     };
 
     for (const unit of this.cfg.org_units_africa) {
@@ -305,7 +308,7 @@ export class SmbAdapter implements MuseumAdapter {
         objectClass: e.cls,
         regionGroup: e.egypt ? "egypt" : regionGroupFromTerms(e.terms, this.cfg),
         culture: null, // not in search rows; known only after fetchArtwork
-        score: scoreFor(weight, { fragment: flat.has(id) }),
+        score: scoreFor(weight, { fragment: flat.has(id), sherd: sherds.has(id) }),
       };
     }
   }

@@ -2,6 +2,7 @@ export type ObjectClass =
   | "mask"
   | "sculpture"
   | "carved-instrument"
+  | "pottery"
   | "other-carved-cast"
   | "other"
   | "specimen"

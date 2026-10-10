@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { africanOrigin, classifyRecord, isFlatFragment, regionGroupFromPlace, scoreFor } from "../src/adapters/common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, isSherd, regionGroupFromPlace, scoreFor } from "../src/adapters/common.js";
 import { metOriginOk, normaliseMetObject } from "../src/adapters/met.js";
 import { loadProfile } from "../src/config.js";
 
@@ -41,6 +41,9 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(classifyRecord("Furniture and woodwork", "Prestige stool (Kuo fo)", profile)).toBe("other-carved-cast");
     expect(classifyRecord("Tapper", "Ifa Divination Tapper", profile)).toBe("other-carved-cast");
     expect(classifyRecord("Neckrest", "Neckrest", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Stamp seal", "Stamp seal", profile)).toBe("other-carved-cast");
+    expect(classifyRecord("Sealing", "Sealing", profile)).toBe("other");
+    expect(classifyRecord("Cylinder seal", "Cylinder seal", profile)).toBe("other-carved-cast");
     for (const type of ["Coins", "Münze", "Dagger", "Sword", "Spear", "Shield", "Helmet", "Arms and Armor", "Dolch", "Speer"])
       expect(classifyRecord(type, "x", profile)).toBe("other-carved-cast");
     for (const [type, title] of [["Jewelry", "Finger Ring of Shoshenq I"], ["Amulets", "Son of Horus Amulet"], ["Scarabs", "Scarab"], ["Costume and Accessories", "Ring: Figure of Seated Cat"],
@@ -59,6 +62,27 @@ describe("africanOrigin (owner 2026-10-08: origin decides, not travel)", () => {
     expect(isFlatFragment("Textile", "Roundel from a Tunic")).toBe(false);
     expect(scoreFor(10, { fragment: true })).toBeCloseTo(3);
     expect(scoreFor(40)).toBe(40);
+  });
+
+  it("pottery and other vessels are their own class; short words match whole words only", () => {
+    const profile = loadProfile();
+    for (const type of ["Ointment jar", "Jar", "Bowls", "Cosmetic dish", "Vessel", "Vase", "Kohl jar", "Water filter", "Juglet", "Lamp", "Gefäß", "Schale", "Jarre", "Ceramic fragment"]) {
+      expect(classifyRecord(type, "x", profile)).toBe("pottery");
+    }
+    expect(classifyRecord("Fragment", "Fragment", profile, "Ceramics")).toBe("pottery");
+    expect(classifyRecord("Potential record", "x", profile)).toBe("other");
+    expect(classifyRecord("Cupid", "x", profile)).toBe("other");
+    expect(classifyRecord("Canopic jar", "x", profile)).toBe("sculpture");
+    expect(classifyRecord("Head vessel", "x", profile)).toBe("sculpture"); // sculpture is checked first
+    expect(profile.classes.pottery).toBeGreaterThan(profile.classes["other-carved-cast"]);
+  });
+
+  it("pottery fragments rank at half the pottery weight, whole vessels and other fragments do not", () => {
+    expect(isSherd("pottery", "Vessel fragment", "x")).toBe(true);
+    expect(isSherd("pottery", "Ceramic fragment", "Sherd")).toBe(true);
+    expect(isSherd("pottery", "Jar", "Jar with lid")).toBe(false);
+    expect(isSherd("other-carved-cast", "Ring fragment", "x")).toBe(false);
+    expect(scoreFor(60, { sherd: true })).toBe(30);
   });
 
   it("regional grouping covers Coptic and Carthage wording", () => {

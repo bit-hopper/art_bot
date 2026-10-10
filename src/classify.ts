@@ -27,6 +27,11 @@ export function matchesTerms(text: string, words: string[]): boolean {
   return hasAny(lower, tokens(lower), words);
 }
 
+/** Whole-word match with an English plural folded ("jars", "dishes"): short words like "pot" and "cup" must not match inside other words. */
+function isWholeWord(words: string[], token: string): boolean {
+  return words.includes(token) || (token.endsWith("s") && words.includes(token.slice(0, -1))) || (token.endsWith("es") && words.includes(token.slice(0, -2)));
+}
+
 /** Derive `object_class` from the museum's own object type wording (spec 4.1, steps 1 and 2). */
 export function classify(objectType: string | null | undefined, profile: FilterProfile): ObjectClass {
   const text = (objectType ?? "").toLowerCase();
@@ -41,6 +46,8 @@ export function classify(objectType: string | null | undefined, profile: FilterP
   if (hasAny(text, toks, kw["carved-instrument"])) return "carved-instrument";
   if (hasAny(text, toks, kw["other-carved-cast"])) return "other-carved-cast";
   if (hasAny(text, toks, kw.sculpture) || toks.some((t) => kw.sculpture_whole_word.includes(t))) return "sculpture";
+  // Whole words count only before the first comma: the Met's object names carry tag lists ("priest, jar, kneeling").
+  if (hasAny(text, toks, kw.pottery) || tokens(text.split(/[,;]/)[0]!).some((t) => isWholeWord(kw.pottery_whole_word, t))) return "pottery";
   return "other";
 }
 
