@@ -8,6 +8,15 @@ import { africanOrigin, classifyRecord, isFlatFragment, isSherd, mapLimit, nonEm
 const API = "https://collectionapi.metmuseum.org/public/collection";
 const PAGE = 500;
 const CHUNK = 200;
+/**
+ * Overlapping date windows (years, BCE negative) for a department whose search has more than 10,000 hits. An object is
+ * found when its date range lies inside a window, so the windows overlap and mix widths; measured on 2026-10-10 they
+ * recover 14,274 of Egyptian Art's 14,413 hits (the base 10,000 plus 4,274), the rest being undated or very wide ranges.
+ */
+const DATE_WINDOWS: Array<[number, number]> = [
+  [-10000, -3000], [-3000, -2000], [-2000, -1500], [-1500, -1000], [-1000, -500], [-500, 0], [0, 500], [500, 1000], [1000, 3000],
+  [-3500, -1500], [-2500, -500], [-1500, 0], [-1000, 500],
+];
 /** An object without an image is looked at again after this many days (the Met keeps releasing Open Access images). */
 const NO_IMAGE_RECHECK_DAYS = 30;
 
@@ -119,16 +128,28 @@ export class MetAdapter implements MuseumAdapter {
     this.enabled = cfg.enabled;
   }
 
-  private async ids(dept: MetSourceConfig["departments"][number]): Promise<number[]> {
-    const out: number[] = [];
+  /** All ids a search returns, paged; stops at the Met's 10,000-offset limit (`total` then exceeds `ids.length`). */
+  private async search(dept: MetSourceConfig["departments"][number], extra: Record<string, string> = {}): Promise<{ ids: number[]; total: number }> {
+    const ids: number[] = [];
     for (let offset = 0; ; offset += PAGE) {
-      const q = new URLSearchParams({ departmentId: String(dept.id), hasImages: "true", q: "*", limit: String(PAGE), offset: String(offset) });
+      const q = new URLSearchParams({ departmentId: String(dept.id), hasImages: "true", q: "*", limit: String(PAGE), offset: String(offset), ...extra });
       if (dept.geo_location) q.set("geoLocation", dept.geo_location);
       const page = await this.http.getJson<SearchResponse>(`${API}/v1.1/search?${q}`);
       const got = page.objectIDs ?? [];
-      out.push(...got);
-      if (got.length === 0 || out.length >= page.total) return out;
+      ids.push(...got);
+      if (got.length === 0 || ids.length >= page.total) return { ids, total: page.total };
     }
+  }
+
+  private async ids(dept: MetSourceConfig["departments"][number]): Promise<number[]> {
+    const first = await this.search(dept);
+    if (first.ids.length >= first.total) return first.ids;
+    // The search refuses offsets past 10,000 (Egyptian Art has 14,400 hits): the ids it never reaches are found by date windows.
+    const seen = new Set(first.ids);
+    for (const [dateBegin, dateEnd] of DATE_WINDOWS) {
+      for (const id of (await this.search(dept, { dateBegin: String(dateBegin), dateEnd: String(dateEnd) })).ids) seen.add(id);
+    }
+    return [...seen];
   }
 
   private object(id: number | string): Promise<MetObject> {

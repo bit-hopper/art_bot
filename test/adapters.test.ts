@@ -94,6 +94,23 @@ describe("Met", () => {
     void af;
   });
 
+  it("finds the ids past the search's 10,000-offset limit with date windows", async () => {
+    const eg = json("met/egypt-obj.json");
+    const one = { ...cfg, departments: [{ id: 10, geo_location: null, egypt: true }] };
+    const { http, urls } = fake((u) => {
+      if (!u.includes("/v1.1/search")) return eg;
+      if (u.includes("dateBegin=-1500&dateEnd=-1000")) return { total: 1, objectIDs: [329767] };
+      if (u.includes("dateBegin")) return { total: 0, objectIDs: null };
+      return u.includes("offset=0&") || u.includes("offset=0") ? { total: 5, objectIDs: [1, 2] } : { total: 5, objectIDs: [] }; // total 5, but only 2 reachable
+    });
+    const cache = new JsonCache<MetCacheEntry>(null);
+    cache.set("1", { day: Math.floor(Date.now() / 86_400_000), row: null, v: CLASS_VERSION });
+    cache.set("2", { day: Math.floor(Date.now() / 86_400_000), row: null, v: CLASS_VERSION });
+    await collect(new MetAdapter(one, profile, http, { cache }).buildIndex());
+    expect(urls.filter((u) => u.includes("dateBegin")).length).toBeGreaterThan(5);
+    expect(urls.filter((u) => u.includes("/objects/"))).toEqual([`${"https://collectionapi.metmuseum.org/public/collection"}/v1/objects/329767`]);
+  });
+
   it("fetches a cached row again when it was classified by an older rule set", async () => {
     const eg = json("met/egypt-obj.json");
     const cache = new JsonCache<MetCacheEntry>(null);
