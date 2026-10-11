@@ -110,8 +110,11 @@ sources:
     max_new_per_run: 12000         # ~3.7 h at 1.1 s; the daily workflow allows 340 min
     # Departments sit in long runs of consecutive ids (sampled 2026-10-10: Egyptian ids ~0-54k and again ~340k+, Oriental,
     # Greek/Roman, Paintings in between). Every 100th id is fetched first; stretches between two probes of the same
-    # unwanted department are skipped, which leaves roughly a fifth of the 251k ids to fetch.
+    # unwanted department are skipped.
     probe_stride: 100
+    # Egyptian stretches only (~57k ids, ~89% postable). The origin-rule departments are 154k more ids at ~0.7% yield
+    # (11 of 1,563, 2026-10-10); the probes still index any African-made object they land on. Set true to crawl them.
+    crawl_origin_stretches: false
     exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)
   nmafa:
     enabled: true                  # audit passed 2026-10-09 (111 rows read, see spec 0)

@@ -32,6 +32,11 @@ export interface LouvreSourceConfig extends SourceConfig {
    * origin-rule ones, and a stretch whose two probes are the same other department is skipped. Unset or 0 crawls every id.
    */
   probe_stride?: number;
+  /**
+   * Crawl the stretches of the origin-rule departments too. Off by default in config: they are 60% of the ids and yielded
+   * 11 postable objects in 1,563 fetched (2026-10-10); the probes still index any African-made object they land on.
+   */
+  crawl_origin_stretches?: boolean;
 }
 
 /** Bumped when the selection rule changes, so ids rejected under an older rule are fetched again. */
@@ -359,6 +364,7 @@ export class LouvreAdapter implements MuseumAdapter {
       const right = lo + stride < all.length ? deptOf(all[lo + stride]!) : left;
       const tier = Math.min(tierOf(left), tierOf(right));
       if (tier === 3 && left === right) continue;
+      if (tier > 1 && !this.cfg.crawl_origin_stretches) continue;
       (tier === 1 ? egyptFirst : originNext).push(...all.slice(lo + 1, lo + stride));
     }
     return [...egyptFirst, ...originNext];

@@ -180,6 +180,18 @@ describe("Louvre index build", () => {
     expect(rows).toHaveLength(4);
   });
 
+  it("crawls the stretches of an origin-rule department only when crawl_origin_stretches is on", async () => {
+    const ids = Array.from({ length: 9 }, (_, i) => `cl01000000${i + 1}`);
+    const rec = (id: string) => JSON.stringify({ ...json("shabti.json"), arkId: id, collection: "Département des Antiquités grecques, étrusques et romaines" });
+    const fetchedWith = async (on: boolean) => {
+      const { http, urls } = fake((u) => (u.endsWith("sitemap0.xml") ? sitemap(...ids) : u.endsWith(".json") ? rec(u.split("/").pop()!.replace(".json", "")) : route(u)));
+      await collect(new LouvreAdapter({ ...cfg, probe_stride: 4, crawl_origin_stretches: on, origin_collections: ["Département des Antiquités grecques, étrusques et romaines"] }, profile, http).buildIndex());
+      return urls.filter((u) => u.endsWith(".json")).map((u) => u.split("/").pop()!.slice(-6, -5)).sort();
+    };
+    expect(await fetchedWith(false)).toEqual(["1", "5", "9"]);
+    expect(await fetchedWith(true)).toEqual(["1", "2", "3", "4", "5", "6", "7", "8", "9"]);
+  });
+
   it("keeps the previous id list when the sitemap refresh is refused", async () => {
     const idsCache = new JsonCache<LouvreIdsEntry>(null);
     idsCache.set("ids", { day: 0, ids: ["cl010026595"] });
