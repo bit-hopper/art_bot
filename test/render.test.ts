@@ -109,6 +109,12 @@ describe("render: provenance note", () => {
     expect(pickProvenanceNote("Bought in 1920. Then sold.", ["looted"])).toEqual({ text: "Bought in 1920.", flagged: false });
     expect(pickProvenanceNote("  ", [])).toBeNull();
   });
+  it("does not split at a German century, an ordinal or an abbreviated month", () => {
+    const smb = "19. Jh., Auftrag im Königreich Benin; in unbekanntem Besitz nach Feb. 1897; erworben von W.H. Himburg, 1902.";
+    expect(pickProvenanceNote(smb, [])?.text).toBe(smb);
+    expect(pickProvenanceNote("Erworben am 3. Mai 1900. Danach verkauft.", [])?.text).toBe("Erworben am 3. Mai 1900.");
+    expect(pickProvenanceNote("Siehe Fig. 4 und Abb. 5 von 1910. Danach verkauft.", [])?.text).toBe("Siehe Fig. 4 und Abb. 5 von 1910.");
+  });
 });
 
 describe("render: counting", () => {

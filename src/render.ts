@@ -119,8 +119,13 @@ export function rightsLine(a: Artwork, resized: boolean): string {
   }
 }
 
-/** A full stop ends a sentence only after two lowercase letters or digits, so initials ("C. White"), "c. 1912" and "N.Y." survive. */
-const SENTENCE_END = /(?<=[\p{Ll}\d)\]]{2}[.!?])\s+(?=[\p{Lu}\d])/u;
+/**
+ * A full stop ends a sentence only after two lowercase letters or digits, so initials ("C. White"), "c. 1912" and "N.Y." survive.
+ * Not after a one- or two-digit number (German ordinals and centuries: "19. Jh.", "am 3. Mai") or a common abbreviation
+ * ("Feb. 1897", "Nr. 12"); a four-digit year still ends a sentence.
+ */
+const SENTENCE_END =
+  /(?<=[\p{Ll}\d)\]]{2}[.!?])(?<!\b(?:\d{1,2}|[Jj]an|[Ff]eb|[Mm]ar|[Aa]pr|[Jj]un|[Jj]ul|[Aa]ug|[Ss]ep|[Ss]ept|[Oo]ct|[Nn]ov|[Dd]ec|[Jj]hs?|[Nn]rs?|[Nn]os?|[Vv]ol|[Ff]ig|[Aa]bb|[Bb]zw|[Uu]sw)\.)\s+(?=[\p{Lu}\d])/u;
 
 export interface ProvenanceNote {
   text: string;
