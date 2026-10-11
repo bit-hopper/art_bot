@@ -2,7 +2,7 @@ import { execFileSync } from "node:child_process";
 import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { clearAlert, raiseAlert } from "../src/alert.js";
 import { evaluateHealth } from "../src/health.js";
 import { Ledger, type LedgerRow } from "../src/ledger.js";
@@ -110,10 +110,19 @@ describe("health (spec 10)", () => {
 });
 
 describe("pushState (spec 8.3: the claim reaches the state branch before anything is published)", () => {
+  // Like a CI runner: no global git identity, and git may not guess one.
+  const emptyConfig = path.join(mkdtempSync(path.join(tmpdir(), "no-git-config-")), "config");
+  writeFileSync(emptyConfig, "");
+  const noIdentity = { GIT_CONFIG_GLOBAL: emptyConfig, GIT_CONFIG_SYSTEM: emptyConfig, GIT_CONFIG_COUNT: "1", GIT_CONFIG_KEY_0: "user.useConfigOnly", GIT_CONFIG_VALUE_0: "true" };
+  const saved = Object.fromEntries(Object.keys(noIdentity).map((k) => [k, process.env[k]]));
+  beforeEach(() => {
+    Object.assign(process.env, noIdentity);
+  });
   afterEach(() => {
     delete process.env.STATE_GIT;
+    for (const [k, v] of Object.entries(saved)) v === undefined ? delete process.env[k] : (process.env[k] = v);
   });
-  const git = (cwd: string, ...a: string[]) => execFileSync("git", a, { cwd, encoding: "utf8" });
+  const git =(cwd: string, ...a: string[]) => execFileSync("git", a, { cwd, encoding: "utf8" });
 
   it("commits, rebases over a concurrent push and pushes; does nothing when off or unchanged", () => {
     const root = mkdtempSync(path.join(tmpdir(), "state-sync-"));

@@ -2,6 +2,8 @@ import { execFileSync } from "node:child_process";
 import { stateDir } from "./state.js";
 
 const git = (args: string[], cwd: string) => execFileSync("git", args, { cwd, stdio: ["ignore", "pipe", "pipe"], encoding: "utf8" });
+// A runner has no git identity, and a rebase that replays our commit needs one just as the commit itself does.
+const identity = ["-c", "user.name=art-bot", "-c", "user.email=art-bot@users.noreply.github.com"];
 
 /**
  * Spec 8.3: the claim row is pushed before anything is published, and again after each publish step. In Actions the
@@ -17,16 +19,17 @@ export function pushState(message: string, opts: { dir?: string; attempts?: numb
     git(["diff", "--cached", "--quiet"], dir);
     return false; // nothing to commit
   } catch {
-    git(["-c", "user.name=art-bot", "-c", "user.email=art-bot@users.noreply.github.com", "commit", "-q", "-m", message], dir);
+    git([...identity, "commit", "-q", "-m", message], dir);
   }
   let lastError = "";
   for (let i = 0; i < (opts.attempts ?? 5); i++) {
     try {
-      git(["pull", "--rebase", "-q", "origin", branch], dir);
+      git([...identity, "pull", "--rebase", "-q", "origin", branch], dir);
       git(["push", "-q", "origin", `HEAD:${branch}`], dir);
       return true;
     } catch (e) {
-      lastError = e instanceof Error ? e.message : String(e);
+      const stderr = (e as { stderr?: unknown }).stderr;
+      lastError = (typeof stderr === "string" && stderr.trim() ? stderr : e instanceof Error ? e.message : String(e)).trim();
       try {
         git(["rebase", "--abort"], dir);
       } catch {
