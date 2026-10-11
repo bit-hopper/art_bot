@@ -166,6 +166,20 @@ describe("Louvre index build", () => {
     expect(b.incomplete).toBe(true);
   });
 
+  it("probes every Nth id and skips the stretches between two probes of the same unwanted department", async () => {
+    const ids = Array.from({ length: 9 }, (_, i) => `cl01000000${i + 1}`);
+    const rec = (id: string) => {
+      const collection = Number(id.slice(-1)) <= 4 ? "Département des Antiquités égyptiennes" : "Département des Peintures";
+      return JSON.stringify({ ...json("shabti.json"), arkId: id, collection });
+    };
+    const { http, urls } = fake((u) => (u.endsWith("sitemap0.xml") ? sitemap(...ids) : u.endsWith(".json") ? rec(u.split("/").pop()!.replace(".json", "")) : route(u)));
+    const rows = await collect(new LouvreAdapter({ ...cfg, probe_stride: 4 }, profile, http).buildIndex());
+    const fetched = urls.filter((u) => u.endsWith(".json")).map((u) => u.split("/").pop()!.slice(-6, -5)).sort();
+    // probes 1, 5 and 9; the stretch 1..5 touches Egypt so 2-4 are fetched; 5..9 are both paintings so 6-8 are not
+    expect(fetched).toEqual(["1", "2", "3", "4", "5", "9"]);
+    expect(rows).toHaveLength(4);
+  });
+
   it("keeps the previous id list when the sitemap refresh is refused", async () => {
     const idsCache = new JsonCache<LouvreIdsEntry>(null);
     idsCache.set("ids", { day: 0, ids: ["cl010026595"] });

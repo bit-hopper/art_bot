@@ -26,6 +26,12 @@ export interface LouvreSourceConfig extends SourceConfig {
   /** A denomination containing one of these is a broken piece and is not posted (owner, 2026-10-08). */
   exclude_terms: string[];
   max_new_per_run: number;
+  /**
+   * The ids carry no department, but a department holds long runs of consecutive ids. Every Nth id is fetched first (a
+   * probe); then only the stretches between probes that touch a wanted department are crawled, Egyptian ones before the
+   * origin-rule ones, and a stretch whose two probes are the same other department is skipped. Unset or 0 crawls every id.
+   */
+  probe_stride?: number;
 }
 
 /** Bumped when the selection rule changes, so ids rejected under an older rule are fetched again. */
@@ -35,6 +41,8 @@ export interface LouvreCacheEntry {
   day: number;
   v?: number;
   row: IndexRow | null;
+  /** The record's department, kept for every fetched object so the probes can steer the crawl (absent on older entries). */
+  dept?: string;
   /** Set on an Egyptian object that had no image yet. */
   retry?: true;
 }
@@ -280,34 +288,46 @@ export class LouvreAdapter implements MuseumAdapter {
     const remember = (id: string, entry: LouvreCacheEntry) => (cache ? cache.set(id, entry) : void local.set(id, entry));
 
     let budget = this.cfg.max_new_per_run;
-    try {
-      for (let i = 0; i < all.length; i += CHUNK) {
-        const wanted = all.slice(i, i + CHUNK).filter((id) => stale(known(id)));
+    const fetchOne = async (id: string): Promise<void> => {
+      let r: LouvreRecord;
+      try {
+        r = await this.record(id);
+      } catch (e) {
+        if (!(e instanceof HttpError && e.status === 404)) throw e;
+        return remember(id, { day: today, row: null });
+      }
+      const a = normaliseLouvreRecord(r, this.profile, this.cfg.exclude_terms, this.cfg.egypt_collections);
+      const weight = classWeight(a.objectClass, this.profile);
+      const wanted = this.wanted(a, r);
+      const row: IndexRow | null =
+        !wanted || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
+          ? null
+          : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { fragment: isFlatFragment(a.objectType, a.title) }) };
+      const dept = a.department ?? undefined;
+      remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, row, dept, retry: true } : { day: today, v: CACHE_VERSION, row, dept });
+    };
+    /** Fetches the stale ids of one list within the per-run budget; false once the budget is spent. */
+    const crawl = async (ids: string[]): Promise<boolean> => {
+      for (let i = 0; i < ids.length; i += CHUNK) {
+        const wanted = ids.slice(i, i + CHUNK).filter((id) => stale(known(id)));
         const todo = wanted.slice(0, budget);
         budget -= todo.length;
         if (todo.length < wanted.length) this.incomplete = true;
-        await mapLimit(todo, 1, async (id) => {
-          let r: LouvreRecord;
-          try {
-            r = await this.record(id);
-          } catch (e) {
-            if (!(e instanceof HttpError && e.status === 404)) throw e;
-            return remember(id, { day: today, row: null });
-          }
-          const a = normaliseLouvreRecord(r, this.profile, this.cfg.exclude_terms, this.cfg.egypt_collections);
-          const weight = classWeight(a.objectClass, this.profile);
-          const wanted = this.wanted(a, r);
-          const row: IndexRow | null =
-            !wanted || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
-              ? null
-              : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { fragment: isFlatFragment(a.objectType, a.title) }) };
-          remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, row, retry: true } : { day: today, v: CACHE_VERSION, row });
-        });
+        await mapLimit(todo, 1, fetchOne);
         if (budget <= 0) {
           this.incomplete = true;
-          break;
+          return false;
         }
         if (i % (CHUNK * 5) === 0) cache?.save();
+      }
+      return true;
+    };
+    try {
+      const stride = this.cfg.probe_stride ?? 0;
+      if (stride > 1) {
+        if (await crawl(all.filter((_, i) => i % stride === 0))) await crawl(this.stretches(all, stride, known));
+      } else {
+        await crawl(all);
       }
     } catch (e) {
       cache?.save();
@@ -320,6 +340,28 @@ export class LouvreAdapter implements MuseumAdapter {
       const row = known(id)?.row;
       if (row) yield row;
     }
+  }
+
+  /**
+   * The ids between the probes that are worth fetching: Egyptian stretches first, then the origin-rule departments, each in
+   * id order. A stretch is skipped when both its probes are the same unwanted department; a probe with no known department
+   * (an older cache entry, a 404) counts as wanted.
+   */
+  private stretches(all: string[], stride: number, known: (id: string) => LouvreCacheEntry | undefined): string[] {
+    const egypt = new Set(this.cfg.egypt_collections);
+    const origin = new Set(this.cfg.origin_collections ?? []);
+    const deptOf = (id: string): string | undefined => known(id)?.dept;
+    const tierOf = (d: string | undefined): number => (d === undefined || egypt.has(d) ? 1 : origin.has(d) ? 2 : 3);
+    const egyptFirst: string[] = [];
+    const originNext: string[] = [];
+    for (let lo = 0; lo < all.length; lo += stride) {
+      const left = deptOf(all[lo]!);
+      const right = lo + stride < all.length ? deptOf(all[lo + stride]!) : left;
+      const tier = Math.min(tierOf(left), tierOf(right));
+      if (tier === 3 && left === right) continue;
+      (tier === 1 ? egyptFirst : originNext).push(...all.slice(lo + 1, lo + stride));
+    }
+    return [...egyptFirst, ...originNext];
   }
 
   /** Egyptian Antiquities in full; the mixed departments only when the place of creation is African. */

@@ -89,7 +89,7 @@ sources:
     retries: 3
     query: "continent:Africa"      # Egypt is inside continent:Africa; no rights filter (spec 7.1)
   louvre:
-    enabled: false                 # off until the production gate (spec 11.4) passes
+    enabled: true                  # owner 2026-10-10; the index fills over several runs (probe_stride below), posts use what is indexed
     kind: scrape
     rights_mode: attributed        # owner 2026-10-08: educational use falls under the terms' teaching use; credit + permalink are its only condition
     source_weight: 1.0
@@ -107,7 +107,11 @@ sources:
       - "Département des Arts de l'Islam"
       - "Département des Arts de Byzance et des chrétientés en Orient"
     ark_prefixes: ["cl01"]         # cl02 is prints and drawings (0 of 21 Egyptian in the 2026-10-08 sample)
-    max_new_per_run: 3000
+    max_new_per_run: 12000         # ~3.7 h at 1.1 s; the daily workflow allows 340 min
+    # Departments sit in long runs of consecutive ids (sampled 2026-10-10: Egyptian ids ~0-54k and again ~340k+, Oriental,
+    # Greek/Roman, Paintings in between). Every 100th id is fetched first; stretches between two probes of the same
+    # unwanted department are skipped, which leaves roughly a fifth of the 251k ids to fetch.
+    probe_stride: 100
     exclude_terms: [fragment]      # owner 2026-10-08: no fragments (checked on every denomination, not only the title)
   nmafa:
     enabled: true                  # audit passed 2026-10-09 (111 rows read, see spec 0)
