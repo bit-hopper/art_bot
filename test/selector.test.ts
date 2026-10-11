@@ -8,6 +8,7 @@ import { cappedRegions, cultureRepeats, exhaustedTiers, rowWeight, selectArtwork
 import type { Artwork, IndexRow, ObjectClass, RegionGroup } from "../src/types.js";
 
 const profile = loadProfile();
+const egyptCap = profile.region_share_caps.egypt!;
 
 function rng(seed: number) {
   return () => ((seed = (seed * 1664525 + 1013904223) >>> 0) / 2 ** 32);
@@ -165,9 +166,10 @@ describe("selectArtwork", () => {
     const l = new Ledger(null, rows.map((r, i) => posted(r, i)));
     expect(await selectArtwork({ ...base, rows, ledger: l, fetch: async (r) => art(r) })).toMatchObject({ ok: false, reason: "POOL_EMPTY" });
 
-    const egypt = Array.from({ length: 11 }, (_, i) => row(100 + i, "met", "mask", "egypt"));
-    const l2 = new Ledger(null, egypt.slice(0, 10).map((r, i) => posted(r, i)));
-    const sel = await selectArtwork({ ...base, rows: [egypt[10]!], ledger: l2, fetch: async (r) => art(r) });
+    const atCap = Math.ceil(24 * egyptCap);
+    const egypt = Array.from({ length: atCap + 1 }, (_, i) => row(100 + i, "met", "mask", "egypt"));
+    const l2 = new Ledger(null, egypt.slice(0, atCap).map((r, i) => posted(r, i)));
+    const sel = await selectArtwork({ ...base, rows: [egypt[atCap]!], ledger: l2, fetch: async (r) => art(r) });
     expect(sel).toMatchObject({ ok: false, reason: "POOL_EMPTY" });
   });
 
@@ -218,7 +220,7 @@ describe("selector simulation: 1,000 runs on a toy index", () => {
     expect(meanPos("sculpture")).toBeLessThan(meanPos("other"));
 
     for (let i = 0; i + 24 <= regions.length; i++) {
-      expect(regions.slice(i, i + 24).filter((g) => g === "egypt").length).toBeLessThanOrEqual(10); // 40% of 24 = 9.6, capped at 10
+      expect(regions.slice(i, i + 24).filter((g) => g === "egypt").length).toBeLessThanOrEqual(Math.ceil(24 * egyptCap));
     }
     // Fairness is a soft halving, not a hard cap: the triple-weight source leads, but by less than its raw 3/5 share.
     const share = sources.filter((x) => x === "c").length / sources.length;
