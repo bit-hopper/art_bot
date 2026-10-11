@@ -154,6 +154,7 @@ interface ReplyParts {
   rights: string | null;
   provenance: string | null;
   description: string | null;
+  note: string | null;
   url: string | null;
 }
 
@@ -167,12 +168,15 @@ function composeReply(p: ReplyParts): string {
     p.rights,
     p.provenance ? `Provenance: ${p.provenance}` : null,
     p.description,
+    p.note,
     p.url,
   ]
     .filter((l): l is string => l !== null)
     .join("\n");
 }
 
+/** Spec 6.7: translated text is flagged; the museum link carries the original. Never dropped for room. */
+const MACHINE_TRANSLATION = "[machine translation]";
 const MIN_DESCRIPTION = 40;
 const MIN_PROVENANCE = 24;
 
@@ -191,6 +195,7 @@ export function renderReply(
     rights: rightsLine(a, opts.resized ?? false),
     provenance: opts.provenance?.text ?? null,
     description: clean(a.description),
+    note: a.translated ? MACHINE_TRANSLATION : null,
     url: a.objectUrl,
   };
   const fits = () => measure(composeReply(p), platform) <= limit;

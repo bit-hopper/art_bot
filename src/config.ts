@@ -58,6 +58,8 @@ export interface SourceConfig {
   min_interval_ms: number;
   timeout_ms?: number;
   retries?: number;
+  /** Language of the record's free text; anything but English is machine-translated at post time (spec 6.7). */
+  language?: string;
 }
 
 function load<T>(file: string): T {

@@ -4,6 +4,7 @@ sources:
     enabled: true
     kind: scrape
     rights_mode: attributed-nc     # owner decision 2026-10-08: post each image under its own licence
+    language: de                   # free text is machine-translated at post time (spec 6.7); titles stay German
     source_weight: 2.0             # largest collection; tune once real posting data exists (spec 5.2)
     min_interval_ms: 1000          # <= 1 request per second (spec 7.3)
     # The portal's geography filter is a term match with no continent hierarchy, so Africa is enumerated
@@ -91,6 +92,7 @@ sources:
   louvre:
     enabled: true                  # owner 2026-10-10; the index fills over several runs (probe_stride below), posts use what is indexed
     kind: scrape
+    language: fr                   # free text is machine-translated at post time (spec 6.7)
     rights_mode: attributed        # owner 2026-10-08: educational use falls under the terms' teaching use; credit + permalink are its only condition
     source_weight: 1.0
     min_interval_ms: 1100          # <= 1 request per second (spec 7.3); the JSON endpoint answered 100 of 100 at 1.1 s (2026-10-08)

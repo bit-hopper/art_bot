@@ -49,6 +49,8 @@ export interface Artwork {
   photographer: string | null;
   rightsStatus: RightsStatus;
   objectUrl: string;
+  /** Set when the free-text fields were machine-translated at post time (spec 6.7); the reply then says so. */
+  translated?: boolean;
 }
 
 /** Cheap row written to `index/<source>.jsonl` by the daily job. */

@@ -13,6 +13,7 @@ import { login, publish } from "./publishers/bluesky.js";
 import { fetchRecentPosts, reconcile } from "./reconcile.js";
 import { LIMITS, measure, renderPost } from "./render.js";
 import { selectArtwork } from "./selector.js";
+import { translateArtwork } from "./translate.js";
 import { ledgerFile, readIndex } from "./state.js";
 import { pushState } from "./state-sync.js";
 import type { Artwork, IndexRow, MuseumAdapter } from "./types.js";
@@ -86,7 +87,10 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
     failures++;
     break;
   }
-  const { artwork, image } = picked;
+  const { image } = picked;
+  const original = picked.artwork;
+  // Spec 6.7: free text of non-English sources is translated for the one chosen object; any failure keeps the original.
+  const artwork = await translateArtwork(original);
   const opts = { resized: image.resized, provenanceFlags: deny.provenance_flags };
   const bsky = renderPost(artwork, "bluesky", opts);
   const threads = renderPost(artwork, "threads", opts);
@@ -98,6 +102,7 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
     console.log(`--- Bluesky reply (${measure(bsky.reply, "bluesky")}/${LIMITS.bluesky})\n${bsky.reply}`);
     console.log(`--- Threads reply (${measure(threads.reply, "threads")}/${LIMITS.threads})\n${threads.reply}`);
     console.log(`--- alt (${measure(bsky.alt, "threads")}/1000)\n${bsky.alt}`);
+    if (artwork.translated) console.log(`--- original text, before translation\n${renderPost(original, "bluesky", opts).reply}`);
     ledger.append({ ...claimRow(artwork, artwork.objectClass), status: "posted_all", postedAt: new Date().toISOString() });
     continue;
   }

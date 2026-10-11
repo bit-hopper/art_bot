@@ -40,6 +40,7 @@ jobs:
           DRY_INPUT: ${{ inputs.dry_run }}
           BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
           BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
         run: |
           # A real post needs the repository variable LIVE=true, so nothing goes out before the owner switches it on.
           if [ "$LIVE" != "true" ] && [ "$EVENT" = "schedule" ]; then echo "LIVE is not true; skipping the scheduled run"; exit 0; fi
