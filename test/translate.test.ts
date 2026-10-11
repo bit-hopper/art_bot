@@ -6,7 +6,7 @@ import type { Artwork } from "../src/types.js";
 const smb: Artwork = {
   key: "smb:1", source: "smb", sourceObjectId: "1", accessionNumber: "III C 1", title: "Menschliche Figur", objectType: "Plastik",
   objectClass: "sculpture", culture: null, country: "Nigeria", region: null, regionGroup: "sub-saharan", dateDisplay: null,
-  medium: "Bronze", dimensions: null, department: "Ethnologisches Museum", creditLine: null, description: "[Benin_Königreich]",
+  medium: "Bronze", dimensions: "Höhe: 16 cm", department: "Ethnologisches Museum", creditLine: null, description: "[Benin_Königreich]",
   provenanceNote: "19. Jh., Auftrag im Königreich Benin.", onView: false, gallery: null, imageUrl: "https://example.org/x.jpg",
   imageLicense: "CC BY-NC-SA 4.0", photographer: "A. Photographer", rightsStatus: "attributed-nc", objectUrl: "https://id.smb.museum/object/1",
 };
@@ -30,13 +30,13 @@ describe("translate", () => {
   it("translates the four free-text fields in one call and leaves title, place and accession alone", async () => {
     const { fetchImpl, calls } = fakeDeepl();
     const t = await translateArtwork(smb, opts({ fetchImpl }));
-    expect(t).toMatchObject({ objectType: "EN(Plastik)", medium: "EN(Bronze)", description: "EN([Benin_Königreich])", provenanceNote: "EN(19. Jh., Auftrag im Königreich Benin.)", translated: true });
+    expect(t).toMatchObject({ objectType: "EN(Plastik)", medium: "EN(Bronze)", dimensions: "EN(Höhe: 16 cm)", description: "EN([Benin_Königreich])", provenanceNote: "EN(19. Jh., Auftrag im Königreich Benin.)", translated: true });
     expect(t).toMatchObject({ title: "Menschliche Figur", country: "Nigeria", accessionNumber: "III C 1", creditLine: null });
     const post = calls.find((c) => c.url.endsWith("/translate"))!;
     expect(post.url).toBe("https://api-free.deepl.com/v2/translate");
     expect(post.auth).toBe("DeepL-Auth-Key k:fx");
     expect(post.body).toMatchObject({ source_lang: "DE", target_lang: "EN-US" });
-    expect(post.body.text).toHaveLength(4);
+    expect(post.body.text).toHaveLength(5);
   });
 
   it("sends nothing for an English source, a missing key, or a record with no free text", async () => {
@@ -44,7 +44,7 @@ describe("translate", () => {
     expect(await translateArtwork(smb, opts({ fetchImpl, language: () => undefined }))).toBe(smb);
     expect(await translateArtwork(smb, opts({ fetchImpl, language: () => "en" }))).toBe(smb);
     expect(await translateArtwork(smb, { language: () => "de", fetchImpl, log: quiet, key: "" })).toBe(smb);
-    const bare = { ...smb, objectType: null, medium: " ", description: null, provenanceNote: null };
+    const bare = { ...smb, objectType: null, medium: " ", dimensions: null, description: null, provenanceNote: null };
     expect(await translateArtwork(bare, opts({ fetchImpl }))).toBe(bare);
     expect(calls).toHaveLength(0);
   });
