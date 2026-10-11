@@ -119,6 +119,12 @@ export class Ledger {
       .sort((a, b) => (a.postedAt ?? a.claimedAt).localeCompare(b.postedAt ?? b.claimedAt));
   }
 
+  /** Minutes since the latest published post, or null when there is none. */
+  minutesSinceLastPost(now = new Date()): number | null {
+    const last = this.posts().at(-1);
+    return last ? (now.getTime() - Date.parse(last.postedAt ?? last.claimedAt)) / 60_000 : null;
+  }
+
   recent(n: number): LedgerRow[] {
     return this.posts().slice(-n);
   }

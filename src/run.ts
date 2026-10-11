@@ -69,6 +69,14 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
 let failures = 0;
 let agent: Awaited<ReturnType<typeof login>> | null = null;
 if (!dryRun) {
+  // Minimum gap: several triggers (GitHub's schedule, an external scheduler, a manual run) may fire in the same hour, and
+  // only the first should post. MIN_GAP_MINUTES=0 turns the guard off for a deliberate extra post.
+  const gap = Number(process.env.MIN_GAP_MINUTES || 40);
+  const since = ledger.minutesSinceLastPost();
+  if (since !== null && since < gap) {
+    log({ event: "too-soon", minutesSinceLastPost: Math.floor(since), minGap: gap });
+    process.exit(0);
+  }
   const identifier = process.env.BSKY_IDENTIFIER;
   const password = process.env.BSKY_APP_PASSWORD;
   if (!identifier || !password) throw new Error("BSKY_IDENTIFIER and BSKY_APP_PASSWORD are required for a live run");

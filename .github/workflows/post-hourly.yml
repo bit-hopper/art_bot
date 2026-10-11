@@ -8,6 +8,10 @@ on:
         description: "Render only; nothing is posted or written to the ledger"
         type: boolean
         default: true
+      force:
+        description: "Post even if the last post was under 40 minutes ago"
+        type: boolean
+        default: false
 concurrency:
   group: art-bot
   cancel-in-progress: false
@@ -38,6 +42,7 @@ jobs:
           LIVE: ${{ vars.LIVE }}
           EVENT: ${{ github.event_name }}
           DRY_INPUT: ${{ inputs.dry_run }}
+          MIN_GAP_MINUTES: ${{ inputs.force && '0' || '40' }}
           BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
           BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
           DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}

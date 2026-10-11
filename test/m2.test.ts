@@ -52,6 +52,19 @@ describe("reconcile (spec 8.3 step 4)", () => {
   });
 });
 
+describe("minimum gap between posts", () => {
+  it("measures minutes from the latest published post and ignores claims and failures", () => {
+    const ledger = new Ledger(null, [
+      row("met:1", "posted_bluesky", "2026-10-10T10:00:00Z", { postedAt: "2026-10-10T10:30:00Z" }),
+      row("met:2", "posted_bluesky", "2026-10-10T11:00:00Z", { postedAt: "2026-10-10T11:20:00Z" }),
+      row("met:3", "claimed", "2026-10-10T11:50:00Z"),
+      row("met:4", "failed", "2026-10-10T11:55:00Z"),
+    ]);
+    expect(ledger.minutesSinceLastPost(now)).toBe(40);
+    expect(new Ledger(null, []).minutesSinceLastPost(now)).toBeNull();
+  });
+});
+
 describe("alerts (spec 10)", () => {
   const env = { GITHUB_TOKEN: "t", GITHUB_REPOSITORY: "o/r" };
   const fake = (open: Array<{ number: number; title: string }>) => {
