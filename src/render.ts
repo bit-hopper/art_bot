@@ -176,7 +176,7 @@ function composeReply(p: ReplyParts): string {
 }
 
 /** Spec 6.7: translated text is flagged; the museum link carries the original. Never dropped for room. */
-const MACHINE_TRANSLATION = "[machine translation]";
+const MACHINE_TRANSLATION = "[auto-translated]";
 const MIN_DESCRIPTION = 40;
 const MIN_PROVENANCE = 24;
 

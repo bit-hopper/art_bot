@@ -72,15 +72,15 @@ describe("translate", () => {
 });
 
 describe("translated posts", () => {
-  it("flags the reply as machine translation and still fits both platforms", async () => {
+  it("flags the reply as auto-translated and still fits both platforms", async () => {
     const long = { ...smb, description: "Lange Beschreibung. ".repeat(40) };
     const t = await translateArtwork(long, opts({ fetchImpl: fakeDeepl(0, (x) => json({ translations: x.map((s) => ({ text: s })) })).fetchImpl }));
     for (const p of ["bluesky", "threads"] as const) {
       const r = renderPost(t, p, {}).reply;
-      expect(r).toContain("[machine translation]");
+      expect(r).toContain("[auto-translated]");
       expect(measure(r, p)).toBeLessThanOrEqual(p === "bluesky" ? 300 : 500);
       expect(r.endsWith(t.objectUrl)).toBe(true);
     }
-    expect(renderPost(smb, "bluesky", {}).reply).not.toContain("machine translation");
+    expect(renderPost(smb, "bluesky", {}).reply).not.toContain("auto-translated");
   });
 });
