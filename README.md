@@ -46,4 +46,6 @@ Repository variables: `BOT_USER_AGENT`, `PAUSED` (`true` stops posting), `LIVE` 
 
 ## Licensing
 
+The code is released under the [MIT License](LICENSE). That covers the code only, not the museum content it posts.
+
 The artworks and images belong to the museums, not to this project. The bot posts for educational purposes only and is strictly non-commercial. Every post credits the museum and links to the object page, and carries the museum's own rights wording (for example CC0, public domain, or CC BY-NC-SA). Objects without an open license are still posted, with the museum's rights statement as it stands, so an image may be "all rights reserved" or "in copyright". The bot blocks only objects with no image and the sensitive-object denylist (human remains, sacred or restricted items).
