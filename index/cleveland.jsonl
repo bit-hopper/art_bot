@@ -1355,11 +1355,10 @@
 {"key":"cleveland:143165","source":"cleveland","sourceObjectId":"143165","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:151044","source":"cleveland","sourceObjectId":"151044","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:144696","source":"cleveland","sourceObjectId":"144696","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Abbasid period","score":10}
+{"key":"cleveland:161684","source":"cleveland","sourceObjectId":"161684","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:130419","source":"cleveland","sourceObjectId":"130419","objectClass":"other","regionGroup":"egypt","culture":"Byzantine Empire (Egypt)","score":10}
 {"key":"cleveland:148336","source":"cleveland","sourceObjectId":"148336","objectClass":"other","regionGroup":"egypt","culture":"Byzantine Empire (Egypt)","score":3}
-{"key":"cleveland:128462","source":"cleveland","sourceObjectId":"128462","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:124964","source":"cleveland","sourceObjectId":"124964","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
-{"key":"cleveland:161684","source":"cleveland","sourceObjectId":"161684","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:126046","source":"cleveland","sourceObjectId":"126046","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Antinoë, Byzantine period","score":3}
 {"key":"cleveland:129824","source":"cleveland","sourceObjectId":"129824","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period","score":10}
 {"key":"cleveland:111339","source":"cleveland","sourceObjectId":"111339","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Mamluk sultanate (1250–1517)","score":3}
@@ -1385,6 +1384,7 @@
 {"key":"cleveland:147672","source":"cleveland","sourceObjectId":"147672","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Assiut, Egyptian maker","score":10}
 {"key":"cleveland:111325","source":"cleveland","sourceObjectId":"111325","objectClass":"other","regionGroup":"north-africa","culture":"Morocco, Moroccan embroiderer","score":10}
 {"key":"cleveland:111336","source":"cleveland","sourceObjectId":"111336","objectClass":"other","regionGroup":"north-africa","culture":"Morocco, Salé, Moroccan embroiderer","score":10}
+{"key":"cleveland:128462","source":"cleveland","sourceObjectId":"128462","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":10}
 {"key":"cleveland:95653","source":"cleveland","sourceObjectId":"95653","objectClass":"other","regionGroup":"north-africa","culture":"Tunisia, Djerba, Tunisian weaver(s) and embroiderer(s)","score":10}
 {"key":"cleveland:95782","source":"cleveland","sourceObjectId":"95782","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Aswan, unidentified makers","score":10}
 {"key":"cleveland:150873","source":"cleveland","sourceObjectId":"150873","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Coptic-style weaver(s)","score":3}
