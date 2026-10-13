@@ -6807,7 +6807,6 @@
 {"key":"smb:738001","source":"smb","sourceObjectId":"738001","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:738037","source":"smb","sourceObjectId":"738037","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"smb:848036","source":"smb","sourceObjectId":"848036","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
-{"key":"smb:841016","source":"smb","sourceObjectId":"841016","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:841037","source":"smb","sourceObjectId":"841037","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:837541","source":"smb","sourceObjectId":"837541","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"smb:841234","source":"smb","sourceObjectId":"841234","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
@@ -7278,6 +7277,7 @@
 {"key":"smb:205828","source":"smb","sourceObjectId":"205828","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:205782","source":"smb","sourceObjectId":"205782","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:610140","source":"smb","sourceObjectId":"610140","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"smb:841016","source":"smb","sourceObjectId":"841016","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:212846","source":"smb","sourceObjectId":"212846","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"smb:213603","source":"smb","sourceObjectId":"213603","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:213605","source":"smb","sourceObjectId":"213605","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
