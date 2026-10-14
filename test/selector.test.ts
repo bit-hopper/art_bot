@@ -228,3 +228,38 @@ describe("selector simulation: 1,000 runs on a toy index", () => {
     expect(share).toBeLessThan(0.6);
   }, 60_000);
 });
+
+describe("mask quota", () => {
+  const profile24 = { ...profile, force_mask_after_hours: 23 };
+  const sculptures = Array.from({ length: 40 }, (_, i) => row(i, "met", "sculpture"));
+  const mask = row(900, "smb", "mask");
+  const now = new Date(Date.UTC(2026, 0, 2, 0, 0));
+  const hoursAgo = (h: number): LedgerRow => ({
+    ...posted(row(500, "met", "mask"), 0), postedAt: new Date(now.getTime() - h * 3_600_000).toISOString(),
+  });
+  const run = (ledger: Ledger, rows: IndexRow[]) =>
+    selectArtwork({ profile: profile24, sourceWeights: { met: 1, smb: 0.01 }, rows, ledger, now, rng: rng(5), fetch: async (r) => art(r) });
+
+  it("draws a mask, however rare, when none was published in the last 23 hours", async () => {
+    for (const l of [new Ledger(null), new Ledger(null, [hoursAgo(24)])]) {
+      const sel = await run(l, [...sculptures, mask]);
+      expect(sel.ok && sel.row.key).toBe("smb:900");
+      expect(sel.ok && sel.maskDue).toBe(true);
+    }
+  });
+
+  it("draws normally once a mask went out within 23 hours", async () => {
+    const sel = await run(new Ledger(null, [hoursAgo(22)]), [...sculptures, mask]);
+    expect(sel.ok && sel.maskDue).toBe(false);
+  });
+
+  it("falls back to the normal pool when no postable mask is left", async () => {
+    const sel = await run(new Ledger(null), sculptures);
+    expect(sel.ok && sel.row.objectClass).toBe("sculpture");
+  });
+
+  it("is off when force_mask_after_hours is unset", async () => {
+    const sel = await selectArtwork({ profile: { ...profile, force_mask_after_hours: undefined }, sourceWeights: { met: 1, smb: 0.01 }, rows: [...sculptures, mask], ledger: new Ledger(null), now, rng: rng(5), fetch: async (r) => art(r) });
+    expect(sel.ok && sel.maskDue).toBe(false);
+  });
+});

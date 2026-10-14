@@ -5,6 +5,7 @@ profiles:
     region_share_caps:        # max fraction of the last 24 posts
       egypt: 0.58
     require_image: true
+    force_mask_after_hours: 23   # owner 2026-10-14: at least one mask in every 24 hours (23 leaves room for a missed hour)
     classes:                  # object_class -> weight
       mask: 100
       sculpture: 90

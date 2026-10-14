@@ -23,6 +23,8 @@ export interface FilterProfile {
   enabled: boolean;
   region_share_caps: Record<string, number>;
   require_image: boolean;
+  /** Draw only masks once none was published for this many hours; unset or 0 turns the rule off. */
+  force_mask_after_hours?: number;
   classes: Record<ObjectClass, number>;
   keywords: Keywords;
   exclude_keywords: string[];

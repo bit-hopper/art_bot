@@ -64,7 +64,7 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
     log({ event: sel.reason, candidates: rows.length });
     return null;
   }
-  log({ event: "selected", key: sel.artwork.key, class: sel.artwork.objectClass, region: sel.artwork.regionGroup, score: sel.row.score, rights: sel.artwork.rightsStatus });
+  log({ event: "selected", key: sel.artwork.key, class: sel.artwork.objectClass, region: sel.artwork.regionGroup, score: sel.row.score, mask_due: sel.maskDue, rights: sel.artwork.rightsStatus });
   return { artwork: sel.artwork, image: sel.prepared };
 }
 

@@ -30,6 +30,16 @@ export function cultureRepeats(culture: string | null, recent2: LedgerRow[]): bo
   return c !== "" && recent2.length >= CULTURE_WINDOW && recent2.every((r) => norm(r.culture) === c);
 }
 
+/**
+ * Owner rule 2026-10-14: at least one mask in every 24 hours. Masks are about 1% of the index, so weights alone gave 3 masks in
+ * 58 posts. True when no mask was published in the last `hours` (the profile sets 23, so a missed hour still lands inside 24).
+ */
+export function maskDue(ledger: Ledger, hours: number | undefined, now: Date): boolean {
+  if (!hours) return false;
+  const since = now.getTime() - hours * 3_600_000;
+  return !ledger.posts().some((r) => r.objectClass === "mask" && Date.parse(r.postedAt ?? r.claimedAt) >= since);
+}
+
 export function weightedPick<T>(items: T[], weight: (t: T) => number, rng: () => number): T | null {
   const total = items.reduce((s, t) => s + Math.max(weight(t), 0), 0);
   if (items.length === 0 || total <= 0) return null;
@@ -75,10 +85,11 @@ export interface SelectorDeps<P = undefined> {
   checkImage?(a: Artwork, prepared: P): Promise<string | null>;
   rng?: () => number;
   maxAttempts?: number;
+  now?: Date;
 }
 
 export type Selection<P = undefined> =
-  | { ok: true; artwork: Artwork; row: IndexRow; prepared: P; attempts: Attempt[]; exhaustedTiers: ObjectClass[] }
+  | { ok: true; artwork: Artwork; row: IndexRow; prepared: P; attempts: Attempt[]; exhaustedTiers: ObjectClass[]; maskDue: boolean }
   | { ok: false; reason: "POOL_EMPTY" | "ATTEMPTS_EXHAUSTED"; attempts: Attempt[]; exhaustedTiers: ObjectClass[] };
 
 /**
@@ -100,10 +111,15 @@ export async function selectArtwork<P = undefined>(d: SelectorDeps<P>): Promise<
   const attempts: Attempt[] = [];
   if (pool.length === 0) return { ok: false, reason: "POOL_EMPTY", attempts, exhaustedTiers: tiers };
 
+  // While a mask is due, draw only from masks; once none are left (or all were rejected) the normal pool takes over.
+  const due = maskDue(d.ledger, d.profile.force_mask_after_hours, d.now ?? new Date());
+  let masks = due ? pool.filter((r) => r.objectClass === "mask") : [];
+
   while (attempts.length < max) {
-    const row = weightedPick(pool, (r) => rowWeight(r, recent6, d.sourceWeights), rng);
+    const row = weightedPick(masks.length > 0 ? masks : pool, (r) => rowWeight(r, recent6, d.sourceWeights), rng);
     if (!row) return { ok: false, reason: "POOL_EMPTY", attempts, exhaustedTiers: tiers };
     pool = pool.filter((r) => r !== row);
+    masks = masks.filter((r) => r !== row);
 
     let artwork: Artwork;
     try {
@@ -133,7 +149,7 @@ export async function selectArtwork<P = undefined>(d: SelectorDeps<P>): Promise<
     if (imageDenied) { reject("denied", imageDenied); continue; }
 
     attempts.push({ key: row.key, outcome: "picked" });
-    return { ok: true, artwork, row, prepared, attempts, exhaustedTiers: tiers };
+    return { ok: true, artwork, row, prepared, attempts, exhaustedTiers: tiers, maskDue: due };
   }
   return { ok: false, reason: "ATTEMPTS_EXHAUSTED", attempts, exhaustedTiers: tiers };
 }
