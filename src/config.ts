@@ -106,6 +106,8 @@ export interface Denylist {
   blocked_keys: string[];
   photograph_terms?: string[];
   allowed_phrases?: string[];
+  modern_material_terms?: string[];
+  latest_year?: number;
 }
 
 export function loadDenylist(): Denylist {

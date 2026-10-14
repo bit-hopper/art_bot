@@ -20,5 +20,15 @@ photograph_terms: [photo, fotografie, foto, daguerreotype, ambrotype, tintype, c
 # human remains and bodies are never posted; a label tied to a mummy is a tag, not a body).
 allowed_phrases: [étiquette de momie, etiquette de momie, mummy label]
 
+# Modern materials (owner, 2026-10-14): an object whose material or title names one of these is never posted (a 2007 Ijele mask
+# with plastic and synthetic cloth got through). Matched in the medium and title only, with the classifier's token rules:
+# "plastik" is left out because German "Plastik" means sculpture, and descriptions are skipped because "plastic" also
+# appears there as an art-historical adjective ("plastic modelling").
+modern_material_terms: [kunststoff, kunstharz, kunstfaser, styropor, styrofoam, polystyrene, polystyrol, polyester, polyurethane, polyurethan, nylon, acrylic, acryl, plexiglas, perspex, vinyl, pvc, lycra, synthetic, synthetisch, synthétique, plastic, "matière plastique", plastique]
+
+# Never post an object whose date text points entirely after this year (owner, 2026-10-14: 1956). Only 4-digit years are read:
+# the earliest one must be later than this. BCE dates, and dates that also name a century, are not judged.
+latest_year: 1956
+
 # Manual overrides, e.g. "met:12345".
 blocked_keys: []

@@ -312,6 +312,31 @@ describe("denylist", () => {
     expect(denyReason({ ...base, objectType: "Mumie" }, deny)).toMatch(/object type/);
   });
 
+  it("blocks modern materials in the medium or title (the 2007 Ijele mask: Kunststoff), not wood or cotton", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    expect(denyReason({ ...base, medium: "Holz, Kunststoff, Baumwollstoffe (Patchwork)" }, deny)).toMatch(/Kunststoff/i);
+    expect(denyReason({ ...base, medium: "Wood, Styrofoam, synthetic fabric" }, deny)).toMatch(/modern material/);
+    expect(denyReason({ ...base, medium: "Bois, matière plastique" }, deny)).toMatch(/modern material/);
+    expect(denyReason({ ...base, medium: "Holz, Baumwollstoffe (Patchwork), Raffia" }, deny)).toBeNull();
+    expect(denyReason({ ...base, objectType: "Plastik", medium: "Holz", description: "plastic modelling of the face" }, deny)).toBeNull();
+  });
+
+  it("blocks an object dated entirely after 1956, but not on a BCE date, a century, or an earlier year in a range", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const dated = (dateDisplay: string | null) => denyReason({ ...base, dateDisplay }, deny);
+    expect(dated("2007")).toBe("dated 2007, after 1956");
+    expect(dated("ca. 1960s")).toMatch(/dated 1960/);
+    expect(dated("1957")).toMatch(/dated 1957/);
+    expect(dated("1956")).toBeNull();
+    expect(dated("1900-1960")).toBeNull();
+    expect(dated("19th century, collected 1980")).toBeNull();
+    expect(dated("19. Jh., erworben 1980")).toBeNull();
+    expect(dated("2050-1900 B.C.")).toBeNull();
+    expect(dated("2100 BCE")).toBeNull();
+    expect(dated("Dynasty 22")).toBeNull();
+    expect(dated(null)).toBeNull();
+  });
+
   it("honours manual key overrides", () => {
     const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
     expect(denyReason(base, { ...deny, blocked_keys: ["mia:1937"] })).toMatch(/manual override/);
