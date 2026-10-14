@@ -417,13 +417,13 @@
 {"key":"mia:55210","source":"mia","sourceObjectId":"55210","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Kuba","score":70}
 {"key":"mia:105989","source":"mia","sourceObjectId":"105989","objectClass":"sculpture","regionGroup":"egypt","culture":"Bedouin","score":90}
 {"key":"mia:113412","source":"mia","sourceObjectId":"113412","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:114637","source":"mia","sourceObjectId":"114637","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","score":10}
 {"key":"mia:114177","source":"mia","sourceObjectId":"114177","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:113495","source":"mia","sourceObjectId":"113495","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
 {"key":"mia:113496","source":"mia","sourceObjectId":"113496","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
 {"key":"mia:118934","source":"mia","sourceObjectId":"118934","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
-{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","score":40}
+{"key":"mia:114637","source":"mia","sourceObjectId":"114637","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","score":10}
 {"key":"mia:123373","source":"mia","sourceObjectId":"123373","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","score":40}
 {"key":"mia:140153","source":"mia","sourceObjectId":"140153","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Amhara","score":40}
 {"key":"mia:142689","source":"mia","sourceObjectId":"142689","objectClass":"other","regionGroup":"sub-saharan","culture":"Surma","score":10}
 {"key":"mia:189","source":"mia","sourceObjectId":"189","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Igbo","score":40}
@@ -931,12 +931,12 @@
 {"key":"mia:120402","source":"mia","sourceObjectId":"120402","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Zulu","score":84}
 {"key":"mia:127115","source":"mia","sourceObjectId":"127115","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
 {"key":"mia:127125","source":"mia","sourceObjectId":"127125","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
-{"key":"mia:129892","source":"mia","sourceObjectId":"129892","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
-{"key":"mia:136088","source":"mia","sourceObjectId":"136088","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
-{"key":"mia:136483","source":"mia","sourceObjectId":"136483","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:129894","source":"mia","sourceObjectId":"129894","objectClass":"other","regionGroup":"sub-saharan","culture":"Kirdi","score":10}
+{"key":"mia:129892","source":"mia","sourceObjectId":"129892","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:136492","source":"mia","sourceObjectId":"136492","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
+{"key":"mia:136088","source":"mia","sourceObjectId":"136088","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136486","source":"mia","sourceObjectId":"136486","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
+{"key":"mia:136483","source":"mia","sourceObjectId":"136483","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136487","source":"mia","sourceObjectId":"136487","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:24981","source":"mia","sourceObjectId":"24981","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:8565","source":"mia","sourceObjectId":"8565","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
