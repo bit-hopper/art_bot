@@ -10,6 +10,12 @@ blocked_terms: [and mummy, mummy of, mummified, human remains, skeletal remains,
 # Matched as whole tokens of the object type only, so "Mumienmaske" (a mask) is not caught.
 blocked_type_tokens: [mummy, mumie, momie, skull, schädel, crâne, skeleton, skelett, squelette, bone, knochen]
 
+# Photographs (owner, 2026-10-14): a photograph of an object may be posted, one with a real person in it never. A record whose object
+# type or medium (the museum's own wording, not the description) names one of these is a photograph; src/people.ts then asks a
+# vision model whether a real person is visible, and the post is refused unless the answer is a clear "none" (no key = refused).
+# Same token rules as blocked_terms.
+photograph_terms: [photo, fotografie, foto, daguerreotype, ambrotype, tintype, cyanotype, "silver print", "albumen print", "salt print", "platinum print", "carbon print", chromogenic, "inkjet print", "pigment print", c-print, polaroid, "glass negative", "film negative", "lantern slide", stereograph, "épreuve argentique", "tirage argentique"]
+
 # Phrases that contain a blocked word but are not remains: removed from the text before the checks above (owner, 2026-10-08:
 # human remains and bodies are never posted; a label tied to a mummy is a tag, not a body).
 allowed_phrases: [étiquette de momie, etiquette de momie, mummy label]

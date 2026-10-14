@@ -6,6 +6,7 @@
 import { enabledAdapters } from "./adapters/index.js";
 import { loadDenylist, loadProfile, loadSourceWeights } from "./config.js";
 import { denyReason } from "./denylist.js";
+import { isPhotograph, photographPeopleReason } from "./people.js";
 import { HttpClient } from "./http.js";
 import { downloadImage, prepareImage, type PreparedImage } from "./image.js";
 import { claimRow, Ledger } from "./ledger.js";
@@ -55,6 +56,7 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
     fetch: (r) => adapters.get(r.source)!.fetchArtwork(r.sourceObjectId),
     deny: (a) => denyReason(a, deny),
     prepare: async (a) => prepareImage(await downloadImage(a.imageUrl!, images)),
+    checkImage: async (a, img) => (isPhotograph(a, deny) ? photographPeopleReason(img) : null),
   });
   for (const t of sel.exhaustedTiers) log({ event: "TIER_EXHAUSTED", tier: t });
   for (const a of sel.attempts) log({ event: "attempt", ...a });

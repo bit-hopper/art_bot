@@ -102,6 +102,7 @@ export interface Denylist {
   blocked_terms: string[];
   blocked_type_tokens: string[];
   blocked_keys: string[];
+  photograph_terms?: string[];
   allowed_phrases?: string[];
 }
 

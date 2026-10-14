@@ -71,6 +71,8 @@ export interface SelectorDeps<P = undefined> {
    * of its newest records), so a failure here re-picks like any other rejection and the result rides along on success.
    */
   prepare?(a: Artwork): Promise<P>;
+  /** Rejection reason found by looking at the prepared image (a photograph with a real person in it), or null. */
+  checkImage?(a: Artwork, prepared: P): Promise<string | null>;
   rng?: () => number;
   maxAttempts?: number;
 }
@@ -126,6 +128,9 @@ export async function selectArtwork<P = undefined>(d: SelectorDeps<P>): Promise<
         continue;
       }
     }
+
+    const imageDenied = d.checkImage ? await d.checkImage(artwork, prepared) : null;
+    if (imageDenied) { reject("denied", imageDenied); continue; }
 
     attempts.push({ key: row.key, outcome: "picked" });
     return { ok: true, artwork, row, prepared, attempts, exhaustedTiers: tiers };
