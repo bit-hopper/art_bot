@@ -989,6 +989,7 @@
 {"key":"met:544416","source":"met","sourceObjectId":"544416","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:544417","source":"met","sourceObjectId":"544417","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:544418","source":"met","sourceObjectId":"544418","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:544419","source":"met","sourceObjectId":"544419","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:544420","source":"met","sourceObjectId":"544420","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:544422","source":"met","sourceObjectId":"544422","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:544423","source":"met","sourceObjectId":"544423","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
@@ -1549,6 +1550,7 @@
 {"key":"met:545152","source":"met","sourceObjectId":"545152","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:545153","source":"met","sourceObjectId":"545153","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:545154","source":"met","sourceObjectId":"545154","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
+{"key":"met:545155","source":"met","sourceObjectId":"545155","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:545158","source":"met","sourceObjectId":"545158","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:545159","source":"met","sourceObjectId":"545159","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:545160","source":"met","sourceObjectId":"545160","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
@@ -6065,6 +6067,7 @@
 {"key":"met:552179","source":"met","sourceObjectId":"552179","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"met:552180","source":"met","sourceObjectId":"552180","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"met:552181","source":"met","sourceObjectId":"552181","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"met:552182","source":"met","sourceObjectId":"552182","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:552183","source":"met","sourceObjectId":"552183","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:552184","source":"met","sourceObjectId":"552184","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:552185","source":"met","sourceObjectId":"552185","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -7582,9 +7585,11 @@
 {"key":"met:555782","source":"met","sourceObjectId":"555782","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:555785","source":"met","sourceObjectId":"555785","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555786","source":"met","sourceObjectId":"555786","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
+{"key":"met:555790","source":"met","sourceObjectId":"555790","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555791","source":"met","sourceObjectId":"555791","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555792","source":"met","sourceObjectId":"555792","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555793","source":"met","sourceObjectId":"555793","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
+{"key":"met:555796","source":"met","sourceObjectId":"555796","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555798","source":"met","sourceObjectId":"555798","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555799","source":"met","sourceObjectId":"555799","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:555801","source":"met","sourceObjectId":"555801","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
@@ -9947,11 +9952,6 @@
 {"key":"met:561621","source":"met","sourceObjectId":"561621","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:561623","source":"met","sourceObjectId":"561623","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:561627","source":"met","sourceObjectId":"561627","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"met:561628","source":"met","sourceObjectId":"561628","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"met:561640","source":"met","sourceObjectId":"561640","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"met:561641","source":"met","sourceObjectId":"561641","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"met:561642","source":"met","sourceObjectId":"561642","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"met:561643","source":"met","sourceObjectId":"561643","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:561758","source":"met","sourceObjectId":"561758","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:561771","source":"met","sourceObjectId":"561771","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:566525","source":"met","sourceObjectId":"566525","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
@@ -10673,6 +10673,7 @@
 {"key":"met:590949","source":"met","sourceObjectId":"590949","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:590954","source":"met","sourceObjectId":"590954","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:590962","source":"met","sourceObjectId":"590962","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:590964","source":"met","sourceObjectId":"590964","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:591135","source":"met","sourceObjectId":"591135","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:591187","source":"met","sourceObjectId":"591187","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:591446","source":"met","sourceObjectId":"591446","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
@@ -10796,6 +10797,11 @@
 {"key":"met:742742","source":"met","sourceObjectId":"742742","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:742754","source":"met","sourceObjectId":"742754","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:742756","source":"met","sourceObjectId":"742756","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
+{"key":"met:561628","source":"met","sourceObjectId":"561628","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:561640","source":"met","sourceObjectId":"561640","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:561641","source":"met","sourceObjectId":"561641","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:561642","source":"met","sourceObjectId":"561642","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"met:561643","source":"met","sourceObjectId":"561643","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:561644","source":"met","sourceObjectId":"561644","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:561645","source":"met","sourceObjectId":"561645","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"met:561647","source":"met","sourceObjectId":"561647","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
