@@ -40,7 +40,7 @@
 {"key":"aic:941","source":"aic","sourceObjectId":"941","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Islamic (culture or style)","score":40}
 {"key":"aic:942","source":"aic","sourceObjectId":"942","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Islamic (culture or style)","score":40}
 {"key":"aic:943","source":"aic","sourceObjectId":"943","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Islamic (culture or style)","score":40}
-{"key":"aic:1690","source":"aic","sourceObjectId":"1690","objectClass":"other","regionGroup":"egypt","culture":"Islamic (culture or style)","score":10}
+{"key":"aic:1690","source":"aic","sourceObjectId":"1690","objectClass":"other","regionGroup":"egypt","culture":"Ottoman","score":10}
 {"key":"aic:5519","source":"aic","sourceObjectId":"5519","objectClass":"other","regionGroup":"egypt","culture":"Roman period (egyptian)","score":10}
 {"key":"aic:5520","source":"aic","sourceObjectId":"5520","objectClass":"other","regionGroup":"egypt","culture":"Roman period (egyptian)","score":10}
 {"key":"aic:5522","source":"aic","sourceObjectId":"5522","objectClass":"sculpture","regionGroup":"egypt","culture":"Egyptian","score":90}
@@ -900,7 +900,7 @@
 {"key":"aic:140634","source":"aic","sourceObjectId":"140634","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ptolemaic","score":40}
 {"key":"aic:140646","source":"aic","sourceObjectId":"140646","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ptolemaic","score":40}
 {"key":"aic:140647","source":"aic","sourceObjectId":"140647","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
-{"key":"aic:140649","source":"aic","sourceObjectId":"140649","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Roman period (egyptian)","score":40}
+{"key":"aic:140649","source":"aic","sourceObjectId":"140649","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140651","source":"aic","sourceObjectId":"140651","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Third intermediate period","score":40}
 {"key":"aic:140654","source":"aic","sourceObjectId":"140654","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"New kingdom","score":40}
 {"key":"aic:140655","source":"aic","sourceObjectId":"140655","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"New kingdom","score":40}
@@ -1045,7 +1045,7 @@
 {"key":"aic:140960","source":"aic","sourceObjectId":"140960","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140961","source":"aic","sourceObjectId":"140961","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140970","source":"aic","sourceObjectId":"140970","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Egyptian","score":40}
-{"key":"aic:140972","source":"aic","sourceObjectId":"140972","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Egyptian","score":40}
+{"key":"aic:140972","source":"aic","sourceObjectId":"140972","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140973","source":"aic","sourceObjectId":"140973","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140975","source":"aic","sourceObjectId":"140975","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Late period (egyptian)","score":40}
 {"key":"aic:140976","source":"aic","sourceObjectId":"140976","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Third intermediate period","score":40}
