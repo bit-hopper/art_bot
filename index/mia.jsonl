@@ -1,8 +1,8 @@
 {"key":"mia:97","source":"mia","sourceObjectId":"97","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:1358","source":"mia","sourceObjectId":"1358","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Edo","score":72}
 {"key":"mia:1854","source":"mia","sourceObjectId":"1854","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":108}
 {"key":"mia:3183","source":"mia","sourceObjectId":"3183","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","score":108}
 {"key":"mia:4866","source":"mia","sourceObjectId":"4866","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ancient Yoruba","score":108}
+{"key":"mia:1358","source":"mia","sourceObjectId":"1358","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Edo","score":72}
 {"key":"mia:1312","source":"mia","sourceObjectId":"1312","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Edo","score":90}
 {"key":"mia:1937","source":"mia","sourceObjectId":"1937","objectClass":"mask","regionGroup":"sub-saharan","culture":"Mende","score":120}
 {"key":"mia:1346","source":"mia","sourceObjectId":"1346","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
@@ -15,15 +15,15 @@
 {"key":"mia:3778","source":"mia","sourceObjectId":"3778","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:4314","source":"mia","sourceObjectId":"4314","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:45269","source":"mia","sourceObjectId":"45269","objectClass":"other","regionGroup":"sub-saharan","culture":"Sakalava","score":10}
+{"key":"mia:3909","source":"mia","sourceObjectId":"3909","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
+{"key":"mia:6028","source":"mia","sourceObjectId":"6028","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
+{"key":"mia:12111","source":"mia","sourceObjectId":"12111","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Zulu","score":60}
+{"key":"mia:115514","source":"mia","sourceObjectId":"115514","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:1230","source":"mia","sourceObjectId":"1230","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":108}
 {"key":"mia:3633","source":"mia","sourceObjectId":"3633","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","score":90}
 {"key":"mia:5773","source":"mia","sourceObjectId":"5773","objectClass":"other","regionGroup":"sub-saharan","culture":"Swahili","score":10}
 {"key":"mia:111088","source":"mia","sourceObjectId":"111088","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ga","score":108}
 {"key":"mia:114833","source":"mia","sourceObjectId":"114833","objectClass":"other","regionGroup":"sub-saharan","culture":"Swahili","score":10}
-{"key":"mia:3909","source":"mia","sourceObjectId":"3909","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
-{"key":"mia:6028","source":"mia","sourceObjectId":"6028","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:12111","source":"mia","sourceObjectId":"12111","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Zulu","score":60}
-{"key":"mia:115514","source":"mia","sourceObjectId":"115514","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:4855","source":"mia","sourceObjectId":"4855","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Mangbetu","score":90}
 {"key":"mia:5896","source":"mia","sourceObjectId":"5896","objectClass":"mask","regionGroup":"sub-saharan","culture":"Yombe","score":100}
 {"key":"mia:111099","source":"mia","sourceObjectId":"111099","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":12}
@@ -75,29 +75,52 @@
 {"key":"mia:120595","source":"mia","sourceObjectId":"120595","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:123387","source":"mia","sourceObjectId":"123387","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Holo","score":90}
 {"key":"mia:127614","source":"mia","sourceObjectId":"127614","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","score":10}
-{"key":"mia:95","source":"mia","sourceObjectId":"95","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
-{"key":"mia:328","source":"mia","sourceObjectId":"328","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:1211","source":"mia","sourceObjectId":"1211","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
-{"key":"mia:1478","source":"mia","sourceObjectId":"1478","objectClass":"mask","regionGroup":"sub-saharan","culture":"Baule","score":100}
-{"key":"mia:4776","source":"mia","sourceObjectId":"4776","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dogon","score":100}
-{"key":"mia:5756","source":"mia","sourceObjectId":"5756","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:5755","source":"mia","sourceObjectId":"5755","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:8472","source":"mia","sourceObjectId":"8472","objectClass":"carved-instrument","regionGroup":"egypt","culture":"Ancient Egyptian","score":70}
-{"key":"mia:24609","source":"mia","sourceObjectId":"24609","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:25242","source":"mia","sourceObjectId":"25242","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe","score":10}
-{"key":"mia:60639","source":"mia","sourceObjectId":"60639","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yombe","score":90}
-{"key":"mia:60759","source":"mia","sourceObjectId":"60759","objectClass":"other","regionGroup":"sub-saharan","culture":"Yaka","score":10}
-{"key":"mia:75993","source":"mia","sourceObjectId":"75993","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:106295","source":"mia","sourceObjectId":"106295","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Kwere","score":40}
-{"key":"mia:109094","source":"mia","sourceObjectId":"109094","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Akan","score":70}
-{"key":"mia:109923","source":"mia","sourceObjectId":"109923","objectClass":"other","regionGroup":"sub-saharan","culture":"Wolof","score":10}
-{"key":"mia:113039","source":"mia","sourceObjectId":"113039","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:113435","source":"mia","sourceObjectId":"113435","objectClass":"other","regionGroup":"sub-saharan","culture":"Xhosa","score":10}
-{"key":"mia:115744","source":"mia","sourceObjectId":"115744","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:128335","source":"mia","sourceObjectId":"128335","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:132391","source":"mia","sourceObjectId":"132391","objectClass":"other","regionGroup":"sub-saharan","culture":"Fon","score":10}
-{"key":"mia:136090","source":"mia","sourceObjectId":"136090","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Igala (?)","score":90}
-{"key":"mia:136938","source":"mia","sourceObjectId":"136938","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dan","score":90}
+{"key":"mia:85","source":"mia","sourceObjectId":"85","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
+{"key":"mia:1311","source":"mia","sourceObjectId":"1311","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Senufo","score":90}
+{"key":"mia:3862","source":"mia","sourceObjectId":"3862","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songye","score":90}
+{"key":"mia:4177","source":"mia","sourceObjectId":"4177","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
+{"key":"mia:5415","source":"mia","sourceObjectId":"5415","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"score":60}
+{"key":"mia:8990","source":"mia","sourceObjectId":"8990","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:12117","source":"mia","sourceObjectId":"12117","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Swahili","score":90}
+{"key":"mia:13213","source":"mia","sourceObjectId":"13213","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:13214","source":"mia","sourceObjectId":"13214","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:27934","source":"mia","sourceObjectId":"27934","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:50086","source":"mia","sourceObjectId":"50086","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
+{"key":"mia:55431","source":"mia","sourceObjectId":"55431","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
+{"key":"mia:60755","source":"mia","sourceObjectId":"60755","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Akan","score":40}
+{"key":"mia:95062","source":"mia","sourceObjectId":"95062","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:111808","source":"mia","sourceObjectId":"111808","objectClass":"mask","regionGroup":"sub-saharan","culture":"Yoruba","score":100}
+{"key":"mia:113479","source":"mia","sourceObjectId":"113479","objectClass":"other","regionGroup":"sub-saharan","culture":"Temne","score":10}
+{"key":"mia:115353","source":"mia","sourceObjectId":"115353","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Lobala","score":70}
+{"key":"mia:118823","source":"mia","sourceObjectId":"118823","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:119230","source":"mia","sourceObjectId":"119230","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
+{"key":"mia:119348","source":"mia","sourceObjectId":"119348","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Tuareg","score":40}
+{"key":"mia:120614","source":"mia","sourceObjectId":"120614","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"score":60}
+{"key":"mia:124240","source":"mia","sourceObjectId":"124240","objectClass":"mask","regionGroup":"sub-saharan","culture":"Temne","score":100}
+{"key":"mia:124301","source":"mia","sourceObjectId":"124301","objectClass":"mask","regionGroup":"sub-saharan","culture":"Temne","score":100}
+{"key":"mia:85","source":"mia","sourceObjectId":"85","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
+{"key":"mia:1311","source":"mia","sourceObjectId":"1311","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Senufo","score":90}
+{"key":"mia:3862","source":"mia","sourceObjectId":"3862","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songye","score":90}
+{"key":"mia:4177","source":"mia","sourceObjectId":"4177","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
+{"key":"mia:5415","source":"mia","sourceObjectId":"5415","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"score":60}
+{"key":"mia:8990","source":"mia","sourceObjectId":"8990","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:12117","source":"mia","sourceObjectId":"12117","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Swahili","score":90}
+{"key":"mia:13213","source":"mia","sourceObjectId":"13213","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:13214","source":"mia","sourceObjectId":"13214","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:27934","source":"mia","sourceObjectId":"27934","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:50086","source":"mia","sourceObjectId":"50086","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
+{"key":"mia:55431","source":"mia","sourceObjectId":"55431","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
+{"key":"mia:60755","source":"mia","sourceObjectId":"60755","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Akan","score":40}
+{"key":"mia:95062","source":"mia","sourceObjectId":"95062","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:111808","source":"mia","sourceObjectId":"111808","objectClass":"mask","regionGroup":"sub-saharan","culture":"Yoruba","score":100}
+{"key":"mia:113479","source":"mia","sourceObjectId":"113479","objectClass":"other","regionGroup":"sub-saharan","culture":"Temne","score":10}
+{"key":"mia:115353","source":"mia","sourceObjectId":"115353","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Lobala","score":70}
+{"key":"mia:118823","source":"mia","sourceObjectId":"118823","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:119230","source":"mia","sourceObjectId":"119230","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
+{"key":"mia:119348","source":"mia","sourceObjectId":"119348","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Tuareg","score":40}
+{"key":"mia:120614","source":"mia","sourceObjectId":"120614","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"score":60}
+{"key":"mia:124240","source":"mia","sourceObjectId":"124240","objectClass":"mask","regionGroup":"sub-saharan","culture":"Temne","score":100}
+{"key":"mia:124301","source":"mia","sourceObjectId":"124301","objectClass":"mask","regionGroup":"sub-saharan","culture":"Temne","score":100}
 {"key":"mia:125260","source":"mia","sourceObjectId":"125260","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"mia:125441","source":"mia","sourceObjectId":"125441","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bwa","score":100}
 {"key":"mia:126256","source":"mia","sourceObjectId":"126256","objectClass":"other","regionGroup":"sub-saharan","culture":"Angas or Afo","score":10}
@@ -108,29 +131,6 @@
 {"key":"mia:132398","source":"mia","sourceObjectId":"132398","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbum","score":10}
 {"key":"mia:132399","source":"mia","sourceObjectId":"132399","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:137642","source":"mia","sourceObjectId":"137642","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Zulu","score":60}
-{"key":"mia:95","source":"mia","sourceObjectId":"95","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
-{"key":"mia:328","source":"mia","sourceObjectId":"328","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:1211","source":"mia","sourceObjectId":"1211","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
-{"key":"mia:1478","source":"mia","sourceObjectId":"1478","objectClass":"mask","regionGroup":"sub-saharan","culture":"Baule","score":100}
-{"key":"mia:4776","source":"mia","sourceObjectId":"4776","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dogon","score":100}
-{"key":"mia:5756","source":"mia","sourceObjectId":"5756","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:5755","source":"mia","sourceObjectId":"5755","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:8472","source":"mia","sourceObjectId":"8472","objectClass":"carved-instrument","regionGroup":"egypt","culture":"Ancient Egyptian","score":70}
-{"key":"mia:24609","source":"mia","sourceObjectId":"24609","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:25242","source":"mia","sourceObjectId":"25242","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe","score":10}
-{"key":"mia:60639","source":"mia","sourceObjectId":"60639","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yombe","score":90}
-{"key":"mia:60759","source":"mia","sourceObjectId":"60759","objectClass":"other","regionGroup":"sub-saharan","culture":"Yaka","score":10}
-{"key":"mia:75993","source":"mia","sourceObjectId":"75993","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:106295","source":"mia","sourceObjectId":"106295","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Kwere","score":40}
-{"key":"mia:109094","source":"mia","sourceObjectId":"109094","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Akan","score":70}
-{"key":"mia:109923","source":"mia","sourceObjectId":"109923","objectClass":"other","regionGroup":"sub-saharan","culture":"Wolof","score":10}
-{"key":"mia:113039","source":"mia","sourceObjectId":"113039","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:113435","source":"mia","sourceObjectId":"113435","objectClass":"other","regionGroup":"sub-saharan","culture":"Xhosa","score":10}
-{"key":"mia:115744","source":"mia","sourceObjectId":"115744","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:128335","source":"mia","sourceObjectId":"128335","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:132391","source":"mia","sourceObjectId":"132391","objectClass":"other","regionGroup":"sub-saharan","culture":"Fon","score":10}
-{"key":"mia:136090","source":"mia","sourceObjectId":"136090","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Igala (?)","score":90}
-{"key":"mia:136938","source":"mia","sourceObjectId":"136938","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dan","score":90}
 {"key":"mia:2032","source":"mia","sourceObjectId":"2032","objectClass":"other","regionGroup":"sub-saharan","culture":"Kalabari","score":10}
 {"key":"mia:3817","source":"mia","sourceObjectId":"3817","objectClass":"mask","regionGroup":"sub-saharan","culture":"Tabwa","score":100}
 {"key":"mia:4172","source":"mia","sourceObjectId":"4172","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Amazigh (Berber)","score":40}
@@ -198,7 +198,7 @@
 {"key":"mia:5865","source":"mia","sourceObjectId":"5865","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Luba","score":60}
 {"key":"mia:5897","source":"mia","sourceObjectId":"5897","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","score":90}
 {"key":"mia:5911","source":"mia","sourceObjectId":"5911","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
-{"key":"mia:5895","source":"mia","sourceObjectId":"5895","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lobi","score":90}
+{"key":"mia:5911","source":"mia","sourceObjectId":"5911","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:5972","source":"mia","sourceObjectId":"5972","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":40}
 {"key":"mia:5970","source":"mia","sourceObjectId":"5970","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Teke","score":40}
 {"key":"mia:8006","source":"mia","sourceObjectId":"8006","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
@@ -218,11 +218,11 @@
 {"key":"mia:12107","source":"mia","sourceObjectId":"12107","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
 {"key":"mia:12234","source":"mia","sourceObjectId":"12234","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:12469","source":"mia","sourceObjectId":"12469","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
-{"key":"mia:12522","source":"mia","sourceObjectId":"12522","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:12517","source":"mia","sourceObjectId":"12517","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:12525","source":"mia","sourceObjectId":"12525","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:12533","source":"mia","sourceObjectId":"12533","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:12543","source":"mia","sourceObjectId":"12543","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:12522","source":"mia","sourceObjectId":"12522","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:14203","source":"mia","sourceObjectId":"14203","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:14219","source":"mia","sourceObjectId":"14219","objectClass":"pottery","regionGroup":"egypt","culture":"Ancient Egyptian","score":60}
 {"key":"mia:15073","source":"mia","sourceObjectId":"15073","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
@@ -238,23 +238,23 @@
 {"key":"mia:18515","source":"mia","sourceObjectId":"18515","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:21297","source":"mia","sourceObjectId":"21297","objectClass":"pottery","regionGroup":"egypt","culture":"Roman Egyptian","score":60}
 {"key":"mia:24585","source":"mia","sourceObjectId":"24585","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24606","source":"mia","sourceObjectId":"24606","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
 {"key":"mia:24605","source":"mia","sourceObjectId":"24605","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
 {"key":"mia:24603","source":"mia","sourceObjectId":"24603","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
+{"key":"mia:24606","source":"mia","sourceObjectId":"24606","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
 {"key":"mia:24608","source":"mia","sourceObjectId":"24608","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24942","source":"mia","sourceObjectId":"24942","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:24938","source":"mia","sourceObjectId":"24938","objectClass":"mask","regionGroup":"sub-saharan","culture":"possibly Yoruba","score":100}
-{"key":"mia:24975","source":"mia","sourceObjectId":"24975","objectClass":"other","regionGroup":"sub-saharan","culture":"Tuareg","score":10}
-{"key":"mia:24976","source":"mia","sourceObjectId":"24976","objectClass":"other","regionGroup":"sub-saharan","culture":"Tuareg","score":10}
 {"key":"mia:24935","source":"mia","sourceObjectId":"24935","objectClass":"other","regionGroup":"sub-saharan","culture":"Gao","score":10}
+{"key":"mia:24942","source":"mia","sourceObjectId":"24942","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:24976","source":"mia","sourceObjectId":"24976","objectClass":"other","regionGroup":"sub-saharan","culture":"Tuareg","score":10}
+{"key":"mia:24975","source":"mia","sourceObjectId":"24975","objectClass":"other","regionGroup":"sub-saharan","culture":"Tuareg","score":10}
 {"key":"mia:24940","source":"mia","sourceObjectId":"24940","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:25186","source":"mia","sourceObjectId":"25186","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:25190","source":"mia","sourceObjectId":"25190","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:25186","source":"mia","sourceObjectId":"25186","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:25192","source":"mia","sourceObjectId":"25192","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25256","source":"mia","sourceObjectId":"25256","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
 {"key":"mia:25240","source":"mia","sourceObjectId":"25240","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:25269","source":"mia","sourceObjectId":"25269","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba or Kuba","score":10}
 {"key":"mia:25267","source":"mia","sourceObjectId":"25267","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
-{"key":"mia:25256","source":"mia","sourceObjectId":"25256","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
 {"key":"mia:25263","source":"mia","sourceObjectId":"25263","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:25458","source":"mia","sourceObjectId":"25458","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:26536","source":"mia","sourceObjectId":"26536","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
@@ -271,20 +271,20 @@
 {"key":"mia:27741","source":"mia","sourceObjectId":"27741","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Mangbetu","score":60}
 {"key":"mia:27738","source":"mia","sourceObjectId":"27738","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Lwena","score":60}
 {"key":"mia:27764","source":"mia","sourceObjectId":"27764","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"score":60}
-{"key":"mia:27964","source":"mia","sourceObjectId":"27964","objectClass":"other","regionGroup":"north-africa","culture":"Ihahan (Berber)","score":10}
 {"key":"mia:27939","source":"mia","sourceObjectId":"27939","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:27964","source":"mia","sourceObjectId":"27964","objectClass":"other","regionGroup":"north-africa","culture":"Ihahan (Berber)","score":10}
 {"key":"mia:28112","source":"mia","sourceObjectId":"28112","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ewe","score":90}
 {"key":"mia:28310","source":"mia","sourceObjectId":"28310","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:29305","source":"mia","sourceObjectId":"29305","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:29332","source":"mia","sourceObjectId":"29332","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:29343","source":"mia","sourceObjectId":"29343","objectClass":"sculpture","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","score":90}
+{"key":"mia:29305","source":"mia","sourceObjectId":"29305","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
 {"key":"mia:29335","source":"mia","sourceObjectId":"29335","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
+{"key":"mia:29332","source":"mia","sourceObjectId":"29332","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:29934","source":"mia","sourceObjectId":"29934","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","score":40}
 {"key":"mia:30160","source":"mia","sourceObjectId":"30160","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Akan","score":40}
 {"key":"mia:30158","source":"mia","sourceObjectId":"30158","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan","score":90}
 {"key":"mia:30206","source":"mia","sourceObjectId":"30206","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Akan","score":40}
-{"key":"mia:30233","source":"mia","sourceObjectId":"30233","objectClass":"other","regionGroup":"sub-saharan","culture":"Akan","score":10}
 {"key":"mia:30231","source":"mia","sourceObjectId":"30231","objectClass":"other","regionGroup":"sub-saharan","culture":"Akan","score":10}
+{"key":"mia:30233","source":"mia","sourceObjectId":"30233","objectClass":"other","regionGroup":"sub-saharan","culture":"Akan","score":10}
 {"key":"mia:30325","source":"mia","sourceObjectId":"30325","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan","score":90}
 {"key":"mia:30557","source":"mia","sourceObjectId":"30557","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Akan","score":40}
 {"key":"mia:30684","source":"mia","sourceObjectId":"30684","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Fon","score":90}
@@ -295,19 +295,19 @@
 {"key":"mia:45273","source":"mia","sourceObjectId":"45273","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Tiv","score":90}
 {"key":"mia:48116","source":"mia","sourceObjectId":"48116","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Fon","score":90}
 {"key":"mia:55179","source":"mia","sourceObjectId":"55179","objectClass":"mask","regionGroup":"sub-saharan","culture":"Beembe","score":100}
-{"key":"mia:55211","source":"mia","sourceObjectId":"55211","objectClass":"mask","regionGroup":"sub-saharan","culture":"Kuba","score":100}
 {"key":"mia:55210","source":"mia","sourceObjectId":"55210","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Kuba","score":70}
 {"key":"mia:55183","source":"mia","sourceObjectId":"55183","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Cham","score":60}
+{"key":"mia:55211","source":"mia","sourceObjectId":"55211","objectClass":"mask","regionGroup":"sub-saharan","culture":"Kuba","score":100}
 {"key":"mia:55226","source":"mia","sourceObjectId":"55226","objectClass":"mask","regionGroup":"sub-saharan","culture":"Leele","score":100}
 {"key":"mia:55405","source":"mia","sourceObjectId":"55405","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nok","score":90}
 {"key":"mia:60166","source":"mia","sourceObjectId":"60166","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nok","score":90}
 {"key":"mia:60556","source":"mia","sourceObjectId":"60556","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:60619","source":"mia","sourceObjectId":"60619","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
 {"key":"mia:60558","source":"mia","sourceObjectId":"60558","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba and Ndengese","score":10}
+{"key":"mia:60614","source":"mia","sourceObjectId":"60614","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","score":90}
 {"key":"mia:60622","source":"mia","sourceObjectId":"60622","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kusu","score":90}
 {"key":"mia:60625","source":"mia","sourceObjectId":"60625","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
 {"key":"mia:60621","source":"mia","sourceObjectId":"60621","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kuba","score":90}
-{"key":"mia:60619","source":"mia","sourceObjectId":"60619","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
-{"key":"mia:60614","source":"mia","sourceObjectId":"60614","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","score":90}
 {"key":"mia:62411","source":"mia","sourceObjectId":"62411","objectClass":"other","regionGroup":"egypt","culture":null,"score":3}
 {"key":"mia:62409","source":"mia","sourceObjectId":"62409","objectClass":"other","regionGroup":"egypt","culture":null,"score":3}
 {"key":"mia:62412","source":"mia","sourceObjectId":"62412","objectClass":"other","regionGroup":"egypt","culture":null,"score":3}
@@ -320,20 +320,20 @@
 {"key":"mia:96243","source":"mia","sourceObjectId":"96243","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:97144","source":"mia","sourceObjectId":"97144","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","score":10}
 {"key":"mia:97145","source":"mia","sourceObjectId":"97145","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
-{"key":"mia:98095","source":"mia","sourceObjectId":"98095","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
 {"key":"mia:98129","source":"mia","sourceObjectId":"98129","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:98130","source":"mia","sourceObjectId":"98130","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:98095","source":"mia","sourceObjectId":"98095","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
 {"key":"mia:98341","source":"mia","sourceObjectId":"98341","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:98500","source":"mia","sourceObjectId":"98500","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","score":10}
 {"key":"mia:98496","source":"mia","sourceObjectId":"98496","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:98493","source":"mia","sourceObjectId":"98493","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","score":10}
-{"key":"mia:98500","source":"mia","sourceObjectId":"98500","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","score":10}
-{"key":"mia:101029","source":"mia","sourceObjectId":"101029","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:101539","source":"mia","sourceObjectId":"101539","objectClass":"other","regionGroup":"sub-saharan","culture":"Benin","score":10}
 {"key":"mia:99246","source":"mia","sourceObjectId":"99246","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:99250","source":"mia","sourceObjectId":"99250","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","score":10}
+{"key":"mia:101029","source":"mia","sourceObjectId":"101029","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:101539","source":"mia","sourceObjectId":"101539","objectClass":"other","regionGroup":"sub-saharan","culture":"Benin","score":10}
 {"key":"mia:105200","source":"mia","sourceObjectId":"105200","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
-{"key":"mia:105987","source":"mia","sourceObjectId":"105987","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
 {"key":"mia:105989","source":"mia","sourceObjectId":"105989","objectClass":"sculpture","regionGroup":"egypt","culture":"Bedouin","score":90}
+{"key":"mia:105987","source":"mia","sourceObjectId":"105987","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
 {"key":"mia:105988","source":"mia","sourceObjectId":"105988","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
 {"key":"mia:106003","source":"mia","sourceObjectId":"106003","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:105994","source":"mia","sourceObjectId":"105994","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
@@ -347,21 +347,21 @@
 {"key":"mia:109916","source":"mia","sourceObjectId":"109916","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
 {"key":"mia:109919","source":"mia","sourceObjectId":"109919","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113068","source":"mia","sourceObjectId":"113068","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:113290","source":"mia","sourceObjectId":"113290","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","score":90}
 {"key":"mia:113351","source":"mia","sourceObjectId":"113351","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","score":10}
 {"key":"mia:113357","source":"mia","sourceObjectId":"113357","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
 {"key":"mia:113347","source":"mia","sourceObjectId":"113347","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:113301","source":"mia","sourceObjectId":"113301","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Sapi","score":90}
 {"key":"mia:113308","source":"mia","sourceObjectId":"113308","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Grebo","score":90}
+{"key":"mia:113290","source":"mia","sourceObjectId":"113290","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","score":90}
 {"key":"mia:113449","source":"mia","sourceObjectId":"113449","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bassa","score":100}
 {"key":"mia:113412","source":"mia","sourceObjectId":"113412","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
 {"key":"mia:113433","source":"mia","sourceObjectId":"113433","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:113455","source":"mia","sourceObjectId":"113455","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:113374","source":"mia","sourceObjectId":"113374","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:113482","source":"mia","sourceObjectId":"113482","objectClass":"mask","regionGroup":"sub-saharan","culture":"Gola","score":100}
+{"key":"mia:113455","source":"mia","sourceObjectId":"113455","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:113458","source":"mia","sourceObjectId":"113458","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kissi","score":90}
 {"key":"mia:113495","source":"mia","sourceObjectId":"113495","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
 {"key":"mia:113496","source":"mia","sourceObjectId":"113496","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:113482","source":"mia","sourceObjectId":"113482","objectClass":"mask","regionGroup":"sub-saharan","culture":"Gola","score":100}
-{"key":"mia:113458","source":"mia","sourceObjectId":"113458","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kissi","score":90}
 {"key":"mia:113684","source":"mia","sourceObjectId":"113684","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:113810","source":"mia","sourceObjectId":"113810","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:113710","source":"mia","sourceObjectId":"113710","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
@@ -370,8 +370,8 @@
 {"key":"mia:113885","source":"mia","sourceObjectId":"113885","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:114203","source":"mia","sourceObjectId":"114203","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:114177","source":"mia","sourceObjectId":"114177","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:114329","source":"mia","sourceObjectId":"114329","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","score":10}
 {"key":"mia:114330","source":"mia","sourceObjectId":"114330","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","score":10}
+{"key":"mia:114329","source":"mia","sourceObjectId":"114329","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","score":10}
 {"key":"mia:114401","source":"mia","sourceObjectId":"114401","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:114636","source":"mia","sourceObjectId":"114636","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","score":10}
 {"key":"mia:114637","source":"mia","sourceObjectId":"114637","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","score":10}
@@ -385,11 +385,11 @@
 {"key":"mia:123054","source":"mia","sourceObjectId":"123054","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:123303","source":"mia","sourceObjectId":"123303","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:123299","source":"mia","sourceObjectId":"123299","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:123388","source":"mia","sourceObjectId":"123388","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lega","score":100}
 {"key":"mia:123375","source":"mia","sourceObjectId":"123375","objectClass":"other","regionGroup":"sub-saharan","culture":"Senufo","score":10}
 {"key":"mia:123373","source":"mia","sourceObjectId":"123373","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","score":40}
-{"key":"mia:123388","source":"mia","sourceObjectId":"123388","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lega","score":100}
 {"key":"mia:123389","source":"mia","sourceObjectId":"123389","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
+{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","score":40}
 {"key":"mia:123528","source":"mia","sourceObjectId":"123528","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon","score":90}
 {"key":"mia:124578","source":"mia","sourceObjectId":"124578","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:124506","source":"mia","sourceObjectId":"124506","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
@@ -610,19 +610,19 @@
 {"key":"mia:113067","source":"mia","sourceObjectId":"113067","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113131","source":"mia","sourceObjectId":"113131","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113126","source":"mia","sourceObjectId":"113126","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113286","source":"mia","sourceObjectId":"113286","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113309","source":"mia","sourceObjectId":"113309","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Mende","score":70}
 {"key":"mia:113291","source":"mia","sourceObjectId":"113291","objectClass":"other","regionGroup":"sub-saharan","culture":"Senufo","score":10}
-{"key":"mia:113349","source":"mia","sourceObjectId":"113349","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:113286","source":"mia","sourceObjectId":"113286","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113359","source":"mia","sourceObjectId":"113359","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:113362","source":"mia","sourceObjectId":"113362","objectClass":"other","regionGroup":"sub-saharan","culture":"Nupe","score":10}
+{"key":"mia:113349","source":"mia","sourceObjectId":"113349","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:113476","source":"mia","sourceObjectId":"113476","objectClass":"mask","regionGroup":"sub-saharan","culture":"Mende or Southern Bullom (Sherbro)","score":100}
 {"key":"mia:113461","source":"mia","sourceObjectId":"113461","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dan","score":100}
 {"key":"mia:113450","source":"mia","sourceObjectId":"113450","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Pokot","score":60}
 {"key":"mia:113430","source":"mia","sourceObjectId":"113430","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:113408","source":"mia","sourceObjectId":"113408","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Loma","score":90}
-{"key":"mia:113476","source":"mia","sourceObjectId":"113476","objectClass":"mask","regionGroup":"sub-saharan","culture":"Mende or Southern Bullom (Sherbro)","score":100}
-{"key":"mia:113483","source":"mia","sourceObjectId":"113483","objectClass":"mask","regionGroup":"sub-saharan","culture":"Vai","score":100}
 {"key":"mia:113468","source":"mia","sourceObjectId":"113468","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
+{"key":"mia:113408","source":"mia","sourceObjectId":"113408","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Loma","score":90}
+{"key":"mia:113483","source":"mia","sourceObjectId":"113483","objectClass":"mask","regionGroup":"sub-saharan","culture":"Vai","score":100}
 {"key":"mia:113730","source":"mia","sourceObjectId":"113730","objectClass":"other","regionGroup":"sub-saharan","culture":"Minyanka (Senufo)","score":10}
 {"key":"mia:113639","source":"mia","sourceObjectId":"113639","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113809","source":"mia","sourceObjectId":"113809","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
@@ -634,23 +634,23 @@
 {"key":"mia:120402","source":"mia","sourceObjectId":"120402","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Zulu","score":84}
 {"key":"mia:120403","source":"mia","sourceObjectId":"120403","objectClass":"other","regionGroup":"sub-saharan","culture":"Zulu","score":10}
 {"key":"mia:123298","source":"mia","sourceObjectId":"123298","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123381","source":"mia","sourceObjectId":"123381","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lwena","score":100}
 {"key":"mia:123363","source":"mia","sourceObjectId":"123363","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
-{"key":"mia:123368","source":"mia","sourceObjectId":"123368","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Kuba","score":60}
 {"key":"mia:123364","source":"mia","sourceObjectId":"123364","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
 {"key":"mia:123392","source":"mia","sourceObjectId":"123392","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
 {"key":"mia:123398","source":"mia","sourceObjectId":"123398","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
 {"key":"mia:123407","source":"mia","sourceObjectId":"123407","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
+{"key":"mia:123381","source":"mia","sourceObjectId":"123381","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lwena","score":100}
 {"key":"mia:123382","source":"mia","sourceObjectId":"123382","objectClass":"other","regionGroup":"sub-saharan","culture":"Beembe","score":10}
 {"key":"mia:123390","source":"mia","sourceObjectId":"123390","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
+{"key":"mia:123368","source":"mia","sourceObjectId":"123368","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Kuba","score":60}
 {"key":"mia:124912","source":"mia","sourceObjectId":"124912","objectClass":"other","regionGroup":"sub-saharan","culture":"Nupe","score":10}
 {"key":"mia:124922","source":"mia","sourceObjectId":"124922","objectClass":"other","regionGroup":"sub-saharan","culture":"Wara","score":10}
 {"key":"mia:124919","source":"mia","sourceObjectId":"124919","objectClass":"other","regionGroup":"sub-saharan","culture":"Wara","score":10}
-{"key":"mia:124925","source":"mia","sourceObjectId":"124925","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:124923","source":"mia","sourceObjectId":"124923","objectClass":"other","regionGroup":"sub-saharan","culture":"Ashanti","score":10}
+{"key":"mia:124925","source":"mia","sourceObjectId":"124925","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:125326","source":"mia","sourceObjectId":"125326","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Igbo","score":90}
-{"key":"mia:127115","source":"mia","sourceObjectId":"127115","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
 {"key":"mia:127075","source":"mia","sourceObjectId":"127075","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
+{"key":"mia:127115","source":"mia","sourceObjectId":"127115","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
 {"key":"mia:127125","source":"mia","sourceObjectId":"127125","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
 {"key":"mia:127711","source":"mia","sourceObjectId":"127711","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:127714","source":"mia","sourceObjectId":"127714","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
@@ -658,27 +658,27 @@
 {"key":"mia:127710","source":"mia","sourceObjectId":"127710","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:128197","source":"mia","sourceObjectId":"128197","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:128330","source":"mia","sourceObjectId":"128330","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:128338","source":"mia","sourceObjectId":"128338","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:128272","source":"mia","sourceObjectId":"128272","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:128338","source":"mia","sourceObjectId":"128338","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:129703","source":"mia","sourceObjectId":"129703","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129738","source":"mia","sourceObjectId":"129738","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Bamenda","score":70}
 {"key":"mia:129700","source":"mia","sourceObjectId":"129700","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
 {"key":"mia:129705","source":"mia","sourceObjectId":"129705","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","score":10}
-{"key":"mia:129774","source":"mia","sourceObjectId":"129774","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Bamileke","score":70}
+{"key":"mia:129738","source":"mia","sourceObjectId":"129738","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Bamenda","score":70}
 {"key":"mia:129766","source":"mia","sourceObjectId":"129766","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:129774","source":"mia","sourceObjectId":"129774","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Bamileke","score":70}
 {"key":"mia:129894","source":"mia","sourceObjectId":"129894","objectClass":"other","regionGroup":"sub-saharan","culture":"Kirdi","score":10}
 {"key":"mia:129892","source":"mia","sourceObjectId":"129892","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:129926","source":"mia","sourceObjectId":"129926","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129925","source":"mia","sourceObjectId":"129925","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129951","source":"mia","sourceObjectId":"129951","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129954","source":"mia","sourceObjectId":"129954","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:132388","source":"mia","sourceObjectId":"132388","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:132396","source":"mia","sourceObjectId":"132396","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
+{"key":"mia:132388","source":"mia","sourceObjectId":"132388","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:136088","source":"mia","sourceObjectId":"136088","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
-{"key":"mia:136483","source":"mia","sourceObjectId":"136483","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136515","source":"mia","sourceObjectId":"136515","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:136492","source":"mia","sourceObjectId":"136492","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136486","source":"mia","sourceObjectId":"136486","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
+{"key":"mia:136483","source":"mia","sourceObjectId":"136483","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136487","source":"mia","sourceObjectId":"136487","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:138138","source":"mia","sourceObjectId":"138138","objectClass":"mask","regionGroup":"sub-saharan","culture":"Tabwa","score":100}
 {"key":"mia:142507","source":"mia","sourceObjectId":"142507","objectClass":"mask","regionGroup":"sub-saharan","culture":"Teke","score":100}
@@ -698,106 +698,106 @@
 {"key":"mia:3814","source":"mia","sourceObjectId":"3814","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:3866","source":"mia","sourceObjectId":"3866","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Baule","score":90}
 {"key":"mia:4175","source":"mia","sourceObjectId":"4175","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ait Wadrim, Amazigh (Berber)","score":40}
-{"key":"mia:4173","source":"mia","sourceObjectId":"4173","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Amazigh (Berber)","score":40}
-{"key":"mia:4178","source":"mia","sourceObjectId":"4178","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
-{"key":"mia:4286","source":"mia","sourceObjectId":"4286","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lwena","score":90}
-{"key":"mia:4259","source":"mia","sourceObjectId":"4259","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Teke","score":60}
-{"key":"mia:4265","source":"mia","sourceObjectId":"4265","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Havu","score":60}
-{"key":"mia:4361","source":"mia","sourceObjectId":"4361","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
-{"key":"mia:4404","source":"mia","sourceObjectId":"4404","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:4449","source":"mia","sourceObjectId":"4449","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nsapo","score":90}
-{"key":"mia:4463","source":"mia","sourceObjectId":"4463","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:4810","source":"mia","sourceObjectId":"4810","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Yoruba","score":40}
-{"key":"mia:4836","source":"mia","sourceObjectId":"4836","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pokot","score":40}
-{"key":"mia:4857","source":"mia","sourceObjectId":"4857","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Bamum","score":90}
-{"key":"mia:5029","source":"mia","sourceObjectId":"5029","objectClass":"sculpture","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","score":90}
-{"key":"mia:5028","source":"mia","sourceObjectId":"5028","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:5113","source":"mia","sourceObjectId":"5113","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Beembe","score":90}
-{"key":"mia:5287","source":"mia","sourceObjectId":"5287","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Ngbaka","score":40}
-{"key":"mia:5430","source":"mia","sourceObjectId":"5430","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:5445","source":"mia","sourceObjectId":"5445","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Semlal Amazigh (Berber)","score":40}
-{"key":"mia:5602","source":"mia","sourceObjectId":"5602","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bamum","score":100}
-{"key":"mia:5648","source":"mia","sourceObjectId":"5648","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
-{"key":"mia:5866","source":"mia","sourceObjectId":"5866","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Chokwe or Lwena","score":60}
-{"key":"mia:5919","source":"mia","sourceObjectId":"5919","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":90}
-{"key":"mia:5882","source":"mia","sourceObjectId":"5882","objectClass":"other","regionGroup":"sub-saharan","culture":"Dida","score":10}
-{"key":"mia:5974","source":"mia","sourceObjectId":"5974","objectClass":"other","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":10}
-{"key":"mia:6032","source":"mia","sourceObjectId":"6032","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
-{"key":"mia:8242","source":"mia","sourceObjectId":"8242","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Tuareg","score":40}
-{"key":"mia:8340","source":"mia","sourceObjectId":"8340","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:8891","source":"mia","sourceObjectId":"8891","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:8996","source":"mia","sourceObjectId":"8996","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Ngala or Ngata","score":40}
-{"key":"mia:9384","source":"mia","sourceObjectId":"9384","objectClass":"other","regionGroup":"sub-saharan","culture":"Nupe","score":10}
-{"key":"mia:9410","source":"mia","sourceObjectId":"9410","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Zande","score":60}
-{"key":"mia:9744","source":"mia","sourceObjectId":"9744","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","score":40}
-{"key":"mia:9775","source":"mia","sourceObjectId":"9775","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Lozi","score":40}
-{"key":"mia:11951","source":"mia","sourceObjectId":"11951","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lobi","score":90}
-{"key":"mia:11988","source":"mia","sourceObjectId":"11988","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:12062","source":"mia","sourceObjectId":"12062","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Pende","score":90}
-{"key":"mia:12100","source":"mia","sourceObjectId":"12100","objectClass":"other","regionGroup":"sub-saharan","culture":"Lozi","score":10}
-{"key":"mia:12108","source":"mia","sourceObjectId":"12108","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
-{"key":"mia:12122","source":"mia","sourceObjectId":"12122","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","score":90}
-{"key":"mia:12121","source":"mia","sourceObjectId":"12121","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","score":90}
-{"key":"mia:12112","source":"mia","sourceObjectId":"12112","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Songye","score":40}
-{"key":"mia:12476","source":"mia","sourceObjectId":"12476","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:12480","source":"mia","sourceObjectId":"12480","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:12535","source":"mia","sourceObjectId":"12535","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:12524","source":"mia","sourceObjectId":"12524","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:12513","source":"mia","sourceObjectId":"12513","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:12816","source":"mia","sourceObjectId":"12816","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:12962","source":"mia","sourceObjectId":"12962","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Igbo","score":90}
-{"key":"mia:13204","source":"mia","sourceObjectId":"13204","objectClass":"other","regionGroup":"north-africa","culture":"Ida ou Semlal Amazigh (Berber)","score":10}
-{"key":"mia:13479","source":"mia","sourceObjectId":"13479","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:14065","source":"mia","sourceObjectId":"14065","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:14730","source":"mia","sourceObjectId":"14730","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"mia:14751","source":"mia","sourceObjectId":"14751","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:15008","source":"mia","sourceObjectId":"15008","objectClass":"pottery","regionGroup":"egypt","culture":"Ancient Egyptian","score":60}
-{"key":"mia:15071","source":"mia","sourceObjectId":"15071","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
-{"key":"mia:15137","source":"mia","sourceObjectId":"15137","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:15344","source":"mia","sourceObjectId":"15344","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:18516","source":"mia","sourceObjectId":"18516","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18511","source":"mia","sourceObjectId":"18511","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
-{"key":"mia:18474","source":"mia","sourceObjectId":"18474","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18518","source":"mia","sourceObjectId":"18518","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18481","source":"mia","sourceObjectId":"18481","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18517","source":"mia","sourceObjectId":"18517","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18604","source":"mia","sourceObjectId":"18604","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
-{"key":"mia:24584","source":"mia","sourceObjectId":"24584","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24602","source":"mia","sourceObjectId":"24602","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24583","source":"mia","sourceObjectId":"24583","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24936","source":"mia","sourceObjectId":"24936","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","score":10}
-{"key":"mia:24959","source":"mia","sourceObjectId":"24959","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
-{"key":"mia:24954","source":"mia","sourceObjectId":"24954","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24941","source":"mia","sourceObjectId":"24941","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:24974","source":"mia","sourceObjectId":"24974","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:24982","source":"mia","sourceObjectId":"24982","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:24977","source":"mia","sourceObjectId":"24977","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:25196","source":"mia","sourceObjectId":"25196","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
-{"key":"mia:25203","source":"mia","sourceObjectId":"25203","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:25181","source":"mia","sourceObjectId":"25181","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:25220","source":"mia","sourceObjectId":"25220","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:25204","source":"mia","sourceObjectId":"25204","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:25261","source":"mia","sourceObjectId":"25261","objectClass":"other","regionGroup":"sub-saharan","culture":"probably Fulani","score":10}
-{"key":"mia:25265","source":"mia","sourceObjectId":"25265","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:26132","source":"mia","sourceObjectId":"26132","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe Fulani","score":10}
-{"key":"mia:26118","source":"mia","sourceObjectId":"26118","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:26120","source":"mia","sourceObjectId":"26120","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:26501","source":"mia","sourceObjectId":"26501","objectClass":"other","regionGroup":"north-africa","culture":"Ben Amazigh (Berber)","score":10}
-{"key":"mia:26541","source":"mia","sourceObjectId":"26541","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:26560","source":"mia","sourceObjectId":"26560","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:26542","source":"mia","sourceObjectId":"26542","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:27074","source":"mia","sourceObjectId":"27074","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:27230","source":"mia","sourceObjectId":"27230","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
-{"key":"mia:27510","source":"mia","sourceObjectId":"27510","objectClass":"other","regionGroup":"north-africa","culture":"Tuareg","score":10}
-{"key":"mia:27559","source":"mia","sourceObjectId":"27559","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:27669","source":"mia","sourceObjectId":"27669","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:27744","source":"mia","sourceObjectId":"27744","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Yombe","score":60}
-{"key":"mia:27743","source":"mia","sourceObjectId":"27743","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Teke","score":60}
-{"key":"mia:27938","source":"mia","sourceObjectId":"27938","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:28050","source":"mia","sourceObjectId":"28050","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:28111","source":"mia","sourceObjectId":"28111","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ewe","score":90}
-{"key":"mia:28513","source":"mia","sourceObjectId":"28513","objectClass":"other","regionGroup":"sub-saharan","culture":"Pygmy","score":10}
-{"key":"mia:29253","source":"mia","sourceObjectId":"29253","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
+{"key":"mia:4218","source":"mia","sourceObjectId":"4218","objectClass":"other","regionGroup":"sub-saharan","culture":"Ndebele","score":10}
+{"key":"mia:4287","source":"mia","sourceObjectId":"4287","objectClass":"mask","regionGroup":"sub-saharan","culture":"Pende","score":100}
+{"key":"mia:4282","source":"mia","sourceObjectId":"4282","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:4318","source":"mia","sourceObjectId":"4318","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","score":90}
+{"key":"mia:4531","source":"mia","sourceObjectId":"4531","objectClass":"mask","regionGroup":"sub-saharan","culture":"Eket","score":100}
+{"key":"mia:4680","source":"mia","sourceObjectId":"4680","objectClass":"other","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber)","score":10}
+{"key":"mia:4835","source":"mia","sourceObjectId":"4835","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kotoko","score":90}
+{"key":"mia:5274","source":"mia","sourceObjectId":"5274","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"probably Lozi","score":40}
+{"key":"mia:5297","source":"mia","sourceObjectId":"5297","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
+{"key":"mia:5443","source":"mia","sourceObjectId":"5443","objectClass":"other","regionGroup":"north-africa","culture":"Ida ou Semlal Amazigh (Berber)","score":10}
+{"key":"mia:5437","source":"mia","sourceObjectId":"5437","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Semlal Amazigh (Berber)","score":40}
+{"key":"mia:5422","source":"mia","sourceObjectId":"5422","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dan or Wobe","score":100}
+{"key":"mia:5506","source":"mia","sourceObjectId":"5506","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Benin","score":60}
+{"key":"mia:5552","source":"mia","sourceObjectId":"5552","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Djenne","score":40}
+{"key":"mia:5620","source":"mia","sourceObjectId":"5620","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Gurage","score":40}
+{"key":"mia:5800","source":"mia","sourceObjectId":"5800","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:5862","source":"mia","sourceObjectId":"5862","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:5918","source":"mia","sourceObjectId":"5918","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":90}
+{"key":"mia:5893","source":"mia","sourceObjectId":"5893","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Borana or Guji","score":60}
+{"key":"mia:5975","source":"mia","sourceObjectId":"5975","objectClass":"other","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":10}
+{"key":"mia:6025","source":"mia","sourceObjectId":"6025","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:7994","source":"mia","sourceObjectId":"7994","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:8037","source":"mia","sourceObjectId":"8037","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dan","score":100}
+{"key":"mia:8164","source":"mia","sourceObjectId":"8164","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Mijikenda (Kauma)","score":90}
+{"key":"mia:8140","source":"mia","sourceObjectId":"8140","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:9379","source":"mia","sourceObjectId":"9379","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ibibio","score":90}
+{"key":"mia:9479","source":"mia","sourceObjectId":"9479","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Djenne","score":60}
+{"key":"mia:9773","source":"mia","sourceObjectId":"9773","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Nkutshu","score":40}
+{"key":"mia:9740","source":"mia","sourceObjectId":"9740","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":60}
+{"key":"mia:11655","source":"mia","sourceObjectId":"11655","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:11985","source":"mia","sourceObjectId":"11985","objectClass":"sculpture","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","score":90}
+{"key":"mia:12008","source":"mia","sourceObjectId":"12008","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:11990","source":"mia","sourceObjectId":"11990","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:12081","source":"mia","sourceObjectId":"12081","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Senufo","score":90}
+{"key":"mia:12102","source":"mia","sourceObjectId":"12102","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
+{"key":"mia:12082","source":"mia","sourceObjectId":"12082","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
+{"key":"mia:12104","source":"mia","sourceObjectId":"12104","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
+{"key":"mia:12094","source":"mia","sourceObjectId":"12094","objectClass":"other","regionGroup":"sub-saharan","culture":"Fon","score":10}
+{"key":"mia:12101","source":"mia","sourceObjectId":"12101","objectClass":"other","regionGroup":"sub-saharan","culture":"Lozi","score":10}
+{"key":"mia:12124","source":"mia","sourceObjectId":"12124","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Yaka or Songo","score":40}
+{"key":"mia:12120","source":"mia","sourceObjectId":"12120","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","score":90}
+{"key":"mia:12118","source":"mia","sourceObjectId":"12118","objectClass":"mask","regionGroup":"sub-saharan","culture":"Wobe or Bete","score":100}
+{"key":"mia:12115","source":"mia","sourceObjectId":"12115","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
+{"key":"mia:12155","source":"mia","sourceObjectId":"12155","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:12217","source":"mia","sourceObjectId":"12217","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:12246","source":"mia","sourceObjectId":"12246","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:12466","source":"mia","sourceObjectId":"12466","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
+{"key":"mia:12857","source":"mia","sourceObjectId":"12857","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","score":90}
+{"key":"mia:13031","source":"mia","sourceObjectId":"13031","objectClass":"mask","regionGroup":"sub-saharan","culture":"Kongo","score":100}
+{"key":"mia:13026","source":"mia","sourceObjectId":"13026","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nok","score":90}
+{"key":"mia:13086","source":"mia","sourceObjectId":"13086","objectClass":"other","regionGroup":"sub-saharan","culture":"Bassa","score":10}
+{"key":"mia:13473","source":"mia","sourceObjectId":"13473","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:13475","source":"mia","sourceObjectId":"13475","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:14160","source":"mia","sourceObjectId":"14160","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
+{"key":"mia:14152","source":"mia","sourceObjectId":"14152","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
+{"key":"mia:14736","source":"mia","sourceObjectId":"14736","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
+{"key":"mia:15050","source":"mia","sourceObjectId":"15050","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:15339","source":"mia","sourceObjectId":"15339","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:15517","source":"mia","sourceObjectId":"15517","objectClass":"pottery","regionGroup":"egypt","culture":"Egyptian","score":60}
+{"key":"mia:18514","source":"mia","sourceObjectId":"18514","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
+{"key":"mia:21309","source":"mia","sourceObjectId":"21309","objectClass":"sculpture","regionGroup":"egypt","culture":"Roman Egyptian","score":90}
+{"key":"mia:24197","source":"mia","sourceObjectId":"24197","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:24590","source":"mia","sourceObjectId":"24590","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
+{"key":"mia:24652","source":"mia","sourceObjectId":"24652","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Zande","score":90}
+{"key":"mia:24934","source":"mia","sourceObjectId":"24934","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:24946","source":"mia","sourceObjectId":"24946","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:24937","source":"mia","sourceObjectId":"24937","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:24963","source":"mia","sourceObjectId":"24963","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:24965","source":"mia","sourceObjectId":"24965","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe Fulani","score":10}
+{"key":"mia:24966","source":"mia","sourceObjectId":"24966","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe Fulani","score":10}
+{"key":"mia:24964","source":"mia","sourceObjectId":"24964","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:24958","source":"mia","sourceObjectId":"24958","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:24980","source":"mia","sourceObjectId":"24980","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:25070","source":"mia","sourceObjectId":"25070","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:25178","source":"mia","sourceObjectId":"25178","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25180","source":"mia","sourceObjectId":"25180","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25189","source":"mia","sourceObjectId":"25189","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25191","source":"mia","sourceObjectId":"25191","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25262","source":"mia","sourceObjectId":"25262","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25271","source":"mia","sourceObjectId":"25271","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25253","source":"mia","sourceObjectId":"25253","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25449","source":"mia","sourceObjectId":"25449","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:26119","source":"mia","sourceObjectId":"26119","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:26544","source":"mia","sourceObjectId":"26544","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
+{"key":"mia:26535","source":"mia","sourceObjectId":"26535","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:26570","source":"mia","sourceObjectId":"26570","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
+{"key":"mia:26580","source":"mia","sourceObjectId":"26580","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
+{"key":"mia:26581","source":"mia","sourceObjectId":"26581","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
+{"key":"mia:26572","source":"mia","sourceObjectId":"26572","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:27207","source":"mia","sourceObjectId":"27207","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
+{"key":"mia:27213","source":"mia","sourceObjectId":"27213","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","score":10}
+{"key":"mia:27508","source":"mia","sourceObjectId":"27508","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:27734","source":"mia","sourceObjectId":"27734","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Teke","score":60}
+{"key":"mia:27747","source":"mia","sourceObjectId":"27747","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Ngombe","score":60}
+{"key":"mia:27933","source":"mia","sourceObjectId":"27933","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:27936","source":"mia","sourceObjectId":"27936","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:28011","source":"mia","sourceObjectId":"28011","objectClass":"other","regionGroup":"north-africa","culture":"Tetouan","score":10}
+{"key":"mia:28323","source":"mia","sourceObjectId":"28323","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:28547","source":"mia","sourceObjectId":"28547","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan","score":90}
+{"key":"mia:29037","source":"mia","sourceObjectId":"29037","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:29339","source":"mia","sourceObjectId":"29339","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:29412","source":"mia","sourceObjectId":"29412","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:29763","source":"mia","sourceObjectId":"29763","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
@@ -898,12 +898,12 @@
 {"key":"mia:123409","source":"mia","sourceObjectId":"123409","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Leele","score":90}
 {"key":"mia:123412","source":"mia","sourceObjectId":"123412","objectClass":"other","regionGroup":"sub-saharan","culture":"Lulua","score":10}
 {"key":"mia:123411","source":"mia","sourceObjectId":"123411","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbala","score":10}
+{"key":"mia:123391","source":"mia","sourceObjectId":"123391","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:123380","source":"mia","sourceObjectId":"123380","objectClass":"other","regionGroup":"sub-saharan","culture":"Luchazi or Lwena","score":10}
 {"key":"mia:123371","source":"mia","sourceObjectId":"123371","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Bamum","score":90}
 {"key":"mia:123410","source":"mia","sourceObjectId":"123410","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
 {"key":"mia:123403","source":"mia","sourceObjectId":"123403","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Leele","score":60}
 {"key":"mia:123399","source":"mia","sourceObjectId":"123399","objectClass":"other","regionGroup":"sub-saharan","culture":"Zela","score":10}
-{"key":"mia:123394","source":"mia","sourceObjectId":"123394","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
 {"key":"mia:123395","source":"mia","sourceObjectId":"123395","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Mende","score":60}
 {"key":"mia:124579","source":"mia","sourceObjectId":"124579","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
 {"key":"mia:124676","source":"mia","sourceObjectId":"124676","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
@@ -913,28 +913,28 @@
 {"key":"mia:126181","source":"mia","sourceObjectId":"126181","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:127610","source":"mia","sourceObjectId":"127610","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Topoke","score":40}
 {"key":"mia:127709","source":"mia","sourceObjectId":"127709","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:127688","source":"mia","sourceObjectId":"127688","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Budja","score":40}
 {"key":"mia:127712","source":"mia","sourceObjectId":"127712","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:127688","source":"mia","sourceObjectId":"127688","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Budja","score":40}
 {"key":"mia:128333","source":"mia","sourceObjectId":"128333","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:128337","source":"mia","sourceObjectId":"128337","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:129701","source":"mia","sourceObjectId":"129701","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"mia:129736","source":"mia","sourceObjectId":"129736","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:129775","source":"mia","sourceObjectId":"129775","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","score":10}
 {"key":"mia:129772","source":"mia","sourceObjectId":"129772","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
+{"key":"mia:129873","source":"mia","sourceObjectId":"129873","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
 {"key":"mia:129886","source":"mia","sourceObjectId":"129886","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:129882","source":"mia","sourceObjectId":"129882","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamenda","score":10}
-{"key":"mia:129873","source":"mia","sourceObjectId":"129873","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
 {"key":"mia:129884","source":"mia","sourceObjectId":"129884","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:129893","source":"mia","sourceObjectId":"129893","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:129897","source":"mia","sourceObjectId":"129897","objectClass":"other","regionGroup":"sub-saharan","culture":"Pende","score":10}
 {"key":"mia:129924","source":"mia","sourceObjectId":"129924","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129944","source":"mia","sourceObjectId":"129944","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129921","source":"mia","sourceObjectId":"129921","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129942","source":"mia","sourceObjectId":"129942","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129932","source":"mia","sourceObjectId":"129932","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129948","source":"mia","sourceObjectId":"129948","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129952","source":"mia","sourceObjectId":"129952","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129944","source":"mia","sourceObjectId":"129944","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129947","source":"mia","sourceObjectId":"129947","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129942","source":"mia","sourceObjectId":"129942","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129953","source":"mia","sourceObjectId":"129953","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:131786","source":"mia","sourceObjectId":"131786","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":108}
 {"key":"mia:132387","source":"mia","sourceObjectId":"132387","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
@@ -1098,104 +1098,104 @@
 {"key":"mia:83745","source":"mia","sourceObjectId":"83745","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:91393","source":"mia","sourceObjectId":"91393","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:96240","source":"mia","sourceObjectId":"96240","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:63747","source":"mia","sourceObjectId":"63747","objectClass":"mask","regionGroup":"sub-saharan","culture":"Baule","score":100}
-{"key":"mia:65201","source":"mia","sourceObjectId":"65201","objectClass":"other","regionGroup":"sub-saharan","culture":"Luba","score":10}
-{"key":"mia:66726","source":"mia","sourceObjectId":"66726","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Dagari","score":60}
-{"key":"mia:66727","source":"mia","sourceObjectId":"66727","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Lobi","score":60}
-{"key":"mia:72012","source":"mia","sourceObjectId":"72012","objectClass":"other","regionGroup":"sub-saharan","culture":"Tutsi","score":10}
-{"key":"mia:72224","source":"mia","sourceObjectId":"72224","objectClass":"other","regionGroup":"sub-saharan","culture":"Tutsi","score":10}
-{"key":"mia:91391","source":"mia","sourceObjectId":"91391","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:94115","source":"mia","sourceObjectId":"94115","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:98128","source":"mia","sourceObjectId":"98128","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
-{"key":"mia:99251","source":"mia","sourceObjectId":"99251","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","score":10}
-{"key":"mia:103797","source":"mia","sourceObjectId":"103797","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
-{"key":"mia:103802","source":"mia","sourceObjectId":"103802","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"mia:108934","source":"mia","sourceObjectId":"108934","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Igbo","score":90}
-{"key":"mia:109885","source":"mia","sourceObjectId":"109885","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:109891","source":"mia","sourceObjectId":"109891","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:110012","source":"mia","sourceObjectId":"110012","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:111809","source":"mia","sourceObjectId":"111809","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:112158","source":"mia","sourceObjectId":"112158","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:112620","source":"mia","sourceObjectId":"112620","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:113130","source":"mia","sourceObjectId":"113130","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:113299","source":"mia","sourceObjectId":"113299","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Kran","score":40}
-{"key":"mia:113361","source":"mia","sourceObjectId":"113361","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
-{"key":"mia:113307","source":"mia","sourceObjectId":"113307","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Djenne","score":40}
-{"key":"mia:113279","source":"mia","sourceObjectId":"113279","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:113410","source":"mia","sourceObjectId":"113410","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Mende","score":70}
-{"key":"mia:113413","source":"mia","sourceObjectId":"113413","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:113477","source":"mia","sourceObjectId":"113477","objectClass":"mask","regionGroup":"sub-saharan","culture":"Mende or Southern Bullom (Sherbro)","score":100}
-{"key":"mia:113432","source":"mia","sourceObjectId":"113432","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:113414","source":"mia","sourceObjectId":"113414","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:113471","source":"mia","sourceObjectId":"113471","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
-{"key":"mia:113444","source":"mia","sourceObjectId":"113444","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Mende","score":70}
-{"key":"mia:113497","source":"mia","sourceObjectId":"113497","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","score":40}
-{"key":"mia:113598","source":"mia","sourceObjectId":"113598","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:113792","source":"mia","sourceObjectId":"113792","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:114407","source":"mia","sourceObjectId":"114407","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
-{"key":"mia:114403","source":"mia","sourceObjectId":"114403","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:114517","source":"mia","sourceObjectId":"114517","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:115887","source":"mia","sourceObjectId":"115887","objectClass":"other","regionGroup":"sub-saharan","culture":"Kalabari","score":10}
-{"key":"mia:118747","source":"mia","sourceObjectId":"118747","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:118744","source":"mia","sourceObjectId":"118744","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:118769","source":"mia","sourceObjectId":"118769","objectClass":"other","regionGroup":"sub-saharan","culture":"Anufo","score":10}
-{"key":"mia:119282","source":"mia","sourceObjectId":"119282","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","score":10}
-{"key":"mia:119283","source":"mia","sourceObjectId":"119283","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","score":10}
-{"key":"mia:119763","source":"mia","sourceObjectId":"119763","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Teke","score":90}
-{"key":"mia:120398","source":"mia","sourceObjectId":"120398","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123053","source":"mia","sourceObjectId":"123053","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123301","source":"mia","sourceObjectId":"123301","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123305","source":"mia","sourceObjectId":"123305","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123377","source":"mia","sourceObjectId":"123377","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
-{"key":"mia:123386","source":"mia","sourceObjectId":"123386","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songye","score":90}
-{"key":"mia:123367","source":"mia","sourceObjectId":"123367","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lega","score":90}
-{"key":"mia:123384","source":"mia","sourceObjectId":"123384","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:123365","source":"mia","sourceObjectId":"123365","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
-{"key":"mia:123391","source":"mia","sourceObjectId":"123391","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:123380","source":"mia","sourceObjectId":"123380","objectClass":"other","regionGroup":"sub-saharan","culture":"Luchazi or Lwena","score":10}
-{"key":"mia:123371","source":"mia","sourceObjectId":"123371","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Bamum","score":90}
-{"key":"mia:123410","source":"mia","sourceObjectId":"123410","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
-{"key":"mia:123403","source":"mia","sourceObjectId":"123403","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Leele","score":60}
-{"key":"mia:123399","source":"mia","sourceObjectId":"123399","objectClass":"other","regionGroup":"sub-saharan","culture":"Zela","score":10}
-{"key":"mia:123394","source":"mia","sourceObjectId":"123394","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
-{"key":"mia:123395","source":"mia","sourceObjectId":"123395","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Mende","score":60}
-{"key":"mia:124579","source":"mia","sourceObjectId":"124579","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
-{"key":"mia:124676","source":"mia","sourceObjectId":"124676","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
-{"key":"mia:124678","source":"mia","sourceObjectId":"124678","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
-{"key":"mia:124928","source":"mia","sourceObjectId":"124928","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
-{"key":"mia:125148","source":"mia","sourceObjectId":"125148","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa or Nupe","score":10}
-{"key":"mia:126181","source":"mia","sourceObjectId":"126181","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:127610","source":"mia","sourceObjectId":"127610","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Topoke","score":40}
-{"key":"mia:127709","source":"mia","sourceObjectId":"127709","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:127688","source":"mia","sourceObjectId":"127688","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Budja","score":40}
-{"key":"mia:127712","source":"mia","sourceObjectId":"127712","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:128333","source":"mia","sourceObjectId":"128333","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:128337","source":"mia","sourceObjectId":"128337","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:129701","source":"mia","sourceObjectId":"129701","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
-{"key":"mia:129736","source":"mia","sourceObjectId":"129736","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:129775","source":"mia","sourceObjectId":"129775","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","score":10}
-{"key":"mia:129772","source":"mia","sourceObjectId":"129772","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
-{"key":"mia:129886","source":"mia","sourceObjectId":"129886","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:129882","source":"mia","sourceObjectId":"129882","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamenda","score":10}
-{"key":"mia:129873","source":"mia","sourceObjectId":"129873","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
-{"key":"mia:129884","source":"mia","sourceObjectId":"129884","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:129893","source":"mia","sourceObjectId":"129893","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:129897","source":"mia","sourceObjectId":"129897","objectClass":"other","regionGroup":"sub-saharan","culture":"Pende","score":10}
-{"key":"mia:129924","source":"mia","sourceObjectId":"129924","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129944","source":"mia","sourceObjectId":"129944","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129921","source":"mia","sourceObjectId":"129921","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129942","source":"mia","sourceObjectId":"129942","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129932","source":"mia","sourceObjectId":"129932","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129948","source":"mia","sourceObjectId":"129948","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129952","source":"mia","sourceObjectId":"129952","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129947","source":"mia","sourceObjectId":"129947","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:129953","source":"mia","sourceObjectId":"129953","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
-{"key":"mia:131786","source":"mia","sourceObjectId":"131786","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":108}
-{"key":"mia:132387","source":"mia","sourceObjectId":"132387","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
-{"key":"mia:136485","source":"mia","sourceObjectId":"136485","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
-{"key":"mia:136489","source":"mia","sourceObjectId":"136489","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
-{"key":"mia:137943","source":"mia","sourceObjectId":"137943","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:139991","source":"mia","sourceObjectId":"139991","objectClass":"other","regionGroup":"sub-saharan","culture":"Amhara","score":10}
+{"key":"mia:96244","source":"mia","sourceObjectId":"96244","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:96349","source":"mia","sourceObjectId":"96349","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
+{"key":"mia:99731","source":"mia","sourceObjectId":"99731","objectClass":"mask","regionGroup":"sub-saharan","culture":"Baga or Nalu","score":100}
+{"key":"mia:100178","source":"mia","sourceObjectId":"100178","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:101918","source":"mia","sourceObjectId":"101918","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:101916","source":"mia","sourceObjectId":"101916","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:101919","source":"mia","sourceObjectId":"101919","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:105992","source":"mia","sourceObjectId":"105992","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
+{"key":"mia:105991","source":"mia","sourceObjectId":"105991","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
+{"key":"mia:105990","source":"mia","sourceObjectId":"105990","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","score":10}
+{"key":"mia:108741","source":"mia","sourceObjectId":"108741","objectClass":"other","regionGroup":"sub-saharan","culture":"Dinka","score":10}
+{"key":"mia:110018","source":"mia","sourceObjectId":"110018","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:110011","source":"mia","sourceObjectId":"110011","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:111095","source":"mia","sourceObjectId":"111095","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Grasslands","score":70}
+{"key":"mia:111101","source":"mia","sourceObjectId":"111101","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113066","source":"mia","sourceObjectId":"113066","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:113235","source":"mia","sourceObjectId":"113235","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113169","source":"mia","sourceObjectId":"113169","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113238","source":"mia","sourceObjectId":"113238","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon","score":90}
+{"key":"mia:113297","source":"mia","sourceObjectId":"113297","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Vai","score":40}
+{"key":"mia:113415","source":"mia","sourceObjectId":"113415","objectClass":"mask","regionGroup":"sub-saharan","culture":"Loma","score":100}
+{"key":"mia:113376","source":"mia","sourceObjectId":"113376","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","score":10}
+{"key":"mia:113300","source":"mia","sourceObjectId":"113300","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Dan","score":40}
+{"key":"mia:113448","source":"mia","sourceObjectId":"113448","objectClass":"mask","regionGroup":"sub-saharan","culture":"Dan","score":100}
+{"key":"mia:113445","source":"mia","sourceObjectId":"113445","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Southern Bullom (Sherbro)","score":90}
+{"key":"mia:113434","source":"mia","sourceObjectId":"113434","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:113464","source":"mia","sourceObjectId":"113464","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
+{"key":"mia:113459","source":"mia","sourceObjectId":"113459","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kissi","score":90}
+{"key":"mia:113426","source":"mia","sourceObjectId":"113426","objectClass":"other","regionGroup":"sub-saharan","culture":"Ganda","score":10}
+{"key":"mia:113427","source":"mia","sourceObjectId":"113427","objectClass":"other","regionGroup":"sub-saharan","culture":"Mende","score":10}
+{"key":"mia:113478","source":"mia","sourceObjectId":"113478","objectClass":"mask","regionGroup":"sub-saharan","culture":"Southern Bullom (Sherbro)","score":100}
+{"key":"mia:113791","source":"mia","sourceObjectId":"113791","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113803","source":"mia","sourceObjectId":"113803","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:113819","source":"mia","sourceObjectId":"113819","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:114408","source":"mia","sourceObjectId":"114408","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:114577","source":"mia","sourceObjectId":"114577","objectClass":"other","regionGroup":"sub-saharan","culture":"Nupe","score":10}
+{"key":"mia:114497","source":"mia","sourceObjectId":"114497","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","score":10}
+{"key":"mia:114635","source":"mia","sourceObjectId":"114635","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","score":10}
+{"key":"mia:115746","source":"mia","sourceObjectId":"115746","objectClass":"other","regionGroup":"sub-saharan","culture":"Dan","score":10}
+{"key":"mia:115888","source":"mia","sourceObjectId":"115888","objectClass":"other","regionGroup":"sub-saharan","culture":"Kalabari","score":10}
+{"key":"mia:115889","source":"mia","sourceObjectId":"115889","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","score":10}
+{"key":"mia:118953","source":"mia","sourceObjectId":"118953","objectClass":"other","regionGroup":"sub-saharan","culture":"Senufo","score":10}
+{"key":"mia:119346","source":"mia","sourceObjectId":"119346","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","score":10}
+{"key":"mia:121347","source":"mia","sourceObjectId":"121347","objectClass":"mask","regionGroup":"sub-saharan","culture":"Yoruba","score":100}
+{"key":"mia:123376","source":"mia","sourceObjectId":"123376","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Beembe","score":90}
+{"key":"mia:123401","source":"mia","sourceObjectId":"123401","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Kuba","score":60}
+{"key":"mia:123374","source":"mia","sourceObjectId":"123374","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:123366","source":"mia","sourceObjectId":"123366","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Bamum","score":60}
+{"key":"mia:123385","source":"mia","sourceObjectId":"123385","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:123379","source":"mia","sourceObjectId":"123379","objectClass":"mask","regionGroup":"sub-saharan","culture":"Chokwe","score":100}
+{"key":"mia:123383","source":"mia","sourceObjectId":"123383","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songo","score":90}
+{"key":"mia:123369","source":"mia","sourceObjectId":"123369","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:123409","source":"mia","sourceObjectId":"123409","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Leele","score":90}
+{"key":"mia:123404","source":"mia","sourceObjectId":"123404","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Shoowa Kuba","score":60}
+{"key":"mia:123412","source":"mia","sourceObjectId":"123412","objectClass":"other","regionGroup":"sub-saharan","culture":"Lulua","score":10}
+{"key":"mia:123411","source":"mia","sourceObjectId":"123411","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbala","score":10}
+{"key":"mia:124580","source":"mia","sourceObjectId":"124580","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
+{"key":"mia:124628","source":"mia","sourceObjectId":"124628","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:124630","source":"mia","sourceObjectId":"124630","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
+{"key":"mia:124677","source":"mia","sourceObjectId":"124677","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:124917","source":"mia","sourceObjectId":"124917","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
+{"key":"mia:124918","source":"mia","sourceObjectId":"124918","objectClass":"other","regionGroup":"sub-saharan","culture":"Wara","score":10}
+{"key":"mia:126182","source":"mia","sourceObjectId":"126182","objectClass":"other","regionGroup":"sub-saharan","culture":"Kalabari","score":10}
+{"key":"mia:126818","source":"mia","sourceObjectId":"126818","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","score":90}
+{"key":"mia:127072","source":"mia","sourceObjectId":"127072","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:127073","source":"mia","sourceObjectId":"127073","objectClass":"other","regionGroup":"sub-saharan","culture":"Samo or Wara","score":10}
+{"key":"mia:127049","source":"mia","sourceObjectId":"127049","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
+{"key":"mia:127100","source":"mia","sourceObjectId":"127100","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:127074","source":"mia","sourceObjectId":"127074","objectClass":"other","regionGroup":"sub-saharan","culture":"Samo or Wara","score":10}
+{"key":"mia:127114","source":"mia","sourceObjectId":"127114","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
+{"key":"mia:127129","source":"mia","sourceObjectId":"127129","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
+{"key":"mia:127133","source":"mia","sourceObjectId":"127133","objectClass":"other","regionGroup":"north-africa","culture":"Beni Hilal","score":10}
+{"key":"mia:127631","source":"mia","sourceObjectId":"127631","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
+{"key":"mia:128271","source":"mia","sourceObjectId":"128271","objectClass":"other","regionGroup":"sub-saharan","culture":"Aleko","score":10}
+{"key":"mia:128336","source":"mia","sourceObjectId":"128336","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:128339","source":"mia","sourceObjectId":"128339","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:129362","source":"mia","sourceObjectId":"129362","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
+{"key":"mia:129735","source":"mia","sourceObjectId":"129735","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","score":10}
+{"key":"mia:129733","source":"mia","sourceObjectId":"129733","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","score":10}
+{"key":"mia:129776","source":"mia","sourceObjectId":"129776","objectClass":"other","regionGroup":"sub-saharan","culture":"Zanaki","score":10}
+{"key":"mia:129773","source":"mia","sourceObjectId":"129773","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
+{"key":"mia:129891","source":"mia","sourceObjectId":"129891","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:129872","source":"mia","sourceObjectId":"129872","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
+{"key":"mia:129870","source":"mia","sourceObjectId":"129870","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:129945","source":"mia","sourceObjectId":"129945","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129931","source":"mia","sourceObjectId":"129931","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129933","source":"mia","sourceObjectId":"129933","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129949","source":"mia","sourceObjectId":"129949","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129927","source":"mia","sourceObjectId":"129927","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:131299","source":"mia","sourceObjectId":"131299","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:131310","source":"mia","sourceObjectId":"131310","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:132308","source":"mia","sourceObjectId":"132308","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Fulani?","score":60}
+{"key":"mia:132389","source":"mia","sourceObjectId":"132389","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
+{"key":"mia:136057","source":"mia","sourceObjectId":"136057","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:142366","source":"mia","sourceObjectId":"142366","objectClass":"other","regionGroup":"sub-saharan","culture":"Songhai","score":10}
+{"key":"mia:142639","source":"mia","sourceObjectId":"142639","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Tutsi or Ge-Sera (Twa)","score":60}
+{"key":"mia:142683","source":"mia","sourceObjectId":"142683","objectClass":"other","regionGroup":"sub-saharan","culture":"Kikuyu","score":10}
+{"key":"mia:144623","source":"mia","sourceObjectId":"144623","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:98","source":"mia","sourceObjectId":"98","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
 {"key":"mia:82","source":"mia","sourceObjectId":"82","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:1192","source":"mia","sourceObjectId":"1192","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
@@ -1207,8 +1207,8 @@
 {"key":"mia:3388","source":"mia","sourceObjectId":"3388","objectClass":"other","regionGroup":"sub-saharan","culture":"Nupe","score":10}
 {"key":"mia:3789","source":"mia","sourceObjectId":"3789","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:3787","source":"mia","sourceObjectId":"3787","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
-{"key":"mia:3788","source":"mia","sourceObjectId":"3788","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:3818","source":"mia","sourceObjectId":"3818","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lwena","score":100}
+{"key":"mia:3788","source":"mia","sourceObjectId":"3788","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:3957","source":"mia","sourceObjectId":"3957","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lwena","score":90}
 {"key":"mia:4039","source":"mia","sourceObjectId":"4039","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:4176","source":"mia","sourceObjectId":"4176","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Semlal Amazigh (Berber)","score":40}
@@ -1222,14 +1222,14 @@
 {"key":"mia:4778","source":"mia","sourceObjectId":"4778","objectClass":"other","regionGroup":"sub-saharan","culture":"Luba","score":10}
 {"key":"mia:5092","source":"mia","sourceObjectId":"5092","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","score":90}
 {"key":"mia:5116","source":"mia","sourceObjectId":"5116","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Bamana","score":60}
-{"key":"mia:5265","source":"mia","sourceObjectId":"5265","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Konda Mongo","score":40}
 {"key":"mia:5278","source":"mia","sourceObjectId":"5278","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
+{"key":"mia:5265","source":"mia","sourceObjectId":"5265","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Konda Mongo","score":40}
 {"key":"mia:5269","source":"mia","sourceObjectId":"5269","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Konda","score":40}
 {"key":"mia:5283","source":"mia","sourceObjectId":"5283","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:5356","source":"mia","sourceObjectId":"5356","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:5601","source":"mia","sourceObjectId":"5601","objectClass":"mask","regionGroup":"sub-saharan","culture":"Pende","score":100}
-{"key":"mia:5647","source":"mia","sourceObjectId":"5647","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:5681","source":"mia","sourceObjectId":"5681","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:5647","source":"mia","sourceObjectId":"5647","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:5727","source":"mia","sourceObjectId":"5727","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:5881","source":"mia","sourceObjectId":"5881","objectClass":"other","regionGroup":"sub-saharan","culture":"Luba","score":10}
 {"key":"mia:5892","source":"mia","sourceObjectId":"5892","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Q","score":60}
@@ -1239,21 +1239,21 @@
 {"key":"mia:8236","source":"mia","sourceObjectId":"8236","objectClass":"other","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","score":10}
 {"key":"mia:8241","source":"mia","sourceObjectId":"8241","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"San (Bushmen)","score":40}
 {"key":"mia:8344","source":"mia","sourceObjectId":"8344","objectClass":"other","regionGroup":"sub-saharan","culture":"Guro","score":10}
+{"key":"mia:8343","source":"mia","sourceObjectId":"8343","objectClass":"other","regionGroup":"sub-saharan","culture":"Guro","score":10}
 {"key":"mia:8345","source":"mia","sourceObjectId":"8345","objectClass":"other","regionGroup":"sub-saharan","culture":"Guro","score":10}
 {"key":"mia:8350","source":"mia","sourceObjectId":"8350","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
-{"key":"mia:8343","source":"mia","sourceObjectId":"8343","objectClass":"other","regionGroup":"sub-saharan","culture":"Guro","score":10}
 {"key":"mia:8913","source":"mia","sourceObjectId":"8913","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Tikar","score":60}
-{"key":"mia:8992","source":"mia","sourceObjectId":"8992","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songye","score":90}
 {"key":"mia:8993","source":"mia","sourceObjectId":"8993","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Bamum","score":60}
 {"key":"mia:8998","source":"mia","sourceObjectId":"8998","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:8999","source":"mia","sourceObjectId":"8999","objectClass":"other","regionGroup":"sub-saharan","culture":"Zulu","score":10}
+{"key":"mia:8992","source":"mia","sourceObjectId":"8992","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Songye","score":90}
 {"key":"mia:9409","source":"mia","sourceObjectId":"9409","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Dan","score":60}
-{"key":"mia:9767","source":"mia","sourceObjectId":"9767","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Oromo","score":40}
-{"key":"mia:9739","source":"mia","sourceObjectId":"9739","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"mia:9776","source":"mia","sourceObjectId":"9776","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Dogon","score":40}
+{"key":"mia:9767","source":"mia","sourceObjectId":"9767","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Oromo","score":40}
 {"key":"mia:9790","source":"mia","sourceObjectId":"9790","objectClass":"other","regionGroup":"sub-saharan","culture":"Kaba","score":10}
-{"key":"mia:11991","source":"mia","sourceObjectId":"11991","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
+{"key":"mia:9739","source":"mia","sourceObjectId":"9739","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"mia:12014","source":"mia","sourceObjectId":"12014","objectClass":"other","regionGroup":"sub-saharan","culture":"Dida","score":10}
+{"key":"mia:11991","source":"mia","sourceObjectId":"11991","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:12015","source":"mia","sourceObjectId":"12015","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuun","score":10}
 {"key":"mia:12066","source":"mia","sourceObjectId":"12066","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Nupe","score":60}
 {"key":"mia:12106","source":"mia","sourceObjectId":"12106","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","score":10}
@@ -1262,37 +1262,37 @@
 {"key":"mia:12240","source":"mia","sourceObjectId":"12240","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:12468","source":"mia","sourceObjectId":"12468","objectClass":"sculpture","regionGroup":"egypt","culture":"Ancient Egyptian","score":90}
 {"key":"mia:12475","source":"mia","sourceObjectId":"12475","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
-{"key":"mia:14735","source":"mia","sourceObjectId":"14735","objectClass":"pottery","regionGroup":"egypt","culture":"Ancient Egyptian or Coptic","score":60}
 {"key":"mia:14694","source":"mia","sourceObjectId":"14694","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
 {"key":"mia:14737","source":"mia","sourceObjectId":"14737","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
+{"key":"mia:14735","source":"mia","sourceObjectId":"14735","objectClass":"pottery","regionGroup":"egypt","culture":"Ancient Egyptian or Coptic","score":60}
 {"key":"mia:15060","source":"mia","sourceObjectId":"15060","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:15055","source":"mia","sourceObjectId":"15055","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:15059","source":"mia","sourceObjectId":"15059","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:15083","source":"mia","sourceObjectId":"15083","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"score":10}
 {"key":"mia:15221","source":"mia","sourceObjectId":"15221","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"mia:15533","source":"mia","sourceObjectId":"15533","objectClass":"pottery","regionGroup":"egypt","culture":"Egyptian","score":60}
+{"key":"mia:18523","source":"mia","sourceObjectId":"18523","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:18478","source":"mia","sourceObjectId":"18478","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:18480","source":"mia","sourceObjectId":"18480","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:18477","source":"mia","sourceObjectId":"18477","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
-{"key":"mia:18523","source":"mia","sourceObjectId":"18523","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:20249","source":"mia","sourceObjectId":"20249","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","score":10}
 {"key":"mia:23368","source":"mia","sourceObjectId":"23368","objectClass":"other","regionGroup":"sub-saharan","culture":"Turka","score":10}
 {"key":"mia:24198","source":"mia","sourceObjectId":"24198","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:24534","source":"mia","sourceObjectId":"24534","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","score":40}
 {"key":"mia:24607","source":"mia","sourceObjectId":"24607","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
 {"key":"mia:24604","source":"mia","sourceObjectId":"24604","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","score":10}
-{"key":"mia:24931","source":"mia","sourceObjectId":"24931","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:24933","source":"mia","sourceObjectId":"24933","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:24957","source":"mia","sourceObjectId":"24957","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:24956","source":"mia","sourceObjectId":"24956","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Fulani","score":90}
-{"key":"mia:24967","source":"mia","sourceObjectId":"24967","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe Fulani","score":10}
 {"key":"mia:24960","source":"mia","sourceObjectId":"24960","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
 {"key":"mia:24953","source":"mia","sourceObjectId":"24953","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:24931","source":"mia","sourceObjectId":"24931","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:24933","source":"mia","sourceObjectId":"24933","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","score":10}
+{"key":"mia:24967","source":"mia","sourceObjectId":"24967","objectClass":"other","regionGroup":"sub-saharan","culture":"Wodaabe Fulani","score":10}
 {"key":"mia:24978","source":"mia","sourceObjectId":"24978","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:25199","source":"mia","sourceObjectId":"25199","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:25179","source":"mia","sourceObjectId":"25179","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:25201","source":"mia","sourceObjectId":"25201","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:25195","source":"mia","sourceObjectId":"25195","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:25201","source":"mia","sourceObjectId":"25201","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:26109","source":"mia","sourceObjectId":"26109","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:26122","source":"mia","sourceObjectId":"26122","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:26537","source":"mia","sourceObjectId":"26537","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
@@ -1398,15 +1398,15 @@
 {"key":"mia:113466","source":"mia","sourceObjectId":"113466","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
 {"key":"mia:113481","source":"mia","sourceObjectId":"113481","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:113525","source":"mia","sourceObjectId":"113525","objectClass":"carved-instrument","regionGroup":"unspecified-africa","culture":null,"score":70}
-{"key":"mia:113525","source":"mia","sourceObjectId":"113525","objectClass":"carved-instrument","regionGroup":"unspecified-africa","culture":null,"score":70}
-{"key":"mia:113847","source":"mia","sourceObjectId":"113847","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113711","source":"mia","sourceObjectId":"113711","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:113757","source":"mia","sourceObjectId":"113757","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113847","source":"mia","sourceObjectId":"113847","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"mia:113986","source":"mia","sourceObjectId":"113986","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
 {"key":"mia:113798","source":"mia","sourceObjectId":"113798","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:114000","source":"mia","sourceObjectId":"114000","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Bamana","score":40}
-{"key":"mia:113986","source":"mia","sourceObjectId":"113986","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","score":10}
+{"key":"mia:114454","source":"mia","sourceObjectId":"114454","objectClass":"other","regionGroup":"north-africa","culture":"Amazigh (Berber)","score":10}
 {"key":"mia:114453","source":"mia","sourceObjectId":"114453","objectClass":"other","regionGroup":"north-africa","culture":"Chichaoua Amazigh (Berber)","score":10}
 {"key":"mia:114384","source":"mia","sourceObjectId":"114384","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:114454","source":"mia","sourceObjectId":"114454","objectClass":"other","regionGroup":"north-africa","culture":"Amazigh (Berber)","score":10}
 {"key":"mia:114669","source":"mia","sourceObjectId":"114669","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:114672","source":"mia","sourceObjectId":"114672","objectClass":"other","regionGroup":"sub-saharan","culture":"Okun Yoruba","score":10}
 {"key":"mia:114638","source":"mia","sourceObjectId":"114638","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Bobo","score":40}
@@ -1418,27 +1418,27 @@
 {"key":"mia:123302","source":"mia","sourceObjectId":"123302","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:123300","source":"mia","sourceObjectId":"123300","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:123304","source":"mia","sourceObjectId":"123304","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
-{"key":"mia:123370","source":"mia","sourceObjectId":"123370","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:123378","source":"mia","sourceObjectId":"123378","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","score":40}
-{"key":"mia:123408","source":"mia","sourceObjectId":"123408","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kusu or Zimba","score":90}
 {"key":"mia:123405","source":"mia","sourceObjectId":"123405","objectClass":"other","regionGroup":"sub-saharan","culture":"Yaka","score":10}
-{"key":"mia:123406","source":"mia","sourceObjectId":"123406","objectClass":"other","regionGroup":"sub-saharan","culture":"Yaka","score":10}
 {"key":"mia:123400","source":"mia","sourceObjectId":"123400","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","score":40}
-{"key":"mia:123413","source":"mia","sourceObjectId":"123413","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yanzi","score":90}
 {"key":"mia:123397","source":"mia","sourceObjectId":"123397","objectClass":"other","regionGroup":"sub-saharan","culture":"Lunda or Lwena","score":10}
+{"key":"mia:123370","source":"mia","sourceObjectId":"123370","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","score":90}
 {"key":"mia:123393","source":"mia","sourceObjectId":"123393","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
+{"key":"mia:123408","source":"mia","sourceObjectId":"123408","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kusu or Zimba","score":90}
+{"key":"mia:123406","source":"mia","sourceObjectId":"123406","objectClass":"other","regionGroup":"sub-saharan","culture":"Yaka","score":10}
+{"key":"mia:123413","source":"mia","sourceObjectId":"123413","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yanzi","score":90}
 {"key":"mia:123414","source":"mia","sourceObjectId":"123414","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Luba","score":70}
 {"key":"mia:124237","source":"mia","sourceObjectId":"124237","objectClass":"other","regionGroup":"sub-saharan","culture":"Fon","score":10}
 {"key":"mia:124505","source":"mia","sourceObjectId":"124505","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
 {"key":"mia:124513","source":"mia","sourceObjectId":"124513","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
 {"key":"mia:125149","source":"mia","sourceObjectId":"125149","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Tuareg","score":40}
 {"key":"mia:125169","source":"mia","sourceObjectId":"125169","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
-{"key":"mia:126257","source":"mia","sourceObjectId":"126257","objectClass":"other","regionGroup":"sub-saharan","culture":"Ejagham","score":10}
 {"key":"mia:126255","source":"mia","sourceObjectId":"126255","objectClass":"other","regionGroup":"sub-saharan","culture":"Angas or Afo","score":10}
+{"key":"mia:126257","source":"mia","sourceObjectId":"126257","objectClass":"other","regionGroup":"sub-saharan","culture":"Ejagham","score":10}
 {"key":"mia:127048","source":"mia","sourceObjectId":"127048","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
+{"key":"mia:127076","source":"mia","sourceObjectId":"127076","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:127052","source":"mia","sourceObjectId":"127052","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","score":10}
 {"key":"mia:127051","source":"mia","sourceObjectId":"127051","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
-{"key":"mia:127076","source":"mia","sourceObjectId":"127076","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:127187","source":"mia","sourceObjectId":"127187","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":12}
 {"key":"mia:127490","source":"mia","sourceObjectId":"127490","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:128270","source":"mia","sourceObjectId":"128270","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
@@ -1450,20 +1450,20 @@
 {"key":"mia:129780","source":"mia","sourceObjectId":"129780","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
 {"key":"mia:129779","source":"mia","sourceObjectId":"129779","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","score":10}
 {"key":"mia:129778","source":"mia","sourceObjectId":"129778","objectClass":"other","regionGroup":"sub-saharan","culture":"Samo","score":10}
-{"key":"mia:129896","source":"mia","sourceObjectId":"129896","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:129950","source":"mia","sourceObjectId":"129950","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129923","source":"mia","sourceObjectId":"129923","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
 {"key":"mia:129943","source":"mia","sourceObjectId":"129943","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","score":10}
+{"key":"mia:129896","source":"mia","sourceObjectId":"129896","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","score":10}
 {"key":"mia:129971","source":"mia","sourceObjectId":"129971","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","score":10}
 {"key":"mia:131332","source":"mia","sourceObjectId":"131332","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:131439","source":"mia","sourceObjectId":"131439","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Morokodu","score":90}
 {"key":"mia:132074","source":"mia","sourceObjectId":"132074","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Zande","score":90}
 {"key":"mia:132310","source":"mia","sourceObjectId":"132310","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Fulani?","score":60}
+{"key":"mia:136517","source":"mia","sourceObjectId":"136517","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:136491","source":"mia","sourceObjectId":"136491","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136490","source":"mia","sourceObjectId":"136490","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136484","source":"mia","sourceObjectId":"136484","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
 {"key":"mia:136488","source":"mia","sourceObjectId":"136488","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Fon","score":40}
-{"key":"mia:136517","source":"mia","sourceObjectId":"136517","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"mia:142681","source":"mia","sourceObjectId":"142681","objectClass":"other","regionGroup":"sub-saharan","culture":"Iraqw","score":10}
 {"key":"mia:142682","source":"mia","sourceObjectId":"142682","objectClass":"other","regionGroup":"sub-saharan","culture":"Kamba","score":10}
 {"key":"mia:142686","source":"mia","sourceObjectId":"142686","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbugwe","score":10}
