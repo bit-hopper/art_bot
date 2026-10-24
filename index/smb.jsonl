@@ -4224,8 +4224,8 @@
 {"key":"smb:206028","source":"smb","sourceObjectId":"206028","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:206027","source":"smb","sourceObjectId":"206027","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:206026","source":"smb","sourceObjectId":"206026","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
-{"key":"smb:1502592","source":"smb","sourceObjectId":"1502592","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:1590115","source":"smb","sourceObjectId":"1590115","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"smb:1502592","source":"smb","sourceObjectId":"1502592","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:243678","source":"smb","sourceObjectId":"243678","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:2323715","source":"smb","sourceObjectId":"2323715","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:257968","source":"smb","sourceObjectId":"257968","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
@@ -11414,7 +11414,6 @@
 {"key":"smb:758000","source":"smb","sourceObjectId":"758000","objectClass":"mask","regionGroup":"egypt","culture":null,"score":100}
 {"key":"smb:759445","source":"smb","sourceObjectId":"759445","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"smb:759458","source":"smb","sourceObjectId":"759458","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
-{"key":"smb:759081","source":"smb","sourceObjectId":"759081","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"smb:758359","source":"smb","sourceObjectId":"758359","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"smb:760001","source":"smb","sourceObjectId":"760001","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"smb:760079","source":"smb","sourceObjectId":"760079","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
@@ -12641,6 +12640,7 @@
 {"key":"smb:601115","source":"smb","sourceObjectId":"601115","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:845037","source":"smb","sourceObjectId":"845037","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1559261","source":"smb","sourceObjectId":"1559261","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"smb:759081","source":"smb","sourceObjectId":"759081","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"smb:1525260","source":"smb","sourceObjectId":"1525260","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"smb:1527911","source":"smb","sourceObjectId":"1527911","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
 {"key":"smb:2009547","source":"smb","sourceObjectId":"2009547","objectClass":"other","regionGroup":"north-africa","culture":null,"score":10}
