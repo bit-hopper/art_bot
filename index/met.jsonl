@@ -17417,6 +17417,7 @@
 {"key":"met:465956","source":"met","sourceObjectId":"465956","objectClass":"other","regionGroup":"egypt","culture":"Byzantine","score":10}
 {"key":"met:466645","source":"met","sourceObjectId":"466645","objectClass":"other","regionGroup":"egypt","culture":"Roman","score":12}
 {"key":"met:466653","source":"met","sourceObjectId":"466653","objectClass":"other","regionGroup":"north-africa","culture":"Roman or Byzantine","score":10}
+{"key":"met:468134","source":"met","sourceObjectId":"468134","objectClass":"other","regionGroup":"egypt","culture":"Egyptian","score":10}
 {"key":"met:468468","source":"met","sourceObjectId":"468468","objectClass":"pottery","regionGroup":"north-africa","culture":"North African (Carthage)","score":60}
 {"key":"met:468469","source":"met","sourceObjectId":"468469","objectClass":"sculpture","regionGroup":"north-africa","culture":"North African (Carthage)","score":90}
 {"key":"met:473068","source":"met","sourceObjectId":"473068","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Coptic (Egypt)","score":40}
