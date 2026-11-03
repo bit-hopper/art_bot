@@ -7,6 +7,7 @@
 {"key":"cleveland:136459","source":"cleveland","sourceObjectId":"136459","objectClass":"mask","regionGroup":"sub-saharan","culture":"Guinea, possibly Baga-style maker","score":100}
 {"key":"cleveland:155510","source":"cleveland","sourceObjectId":"155510","objectClass":"mask","regionGroup":"sub-saharan","culture":"Nigeria, Ejagham-style maker","score":100}
 {"key":"cleveland:132047","source":"cleveland","sourceObjectId":"132047","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Côte d'Ivoire, possibly Baule-style goldsmith","score":40}
+{"key":"cleveland:155499","source":"cleveland","sourceObjectId":"155499","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ghana, Akan-style sculpture, unknown female ceramicist","score":90}
 {"key":"cleveland:143174","source":"cleveland","sourceObjectId":"143174","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Burkina Faso, Ghana, or Côte d’Ivoire, Lobi–style artist","score":90}
 {"key":"cleveland:136656","source":"cleveland","sourceObjectId":"136656","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Côte d'Ivoire, reportedly Korhogo area, Senufo-style carver","score":90}
 {"key":"cleveland:164629","source":"cleveland","sourceObjectId":"164629","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Cameroon, Bandjoun Kingdom, Bamileke makers","score":40}
@@ -50,7 +51,6 @@
 {"key":"cleveland:146107","source":"cleveland","sourceObjectId":"146107","objectClass":"mask","regionGroup":"sub-saharan","culture":"Côte d'Ivoire or Liberia, Wè-style carver","score":100}
 {"key":"cleveland:147854","source":"cleveland","sourceObjectId":"147854","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Democratic Republic of Congo, Luba-style maker","score":90}
 {"key":"cleveland:129226","source":"cleveland","sourceObjectId":"129226","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Côte d'Ivoire, probably Baule-style goldsmith","score":40}
-{"key":"cleveland:155499","source":"cleveland","sourceObjectId":"155499","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ghana, Akan-style sculpture, unknown female ceramicist","score":90}
 {"key":"cleveland:146109","source":"cleveland","sourceObjectId":"146109","objectClass":"mask","regionGroup":"sub-saharan","culture":"Côte d'Ivoire, possibly Yaure-style carver","score":100}
 {"key":"cleveland:168429","source":"cleveland","sourceObjectId":"168429","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lesotho, Southern Sotho-style maker","score":90}
 {"key":"cleveland:130708","source":"cleveland","sourceObjectId":"130708","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nigeria, Benin Kingdom, Ẹdo peoples, members of the Igun Eronmwon (royal brasscasters) guild","score":90}
