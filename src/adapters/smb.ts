@@ -96,6 +96,12 @@ function pickDimensions(dimensions: SmbNameLine[] | undefined): string | null {
   return ls.length > 0 ? ls.join("; ") : null;
 }
 
+/** The kingdom line ("historische Angabe (Hauptkatalog): Benin"): most Benin works carry no Ethnie, only this. */
+function kingdom(rec: SmbRecord): string | null {
+  const k = geo(rec, "Königreich")?.replace(/^historische Angabe \(Hauptkatalog\):\s*/i, "").trim();
+  return k || null;
+}
+
 function geo(rec: SmbRecord, ...roles: string[]): string | null {
   const hit = (rec.geography ?? []).find((g) => g.role && roles.includes(g.role) && g.nameLine);
   return hit?.nameLine?.trim() ?? null;
@@ -185,7 +191,7 @@ export function normaliseSmbRecord(rec: SmbRecord, cfg: SmbSourceConfig, profile
     title: rec.title?.trim() || rec.term?.trim() || null,
     objectType: rec.term?.trim() || null,
     objectClass: classifyRecord(rec.term, rec.title, profile),
-    culture: geo(rec, "Ethnie"),
+    culture: geo(rec, "Ethnie") ?? kingdom(rec),
     country,
     region: geo(rec, "Region"),
     regionGroup: originUnit
@@ -307,7 +313,8 @@ export class SmbAdapter implements MuseumAdapter {
         sourceObjectId: numericId,
         objectClass: e.cls,
         regionGroup: e.egypt ? "egypt" : regionGroupFromTerms(e.terms, this.cfg),
-        culture: null, // not in search rows; known only after fetchArtwork
+        // Search rows carry no culture; only the featured terms (Benin) are known here, from the term the row was found under.
+        culture: (this.cfg.featured_cultures ?? []).find((c) => e.terms.has(c)) ?? null,
         score: scoreFor(weight, { fragment: flat.has(id), sherd: sherds.has(id) }),
       };
     }

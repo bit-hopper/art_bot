@@ -10,6 +10,9 @@ sources:
     # The portal's geography filter is a term match with no continent hierarchy, so Africa is enumerated
     # country by country and unioned by id (spike result 2026-10-08).
     org_units_africa: ["Ethnologisches Museum"]
+    # Owner 2026-11-05: Benin works are wanted. About 600 SMB records sit under the term "Benin" (the Kingdom: role Königreich, country
+    # Nigeria); their index rows get culture "Benin" so the pick-time boost in filters.yaml applies. A few Republic of Benin objects share it.
+    featured_cultures: [Benin]
     org_units_egypt: ["Ägyptisches Museum und Papyrussammlung"]
     # Origin rule (owner 2026-10-09): units filed by period. Kept when every place of origin the record names is African
     # (find-spots and purchase places are ignored); "Ägypten" + "Syrien" is "Egypt or Syria" and is out. Measured 2026-10-09:

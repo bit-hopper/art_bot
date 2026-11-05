@@ -212,3 +212,33 @@ describe("units filed by period (owner 2026-10-09: origin decides)", () => {
     expect(b).toMatchObject({ regionGroup: "egypt", country: "Ägypten", rightsStatus: "attributed" });
   });
 });
+
+describe("Benin works (owner 2026-11-05: more Benin bronzes)", () => {
+  const rec = (geography: Array<{ nameLine: string; role?: string }>) => ({ id: "obj-455905", org_unit: "Ethnologisches Museum", term: "Plastik", images: [], geography });
+
+  it("takes the culture from the kingdom line when the record has no Ethnie, and prefers Ethnie when it has one", () => {
+    const benin = [{ nameLine: "Nigeria", role: "Land" }, { nameLine: "historische Angabe (Hauptkatalog): Benin", role: "Königreich" }];
+    expect(normaliseSmbRecord(rec(benin) as never, cfg, profile).culture).toBe("Benin");
+    expect(normaliseSmbRecord(rec([...benin, { nameLine: "Edo", role: "Ethnie" }]) as never, cfg, profile).culture).toBe("Edo");
+    expect(normaliseSmbRecord(rec([{ nameLine: "Nigeria", role: "Land" }]) as never, cfg, profile).culture).toBeNull();
+  });
+
+  it("marks index rows found under a featured term with that culture, so the pick boost sees them", async () => {
+    const small = { ...cfg, org_units_africa: ["EM"], org_units_egypt: [], org_units_origin: [], africa_terms: ["Nigeria", "Benin"], featured_cultures: ["Benin"] };
+    const db: Record<string, Array<{ id: string; objekttyp: string }>> = {
+      "EM|Nigeria": [{ id: "obj-1", objekttyp: "Reliefplatte" }, { id: "obj-2", objekttyp: "Maske" }],
+      "EM|Benin": [{ id: "obj-1", objekttyp: "Reliefplatte" }],
+    };
+    const fetchImpl = (async (input: RequestInfo | URL) => {
+      const u = new URL(String(input));
+      const all = db[`${u.searchParams.get("org_units")}|${u.searchParams.get("geographicalReferences") ?? ""}`] ?? [];
+      return new Response(JSON.stringify({ artworks: all, total: all.length }), { status: 200 });
+    }) as typeof fetch;
+    const adapter = new SmbAdapter(small, profile, new HttpClient({ fetchImpl, sleep: async () => {}, retryDelaysMs: [] }));
+    const rows = [];
+    for await (const r of adapter.buildIndex()) rows.push(r);
+    const byKey = Object.fromEntries(rows.map((r) => [r.key, r]));
+    expect(byKey["smb:1"]!.culture).toBe("Benin");
+    expect(byKey["smb:2"]!.culture).toBeNull();
+  });
+});

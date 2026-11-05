@@ -64,6 +64,8 @@ export interface SmbSourceConfig {
   /** Egyptian towns that appear next to "Ägypten" in origin lines ("Ägypten" + "Fustat" is one origin, not two). */
   origin_egypt_places?: string[];
   africa_terms: string[];
+  /** Index terms whose rows carry that name as `culture`, so the pick-time boost sees them (search rows have no culture otherwise). */
+  featured_cultures?: string[];
   egypt_terms: string[];
   north_africa_terms: string[];
   allowed_licenses: Record<"open" | "attributed" | "attributed-nc", string[]>;
