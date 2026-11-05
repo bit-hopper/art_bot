@@ -43,6 +43,10 @@ condition_terms: [corroded, corrosion, encrusted, encrustation, concretion, korr
 # Never post an object whose date text points entirely after this year (owner, 2026-10-14: 1956). Only 4-digit years are read:
 # the earliest one must be later than this. BCE dates, and dates that also name a century, are not judged.
 latest_year: 1956
+# Owner 2026-11-05: the Edo brass casters of Benin City still work in the lost-wax tradition, and their new work (AIC 197666, a
+# leopard-head container made 2000-2008, a gift from the Oba of Benin) is exactly what the feed wants. Edo/Benin culture and a
+# brass or bronze medium skip the date rule above. The modern-material rule still applies to them.
+latest_year_exempt: { culture_terms: [edo, ẹdo, benin], medium_terms: [brass, bronze, messing, laiton] }
 
 # Manual overrides, e.g. "met:12345".
 #   met:564545 Min figurine (ithyphallic god, owner 2026-11-05); louvre:cl010374365 encrusted Osiris bronze (no wording or image rule catches it).

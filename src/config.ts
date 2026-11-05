@@ -132,6 +132,8 @@ export interface Denylist {
   /** CLIP score (0 to 1) from which an image counts as corroded or encrusted; unset or 0 turns the image check off. */
   condition_image_threshold?: number;
   latest_year?: number;
+  /** Owner 2026-11-05: a work in a traditional medium by a living craft tradition (Edo brass from Benin City) is exempt from `latest_year`. */
+  latest_year_exempt?: { culture_terms: string[]; medium_terms: string[] };
 }
 
 export function loadDenylist(): Denylist {

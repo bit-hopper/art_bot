@@ -290,6 +290,11 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     expect(keepProbability(eg("Statuette des Hor-chebt"), taste)).toBe(0.6);
   });
 
+  it("never down-weights Edo/Benin works, even a fragment (met:310747, a leopard head fragment)", () => {
+    expect(keepProbability(eg("Fragment of a leopard head", { regionGroup: "sub-saharan", culture: "Edo peoples" }), taste)).toBe(1);
+    expect(keepProbability(eg("Fragment of a leopard head", { regionGroup: "sub-saharan", culture: "Bedouin" }), taste)).toBe(0.25);
+  });
+
   it("leaves pottery, masks and non-Egyptian figures alone, but still down-weights fragments anywhere", () => {
     expect(keepProbability(eg("Red polish ware jar", { objectClass: "pottery" }), taste)).toBe(1);
     expect(keepProbability(eg("Funerary Mask", { objectClass: "mask" }), taste)).toBe(1);

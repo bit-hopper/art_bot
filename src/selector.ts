@@ -35,6 +35,8 @@ export function keepProbability(a: Artwork, taste?: TasteConfig): number {
   const li = taste?.low_interest;
   const hi = taste?.high_interest;
   const text = [a.title, a.objectType].filter(Boolean).join(" \n ");
+  // Featured cultures (Edo/Benin, the same terms as the pick boost) are never down-weighted: the Met's "Fragment of a leopard head" stays.
+  if (taste?.culture_boost && a.culture && matchesTerms(a.culture, taste.culture_boost.terms)) return 1;
   if (li && (matchesTerms(text, li.terms) || (a.regionGroup === "egypt" && matchesTerms(text, li.egypt_terms)))) return li.accept;
   if (hi && a.regionGroup === "egypt" && a.objectClass !== "pottery" && a.objectClass !== "mask") return hasWholeWord(text, hi.terms) ? 1 : hi.other_accept;
   return 1;

@@ -346,6 +346,18 @@ describe("denylist", () => {
     expect(why({ medium: "Bronze with green patina", description: "A well-preserved bronze with a green patina" })).toBeNull();
   });
 
+  it("lets Edo/Benin brass through the date rule (AIC 197666, made 2000-2008), but nothing else modern", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const why = (o: Partial<typeof base>) => denyReason({ ...base, ...o }, deny);
+    const leopard = { culture: "Edo (african)", medium: "Brass", dateDisplay: "Early 21st century" };
+    expect(why(leopard)).toBeNull();
+    expect(why({ ...leopard, culture: "Edo peoples", medium: "Bronze", dateDisplay: "2005" })).toBeNull();
+    expect(why({ ...leopard, medium: "Brass, plastic" })).toMatch(/modern material/);
+    expect(why({ ...leopard, medium: "Wood, plastic" })).toMatch(/dated 2000/);
+    expect(why({ ...leopard, medium: "Wood" })).toMatch(/dated 2000/);
+    expect(why({ ...leopard, culture: "Yoruba" })).toMatch(/dated 2000/);
+  });
+
   it("blocks an object dated entirely after 1956, but not on a BCE date, a century, or an earlier year in a range", () => {
     const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
     const dated = (dateDisplay: string | null) => denyReason({ ...base, dateDisplay }, deny);
@@ -358,6 +370,12 @@ describe("denylist", () => {
     expect(dated("19. Jh., erworben 1980")).toBeNull();
     expect(dated("2050-1900 B.C.")).toBeNull();
     expect(dated("2100 BCE")).toBeNull();
+    expect(dated("Early 21st century")).toBe("dated 2000, after 1956");
+    expect(dated("21e siècle")).toMatch(/after 1956/);
+    expect(dated("Late 20th century")).toMatch(/after 1956/);
+    expect(dated("Early/mid–20th century")).toBeNull();
+    expect(dated("1st century CE")).toBeNull();
+    expect(dated("12th century")).toBeNull();
     expect(dated("Dynasty 22")).toBeNull();
     expect(dated(null)).toBeNull();
   });
