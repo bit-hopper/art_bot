@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { loadProfile } from "../src/config.js";
 import { claimRow, Ledger, type LedgerRow } from "../src/ledger.js";
-import { cappedRegions, cultureRepeats, exhaustedTiers, rowWeight, selectArtwork, weightedPick } from "../src/selector.js";
+import { cappedRegions, cultureRepeats, exhaustedTiers, keepProbability, rowWeight, selectArtwork, weightedPick } from "../src/selector.js";
 import type { Artwork, IndexRow, ObjectClass, RegionGroup } from "../src/types.js";
 
 const profile = loadProfile();
@@ -261,5 +261,54 @@ describe("mask quota", () => {
   it("is off when force_mask_after_hours is unset", async () => {
     const sel = await selectArtwork({ profile: { ...profile, force_mask_after_hours: undefined }, sourceWeights: { met: 1, smb: 0.01 }, rows: [...sculptures, mask], ledger: new Ledger(null), now, rng: rng(5), fetch: async (r) => art(r) });
     expect(sel.ok && sel.maskDue).toBe(false);
+  });
+});
+
+describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pieces)", () => {
+  const taste = profile.taste!;
+  const eg = (title: string, over: Partial<Artwork> = {}) => art(row(1, "met", "sculpture", "egypt"), { title, objectType: title, ...over });
+
+  it("boosts pottery and Edo/Benin rows at pick time, and nothing else", () => {
+    const w = (r: IndexRow) => rowWeight(r, [], {}, taste);
+    expect(w(row(1, "met", "sculpture"))).toBe(90);
+    expect(w({ ...row(2, "met", "other"), objectClass: "pottery", score: 60 })).toBe(120);
+    expect(w(row(3, "met", "sculpture", "sub-saharan", "Edo peoples"))).toBe(90 * 8);
+    expect(w(row(4, "cleveland", "sculpture", "sub-saharan", "Nigeria, Benin Kingdom, Ẹdo peoples"))).toBe(90 * 8);
+    expect(w(row(5, "mia", "sculpture", "sub-saharan", "Bedouin"))).toBe(90);
+  });
+
+  it("keeps small Egyptian pieces and fragments 1 time in 4, and whole heads, statues and coffins always", () => {
+    expect(keepProbability(eg("amulette oudjat"), taste)).toBe(0.25);
+    expect(keepProbability(eg("serviteur funéraire momiforme"), taste)).toBe(0.25);
+    expect(keepProbability(eg("perle"), taste)).toBe(0.25);
+    expect(keepProbability(eg("ostracon"), taste)).toBe(0.25);
+    expect(keepProbability(eg("bouchon de jarre ; empreinte de sceau"), taste)).toBe(0.25);
+    expect(keepProbability(eg("Relief Fragment from the Tomb of Neferu or Khety"), taste)).toBe(0.25);
+    expect(keepProbability(eg("Kopf des Chaemwese, Sohn Ramses` II."), taste)).toBe(1);
+    expect(keepProbability(eg("Coffin of Wah"), taste)).toBe(1);
+    expect(keepProbability(eg("statue de triade"), taste)).toBe(1);
+    expect(keepProbability(eg("Statuette des Hor-chebt"), taste)).toBe(0.6);
+  });
+
+  it("leaves pottery, masks and non-Egyptian figures alone, but still down-weights fragments anywhere", () => {
+    expect(keepProbability(eg("Red polish ware jar", { objectClass: "pottery" }), taste)).toBe(1);
+    expect(keepProbability(eg("Funerary Mask", { objectClass: "mask" }), taste)).toBe(1);
+    expect(keepProbability(eg("Female figurine", { regionGroup: "sub-saharan" }), taste)).toBe(1);
+    expect(keepProbability(eg("Power figure (nkisi)", { regionGroup: "sub-saharan" }), taste)).toBe(1);
+    expect(keepProbability(eg("Fragment (Gefäß)", { regionGroup: "sub-saharan", objectClass: "pottery" }), taste)).toBe(0.25);
+    expect(keepProbability(eg("amulette"), undefined)).toBe(1);
+  });
+
+  it("re-picks a rejected record without using up the attempts, and never fails on taste alone", async () => {
+    const pool = Array.from({ length: 30 }, (_, i) => row(i, "met", "sculpture", "egypt"));
+    const base = { profile, sourceWeights: { met: 1 }, rows: pool, ledger: new Ledger(null) };
+    const allMinor = await selectArtwork({ ...base, rng: () => 0.99, fetch: async (r) => art(r, { title: "amulette", regionGroup: "egypt" }) });
+    expect(allMinor.ok).toBe(true);
+    expect(allMinor.attempts.filter((a) => a.outcome === "low-interest")).toHaveLength(taste.low_interest!.max_rejects);
+
+    const first = pool[0]!.key;
+    const mixed = await selectArtwork({ ...base, rng: () => 0.5, fetch: async (r) => art(r, { title: r.key === first ? "Head of a king" : "amulette", regionGroup: "egypt" }) });
+    expect(mixed.ok && mixed.artwork.title).toMatch(/Head|amulette/);
+    expect(mixed.attempts.filter((a) => a.outcome !== "low-interest")).toHaveLength(1);
   });
 });

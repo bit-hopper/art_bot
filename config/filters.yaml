@@ -5,6 +5,19 @@ profiles:
     region_share_caps:        # max fraction of the last 24 posts
       egypt: 0.58
     require_image: true
+    # Owner 2026-11-05: more objects that awe (whole decorated pottery, cast Benin works), fewer small Egyptian pieces that are
+    # mostly corroded or remains of something larger. Applied when a post is picked, so no index needs a rebuild.
+    taste:
+      class_boost: { pottery: 2 }
+      culture_boost: { terms: [edo, ẹdo, benin, ife], factor: 8 }    # the Edo/Benin rows are about 185 of 80,000; SMB rows carry no culture, so they are not boosted
+      low_interest:
+        accept: 0.25            # a record that matches is kept 1 time in 4
+        max_rejects: 12
+        terms: [fragment, bruchstück, sherd, scherbe, tesson]
+        egypt_terms: [amulet, amulette, amulett, scarab, scarabée, skarabäus, figurine, shabti, ushabti, uschebti, oushebti, ouchebti, chaouabti, serviteur, ostrac, ostrak, stopper, bouchon, "seal impression", empreinte, sealing, bead, perle]
+      high_interest:            # Egypt only: royal heads, statues, coffins, stelae and reliefs are always kept, other Egyptian objects (not pottery or masks) 3 times in 5
+        other_accept: 0.6
+        terms: [head, kopf, tête, bust, büste, buste, statue, coffin, sarcophagus, sarkophag, cercueil, sarcophage, stela, stele, stèle, relief, sphinx, naos]
     force_mask_after_hours: 23   # owner 2026-10-14: at least one mask in every 24 hours (23 leaves room for a missed hour)
     classes:                  # object_class -> weight
       mask: 100

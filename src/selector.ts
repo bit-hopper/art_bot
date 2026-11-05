@@ -1,4 +1,5 @@
-import type { FilterProfile } from "./config.js";
+import { matchesTerms } from "./classify.js";
+import type { FilterProfile, TasteConfig } from "./config.js";
 import type { Ledger, LedgerRow } from "./ledger.js";
 import type { Artwork, IndexRow, ObjectClass } from "./types.js";
 
@@ -9,10 +10,34 @@ const MAX_ATTEMPTS = 5;
 
 const norm = (s: string | null) => (s ?? "").trim().toLowerCase();
 
-/** Spec 5.2 step 2: `score x source_weight x 0.5^n`, n = how many of the last 6 posts came from the same source. */
-export function rowWeight(row: IndexRow, recent6: LedgerRow[], sourceWeights: Record<string, number>): number {
+/**
+ * Spec 5.2 step 2: `score x source_weight x 0.5^n`, n = how many of the last 6 posts came from the same source.
+ * `taste` (owner 2026-11-05) adds the class and culture boosts.
+ */
+export function rowWeight(row: IndexRow, recent6: LedgerRow[], sourceWeights: Record<string, number>, taste?: TasteConfig): number {
   const n = recent6.filter((r) => r.source === row.source).length;
-  return row.score * (sourceWeights[row.source] ?? 1) * 0.5 ** n;
+  let w = row.score * (sourceWeights[row.source] ?? 1) * 0.5 ** n;
+  w *= taste?.class_boost?.[row.objectClass] ?? 1;
+  if (taste?.culture_boost && row.culture && matchesTerms(row.culture, taste.culture_boost.terms)) w *= taste.culture_boost.factor;
+  return w;
+}
+
+const WORD = /[^\p{L}\p{N}_]+/u;
+
+/** Whole-word match (plural folded), so "statue" is a statue and "statuette" is not. */
+function hasWholeWord(text: string, words: string[]): boolean {
+  const toks = text.toLowerCase().split(WORD).filter(Boolean).flatMap((t) => [t, t.replace(/(es|s|n)$/, "")]);
+  return words.some((w) => toks.includes(w.toLowerCase()));
+}
+
+/** Chance (0 to 1) that a fetched record is kept at all; below 1 it is re-picked. The taste ladder (owner 2026-11-05). */
+export function keepProbability(a: Artwork, taste?: TasteConfig): number {
+  const li = taste?.low_interest;
+  const hi = taste?.high_interest;
+  const text = [a.title, a.objectType].filter(Boolean).join(" \n ");
+  if (li && (matchesTerms(text, li.terms) || (a.regionGroup === "egypt" && matchesTerms(text, li.egypt_terms)))) return li.accept;
+  if (hi && a.regionGroup === "egypt" && a.objectClass !== "pottery" && a.objectClass !== "mask") return hasWholeWord(text, hi.terms) ? 1 : hi.other_accept;
+  return 1;
 }
 
 /** Region groups already at their share of the last 24 posts (spec 5.2). The cap is never relaxed. */
@@ -64,7 +89,7 @@ export function exhaustedTiers(rows: IndexRow[], ledger: Ledger, profile: Filter
 
 export interface Attempt {
   key: string;
-  outcome: "picked" | "fetch-failed" | "image-failed" | "duplicate" | "no-image" | "culture-repeat" | "denied";
+  outcome: "picked" | "fetch-failed" | "image-failed" | "duplicate" | "no-image" | "culture-repeat" | "denied" | "low-interest";
   detail?: string;
 }
 
@@ -115,8 +140,11 @@ export async function selectArtwork<P = undefined>(d: SelectorDeps<P>): Promise<
   const due = maskDue(d.ledger, d.profile.force_mask_after_hours, d.now ?? new Date());
   let masks = due ? pool.filter((r) => r.objectClass === "mask") : [];
 
-  while (attempts.length < max) {
-    const row = weightedPick(masks.length > 0 ? masks : pool, (r) => rowWeight(r, recent6, d.sourceWeights), rng);
+  // Taste rejections are cheap re-picks (nothing is downloaded yet), so they do not use up the attempts, but they are capped.
+  const taste = d.profile.taste;
+  let tasteRejects = 0;
+  while (attempts.filter((a) => a.outcome !== "low-interest").length < max) {
+    const row = weightedPick(masks.length > 0 ? masks : pool, (r) => rowWeight(r, recent6, d.sourceWeights, taste), rng);
     if (!row) return { ok: false, reason: "POOL_EMPTY", attempts, exhaustedTiers: tiers };
     pool = pool.filter((r) => r !== row);
     masks = masks.filter((r) => r !== row);
@@ -134,6 +162,11 @@ export async function selectArtwork<P = undefined>(d: SelectorDeps<P>): Promise<
     if (cultureRepeats(artwork.culture, recent2)) { reject("culture-repeat", artwork.culture ?? undefined); continue; }
     const denied = d.deny?.(artwork);
     if (denied) { reject("denied", denied); continue; }
+    if (taste?.low_interest && tasteRejects < taste.low_interest.max_rejects && rng() >= keepProbability(artwork, taste)) {
+      tasteRejects++;
+      reject("low-interest", artwork.title ?? undefined);
+      continue;
+    }
 
     let prepared = undefined as P;
     if (d.prepare) {
