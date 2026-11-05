@@ -1597,7 +1597,6 @@
 {"key":"cleveland:108440","source":"cleveland","sourceObjectId":"108440","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":3}
 {"key":"cleveland:108442","source":"cleveland","sourceObjectId":"108442","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":3}
 {"key":"cleveland:111449","source":"cleveland","sourceObjectId":"111449","objectClass":"other","regionGroup":"egypt","culture":"Egypt, 9th century","score":3}
-{"key":"cleveland:111452","source":"cleveland","sourceObjectId":"111452","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, Caliphate of al-Mustansir, 1000s","score":3}
 {"key":"cleveland:111466","source":"cleveland","sourceObjectId":"111466","objectClass":"other","regionGroup":"egypt","culture":"Egypt","score":10}
 {"key":"cleveland:113205","source":"cleveland","sourceObjectId":"113205","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Ikhshidid period, Caliphate of al-Radi, AH 323-328 (A.D. 934-940)","score":3}
 {"key":"cleveland:113238","source":"cleveland","sourceObjectId":"113238","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Abbasid period, during Caliphate of al-Muqtadir, AH 295-320 (A.D. 908-932)","score":10}
@@ -1636,6 +1635,7 @@
 {"key":"cleveland:110536","source":"cleveland","sourceObjectId":"110536","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Byzantine period","score":3}
 {"key":"cleveland:111342","source":"cleveland","sourceObjectId":"111342","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Mamluk sultanate (1250–1517)","score":10}
 {"key":"cleveland:111451","source":"cleveland","sourceObjectId":"111451","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, probably Caliphate of al-Amir, AH 495-524, 12th Century","score":3}
+{"key":"cleveland:111452","source":"cleveland","sourceObjectId":"111452","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, Caliphate of al-Mustansir, 1000s","score":3}
 {"key":"cleveland:111454","source":"cleveland","sourceObjectId":"111454","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, Caliphate of al-Hafiz, AH 524-544, 12th Century","score":3}
 {"key":"cleveland:111455","source":"cleveland","sourceObjectId":"111455","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, Caliphate of al-Hafiz, AH 524-544, 12th Century","score":3}
 {"key":"cleveland:111456","source":"cleveland","sourceObjectId":"111456","objectClass":"other","regionGroup":"egypt","culture":"Egypt, Fatimid period, Caliphate of of al-Mustansir, AH 475-487, 11th Century","score":3}
