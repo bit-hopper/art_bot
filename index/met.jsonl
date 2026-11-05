@@ -418,6 +418,7 @@
 {"key":"met:858185","source":"met","sourceObjectId":"858185","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Zulu peoples","score":60}
 {"key":"met:883968","source":"met","sourceObjectId":"883968","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Temne or Bullom peoples","score":70}
 {"key":"met:884755","source":"met","sourceObjectId":"884755","objectClass":"other","regionGroup":"sub-saharan","culture":"Yombe-Kongo peoples","score":10}
+{"key":"met:930571","source":"met","sourceObjectId":"930571","objectClass":"other","regionGroup":"sub-saharan","culture":"Swahili peoples","score":10}
 {"key":"met:329767","source":"met","sourceObjectId":"329767","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"met:329768","source":"met","sourceObjectId":"329768","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
 {"key":"met:329769","source":"met","sourceObjectId":"329769","objectClass":"sculpture","regionGroup":"egypt","culture":null,"score":90}
