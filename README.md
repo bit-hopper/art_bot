@@ -2,6 +2,8 @@
 
 Posts one Africana artwork an hour to Bluesky/AT Protocol, picked from open museum collections. Each post is the image, a short caption, and a reply with the museum's credit and a link to the object page. German and French descriptions are auto-translated with DeepL and marked "[auto-translated]". Threads integration is scheduled next.
 
+Version 0.2.0 (2026-11-05): the bot now favours whole, refined objects (more pottery and Benin works, fewer small Egyptian pieces) and skips explicit, corroded or dull catalogue-style objects.
+
 ## Sources
 
 Staatliche Museen zu Berlin, The Met, Cleveland Museum of Art, Art Institute of Chicago, Minneapolis Institute of Art, Smithsonian National Museum of African Art, and the Louvre. Objects made in Africa are in scope, which includes ancient Egypt. Human remains and some other categories are filtered out (see `config/denylist.yaml`, `config/filters.yaml`).
