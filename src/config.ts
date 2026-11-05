@@ -19,8 +19,27 @@ export interface Keywords {
   sculpture_whole_word: string[];
 }
 
+/** Owner 2026-11-05: favour whole, refined objects. Applied at pick time, so no index has to be rebuilt. */
+export interface TasteConfig {
+  /** Multiplies the pick weight of every row of a class. */
+  class_boost?: Partial<Record<ObjectClass, number>>;
+  /** Rows whose culture names one of these (Edo, Benin) are drawn `factor` times as often. */
+  culture_boost?: { terms: string[]; factor: number };
+  /**
+   * After the record is fetched: a title or type naming one of `terms` (any region) or, for Egypt, `egypt_terms`, is kept with
+   * probability `accept` and otherwise re-picked, at most `max_rejects` times per run so a post never fails on it.
+   */
+  low_interest?: { accept: number; max_rejects: number; terms: string[]; egypt_terms: string[] };
+  /**
+   * Egypt only: a title or type naming one of `terms` as a whole word (heads, statues, coffins, stelae, wall reliefs) is always kept;
+   * any other Egyptian record that is not pottery or a mask is kept with probability `other_accept`. Shares `low_interest.max_rejects`.
+   */
+  high_interest?: { terms: string[]; other_accept: number };
+}
+
 export interface FilterProfile {
   enabled: boolean;
+  taste?: TasteConfig;
   region_share_caps: Record<string, number>;
   require_image: boolean;
   /** Draw only masks once none was published for this many hours; unset or 0 turns the rule off. */
@@ -107,6 +126,11 @@ export interface Denylist {
   photograph_terms?: string[];
   allowed_phrases?: string[];
   modern_material_terms?: string[];
+  explicit_terms?: string[];
+  explicit_title_terms?: string[];
+  condition_terms?: string[];
+  /** CLIP score (0 to 1) from which an image counts as corroded or encrusted; unset or 0 turns the image check off. */
+  condition_image_threshold?: number;
   latest_year?: number;
 }
 

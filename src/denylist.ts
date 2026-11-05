@@ -31,6 +31,16 @@ export function denyReason(a: Artwork, deny: Denylist): string | null {
     const term = deny.modern_material_terms.find((t) => matchesTerms([a.medium, a.title].filter(Boolean).join(" \n "), [t]));
     if (term) return `modern material "${term}"`;
   }
+  const firstTerm = (fields: (string | null)[], terms?: string[]) => {
+    const text = fields.filter(Boolean).join(" \n ");
+    return terms?.find((t) => matchesTerms(text, [t]));
+  };
+  const explicitTerm =
+    firstTerm([a.title, a.objectType, a.medium], deny.explicit_title_terms) ??
+    firstTerm([a.title, a.objectType, a.medium, a.description, a.provenanceNote], deny.explicit_terms);
+  if (explicitTerm) return `explicit content "${explicitTerm}"`;
+  const conditionTerm = firstTerm([a.title, a.objectType, a.medium, a.description], deny.condition_terms);
+  if (conditionTerm) return `condition "${conditionTerm}"`;
   const strip = (s: string) => (deny.allowed_phrases ?? []).reduce((t, ph) => t.split(ph.toLowerCase()).join(" "), s.toLowerCase());
   const typeTokens = strip(a.objectType ?? "").toLowerCase().split(TOKEN_SPLIT);
   const tok = deny.blocked_type_tokens.find((t) => typeTokens.includes(t.toLowerCase()));

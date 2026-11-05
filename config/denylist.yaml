@@ -26,9 +26,24 @@ allowed_phrases: [étiquette de momie, etiquette de momie, mummy label]
 # appears there as an art-historical adjective ("plastic modelling").
 modern_material_terms: [kunststoff, kunstharz, kunstfaser, styropor, styrofoam, polystyrene, polystyrol, polyester, polyurethane, polyurethan, nylon, acrylic, acryl, plexiglas, perspex, vinyl, pvc, lycra, synthetic, synthetisch, synthétique, plastic, "matière plastique", plastique]
 
+# Explicit sexual content (owner, 2026-11-05: the bot posted phallic figures). Two lists, both with the classifier's token rules
+# ("ithyphallic" is caught by "phallic", "Penisfutteral" by "penis"), both on the museum's own wording only.
+# explicit_terms: title, type, medium, description and provenance. The Louvre describes figures as "phallus dresse".
+explicit_terms: [phallus, phallic, phallique, phallisch, phallos, priap]
+# explicit_title_terms: title, type and medium only, because descriptions use these words in scholarly prose (a Bwa mask note
+# on a "circumcised penis", an SMB statue with "erotischer Ausstrahlung") and those objects are fine.
+explicit_title_terms: [penis, pénis, genital, génital, geschlechtsteil, "sexual organ", erotic, erotique, érotique, erotisch, erotik, ejaculat, "sexual intercourse", geschlechtsverkehr, "rapport sexuel"]
+
+# Condition (owner, 2026-11-05: a heavily corroded, encrusted Osiris bronze was posted). Title, type, medium and description,
+# the museum's own wording. Only words that say the object itself is corroded or crusted over; "patina" is left out because a
+# green patina on a clean bronze is normal. The image check in src/condition.ts covers records that say nothing.
+condition_image_threshold: 0.6    # calibrated 2026-11-05 on the 582 posted images: flags about 1 in 10, mostly SMB colour-chart shots, fragments, ostraca and encrusted bronzes
+condition_terms: [corroded, corrosion, encrusted, encrustation, concretion, korrodiert, korrosion, verkrustet, verkrustung, corrodé, corrodée, incrusté, incrustée, concrétion, oxydé]
+
 # Never post an object whose date text points entirely after this year (owner, 2026-10-14: 1956). Only 4-digit years are read:
 # the earliest one must be later than this. BCE dates, and dates that also name a century, are not judged.
 latest_year: 1956
 
 # Manual overrides, e.g. "met:12345".
-blocked_keys: []
+#   met:564545 Min figurine (ithyphallic god, owner 2026-11-05); louvre:cl010374365 encrusted Osiris bronze (no wording or image rule catches it).
+blocked_keys: ["met:564545", "louvre:cl010374365"]

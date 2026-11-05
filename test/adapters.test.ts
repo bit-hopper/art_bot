@@ -321,6 +321,31 @@ describe("denylist", () => {
     expect(denyReason({ ...base, objectType: "Plastik", medium: "Holz", description: "plastic modelling of the face" }, deny)).toBeNull();
   });
 
+  it("blocks explicit sexual content in the museum's own wording, in four languages", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const why = (o: Partial<typeof base>) => denyReason({ ...base, ...o }, deny);
+    expect(why({ title: "figurine érotique", description: "homme (assis, nu, phallus dressé, phallus hypertrophié)" })).toMatch(/explicit content/);
+    expect(why({ description: "Ithyphallic figure of the god Min" })).toMatch(/phallic/);
+    expect(why({ objectType: "Penisfutteral" })).toMatch(/penis/);
+    expect(why({ title: "Phallusförmiger Anhänger" })).toMatch(/phallus/);
+    expect(why({ title: "Erotic scene" })).toMatch(/erotic/);
+    expect(why({ description: "Ritual scene with erotic imagery" })).toBeNull();
+    expect(why({ description: "a reference to the circumcised penis of a newly initiated boy" })).toBeNull();
+    expect(why({ description: "Die Kleidung steigert die Modellierung zu feiner erotischer Ausstrahlung." })).toBeNull();
+    expect(why({ title: "Stele of Penimen", description: "Genitive construction; a pen-shaped tool" })).toBeNull();
+    expect(why({})).toBeNull();
+  });
+
+  it("blocks objects the museum describes as corroded or encrusted, but not a plain patina", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const why = (o: Partial<typeof base>) => denyReason({ ...base, ...o }, deny);
+    expect(why({ description: "Bronze, heavily corroded, with traces of gilding" })).toMatch(/condition "corroded"/);
+    expect(why({ description: "Surface encrusted with sand and mineral deposits" })).toMatch(/encrusted/);
+    expect(why({ description: "Eisen, stark korrodiert" })).toMatch(/korrodiert/);
+    expect(why({ description: "alliage cuivreux, surface oxydée" })).toMatch(/oxydé/);
+    expect(why({ medium: "Bronze with green patina", description: "A well-preserved bronze with a green patina" })).toBeNull();
+  });
+
   it("blocks an object dated entirely after 1956, but not on a BCE date, a century, or an earlier year in a range", () => {
     const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
     const dated = (dateDisplay: string | null) => denyReason({ ...base, dateDisplay }, deny);

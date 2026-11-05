@@ -3,6 +3,7 @@ import { normaliseMiaRecord } from "../src/adapters/mia.js";
 import { loadDenylist, loadProfile } from "../src/config.js";
 import { denyReason } from "../src/denylist.js";
 import type { PreparedImage } from "../src/image.js";
+import { conditionReason } from "../src/condition.js";
 import { isPhotograph, photographPeopleReason } from "../src/people.js";
 import { readFileSync } from "node:fs";
 
@@ -35,5 +36,25 @@ describe("photographs", () => {
 
   it("fails closed: a detector that cannot load or run keeps the photograph out", async () => {
     expect(await photographPeopleReason(img, async () => { throw new Error("offline"); })).toMatch(/not checked.*offline/);
+  });
+});
+
+describe("corroded or encrusted objects (image check)", () => {
+  it("rejects an image at or above the threshold, and passes one below it", async () => {
+    expect(await conditionReason(img, 0.6, async () => 0.72)).toMatch(/catalogue shot \(score 0\.72\)/);
+    expect(await conditionReason(img, 0.6, async () => 0.6)).toMatch(/corroded/);
+    expect(await conditionReason(img, 0.6, async () => 0.05)).toBeNull();
+  });
+
+  it("is off without a threshold, and fails open when the model cannot run", async () => {
+    expect(await conditionReason(img, undefined, async () => 1)).toBeNull();
+    expect(await conditionReason(img, 0, async () => 1)).toBeNull();
+    expect(await conditionReason(img, 0.6, async () => { throw new Error("offline"); })).toBeNull();
+  });
+
+  it("is on in the shipped config, and blocks the two objects the owner named by key", () => {
+    expect(deny.condition_image_threshold).toBe(0.6);
+    expect(deny.blocked_keys).toEqual(expect.arrayContaining(["met:564545", "louvre:cl010374365"]));
+    expect(denyReason({ ...base, key: "met:564545" }, deny)).toMatch(/manual override/);
   });
 });
