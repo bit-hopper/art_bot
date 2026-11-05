@@ -4,7 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { loadProfile } from "../src/config.js";
 import { claimRow, Ledger, type LedgerRow } from "../src/ledger.js";
-import { cappedRegions, cultureRepeats, exhaustedTiers, keepProbability, rowWeight, selectArtwork, weightedPick } from "../src/selector.js";
+import { cappedRegions, cultureRepeats, exhaustedTiers, keepProbability, rowWeight, selectArtwork, summariseAttempts, weightedPick } from "../src/selector.js";
 import type { Artwork, IndexRow, ObjectClass, RegionGroup } from "../src/types.js";
 
 const profile = loadProfile();
@@ -315,5 +315,23 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     const mixed = await selectArtwork({ ...base, rng: () => 0.5, fetch: async (r) => art(r, { title: r.key === first ? "Head of a king" : "amulette", regionGroup: "egypt" }) });
     expect(mixed.ok && mixed.artwork.title).toMatch(/Head|amulette/);
     expect(mixed.attempts.filter((a) => a.outcome !== "low-interest")).toHaveLength(1);
+  });
+});
+
+describe("selection summary (how often a stale index row is picked and refused)", () => {
+  it("counts outcomes and splits denials by source and by kind", () => {
+    const s = summariseAttempts([
+      { key: "louvre:cl1", outcome: "denied", detail: 'explicit content "phallus"' },
+      { key: "louvre:cl2", outcome: "denied", detail: "manual override louvre:cl2" },
+      { key: "smb:5", outcome: "denied", detail: "image looks corroded, fragmentary or like a catalogue shot (score 0.80)" },
+      { key: "smb:6", outcome: "denied", detail: "dated 1985, after 1956" },
+      { key: "met:7", outcome: "low-interest", detail: "amulet" },
+      { key: "met:8", outcome: "picked" },
+    ]);
+    expect(s.attempts).toBe(6);
+    expect(s.outcomes).toEqual({ denied: 4, "low-interest": 1, picked: 1 });
+    expect(s.denied_by_source).toEqual({ louvre: 2, smb: 2 });
+    expect(s.denied_by_kind).toEqual({ explicit: 1, "manual-key": 1, "image-check": 1, date: 1 });
+    expect(summariseAttempts([])).toEqual({ attempts: 0, outcomes: {}, denied_by_source: {}, denied_by_kind: {} });
   });
 });

@@ -14,7 +14,7 @@ import { claimRow, Ledger } from "./ledger.js";
 import { login, publish } from "./publishers/bluesky.js";
 import { fetchRecentPosts, reconcile } from "./reconcile.js";
 import { LIMITS, measure, renderPost } from "./render.js";
-import { selectArtwork } from "./selector.js";
+import { selectArtwork, summariseAttempts } from "./selector.js";
 import { translateArtwork } from "./translate.js";
 import { ledgerFile, readIndex } from "./state.js";
 import { pushState } from "./state-sync.js";
@@ -61,6 +61,7 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
   });
   for (const t of sel.exhaustedTiers) log({ event: "TIER_EXHAUSTED", tier: t });
   for (const a of sel.attempts) log({ event: "attempt", ...a });
+  log({ event: "selection-summary", ...summariseAttempts(sel.attempts) });
   if (!sel.ok) {
     log({ event: sel.reason, candidates: rows.length });
     return null;

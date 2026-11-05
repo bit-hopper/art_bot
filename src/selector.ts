@@ -78,6 +78,30 @@ export function weightedPick<T>(items: T[], weight: (t: T) => number, rng: () =>
   return items[items.length - 1]!;
 }
 
+const DENIAL_KINDS: Array<[RegExp, string]> = [
+  [/^manual override/, "manual-key"], [/^dated/, "date"], [/^modern material/, "modern-material"], [/^explicit/, "explicit"],
+  [/^condition/, "condition-text"], [/^image looks/, "image-check"], [/^photograph/, "photograph"], [/^(object type|record mentions)/, "sensitive"],
+];
+
+/**
+ * One line of counts for a run's attempts, so how often a stale index row is picked and then refused (the Louvre index keeps rows
+ * cached before a filter existed) can be read from the logs: `denied_by_source` and `denied_by_kind` say where and why.
+ */
+export function summariseAttempts(attempts: Attempt[]) {
+  const outcomes: Record<string, number> = {};
+  const deniedBySource: Record<string, number> = {};
+  const deniedByKind: Record<string, number> = {};
+  for (const a of attempts) {
+    outcomes[a.outcome] = (outcomes[a.outcome] ?? 0) + 1;
+    if (a.outcome !== "denied") continue;
+    const source = a.key.slice(0, a.key.indexOf(":"));
+    const kind = DENIAL_KINDS.find(([re]) => re.test(a.detail ?? ""))?.[1] ?? "other";
+    deniedBySource[source] = (deniedBySource[source] ?? 0) + 1;
+    deniedByKind[kind] = (deniedByKind[kind] ?? 0) + 1;
+  }
+  return { attempts: attempts.length, outcomes, denied_by_source: deniedBySource, denied_by_kind: deniedByKind };
+}
+
 /** Postable classes that have index rows but none left after removing already-posted keys (spec 5.2 step 5). */
 export function exhaustedTiers(rows: IndexRow[], ledger: Ledger, profile: FilterProfile): ObjectClass[] {
   const seen = new Set<ObjectClass>();
