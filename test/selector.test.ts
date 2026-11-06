@@ -272,9 +272,24 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     const w = (r: IndexRow) => rowWeight(r, [], {}, taste);
     expect(w(row(1, "met", "sculpture"))).toBe(90);
     expect(w({ ...row(2, "met", "other"), objectClass: "pottery", score: 60 })).toBe(120);
-    expect(w(row(3, "met", "sculpture", "sub-saharan", "Edo peoples"))).toBe(90 * 8);
-    expect(w(row(4, "cleveland", "sculpture", "sub-saharan", "Nigeria, Benin Kingdom, Ẹdo peoples"))).toBe(90 * 8);
+    expect(w(row(3, "met", "sculpture", "sub-saharan", "Edo peoples"))).toBe(90 * 12);
+    expect(w(row(4, "cleveland", "sculpture", "sub-saharan", "Nigeria, Benin Kingdom, Ẹdo peoples"))).toBe(90 * 12);
     expect(w(row(5, "mia", "sculpture", "sub-saharan", "Bedouin"))).toBe(90);
+    expect(w(row(6, "met", "other"))).toBe(5);   // the catch-all class is halved
+  });
+
+  it("keeps a catch-all object of fur, leather or raffia 1 time in 5, plain wood or iron 1 in 2, refined materials always", () => {
+    const o = (medium: string, over: Partial<Artwork> = {}) => art(row(1, "smb", "other", "sub-saharan"), { title: "Bellows", objectType: "Bellows", medium, ...over });
+    expect(keepProbability(o("Wood; leather; fur; raffia"), taste)).toBe(0.2);
+    expect(keepProbability(o("Holz; Leder; Fell; Raffia"), taste)).toBe(0.2);
+    expect(keepProbability(o("Wood; iron"), taste)).toBe(0.5);        // no refined material named
+    expect(keepProbability(o("Ivory, metal"), taste)).toBe(1);
+    expect(keepProbability(o("Brass, iron"), taste)).toBe(1);
+    expect(keepProbability(o("Quarzit; Stein"), taste)).toBe(1);
+    expect(keepProbability(o(null as never), taste)).toBe(1);          // no recorded medium: left alone
+    expect(keepProbability(o("Wood; leather", { objectClass: "mask" }), taste)).toBe(1);
+    expect(keepProbability(o("Wood; leather", { objectClass: "other-carved-cast" }), taste)).toBe(1);
+    expect(keepProbability(o("Brass; leather", { culture: "Edo" }), taste)).toBe(1);
   });
 
   it("keeps small Egyptian pieces and fragments 1 time in 4, and whole heads, statues and coffins always", () => {

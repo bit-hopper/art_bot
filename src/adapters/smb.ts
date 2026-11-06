@@ -98,13 +98,13 @@ function pickDimensions(dimensions: SmbNameLine[] | undefined): string | null {
 
 /** The kingdom line ("historische Angabe (Hauptkatalog): Benin"): most Benin works carry no Ethnie, only this. */
 function kingdom(rec: SmbRecord): string | null {
-  const k = geo(rec, "Königreich")?.replace(/^historische Angabe \(Hauptkatalog\):\s*/i, "").trim();
-  return k || null;
+  return geo(rec, "Königreich");
 }
 
+/** A geography value, with the catalogue's "historische Angabe (Hauptkatalog): " provenance label stripped ("Umbugwe", not the label). */
 function geo(rec: SmbRecord, ...roles: string[]): string | null {
   const hit = (rec.geography ?? []).find((g) => g.role && roles.includes(g.role) && g.nameLine);
-  return hit?.nameLine?.trim() ?? null;
+  return hit?.nameLine?.replace(/^historische Angabe \(Hauptkatalog\):\s*/i, "").trim() || null;
 }
 
 export function licenseRights(license: string | null | undefined, cfg: SmbSourceConfig): RightsStatus {

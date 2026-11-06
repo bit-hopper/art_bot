@@ -39,6 +39,11 @@ export function keepProbability(a: Artwork, taste?: TasteConfig): number {
   if (taste?.culture_boost && a.culture && matchesTerms(a.culture, taste.culture_boost.terms)) return 1;
   if (li && (matchesTerms(text, li.terms) || (a.regionGroup === "egypt" && matchesTerms(text, li.egypt_terms)))) return li.accept;
   if (hi && a.regionGroup === "egypt" && a.objectClass !== "pottery" && a.objectClass !== "mask") return hasWholeWord(text, hi.terms) ? 1 : hi.other_accept;
+  const ca = taste?.catch_all;
+  if (ca && a.objectClass === "other" && a.medium) {
+    if (hasWholeWord(a.medium, ca.organic_terms)) return ca.organic_accept;
+    if (!hasWholeWord(a.medium, ca.refined_terms)) return ca.unrefined_accept;
+  }
   return 1;
 }
 

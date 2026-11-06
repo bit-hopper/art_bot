@@ -223,6 +223,11 @@ describe("Benin works (owner 2026-11-05: more Benin bronzes)", () => {
     expect(normaliseSmbRecord(rec([{ nameLine: "Nigeria", role: "Land" }]) as never, cfg, profile).culture).toBeNull();
   });
 
+  it("strips the catalogue's provenance label from an Ethnie line too (post 3mzlytqcbbr25 said 'historische Angabe (Hauptkatalog): Umbugwe')", () => {
+    const a = normaliseSmbRecord(rec([{ nameLine: "historische Angabe (Hauptkatalog): Umbugwe", role: "Ethnie" }]) as never, cfg, profile);
+    expect(a.culture).toBe("Umbugwe");
+  });
+
   it("marks index rows found under a featured term with that culture, so the pick boost sees them", async () => {
     const small = { ...cfg, org_units_africa: ["EM"], org_units_egypt: [], org_units_origin: [], africa_terms: ["Nigeria", "Benin"], featured_cultures: ["Benin"] };
     const db: Record<string, Array<{ id: string; objekttyp: string }>> = {

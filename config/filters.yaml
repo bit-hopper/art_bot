@@ -8,8 +8,13 @@ profiles:
     # Owner 2026-11-05: more objects that awe (whole decorated pottery, cast Benin works), fewer small Egyptian pieces that are
     # mostly corroded or remains of something larger. Applied when a post is picked, so no index needs a rebuild.
     taste:
-      class_boost: { pottery: 2 }
-      culture_boost: { terms: [edo, ẹdo, benin, ife], factor: 8 }    # the Edo/Benin rows are about 185 of 80,000; SMB rows carry no culture, so they are not boosted
+      class_boost: { pottery: 2, other: 0.5 }
+      culture_boost: { terms: [edo, ẹdo, benin, ife], factor: 12 }   # 776 tagged rows (SMB's Benin works included): about 14% of draws at 8, about 19% at 12
+      catch_all:                # owner 2026-11-05: refined taste (cast brass, polished pottery, carved ivory and stone); a bellows of fur, leather and raffia is not what the feed is for
+        organic_accept: 0.2     # class `other` only: a medium naming one of organic_terms is kept 1 time in 5
+        organic_terms: [fur, pelt, hide, skin, leather, raffia, fell, leder, haut, fibre, fiber, grass, cloth, textile, cotton, baumwolle, stoff]
+        unrefined_accept: 0.5   # ...otherwise, a medium naming none of refined_terms is kept 1 time in 2
+        refined_terms: [brass, bronze, messing, bronzen, copper, kupfer, gold, silver, silber, ivory, elfenbein, stone, stein, marble, marmor, quartzite, granite, granit, limestone, sandstone, alabaster, terracotta, ceramic, pottery, keramik, ton, glass, glas, faience, fayence, ebony, ebenholz]
       low_interest:
         accept: 0.25            # a record that matches is kept 1 time in 4
         max_rejects: 12

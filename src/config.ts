@@ -35,6 +35,12 @@ export interface TasteConfig {
    * any other Egyptian record that is not pottery or a mask is kept with probability `other_accept`. Shares `low_interest.max_rejects`.
    */
   high_interest?: { terms: string[]; other_accept: number };
+  /**
+   * The catch-all class (`other`) holds the plain utilitarian objects. By medium (whole words): soft organic material (fur, leather,
+   * raffia: bellows, bags, pelts) is kept with probability `organic_accept`; otherwise, a medium that names none of `refined_terms`
+   * (cast metal, ivory, stone, ceramic) is kept with `unrefined_accept`. No recorded medium is left alone. Shares `low_interest.max_rejects`.
+   */
+  catch_all?: { organic_terms: string[]; organic_accept: number; refined_terms: string[]; unrefined_accept: number };
 }
 
 export interface FilterProfile {
