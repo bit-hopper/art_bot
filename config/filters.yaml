@@ -14,7 +14,7 @@ profiles:
         boost: 2                # a row whose index medium names one of boost_terms is drawn twice as often
         boost_terms: [brass, bronze, messing, copper, kupfer, gold, silver, silber, ivory, elfenbein, marble, marmor, quartzite, quarzit, granite, granit, limestone, kalkstein, sandstone, sandstein, alabaster, ebony, ebenholz, stone, stein]
         organic: 0.25           # class `other` only: a medium naming one of organic_terms (and no boost term) is drawn a quarter as often
-        organic_terms: [fur, pelt, hide, skin, leather, raffia, fell, leder, haut, fibre, fiber, grass, gras, pflanzenfaser, cloth, textile, textil, cotton, baumwolle, linen, leinen, stoff]
+        organic_terms: [fur, pelt, hide, skin, leather, raffia, fell, leder, haut, fibre, fiber, grass, gras, pflanzenfaser, cloth, textile, textil, cotton, baumwolle, linen, leinen, stoff, raphia, rafia, palmfaser, kürbis, kürbisschale, gourd, kalebasse, calabash, papyrus, pergament, parchment]
       catch_all:                # after the fetch, class `other` only, from the record's own medium
         organic_accept: 0.2     # a medium naming one of material.organic_terms is kept 1 time in 5
         unrefined_accept: 0.5   # ...otherwise, a medium naming none of refined_terms is kept 1 time in 2

@@ -287,6 +287,7 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     expect(w("sculpture")).toBe(90);
     expect(w("other", "Wood; leather; fur; raffia")).toBe(10 * 0.5 * 0.25);
     expect(w("other", "Leder; Fell")).toBe(10 * 0.5 * 0.25);
+    for (const m of ["Holz, Raphia", "Palmfaser", "Kürbisschale", "Kürbis", "Papyrus (Material); beidseitig, beschriftet (Technik)", "Pergament, Papier"]) expect(w("other", m), m).toBe(10 * 0.5 * 0.25);
     expect(w("sculpture", "Wood; leather")).toBe(90);              // organic only counts down the catch-all class
     expect(w("other", "Stein; Leder")).toBe(10 * 0.5 * 2);         // a worked material wins over an organic one
   });

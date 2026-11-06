@@ -15,7 +15,7 @@ sources:
     featured_cultures: [Benin]
     # Owner 2026-11-05: favour worked materials (cast metal, ivory, stone) over fur, leather and fibre. The portal's `materials` filter answers
     # one term at a time; each indexed row records the terms it matched (`medium`), and the pick weighs them (filters.yaml, taste.material).
-    material_terms: [Messing, Bronze, Kupfer, Gold, Silber, Elfenbein, Stein, Marmor, Quarzit, Granit, Kalkstein, Sandstein, Ebenholz, Leder, Fell, Haut, Raffia, Gras, Pflanzenfaser, Textil, Baumwolle, Leinen]
+    material_terms: [Messing, Bronze, Kupfer, Gold, Silber, Elfenbein, Stein, Marmor, Quarzit, Granit, Kalkstein, Sandstein, Ebenholz, Leder, Fell, Haut, Raffia, Gras, Pflanzenfaser, Textil, Baumwolle, Leinen, Raphia, Palmfaser, Kürbis, Papyrus, Pergament]
     org_units_egypt: ["Ägyptisches Museum und Papyrussammlung"]
     # Origin rule (owner 2026-10-09): units filed by period. Kept when every place of origin the record names is African
     # (find-spots and purchase places are ignored); "Ägypten" + "Syrien" is "Egypt or Syria" and is out. Measured 2026-10-09:
