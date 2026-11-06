@@ -6,13 +6,17 @@ profiles:
       egypt: 0.58
     require_image: true
     # Owner 2026-11-05: more objects that awe (whole decorated pottery, cast Benin works), fewer small Egyptian pieces that are
-    # mostly corroded or remains of something larger. Applied when a post is picked, so no index needs a rebuild.
+    # mostly corroded or remains of something larger. Applied when a post is picked; the material rules read the `medium` each index row carries.
     taste:
       class_boost: { pottery: 2, other: 0.5 }
       culture_boost: { terms: [edo, ẹdo, benin, ife], factor: 12 }   # 776 tagged rows (SMB's Benin works included): about 14% of draws at 8, about 19% at 12
-      catch_all:                # owner 2026-11-05: refined taste (cast brass, polished pottery, carved ivory and stone); a bellows of fur, leather and raffia is not what the feed is for
-        organic_accept: 0.2     # class `other` only: a medium naming one of organic_terms is kept 1 time in 5
-        organic_terms: [fur, pelt, hide, skin, leather, raffia, fell, leder, haut, fibre, fiber, grass, cloth, textile, cotton, baumwolle, stoff]
+      material:                 # owner 2026-11-05: refined taste (cast brass, carved ivory and stone); a bellows of fur, leather and raffia is not what the feed is for
+        boost: 2                # a row whose index medium names one of boost_terms is drawn twice as often
+        boost_terms: [brass, bronze, messing, copper, kupfer, gold, silver, silber, ivory, elfenbein, marble, marmor, quartzite, quarzit, granite, granit, limestone, kalkstein, sandstone, sandstein, alabaster, ebony, ebenholz, stone, stein]
+        organic: 0.25           # class `other` only: a medium naming one of organic_terms (and no boost term) is drawn a quarter as often
+        organic_terms: [fur, pelt, hide, skin, leather, raffia, fell, leder, haut, fibre, fiber, grass, gras, pflanzenfaser, cloth, textile, textil, cotton, baumwolle, linen, leinen, stoff]
+      catch_all:                # after the fetch, class `other` only, from the record's own medium
+        organic_accept: 0.2     # a medium naming one of material.organic_terms is kept 1 time in 5
         unrefined_accept: 0.5   # ...otherwise, a medium naming none of refined_terms is kept 1 time in 2
         refined_terms: [brass, bronze, messing, bronzen, copper, kupfer, gold, silver, silber, ivory, elfenbein, stone, stein, marble, marmor, quartzite, granite, granit, limestone, sandstone, alabaster, terracotta, ceramic, pottery, keramik, ton, glass, glas, faience, fayence, ebony, ebenholz]
       low_interest:

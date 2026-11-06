@@ -4,7 +4,7 @@ import { denyReason } from "../denylist.js";
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
-import { classifyRecord, isFlatFragment, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { classifyRecord, indexMedium, isFlatFragment, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const SITE = "https://collections.louvre.fr";
 const SITEMAP_INDEX = `${SITE}/sitemap.xml`;
@@ -41,10 +41,14 @@ export interface LouvreSourceConfig extends SourceConfig {
 
 /** Bumped when the selection rule changes, so ids rejected under an older rule are fetched again. */
 export const CACHE_VERSION = 2;
+/** Rows indexed before index rows carried `medium` are re-fetched (rows only, not the whole crawl) until they carry it. */
+const MEDIUM_VERSION = 1;
 
 export interface LouvreCacheEntry {
   day: number;
   v?: number;
+  /** `MEDIUM_VERSION` when the row was built with its medium. */
+  mv?: number;
   row: IndexRow | null;
   /** The record's department, kept for every fetched object so the probes can steer the crawl (absent on older entries). */
   dept?: string;
@@ -289,7 +293,7 @@ export class LouvreAdapter implements MuseumAdapter {
     const cache = this.opts.cache;
     const local = new Map<string, LouvreCacheEntry>();
     const known = (id: string) => cache?.get(id) ?? local.get(id);
-    const stale = (e: LouvreCacheEntry | undefined) => !e || e.v !== CACHE_VERSION || (e.retry === true && today - e.day > NO_IMAGE_RECHECK_DAYS);
+    const stale = (e: LouvreCacheEntry | undefined) => !e || e.v !== CACHE_VERSION || (e.row !== null && e.mv !== MEDIUM_VERSION) || (e.retry === true && today - e.day > NO_IMAGE_RECHECK_DAYS);
     const remember = (id: string, entry: LouvreCacheEntry) => (cache ? cache.set(id, entry) : void local.set(id, entry));
 
     let budget = this.cfg.max_new_per_run;
@@ -307,9 +311,9 @@ export class LouvreAdapter implements MuseumAdapter {
       const row: IndexRow | null =
         !wanted || !a.imageUrl || a.rightsStatus === "blocked" || weight <= 0 || denyReason(a, this.deny) !== null
           ? null
-          : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { fragment: isFlatFragment(a.objectType, a.title) }) };
+          : { key: a.key, source: "louvre", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass, regionGroup: a.regionGroup, culture: a.culture, medium: indexMedium(a.medium), score: scoreFor(weight, { fragment: isFlatFragment(a.objectType, a.title) }) };
       const dept = a.department ?? undefined;
-      remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, row, dept, retry: true } : { day: today, v: CACHE_VERSION, row, dept });
+      remember(id, wanted && !a.imageUrl && !r.isMuseesNationauxRecuperation ? { day: today, v: CACHE_VERSION, mv: MEDIUM_VERSION, row, dept, retry: true } : { day: today, v: CACHE_VERSION, mv: MEDIUM_VERSION, row, dept });
     };
     /** Fetches the stale ids of one list within the per-run budget; false once the budget is spent. */
     const crawl = async (ids: string[]): Promise<boolean> => {

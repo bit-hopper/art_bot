@@ -36,11 +36,17 @@ export interface TasteConfig {
    */
   high_interest?: { terms: string[]; other_accept: number };
   /**
-   * The catch-all class (`other`) holds the plain utilitarian objects. By medium (whole words): soft organic material (fur, leather,
-   * raffia: bellows, bags, pelts) is kept with probability `organic_accept`; otherwise, a medium that names none of `refined_terms`
-   * (cast metal, ivory, stone, ceramic) is kept with `unrefined_accept`. No recorded medium is left alone. Shares `low_interest.max_rejects`.
+   * Material at pick time, from the index row's `medium` (whole words; German terms for SMB). A medium naming one of `boost_terms` (cast
+   * metal, ivory, stone) is drawn `boost` times as often; a catch-all (`other`) row naming one of `organic_terms` (fur, leather, raffia,
+   * fibre) and no boost term is drawn `organic` times as often. Rows with no recorded medium are neutral.
    */
-  catch_all?: { organic_terms: string[]; organic_accept: number; refined_terms: string[]; unrefined_accept: number };
+  material?: { boost_terms: string[]; boost: number; organic_terms: string[]; organic: number };
+  /**
+   * After the fetch, for the catch-all class (`other`), by the record's medium: soft organic material (`material.organic_terms`) is kept
+   * with probability `organic_accept`; otherwise a medium that names none of `refined_terms` (metal, ivory, stone, ceramic) is kept with
+   * `unrefined_accept`. No recorded medium is left alone. Shares `low_interest.max_rejects`.
+   */
+  catch_all?: { organic_accept: number; refined_terms: string[]; unrefined_accept: number };
 }
 
 export interface FilterProfile {
@@ -72,6 +78,11 @@ export interface SmbSourceConfig {
   africa_terms: string[];
   /** Index terms whose rows carry that name as `culture`, so the pick-time boost sees them (search rows have no culture otherwise). */
   featured_cultures?: string[];
+  /**
+   * Material terms the portal can filter on (`materials=`). The search rows carry no material, so after the index is enumerated each term is
+   * searched once per unit and every indexed row it hits gets the term in its `medium` (a few hundred requests, not one page per object).
+   */
+  material_terms?: string[];
   egypt_terms: string[];
   north_africa_terms: string[];
   allowed_licenses: Record<"open" | "attributed" | "attributed-nc", string[]>;

@@ -246,4 +246,26 @@ describe("Benin works (owner 2026-11-05: more Benin bronzes)", () => {
     expect(byKey["smb:1"]!.culture).toBe("Benin");
     expect(byKey["smb:2"]!.culture).toBeNull();
   });
+
+  it("records the material terms each indexed row matched (one filtered search per unit and term), and ignores hits outside the index", async () => {
+    const small = { ...cfg, org_units_africa: ["EM"], org_units_egypt: [], org_units_origin: [], africa_terms: ["Nigeria"], featured_cultures: [], material_terms: ["Messing", "Leder"] };
+    const asked: string[] = [];
+    const fetchImpl = (async (input: RequestInfo | URL) => {
+      const u = new URL(String(input));
+      const m = u.searchParams.get("materials");
+      if (m) asked.push(m);
+      const hits: Record<string, string[]> = { Messing: ["obj-1", "obj-2", "obj-99"], Leder: ["obj-2"] };
+      const ids = m ? hits[m] ?? [] : ["obj-1", "obj-2", "obj-3"];
+      return new Response(JSON.stringify({ artworks: ids.map((id) => ({ id, objekttyp: "Maske" })), total: ids.length }), { status: 200 });
+    }) as typeof fetch;
+    const adapter = new SmbAdapter(small, profile, new HttpClient({ fetchImpl, sleep: async () => {}, retryDelaysMs: [] }));
+    const rows = [];
+    for await (const r of adapter.buildIndex()) rows.push(r);
+    const byKey = Object.fromEntries(rows.map((r) => [r.key, r]));
+    expect(asked).toEqual(["Messing", "Leder"]);
+    expect(byKey["smb:1"]!.medium).toBe("Messing");
+    expect(byKey["smb:2"]!.medium).toBe("Messing; Leder");
+    expect(byKey["smb:3"]!.medium).toBeUndefined();
+    expect(byKey["smb:99"]).toBeUndefined();
+  });
 });

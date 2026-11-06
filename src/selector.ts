@@ -19,6 +19,11 @@ export function rowWeight(row: IndexRow, recent6: LedgerRow[], sourceWeights: Re
   let w = row.score * (sourceWeights[row.source] ?? 1) * 0.5 ** n;
   w *= taste?.class_boost?.[row.objectClass] ?? 1;
   if (taste?.culture_boost && row.culture && matchesTerms(row.culture, taste.culture_boost.terms)) w *= taste.culture_boost.factor;
+  const m = taste?.material;
+  if (m && row.medium) {
+    if (hasWholeWord(row.medium, m.boost_terms)) w *= m.boost;
+    else if (row.objectClass === "other" && hasWholeWord(row.medium, m.organic_terms)) w *= m.organic;
+  }
   return w;
 }
 
@@ -41,7 +46,7 @@ export function keepProbability(a: Artwork, taste?: TasteConfig): number {
   if (hi && a.regionGroup === "egypt" && a.objectClass !== "pottery" && a.objectClass !== "mask") return hasWholeWord(text, hi.terms) ? 1 : hi.other_accept;
   const ca = taste?.catch_all;
   if (ca && a.objectClass === "other" && a.medium) {
-    if (hasWholeWord(a.medium, ca.organic_terms)) return ca.organic_accept;
+    if (taste?.material && hasWholeWord(a.medium, taste.material.organic_terms)) return ca.organic_accept;
     if (!hasWholeWord(a.medium, ca.refined_terms)) return ca.unrefined_accept;
   }
   return 1;

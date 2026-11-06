@@ -278,6 +278,19 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     expect(w(row(6, "met", "other"))).toBe(5);   // the catch-all class is halved
   });
 
+  it("weighs the medium an index row carries: worked materials twice, organic catch-all objects a quarter, unknown neutral", () => {
+    const w = (cls: ObjectClass, medium?: string) => rowWeight({ ...row(1, "smb", cls), ...(medium ? { medium } : {}) }, [], {}, taste);
+    expect(w("sculpture", "Brass, iron")).toBe(90 * 2);
+    expect(w("sculpture", "Messing; Leder")).toBe(90 * 2);        // SMB rows carry the German terms they matched
+    expect(w("mask", "Ivory, metal")).toBe(100 * 2);
+    expect(w("sculpture", "Wood")).toBe(90);
+    expect(w("sculpture")).toBe(90);
+    expect(w("other", "Wood; leather; fur; raffia")).toBe(10 * 0.5 * 0.25);
+    expect(w("other", "Leder; Fell")).toBe(10 * 0.5 * 0.25);
+    expect(w("sculpture", "Wood; leather")).toBe(90);              // organic only counts down the catch-all class
+    expect(w("other", "Stein; Leder")).toBe(10 * 0.5 * 2);         // a worked material wins over an organic one
+  });
+
   it("keeps a catch-all object of fur, leather or raffia 1 time in 5, plain wood or iron 1 in 2, refined materials always", () => {
     const o = (medium: string, over: Partial<Artwork> = {}) => art(row(1, "smb", "other", "sub-saharan"), { title: "Bellows", objectType: "Bellows", medium, ...over });
     expect(keepProbability(o("Wood; leather; fur; raffia"), taste)).toBe(0.2);

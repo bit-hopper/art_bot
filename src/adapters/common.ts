@@ -32,6 +32,12 @@ export function classifyRecord(type: string | null | undefined, title: string | 
   return cls;
 }
 
+/** The record's medium as an index row carries it: whitespace folded, capped at 80 characters, absent when empty. */
+export function indexMedium(medium: string | null | undefined): string | undefined {
+  const t = (medium ?? "").replace(/\s+/g, " ").trim();
+  return t ? t.slice(0, 80) : undefined;
+}
+
 const FRAGMENT = /fragment|bruchst/i;
 const SHERD = /fragment|bruchst|sherd|scherbe|tesson/i;
 const FLAT = /textil|papyr|kelim|gewebe|stoff|tapestry|tunic|tunika|clavus|segment|curtain|vorhang|behang|hanging|linen|leinen|wool|wolle|cloth|garment|kleidung|seide|silk|weav|woven/i;

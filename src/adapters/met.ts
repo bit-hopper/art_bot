@@ -3,7 +3,7 @@ import { loadProfile, loadSourceConfig, type FilterProfile, type SourceConfig } 
 import { HttpClient, HttpError, StopCrawlError } from "../http.js";
 import type { JsonCache } from "../state.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup } from "../types.js";
-import { africanOrigin, classifyRecord, isFlatFragment, isSherd, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
+import { africanOrigin, classifyRecord, isFlatFragment, indexMedium, isSherd, mapLimit, nonEmpty, regionGroupFromPlace, scoreFor } from "./common.js";
 
 const API = "https://collectionapi.metmuseum.org/public/collection";
 const PAGE = 500;
@@ -29,7 +29,7 @@ export interface MetCacheEntry {
 }
 
 /** Bump when the class rules change: cached rows older than this are fetched again, or re-derived from the Met's open-data CSV (`scripts/met-reclass.ts`). */
-export const CLASS_VERSION = 3;
+export const CLASS_VERSION = 4;   // 4: index rows carry `medium`; only the rows already indexed are re-fetched, a few thousand a run
 
 
 export interface MetSourceConfig extends SourceConfig {
@@ -214,7 +214,7 @@ export class MetAdapter implements MuseumAdapter {
               ? null
               : {
                   key: a.key, source: "met", sourceObjectId: a.sourceObjectId, objectClass: a.objectClass,
-                  regionGroup: a.regionGroup, culture: a.culture, score: scoreFor(weight, { highlight: o.isHighlight, fragment: isFlatFragment(a.objectType, a.title), sherd: isSherd(a.objectClass, a.objectType, a.title) }),
+                  regionGroup: a.regionGroup, culture: a.culture, medium: indexMedium(a.medium), score: scoreFor(weight, { highlight: o.isHighlight, fragment: isFlatFragment(a.objectType, a.title), sherd: isSherd(a.objectClass, a.objectType, a.title) }),
                 };
           const entry = { day: today, row, v: CLASS_VERSION };
           if (cache) cache.set(String(id), entry);

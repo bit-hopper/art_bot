@@ -61,6 +61,8 @@ export interface IndexRow {
   objectClass: ObjectClass;
   regionGroup: RegionGroup;
   culture: string | null;
+  /** The medium, up to 80 characters, so the pick can favour worked materials; SMB rows carry the material terms they matched. Absent when unknown. */
+  medium?: string;
   /** class weight x quality factor (spec 4.2). */
   score: number;
 }

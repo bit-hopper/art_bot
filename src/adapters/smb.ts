@@ -4,7 +4,7 @@ import { loadProfile, loadSmbConfig, type FilterProfile, type SmbSourceConfig } 
 import { HttpClient } from "../http.js";
 import { htmlToText } from "../text.js";
 import type { Artwork, IndexRow, MuseumAdapter, RegionGroup, RightsStatus } from "../types.js";
-import { classifyRecord, isFlatFragment, isSherd, scoreFor } from "./common.js";
+import { classifyRecord, indexMedium, isFlatFragment, isSherd, scoreFor } from "./common.js";
 
 const SITE = "https://search.smb.museum";
 const PAGE_SIZE = 300; // server caps `limit` at 300 (M0 spike)
@@ -303,6 +303,8 @@ export class SmbAdapter implements MuseumAdapter {
       for (const [id, e] of found) if (!byId.has(id)) byId.set(id, { cls: e.cls, terms: e.terms, egypt: false });
     }
 
+    const materials = await this.materialsById(new Set(byId.keys()));
+
     for (const [id, e] of byId) {
       const weight = classWeight(e.cls, this.profile);
       if (weight <= 0) continue;
@@ -315,9 +317,33 @@ export class SmbAdapter implements MuseumAdapter {
         regionGroup: e.egypt ? "egypt" : regionGroupFromTerms(e.terms, this.cfg),
         // Search rows carry no culture; only the featured terms (Benin) are known here, from the term the row was found under.
         culture: (this.cfg.featured_cultures ?? []).find((c) => e.terms.has(c)) ?? null,
+        medium: indexMedium(materials.get(id)?.join("; ")),
         score: scoreFor(weight, { fragment: flat.has(id), sherd: sherds.has(id) }),
       };
     }
+  }
+
+  /**
+   * Which of `material_terms` each indexed row matches, from one filtered search per unit and term (search rows carry no material).
+   * A refused or failed search stops the tagging and keeps what was found: untagged rows are simply not favoured.
+   */
+  private async materialsById(indexed: Set<string>): Promise<Map<string, string[]>> {
+    const out = new Map<string, string[]>();
+    const units = [...this.cfg.org_units_africa, ...this.cfg.org_units_egypt, ...(this.cfg.org_units_origin ?? [])];
+    try {
+      for (const term of this.cfg.material_terms ?? []) {
+        for (const unit of units) {
+          for (const row of await this.drain({ org_units: unit, materials: term })) {
+            if (!indexed.has(row.id)) continue;
+            const have = out.get(row.id) ?? [];
+            if (!have.includes(term)) out.set(row.id, [...have, term]);
+          }
+        }
+      }
+    } catch (e) {
+      console.error(JSON.stringify({ event: "smb-materials-incomplete", tagged: out.size, error: e instanceof Error ? e.message : String(e) }));
+    }
+    return out;
   }
 
   async fetchArtwork(sourceObjectId: string): Promise<Artwork> {
