@@ -22,6 +22,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm ci || { echo "npm ci failed; retrying once"; sleep 30; npm ci; }
       - run: bash scripts/state-checkout.sh
       - run: npx tsx scripts/health-check.ts

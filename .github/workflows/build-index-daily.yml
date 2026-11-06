@@ -25,13 +25,13 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm ci || { echo "npm ci failed; retrying once"; sleep 30; npm ci; }
       - name: Check out the state branch
         run: bash scripts/state-checkout.sh
       - name: Rebuild every enabled source (a failing source keeps yesterday's index)
         run: npx tsx src/build-index.ts
       - name: Push any unpushed state
-        if: always()
+        if: always() && hashFiles('state/.git') != ''
         run: npx tsx scripts/state-push.ts "index run ${{ github.run_id }}"
       - name: Clear the failure alert
         if: success()

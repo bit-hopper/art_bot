@@ -7,7 +7,7 @@ import { classifyRecord, isFlatFragment, indexMedium, isSherd, nonEmpty, regionG
 
 const API = "https://api.artic.edu/api/v1/artworks";
 const PAGE = 100;
-const LIST_FIELDS = "id,title,artwork_type_title,place_of_origin,style_title,image_id";
+const LIST_FIELDS = "id,title,artwork_type_title,place_of_origin,style_title,image_id,medium_display";
 const FULL_FIELDS = [
   "id", "title", "main_reference_number", "artwork_type_title", "place_of_origin", "style_title", "date_display", "medium_display",
   "dimensions", "credit_line", "department_title", "description", "provenance_text", "is_public_domain", "copyright_notice",

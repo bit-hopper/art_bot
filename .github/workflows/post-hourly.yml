@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: 22
           cache: npm
-      - run: npm ci
+      - run: npm ci || { echo "npm ci failed; retrying once"; sleep 30; npm ci; }
       - name: Cache the image models
         uses: actions/cache@v4
         with:
@@ -57,7 +57,7 @@ jobs:
           if [ "$LIVE" = "true" ] && { [ "$EVENT" = "schedule" ] || [ "$DRY_INPUT" = "false" ]; }; then export DRY_RUN=0; else export DRY_RUN=1; fi
           npx tsx src/run.ts
       - name: Push any unpushed state
-        if: always()
+        if: always() && hashFiles('state/.git') != ''
         run: npx tsx scripts/state-push.ts "hourly run ${{ github.run_id }}"
       - name: Clear the failure alert
         if: success()

@@ -7,7 +7,7 @@ import { africanOrigin, classifyRecord, isFlatFragment, isSherd, indexMedium, no
 
 const API = "https://openaccess-api.clevelandart.org/api/artworks";
 const PAGE = 1000;
-const LIST_FIELDS = "id,type,title,culture,department,images";
+const LIST_FIELDS = "id,type,title,culture,department,images,technique";
 
 export interface ClevelandSourceConfig extends SourceConfig {
   departments: string[];
