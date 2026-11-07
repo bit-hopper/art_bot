@@ -42,14 +42,25 @@ const clip: CorrosionScorer = async (img) => {
   return out.filter((o) => POOR.includes(o.label)).reduce((sum, o) => sum + o.score, 0);
 };
 
-/** The reason to reject an image that looks corroded, fragmentary or like a dull catalogue shot, or null (also null when the model fails: this check fails open). */
-export async function conditionReason(img: PreparedImage, threshold: number | undefined, score: CorrosionScorer = clip): Promise<string | null> {
+export interface ConditionOptions {
+  /** Refuse the image when the model cannot run, instead of letting it through (owner 2026-11-06). */
+  failClosed?: boolean;
+  /** Called with the error whenever the model fails, so a silent fail-open shows up in the run log. */
+  onError?: (e: unknown) => void;
+}
+
+/**
+ * The reason to reject an image that looks corroded, fragmentary or like a dull catalogue shot, or null. When the model fails the
+ * error is reported to `onError`; the image then passes (fail open) unless `failClosed`, which refuses it.
+ */
+export async function conditionReason(img: PreparedImage, threshold: number | undefined, score: CorrosionScorer = clip, opts: ConditionOptions = {}): Promise<string | null> {
   if (!threshold) return null;
   try {
     const s = await score(img);
     return s >= threshold ? `image looks corroded, fragmentary or like a catalogue shot (score ${s.toFixed(2)})` : null;
-  } catch {
+  } catch (e) {
     loaded = null;
-    return null;
+    opts.onError?.(e);
+    return opts.failClosed ? `image not checked for condition (${e instanceof Error ? e.message : e})` : null;
   }
 }

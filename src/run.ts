@@ -57,7 +57,10 @@ async function pickOne(): Promise<{ artwork: Artwork; image: PreparedImage } | n
     fetch: (r) => adapters.get(r.source)!.fetchArtwork(r.sourceObjectId),
     deny: (a) => denyReason(a, deny),
     prepare: async (a) => prepareImage(await downloadImage(a.imageUrl!, images)),
-    checkImage: async (a, img) => (isPhotograph(a, deny) ? await photographPeopleReason(img) : null) ?? (await conditionReason(img, deny.condition_image_threshold)),
+    checkImage: async (a, img) => (isPhotograph(a, deny) ? await photographPeopleReason(img) : null) ?? (await conditionReason(img, deny.condition_image_threshold, undefined, {
+      failClosed: (deny.condition_fail_closed_sources ?? []).includes(a.source),
+      onError: (e) => log({ event: "condition-check-failed", key: a.key, error: String(e instanceof Error ? e.message : e) }),
+    })),
   });
   for (const t of sel.exhaustedTiers) log({ event: "TIER_EXHAUSTED", tier: t });
   for (const a of sel.attempts) log({ event: "attempt", ...a });

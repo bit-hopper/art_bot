@@ -23,6 +23,9 @@ profiles:
         accept: 0.25            # a record that matches is kept 1 time in 4
         max_rejects: 12
         terms: [fragment, bruchstück, sherd, scherbe, tesson]
+        egypt_strict:           # owner 2026-11-06: shabtis and small figurines (a blank Siptah shabti, a corroded Osiris) still got through at 1 in 4
+          accept: 0.1           # Egypt only; checked before egypt_terms, so these are kept 1 time in 10
+          terms: [shabti, ushabti, uschebti, oushebti, ouchebti, chaouabti, serviteur, figurine]
         egypt_terms: [amulet, amulette, amulett, scarab, scarabée, skarabäus, figurine, shabti, ushabti, uschebti, oushebti, ouchebti, chaouabti, serviteur, ostrac, ostrak, stopper, bouchon, "seal impression", empreinte, sealing, bead, perle]
       high_interest:            # Egypt only: royal heads, statues, coffins, stelae and reliefs are always kept, other Egyptian objects (not pottery or masks) 3 times in 5
         other_accept: 0.6

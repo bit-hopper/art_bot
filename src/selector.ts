@@ -42,6 +42,7 @@ export function keepProbability(a: Artwork, taste?: TasteConfig): number {
   const text = [a.title, a.objectType].filter(Boolean).join(" \n ");
   // Featured cultures (Edo/Benin, the same terms as the pick boost) are never down-weighted: the Met's "Fragment of a leopard head" stays.
   if (taste?.culture_boost && a.culture && matchesTerms(a.culture, taste.culture_boost.terms)) return 1;
+  if (li?.egypt_strict && a.regionGroup === "egypt" && matchesTerms(text, li.egypt_strict.terms)) return li.egypt_strict.accept;
   if (li && (matchesTerms(text, li.terms) || (a.regionGroup === "egypt" && matchesTerms(text, li.egypt_terms)))) return li.accept;
   if (hi && a.regionGroup === "egypt" && a.objectClass !== "pottery" && a.objectClass !== "mask") return hasWholeWord(text, hi.terms) ? 1 : hi.other_accept;
   const ca = taste?.catch_all;
@@ -90,7 +91,7 @@ export function weightedPick<T>(items: T[], weight: (t: T) => number, rng: () =>
 
 const DENIAL_KINDS: Array<[RegExp, string]> = [
   [/^manual override/, "manual-key"], [/^dated/, "date"], [/^modern material/, "modern-material"], [/^explicit/, "explicit"],
-  [/^condition/, "condition-text"], [/^image looks/, "image-check"], [/^photograph/, "photograph"], [/^(object type|record mentions)/, "sensitive"],
+  [/^condition/, "condition-text"], [/^image looks/, "image-check"], [/^image not checked/, "image-check-error"], [/^photograph/, "photograph"], [/^(object type|record mentions)/, "sensitive"],
 ];
 
 /**

@@ -308,7 +308,7 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
 
   it("keeps small Egyptian pieces and fragments 1 time in 4, and whole heads, statues and coffins always", () => {
     expect(keepProbability(eg("amulette oudjat"), taste)).toBe(0.25);
-    expect(keepProbability(eg("serviteur funéraire momiforme"), taste)).toBe(0.25);
+    expect(keepProbability(eg("serviteur funéraire momiforme"), taste)).toBe(0.1);   // shabtis and figurines: 1 in 10 (owner 2026-11-06)
     expect(keepProbability(eg("perle"), taste)).toBe(0.25);
     expect(keepProbability(eg("ostracon"), taste)).toBe(0.25);
     expect(keepProbability(eg("bouchon de jarre ; empreinte de sceau"), taste)).toBe(0.25);
@@ -317,6 +317,15 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     expect(keepProbability(eg("Coffin of Wah"), taste)).toBe(1);
     expect(keepProbability(eg("statue de triade"), taste)).toBe(1);
     expect(keepProbability(eg("Statuette des Hor-chebt"), taste)).toBe(0.6);
+  });
+
+  it("keeps Egyptian shabtis and figurines 1 time in 10, but only in Egypt, and never an Edo/Benin one (owner 2026-11-06)", () => {
+    expect(keepProbability(eg("Shabti of Siptah"), taste)).toBe(0.1);
+    expect(keepProbability(eg("Ushabti of Seti I"), taste)).toBe(0.1);
+    expect(keepProbability(eg("figurine d'Osiris"), taste)).toBe(0.1);
+    expect(keepProbability(eg("Female figurine", { regionGroup: "sub-saharan" }), taste)).toBe(1);
+    expect(keepProbability(eg("Figurine", { regionGroup: "sub-saharan", culture: "Edo peoples" }), taste)).toBe(1);
+    expect(keepProbability(eg("amulette oudjat"), taste)).toBe(0.25);   // other small pieces keep the 1-in-4 rate
   });
 
   it("never down-weights Edo/Benin works, even a fragment (met:310747, a leopard head fragment)", () => {

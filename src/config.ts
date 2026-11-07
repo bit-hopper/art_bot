@@ -29,7 +29,7 @@ export interface TasteConfig {
    * After the record is fetched: a title or type naming one of `terms` (any region) or, for Egypt, `egypt_terms`, is kept with
    * probability `accept` and otherwise re-picked, at most `max_rejects` times per run so a post never fails on it.
    */
-  low_interest?: { accept: number; max_rejects: number; terms: string[]; egypt_terms: string[] };
+  low_interest?: { accept: number; max_rejects: number; terms: string[]; egypt_terms: string[]; egypt_strict?: { accept: number; terms: string[] } };
   /**
    * Egypt only: a title or type naming one of `terms` as a whole word (heads, statues, coffins, stelae, wall reliefs) is always kept;
    * any other Egyptian record that is not pottery or a mask is kept with probability `other_accept`. Shares `low_interest.max_rejects`.
@@ -150,6 +150,8 @@ export interface Denylist {
   condition_terms?: string[];
   /** CLIP score (0 to 1) from which an image counts as corroded or encrusted; unset or 0 turns the image check off. */
   condition_image_threshold?: number;
+  /** Sources whose image check fails closed: when the CLIP model cannot run, their pick is refused instead of posted unchecked (owner 2026-11-06: an encrusted Osiris slipped through). */
+  condition_fail_closed_sources?: string[];
   latest_year?: number;
   /** Owner 2026-11-05: a work in a traditional medium by a living craft tradition (Edo brass from Benin City) is exempt from `latest_year`. */
   latest_year_exempt?: { culture_terms: string[]; medium_terms: string[] };

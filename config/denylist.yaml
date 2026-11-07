@@ -38,6 +38,7 @@ explicit_title_terms: [penis, pénis, genital, génital, geschlechtsteil, "sexua
 # the museum's own wording. Only words that say the object itself is corroded or crusted over; "patina" is left out because a
 # green patina on a clean bronze is normal. The image check in src/condition.ts covers records that say nothing.
 condition_image_threshold: 0.6    # calibrated 2026-11-05 on the 582 posted images: flags about 1 in 10, mostly SMB colour-chart shots, fragments, ostraca and encrusted bronzes
+condition_fail_closed_sources: [louvre, smb, met]   # owner 2026-11-06: corroded bronzes come from these; if the model cannot run, refuse the pick (the next hour retries) rather than post unchecked
 condition_terms: [corroded, corrosion, encrusted, encrustation, concretion, korrodiert, korrosion, verkrustet, verkrustung, corrodé, corrodée, incrusté, incrustée, concrétion, oxydé]
 
 # Never post an object whose date text points entirely after this year (owner, 2026-10-14: 1956). Only 4-digit years are read:

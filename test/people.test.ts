@@ -52,8 +52,19 @@ describe("corroded or encrusted objects (image check)", () => {
     expect(await conditionReason(img, 0.6, async () => { throw new Error("offline"); })).toBeNull();
   });
 
+  it("reports a model failure, and refuses the image when the source fails closed", async () => {
+    const errors: unknown[] = [];
+    const boom = async () => { throw new Error("offline"); };
+    expect(await conditionReason(img, 0.6, boom, { onError: (e) => errors.push(e) })).toBeNull();
+    expect(errors).toHaveLength(1);
+    expect(await conditionReason(img, 0.6, boom, { failClosed: true, onError: (e) => errors.push(e) })).toMatch(/^image not checked for condition \(offline\)/);
+    expect(errors).toHaveLength(2);
+    expect(await conditionReason(img, 0.6, async () => 0.05, { failClosed: true })).toBeNull();
+  });
+
   it("is on in the shipped config, and blocks the two objects the owner named by key", () => {
     expect(deny.condition_image_threshold).toBe(0.6);
+    expect(deny.condition_fail_closed_sources).toEqual(expect.arrayContaining(["louvre", "smb", "met"]));
     expect(deny.blocked_keys).toEqual(expect.arrayContaining(["met:564545", "louvre:cl010374365"]));
     expect(denyReason({ ...base, key: "met:564545" }, deny)).toMatch(/manual override/);
   });
