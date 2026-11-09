@@ -24,6 +24,15 @@ function madeAfter(dateDisplay: string | null, cutoff: number): number | null {
   return first !== null && first > cutoff ? first : null;
 }
 
+/**
+ * Bluesky self-label for an object that is posted but shows nudity (owner 2026-11-09: the Benin plaque of three unclothed
+ * youths). The museum's own wording only. The label puts the image behind Bluesky's "sensitive media" blur; nothing is blocked.
+ */
+export function sensitiveLabel(a: Pick<Artwork, "title" | "objectType" | "medium" | "description">, deny: Denylist): "nudity" | null {
+  const text = [a.title, a.objectType, a.medium, a.description].filter(Boolean).join(" \n ");
+  return deny.sensitive_nudity_terms?.length && matchesTerms(text, deny.sensitive_nudity_terms) ? "nudity" : null;
+}
+
 /** Spec 7.4. Returns the reason an object must not be posted, or null. An ethics filter: it stays when licensing never blocks. */
 export function denyReason(a: Artwork, deny: Denylist): string | null {
   if (deny.blocked_keys.includes(a.key)) return `manual override ${a.key}`;

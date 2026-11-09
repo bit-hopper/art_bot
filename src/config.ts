@@ -148,6 +148,8 @@ export interface Denylist {
   explicit_terms?: string[];
   explicit_title_terms?: string[];
   condition_terms?: string[];
+  /** Museum wording that gets the post a Bluesky "nudity" self-label (sensitive-media blur) instead of a block. */
+  sensitive_nudity_terms?: string[];
   /** CLIP score (0 to 1) from which an image counts as corroded or encrusted; unset or 0 turns the image check off. */
   condition_image_threshold?: number;
   /** Sources whose image check fails closed: when the CLIP model cannot run, their pick is refused instead of posted unchecked (owner 2026-11-06: an encrusted Osiris slipped through). */

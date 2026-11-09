@@ -5,7 +5,7 @@
  */
 import { enabledAdapters } from "./adapters/index.js";
 import { loadDenylist, loadProfile, loadSourceWeights } from "./config.js";
-import { denyReason } from "./denylist.js";
+import { denyReason, sensitiveLabel } from "./denylist.js";
 import { conditionReason } from "./condition.js";
 import { isPhotograph, photographPeopleReason } from "./people.js";
 import { HttpClient } from "./http.js";
@@ -109,6 +109,8 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
   const opts = { resized: image.resized, provenanceFlags: deny.provenance_flags };
   const bsky = renderPost(artwork, "bluesky", opts);
   const threads = renderPost(artwork, "threads", opts);
+  // Sensitive-media self-label: checked on the original wording and on the translation, since either may carry the nudity word.
+  const label = sensitiveLabel(original, deny) ?? sensitiveLabel(artwork, deny);
 
   if (dryRun) {
     const size = `${image.width}x${image.height} ${image.mime} ${image.bytes.length} bytes${image.resized ? ` (resized from ${image.originalBytes})` : ""}`;
@@ -117,6 +119,7 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
     console.log(`--- Bluesky reply (${measure(bsky.reply, "bluesky")}/${LIMITS.bluesky})\n${bsky.reply}`);
     console.log(`--- Threads reply (${measure(threads.reply, "threads")}/${LIMITS.threads})\n${threads.reply}`);
     console.log(`--- alt (${measure(bsky.alt, "threads")}/1000)\n${bsky.alt}`);
+    if (label) console.log(`--- self-label: ${label}`);
     if (artwork.translated) console.log(`--- original text, before translation\n${renderPost(original, "bluesky", opts).reply}`);
     ledger.append({ ...claimRow(artwork, artwork.objectClass), status: "posted_all", postedAt: new Date().toISOString() });
     continue;
@@ -128,14 +131,14 @@ for (let i = 0; i < (dryRun ? count : 1); i++) {
   pushState(`claim ${artwork.key}`);
   try {
     const result = await publish(agent!, {
-      rootText: bsky.root, replyText: bsky.reply, alt: bsky.alt, image,
+      rootText: bsky.root, replyText: bsky.reply, alt: bsky.alt, image, ...(label ? { labels: [label] } : {}),
     });
     ledger.append({
       ...claim, status: "posted_bluesky", blueskyUri: result.root.uri, blueskyCid: result.root.cid,
       postedAt: new Date().toISOString(), ...(result.replyError ? { error: `reply failed: ${result.replyError}` } : {}),
     });
     pushState(`posted ${artwork.key}`);
-    log({ event: "posted", key: artwork.key, uri: result.root.uri, replyError: result.replyError });
+    log({ event: "posted", key: artwork.key, uri: result.root.uri, replyError: result.replyError, ...(label ? { label } : {}) });
     if (result.replyError) failures++;
   } catch (e) {
     ledger.append({ ...claim, status: "failed", error: errText(e) });

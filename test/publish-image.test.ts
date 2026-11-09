@@ -75,6 +75,16 @@ describe("Bluesky publisher", () => {
     expect(r.reply?.uri).toContain("/2");
   });
 
+  it("puts self-labels on the root post only, and none when there are no labels", async () => {
+    const { agent: a, calls } = agent();
+    await publish(a, { ...post, labels: ["nudity"] });
+    expect(calls.posts[0]!.labels).toEqual({ $type: "com.atproto.label.defs#selfLabels", values: [{ val: "nudity" }] });
+    expect(calls.posts[1]!.labels).toBeUndefined();
+    const plain = agent();
+    await publish(plain.agent, post);
+    expect(plain.calls.posts[0]!).not.toHaveProperty("labels");
+  });
+
   it("adds tag facets to the root and a link facet to the reply", async () => {
     const { agent: a, calls } = agent();
     await publish(a, post);

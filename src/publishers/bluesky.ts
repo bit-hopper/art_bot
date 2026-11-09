@@ -36,7 +36,7 @@ async function richText(agent: BlueskyAgent, text: string): Promise<RichText> {
  */
 export async function publish(
   agent: BlueskyAgent,
-  post: { rootText: string; replyText: string; alt: string; image: PreparedImage },
+  post: { rootText: string; replyText: string; alt: string; image: PreparedImage; /** Self-labels on the root, e.g. "nudity" (sensitive-media blur). */ labels?: string[] },
 ): Promise<BlueskyResult> {
   const rootRt = await richText(agent, post.rootText);
   const replyRt = await richText(agent, post.replyText);
@@ -46,6 +46,9 @@ export async function publish(
     text: rootRt.text,
     facets: rootRt.facets,
     langs: ["en"],
+    ...(post.labels?.length
+      ? { labels: { $type: "com.atproto.label.defs#selfLabels", values: post.labels.map((val) => ({ val })) } }
+      : {}),
     embed: {
       $type: "app.bsky.embed.images",
       images: [{ image: upload.data.blob, alt: post.alt, aspectRatio: { width: post.image.width, height: post.image.height } }],

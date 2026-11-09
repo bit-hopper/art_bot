@@ -7,7 +7,7 @@ import { ClevelandAdapter, cultureMatches, normaliseClevelandArtwork, type Cleve
 import { CLASS_VERSION, MetAdapter, normaliseMetObject, type MetCacheEntry, type MetSourceConfig } from "../src/adapters/met.js";
 import { hasPublicImage, MiaAdapter, normaliseMiaRecord, type MiaRecord, type MiaSourceConfig } from "../src/adapters/mia.js";
 import { loadDenylist, loadProfile, loadSourceConfig } from "../src/config.js";
-import { denyReason } from "../src/denylist.js";
+import { denyReason, sensitiveLabel } from "../src/denylist.js";
 import { HttpClient, StopCrawlError } from "../src/http.js";
 import { JsonCache } from "../src/state.js";
 import type { IndexRow } from "../src/types.js";
@@ -334,6 +334,18 @@ describe("denylist", () => {
     expect(why({ description: "Die Kleidung steigert die Modellierung zu feiner erotischer Ausstrahlung." })).toBeNull();
     expect(why({ title: "Stele of Penimen", description: "Genitive construction; a pen-shaped tool" })).toBeNull();
     expect(why({})).toBeNull();
+  });
+
+  it("labels, but does not block, objects the museum describes as nude", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const label = (o: Partial<typeof base>) => sensitiveLabel({ ...base, ...o }, deny);
+    const plaque = { description: "The three unclothed young men with coral necklaces around their necks and ankles are probably not servants." };
+    expect(label(plaque)).toBe("nudity");
+    expect(denyReason({ ...base, ...plaque }, deny)).toBeNull();
+    expect(label({ description: "Nackte männliche Figur" })).toBe("nudity");
+    expect(label({ description: "Figure de femme aux seins nus" })).toBe("nudity");
+    expect(label({ description: "Female figure with prominent breasts and a scarified torso" })).toBeNull();
+    expect(label({})).toBeNull();
   });
 
   it("blocks objects the museum describes as corroded or encrusted, but not a plain patina", () => {
