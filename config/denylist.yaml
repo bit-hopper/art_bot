@@ -38,7 +38,7 @@ explicit_title_terms: [penis, pénis, genital, génital, geschlechtsteil, "sexua
 # out with the Bluesky "nudity" self-label, which blurs the image behind a click for people who filter it. Title, type, medium and
 # description, the museum's own wording, with the classifier's token rules. Kept to plain nudity words; "breasts" is left out
 # because it describes most female figures. Edit freely: the list is the whole rule.
-sensitive_nudity_terms: [nude, nudity, naked, unclothed, undressed, bare-breasted, topless, nackt, nacktheit, unbekleidet, entblößt, nudité, dénudé, "seins nus", "torse nu"]
+sensitive_nudity_terms: [nude, nudity, naked, unclothed, undressed, bare-breasted, topless, nackt, nackte, nackten, nackter, nacktheit, unbekleidet, unbekleidete, unbekleideten, unbekleideter, entblößt, nudité, dénudé, "seins nus", "torse nu"]
 
 # Condition (owner, 2026-11-05: a heavily corroded, encrusted Osiris bronze was posted). Title, type, medium and description,
 # the museum's own wording. Only words that say the object itself is corroded or crusted over; "patina" is left out because a

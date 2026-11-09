@@ -1,0 +1,55 @@
+name: repost
+# One-off: repost an object already in the ledger (its old post deleted by hand), e.g. to add a self-label. Manual only.
+on:
+  workflow_dispatch:
+    inputs:
+      key:
+        description: "Ledger key, e.g. smb:211802"
+        required: true
+      label:
+        description: "Self-label for the root post (blank: decided from the record's wording)"
+        required: false
+        default: "nudity"
+      live:
+        description: "Really post (false: render only)"
+        type: boolean
+        default: false
+concurrency:
+  group: art-bot
+  cancel-in-progress: false
+permissions:
+  contents: write
+jobs:
+  repost:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      STATE_DIR: ${{ github.workspace }}/state
+      STATE_GIT: "1"
+      BOT_USER_AGENT: ${{ vars.BOT_USER_AGENT }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci || { echo "npm ci failed; retrying once"; sleep 30; npm ci; }
+      - name: Check out the state branch
+        run: bash scripts/state-checkout.sh
+      - name: Repost
+        env:
+          KEY: ${{ inputs.key }}
+          LABEL: ${{ inputs.label }}
+          LIVE_INPUT: ${{ inputs.live }}
+          BSKY_IDENTIFIER: ${{ secrets.BSKY_IDENTIFIER }}
+          BSKY_APP_PASSWORD: ${{ secrets.BSKY_APP_PASSWORD }}
+          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        run: |
+          args=("$KEY")
+          [ -n "$LABEL" ] && args+=("--label=$LABEL")
+          [ "$LIVE_INPUT" = "true" ] && args+=("--live")
+          npx tsx scripts/repost.ts "${args[@]}"
+      - name: Push any unpushed state
+        if: always() && hashFiles('state/.git') != ''
+        run: npx tsx scripts/state-push.ts "repost run ${{ github.run_id }}"

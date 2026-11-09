@@ -343,6 +343,7 @@ describe("denylist", () => {
     expect(label(plaque)).toBe("nudity");
     expect(denyReason({ ...base, ...plaque }, deny)).toBeNull();
     expect(label({ description: "Nackte männliche Figur" })).toBe("nudity");
+    expect(label({ description: "Bei den drei unbekleideten jungen Männern mit Korallenketten" })).toBe("nudity");
     expect(label({ description: "Figure de femme aux seins nus" })).toBe("nudity");
     expect(label({ description: "Female figure with prominent breasts and a scarified torso" })).toBeNull();
     expect(label({})).toBeNull();
