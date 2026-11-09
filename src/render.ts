@@ -15,6 +15,7 @@ export const MUSEUMS: Record<string, string> = {
   smb: "Staatliche Museen zu Berlin",
   louvre: "Musée du Louvre",
   nmafa: "Smithsonian National Museum of African Art",
+  rmca: "Royal Museum for Central Africa",
 };
 
 const segmenter = new Intl.Segmenter(undefined, { granularity: "grapheme" });

@@ -6,6 +6,7 @@ import { LouvreAdapter, type LouvreCacheEntry, type LouvreIdsEntry } from "./lou
 import { MetAdapter, type MetCacheEntry } from "./met.js";
 import { MiaAdapter } from "./mia.js";
 import { NmafaAdapter } from "./nmafa.js";
+import { RmcaAdapter } from "./rmca.js";
 import { SmbAdapter } from "./smb.js";
 import { JsonCache, louvreCacheFile, louvreIdsFile, metCacheFile } from "../state.js";
 
@@ -16,6 +17,7 @@ const FACTORIES: Record<string, () => MuseumAdapter> = {
   aic: () => new AicAdapter(),
   mia: () => new MiaAdapter(),
   nmafa: () => new NmafaAdapter(),
+  rmca: () => new RmcaAdapter(),
   louvre: () => new LouvreAdapter(undefined, undefined, undefined, { cache: new JsonCache<LouvreCacheEntry>(louvreCacheFile()), idsCache: new JsonCache<LouvreIdsEntry>(louvreIdsFile()) }),
 };
 

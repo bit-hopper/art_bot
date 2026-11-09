@@ -95,8 +95,25 @@ sources:
     timeout_ms: 30000              # about 1 call in 15 timed out at 19 s (M0)
     retries: 3
     query: "continent:Africa"      # Egypt is inside continent:Africa; no rights filter (spec 7.1)
+  rmca:
+    enabled: false                 # owner 2026-11-09: off until switched on. Once true, the index fills in one daily run (about 2,650 listing pages at 1 req/s, ~45 min)
+    kind: scrape
+    rights_mode: attributed-nc     # the museum's data policy: CC BY-NC-SA 2.0 BE unless stated otherwise; credit + licence are the reply's rights line
+    source_weight: 1.0
+    min_interval_ms: 1000          # <= 1 request per second (spec 7.3); webarch.africamuseum.be/robots.txt allows crawling
+    # The old human-sciences database (the museum is building a replacement). A blank search lists all ~26,000 records, ten a page; the
+    # listing gives type, place of collecting, culture and a picture, so the index needs no object pages. The picture is the Zoomify
+    # tile pyramid (up to ~2,000 px), stitched at post time, because the plain image is a 400 px thumbnail.
+    # Origin rule (owner 2026-10-08): the place of collecting is the only provenance the listing gives. Any part of it naming one of
+    # these means made elsewhere -> blocked. The collection is mostly Central Africa; the Pacific and a few others sit in it too.
+    # Owner 2026-11-09: the database also holds the museum's photograph archives (inventory AP, EP, HP, CP, SA: portraits, colonial
+    # administration, body art, violence) and drawings. They have no object type, and the person detector missed a quarter of them in a
+    # random sample while flagging real statuettes. So a record counts only with an object type AND one of these inventory prefixes.
+    # Sample of 1,200 records, 2026-11-09: EO 1,013, MO 3, HO (typed) 1; the six archive prefixes were 80, all excluded by this rule.
+    object_inventory_prefixes: [EO, MO, HO]
+    non_african_places: [Melanesia, Vanuatu, New Caledonia, Papua New Guinea, Solomon Islands, Fiji, Polynesia, Micronesia, Oceania, Indonesia, India, China, Japan, Philippines, Thailand, Vietnam, Myanmar, Asia, Brazil, Peru, Mexico, America, Americas, Northern America, Southern America, South America, North America, Central America, Latin America, Caribbean, Venezuela, Colombia, Argentina, Chile, Bolivia, Ecuador, Guatemala, Canada, Australia, New Zealand, Malaysia, Borneo, Sumatra, Java, Sulawesi, Papua, Europe, Belgium, Germany, France, Portugal, Netherlands, United Kingdom, Italy, Spain]
   louvre:
-    enabled: true                  # owner 2026-10-10; the index fills over several runs (probe_stride below), posts use what is indexed
+    enabled: true                 # owner 2026-10-10; the index fills over several runs (probe_stride below), posts use what is indexed
     kind: scrape
     language: fr                   # free text is machine-translated at post time (spec 6.7)
     rights_mode: attributed        # owner 2026-10-08: educational use falls under the terms' teaching use; credit + permalink are its only condition

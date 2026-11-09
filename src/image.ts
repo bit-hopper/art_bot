@@ -1,5 +1,6 @@
 import sharp from "sharp";
-import { DEFAULT_USER_AGENT, type HttpClient } from "./http.js";
+import { DEFAULT_USER_AGENT, HttpClient } from "./http.js";
+import { isZoomifyUrl, stitchZoomify } from "./zoomify.js";
 
 /** Bluesky's blob limit (lexicon `maxSize`, M0 2026-10-08). Resize only above it (spec 6.6). */
 export const BLUESKY_MAX_BYTES = 2_000_000;
@@ -23,7 +24,11 @@ function hostHeaders(url: string): Record<string, string> {
   return new URL(url).hostname.endsWith("artic.edu") ? { "AIC-User-Agent": process.env.BOT_USER_AGENT ?? DEFAULT_USER_AGENT } : {};
 }
 
-export async function downloadImage(url: string, http: HttpClient): Promise<Uint8Array> {
+/** Tiles are small and numerous (about 60 for one picture), so they get their own, faster client than the one image per post. */
+const tileHttp = new HttpClient({ minIntervalMs: 250, stopOnBlock: true });
+
+export async function downloadImage(url: string, http: HttpClient, tiles: HttpClient = tileHttp): Promise<Uint8Array> {
+  if (isZoomifyUrl(url)) return stitchZoomify(url, tiles);
   const res = await http.get(url, { Accept: "image/*", ...hostHeaders(url) });
   if (!res.ok) throw new Error(`image HTTP ${res.status} from ${url}`);
   const type = res.headers.get("content-type") ?? "";
