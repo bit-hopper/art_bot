@@ -46,8 +46,8 @@
 {"key":"nmafa:60/nmafa_96-42-1.8","source":"nmafa","sourceObjectId":"60/nmafa_96-42-1.8","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan artist","medium":"Copper alloy","score":90}
 {"key":"nmafa:60/nmafa_85-1-1","source":"nmafa","sourceObjectId":"60/nmafa_85-1-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Inland Niger Delta Style","medium":"Ceramic","score":90}
 {"key":"nmafa:61/nmafa_2004-7-6","source":"nmafa","sourceObjectId":"61/nmafa_2004-7-6","objectClass":"other","regionGroup":"sub-saharan","culture":"Ethiopian Orthodox","medium":"Wood, paint, string","score":10}
-{"key":"nmafa:64/nmafa_2005-6-189","source":"nmafa","sourceObjectId":"64/nmafa_2005-6-189","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bembe artist","medium":"Wood, resin pigment","score":100}
 {"key":"nmafa:64/nmafa_EJ10579","source":"nmafa","sourceObjectId":"64/nmafa_EJ10579","objectClass":"other","regionGroup":"sub-saharan","culture":"Nana Tiko","medium":"Silk, synthetic dye","score":10}
+{"key":"nmafa:64/nmafa_2005-6-189","source":"nmafa","sourceObjectId":"64/nmafa_2005-6-189","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bembe artist","medium":"Wood, resin pigment","score":100}
 {"key":"nmafa:69/nmafa_82-3-59","source":"nmafa","sourceObjectId":"69/nmafa_82-3-59","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan artist","medium":"Copper alloy, copper","score":90}
 {"key":"nmafa:70/nmafa_2000-16-1","source":"nmafa","sourceObjectId":"70/nmafa_2000-16-1","objectClass":"sculpture","regionGroup":"north-africa","culture":"Kabyle artist","medium":"Ceramic","score":90}
 {"key":"nmafa:73/nmafa_85-16-1","source":"nmafa","sourceObjectId":"73/nmafa_85-16-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lower Niger Bronze Industry","medium":"Copper alloy","score":90}
@@ -64,15 +64,15 @@
 {"key":"nmafa:8f/nmafa_89-8-37","source":"nmafa","sourceObjectId":"8f/nmafa_89-8-37","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ganda artist","medium":"Plant fiber, reed","score":90}
 {"key":"nmafa:91/nmafa_98-2-1","source":"nmafa","sourceObjectId":"91/nmafa_98-2-1","objectClass":"other","regionGroup":"sub-saharan","culture":"Ethiopian Orthodox","medium":"Distemper and gesso on wood","score":10}
 {"key":"nmafa:98/nmafa_94-7-1","source":"nmafa","sourceObjectId":"98/nmafa_94-7-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Xhosa artist","medium":"Wood, lead, iron","score":90}
-{"key":"nmafa:99/nmafa_93-5-2","source":"nmafa","sourceObjectId":"99/nmafa_93-5-2","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Lega artist","medium":"Ivory","score":40}
 {"key":"nmafa:99/nmafa_68-36-141","source":"nmafa","sourceObjectId":"99/nmafa_68-36-141","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan artist","medium":"Copper alloy","score":90}
+{"key":"nmafa:99/nmafa_93-5-2","source":"nmafa","sourceObjectId":"99/nmafa_93-5-2","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Lega artist","medium":"Ivory","score":40}
 {"key":"nmafa:9d/nmafa_96-42-1.9","source":"nmafa","sourceObjectId":"9d/nmafa_96-42-1.9","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan artist","medium":"Copper alloy","score":90}
 {"key":"nmafa:a3/nmafa_91-10-1","source":"nmafa","sourceObjectId":"a3/nmafa_91-10-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo artist","medium":"Copper alloy","score":90}
 {"key":"nmafa:a7/nmafa_2003-6-1","source":"nmafa","sourceObjectId":"a7/nmafa_2003-6-1","objectClass":"other","regionGroup":"sub-saharan","culture":"Ethiopian Orthodox","medium":"Distemper and gesso on wood","score":10}
 {"key":"nmafa:ab/nmafa_2004-7-12","source":"nmafa","sourceObjectId":"ab/nmafa_2004-7-12","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ethiopian Orthodox","medium":"Iron","score":90}
-{"key":"nmafa:ac/nmafa_2005-6-9","source":"nmafa","sourceObjectId":"ac/nmafa_2005-6-9","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Temne artist","medium":"Ivory, metal","score":90}
-{"key":"nmafa:ac/nmafa_89-13-16","source":"nmafa","sourceObjectId":"ac/nmafa_89-13-16","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Undetermined artist","medium":"Ceramic","score":60}
 {"key":"nmafa:ac/nmafa_96-28-1","source":"nmafa","sourceObjectId":"ac/nmafa_96-28-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo artist","medium":"Ivory","score":90}
+{"key":"nmafa:ac/nmafa_89-13-16","source":"nmafa","sourceObjectId":"ac/nmafa_89-13-16","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Undetermined artist","medium":"Ceramic","score":60}
+{"key":"nmafa:ac/nmafa_2005-6-9","source":"nmafa","sourceObjectId":"ac/nmafa_2005-6-9","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Temne artist","medium":"Ivory, metal","score":90}
 {"key":"nmafa:af/nmafa_91-19-1","source":"nmafa","sourceObjectId":"af/nmafa_91-19-1","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba artist","medium":"Wood, copper, iron","score":90}
 {"key":"nmafa:af/nmafa_89-8-21","source":"nmafa","sourceObjectId":"af/nmafa_89-8-21","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Undetermined artist","medium":"Wood, white metal, iron","score":90}
 {"key":"nmafa:b6/nmafa_75-3-91","source":"nmafa","sourceObjectId":"b6/nmafa_75-3-91","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan artist","medium":"Copper alloy","score":90}
