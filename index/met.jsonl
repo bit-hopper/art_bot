@@ -9953,7 +9953,6 @@
 {"key":"met:561567","source":"met","sourceObjectId":"561567","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561568","source":"met","sourceObjectId":"561568","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561569","source":"met","sourceObjectId":"561569","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
-{"key":"met:561570","source":"met","sourceObjectId":"561570","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561758","source":"met","sourceObjectId":"561758","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Steatite","score":40}
 {"key":"met:561771","source":"met","sourceObjectId":"561771","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bone","score":10}
 {"key":"met:566525","source":"met","sourceObjectId":"566525","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Pottery","score":10}
@@ -12133,6 +12132,7 @@
 {"key":"met:852237","source":"met","sourceObjectId":"852237","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Glass","score":10}
 {"key":"met:852238","source":"met","sourceObjectId":"852238","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Glass","score":10}
 {"key":"met:968564","source":"met","sourceObjectId":"968564","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Glass, carnelia, lapis lazuli","score":40}
+{"key":"met:561570","source":"met","sourceObjectId":"561570","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561571","source":"met","sourceObjectId":"561571","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561572","source":"met","sourceObjectId":"561572","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:564539","source":"met","sourceObjectId":"564539","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bronze or copper alloy","score":10}
