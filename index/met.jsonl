@@ -4,7 +4,9 @@
 {"key":"met:308245","source":"met","sourceObjectId":"308245","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Edo peoples","medium":"Brass, iron","score":90}
 {"key":"met:309529","source":"met","sourceObjectId":"309529","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"medium":"Wood, pigment, metal hinge","score":40}
 {"key":"met:309769","source":"met","sourceObjectId":"309769","objectClass":"other","regionGroup":"sub-saharan","culture":"Mende, Vai, or Temne peoples","medium":"Cotton, wool, natural dye","score":10}
+{"key":"met:309789","source":"met","sourceObjectId":"309789","objectClass":"mask","regionGroup":"sub-saharan","culture":"Noni peoples","medium":"Wood, kaolin","score":100}
 {"key":"met:309790","source":"met","sourceObjectId":"309790","objectClass":"mask","regionGroup":"sub-saharan","culture":"Kom peoples, Tikar group","medium":"Iroko (hardwood), pigment(?)","score":100}
+{"key":"met:309800","source":"met","sourceObjectId":"309800","objectClass":"mask","regionGroup":"sub-saharan","culture":"Moghamo-Widekum peoples (?)","medium":"Wood, pigment","score":100}
 {"key":"met:309821","source":"met","sourceObjectId":"309821","objectClass":"other","regionGroup":"sub-saharan","culture":"Duala peoples","medium":"Wood","score":10}
 {"key":"met:309900","source":"met","sourceObjectId":"309900","objectClass":"other","regionGroup":"sub-saharan","culture":"Edo peoples (Bini-Portuguese)","medium":"Ivory","score":10}
 {"key":"met:309909","source":"met","sourceObjectId":"309909","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Bongo","medium":"Mahogany","score":90}
@@ -68,11 +70,13 @@
 {"key":"met:312170","source":"met","sourceObjectId":"312170","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Asante-Akan peoples","medium":"Brass","score":60}
 {"key":"met:312191","source":"met","sourceObjectId":"312191","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Temne or Bullom peoples","medium":"Soapstone, steatite","score":90}
 {"key":"met:312193","source":"met","sourceObjectId":"312193","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":"Edo peoples","medium":"Brass","score":70}
+{"key":"met:312196","source":"met","sourceObjectId":"312196","objectClass":"mask","regionGroup":"sub-saharan","culture":"Fang peoples","medium":"Wood, pigment, kaolin","score":100}
 {"key":"met:312231","source":"met","sourceObjectId":"312231","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Dogon peoples","medium":"Wood","score":72}
 {"key":"met:312262","source":"met","sourceObjectId":"312262","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Abron peoples","medium":"Brass","score":90}
 {"key":"met:312265","source":"met","sourceObjectId":"312265","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nigeria","medium":"Stone","score":90}
 {"key":"met:312268","source":"met","sourceObjectId":"312268","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Tellem civilization (?)","medium":"Wood (Moraceae family), applied organic materials","score":90}
 {"key":"met:312269","source":"met","sourceObjectId":"312269","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon peoples","medium":"Wood, metal, leather","score":90}
+{"key":"met:312277","source":"met","sourceObjectId":"312277","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Fon peoples, Danhomè Kingdom","medium":"Silver-copper alloy, wood","score":90}
 {"key":"met:312283","source":"met","sourceObjectId":"312283","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon or Tellem peoples (?)","medium":"Wood (Newtonia, Leguminosae wood), sacrificial materials","score":90}
 {"key":"met:312286","source":"met","sourceObjectId":"312286","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Fon peoples","medium":"Brass, copper, seed pod(?)","score":90}
 {"key":"met:312289","source":"met","sourceObjectId":"312289","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon peoples","medium":"Wood, metal","score":90}
@@ -360,6 +364,8 @@
 {"key":"met:318380","source":"met","sourceObjectId":"318380","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Middle Niger civilization","medium":"Copper alloy","score":40}
 {"key":"met:318381","source":"met","sourceObjectId":"318381","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Middle Niger civilization","medium":"Copper alloy","score":40}
 {"key":"met:318382","source":"met","sourceObjectId":"318382","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Middle Niger civilization","medium":"Copper alloy","score":40}
+{"key":"met:318386","source":"met","sourceObjectId":"318386","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba peoples","medium":"Raffia palm fiber, cotton, dye","score":10}
+{"key":"met:318388","source":"met","sourceObjectId":"318388","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba peoples","medium":"Raffia palm fiber","score":10}
 {"key":"met:318397","source":"met","sourceObjectId":"318397","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba peoples","medium":"Raffia palm fiber, dye","score":10}
 {"key":"met:318622","source":"met","sourceObjectId":"318622","objectClass":"mask","regionGroup":"sub-saharan","culture":"Edo peoples","medium":"Ivory, iron, brass, coal, traces of iron oxides","score":120}
 {"key":"met:318649","source":"met","sourceObjectId":"318649","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Edo peoples","medium":"Brass","score":90}
@@ -384,6 +390,7 @@
 {"key":"met:320598","source":"met","sourceObjectId":"320598","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Akan","medium":"Terracotta","score":90}
 {"key":"met:320599","source":"met","sourceObjectId":"320599","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Mbembe peoples","medium":"Wood, pigment, resin, nails","score":90}
 {"key":"met:320635","source":"met","sourceObjectId":"320635","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Parchment, pigments","score":10}
+{"key":"met:320746","source":"met","sourceObjectId":"320746","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Wongo peoples","medium":"Wood","score":60}
 {"key":"met:320833","source":"met","sourceObjectId":"320833","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Northern Highlands region","medium":"Bronze","score":90}
 {"key":"met:320962","source":"met","sourceObjectId":"320962","objectClass":"other","regionGroup":"sub-saharan","culture":"Tigrinya peoples","medium":"Parchment, ink, pigments, cotton","score":10}
 {"key":"met:321217","source":"met","sourceObjectId":"321217","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba peoples","medium":"Cotton, silk, dye","score":90}
@@ -5598,6 +5605,7 @@
 {"key":"met:551495","source":"met","sourceObjectId":"551495","objectClass":"carved-instrument","regionGroup":"egypt","culture":null,"medium":"Faience","score":70}
 {"key":"met:551497","source":"met","sourceObjectId":"551497","objectClass":"carved-instrument","regionGroup":"egypt","culture":null,"medium":"Faience","score":70}
 {"key":"met:551498","source":"met","sourceObjectId":"551498","objectClass":"carved-instrument","regionGroup":"egypt","culture":null,"medium":"Faience","score":70}
+{"key":"met:551500","source":"met","sourceObjectId":"551500","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Cartonnage, paint","score":10}
 {"key":"met:551501","source":"met","sourceObjectId":"551501","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Wood, paste, paint","score":90}
 {"key":"met:551502","source":"met","sourceObjectId":"551502","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Limestone, paint","score":90}
 {"key":"met:551503","source":"met","sourceObjectId":"551503","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Wood, paste, paint","score":90}
@@ -6113,6 +6121,7 @@
 {"key":"met:552241","source":"met","sourceObjectId":"552241","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Limestone","score":90}
 {"key":"met:552242","source":"met","sourceObjectId":"552242","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Limestone","score":90}
 {"key":"met:552244","source":"met","sourceObjectId":"552244","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Limestone","score":90}
+{"key":"met:552245","source":"met","sourceObjectId":"552245","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Cartonnage, paint","score":10}
 {"key":"met:552246","source":"met","sourceObjectId":"552246","objectClass":"mask","regionGroup":"egypt","culture":null,"medium":"Wood, gold leaf","score":100}
 {"key":"met:552247","source":"met","sourceObjectId":"552247","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Linen, stucco, paint","score":10}
 {"key":"met:552248","source":"met","sourceObjectId":"552248","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Linen, stucco, paint","score":10}
