@@ -2225,7 +2225,6 @@
 {"key":"smb:216377","source":"smb","sourceObjectId":"216377","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:216333","source":"smb","sourceObjectId":"216333","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"score":40}
 {"key":"smb:216476","source":"smb","sourceObjectId":"216476","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"score":100}
-{"key":"smb:216585","source":"smb","sourceObjectId":"216585","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:207024","source":"smb","sourceObjectId":"207024","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Textil","score":10}
 {"key":"smb:212002","source":"smb","sourceObjectId":"212002","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Leder","score":10}
 {"key":"smb:212060","source":"smb","sourceObjectId":"212060","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"medium":"Messing","score":90}
@@ -4226,6 +4225,7 @@
 {"key":"smb:1959255","source":"smb","sourceObjectId":"1959255","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"medium":"Elfenbein","score":40}
 {"key":"smb:754004","source":"smb","sourceObjectId":"754004","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:1025630","source":"smb","sourceObjectId":"1025630","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"smb:216585","source":"smb","sourceObjectId":"216585","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:243678","source":"smb","sourceObjectId":"243678","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:2323715","source":"smb","sourceObjectId":"2323715","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:257968","source":"smb","sourceObjectId":"257968","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"medium":"Leder","score":70}
@@ -6493,6 +6493,8 @@
 {"key":"smb:2451169","source":"smb","sourceObjectId":"2451169","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"medium":"Leder","score":60}
 {"key":"smb:3716475","source":"smb","sourceObjectId":"3716475","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Leder","score":10}
 {"key":"smb:2438958","source":"smb","sourceObjectId":"2438958","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Pflanzenfaser","score":10}
+{"key":"smb:4328783","source":"smb","sourceObjectId":"4328783","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
+{"key":"smb:243477","source":"smb","sourceObjectId":"243477","objectClass":"other","regionGroup":"sub-saharan","culture":null,"score":10}
 {"key":"smb:500581","source":"smb","sourceObjectId":"500581","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Messing; Kupfer","score":10}
 {"key":"smb:212141","source":"smb","sourceObjectId":"212141","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"score":90}
 {"key":"smb:212222","source":"smb","sourceObjectId":"212222","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"medium":"Elfenbein","score":90}
@@ -8423,7 +8425,6 @@
 {"key":"smb:212215","source":"smb","sourceObjectId":"212215","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:212382","source":"smb","sourceObjectId":"212382","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:212381","source":"smb","sourceObjectId":"212381","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
-{"key":"smb:212376","source":"smb","sourceObjectId":"212376","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:212322","source":"smb","sourceObjectId":"212322","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:212334","source":"smb","sourceObjectId":"212334","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:212498","source":"smb","sourceObjectId":"212498","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
@@ -9601,6 +9602,7 @@
 {"key":"smb:255855","source":"smb","sourceObjectId":"255855","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
 {"key":"smb:258026","source":"smb","sourceObjectId":"258026","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
 {"key":"smb:258027","source":"smb","sourceObjectId":"258027","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"score":70}
+{"key":"smb:212376","source":"smb","sourceObjectId":"212376","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gras; Pflanzenfaser","score":10}
 {"key":"smb:218887","source":"smb","sourceObjectId":"218887","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"medium":"Messing","score":60}
 {"key":"smb:814550","source":"smb","sourceObjectId":"814550","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"medium":"Fell; Pflanzenfaser","score":70}
 {"key":"smb:814563","source":"smb","sourceObjectId":"814563","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"medium":"Messing; Leder; Fell; Pflanzenfaser","score":70}
@@ -12652,7 +12654,6 @@
 {"key":"smb:1521064","source":"smb","sourceObjectId":"1521064","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":90}
 {"key":"smb:1521062","source":"smb","sourceObjectId":"1521062","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1521050","source":"smb","sourceObjectId":"1521050","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"smb:1521061","source":"smb","sourceObjectId":"1521061","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
 {"key":"smb:1521060","source":"smb","sourceObjectId":"1521060","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":40}
 {"key":"smb:1522832","source":"smb","sourceObjectId":"1522832","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522827","source":"smb","sourceObjectId":"1522827","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -12694,19 +12695,15 @@
 {"key":"smb:1522822","source":"smb","sourceObjectId":"1522822","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522823","source":"smb","sourceObjectId":"1522823","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522820","source":"smb","sourceObjectId":"1522820","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522819","source":"smb","sourceObjectId":"1522819","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522817","source":"smb","sourceObjectId":"1522817","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522840","source":"smb","sourceObjectId":"1522840","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522844","source":"smb","sourceObjectId":"1522844","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1522839","source":"smb","sourceObjectId":"1522839","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1522862","source":"smb","sourceObjectId":"1522862","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522863","source":"smb","sourceObjectId":"1522863","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522864","source":"smb","sourceObjectId":"1522864","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522867","source":"smb","sourceObjectId":"1522867","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522865","source":"smb","sourceObjectId":"1522865","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522869","source":"smb","sourceObjectId":"1522869","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522870","source":"smb","sourceObjectId":"1522870","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522866","source":"smb","sourceObjectId":"1522866","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522871","source":"smb","sourceObjectId":"1522871","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522909","source":"smb","sourceObjectId":"1522909","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523619","source":"smb","sourceObjectId":"1523619","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -12734,12 +12731,10 @@
 {"key":"smb:1523124","source":"smb","sourceObjectId":"1523124","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523123","source":"smb","sourceObjectId":"1523123","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523155","source":"smb","sourceObjectId":"1523155","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1523152","source":"smb","sourceObjectId":"1523152","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523139","source":"smb","sourceObjectId":"1523139","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523135","source":"smb","sourceObjectId":"1523135","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523166","source":"smb","sourceObjectId":"1523166","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523163","source":"smb","sourceObjectId":"1523163","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1523159","source":"smb","sourceObjectId":"1523159","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523160","source":"smb","sourceObjectId":"1523160","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523172","source":"smb","sourceObjectId":"1523172","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1523167","source":"smb","sourceObjectId":"1523167","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -12893,8 +12888,6 @@
 {"key":"smb:1522659","source":"smb","sourceObjectId":"1522659","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1521913","source":"smb","sourceObjectId":"1521913","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1521914","source":"smb","sourceObjectId":"1521914","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522661","source":"smb","sourceObjectId":"1522661","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522660","source":"smb","sourceObjectId":"1522660","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1521903","source":"smb","sourceObjectId":"1521903","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522658","source":"smb","sourceObjectId":"1522658","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522663","source":"smb","sourceObjectId":"1522663","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -12912,7 +12905,6 @@
 {"key":"smb:1522671","source":"smb","sourceObjectId":"1522671","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1522675","source":"smb","sourceObjectId":"1522675","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1522676","source":"smb","sourceObjectId":"1522676","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
-{"key":"smb:1522677","source":"smb","sourceObjectId":"1522677","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1522678","source":"smb","sourceObjectId":"1522678","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1522694","source":"smb","sourceObjectId":"1522694","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"smb:1522680","source":"smb","sourceObjectId":"1522680","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
@@ -12957,7 +12949,6 @@
 {"key":"smb:1522551","source":"smb","sourceObjectId":"1522551","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"smb:1522569","source":"smb","sourceObjectId":"1522569","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1522570","source":"smb","sourceObjectId":"1522570","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"smb:1522572","source":"smb","sourceObjectId":"1522572","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1522571","source":"smb","sourceObjectId":"1522571","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1521686","source":"smb","sourceObjectId":"1521686","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1521032","source":"smb","sourceObjectId":"1521032","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
@@ -13092,7 +13083,6 @@
 {"key":"smb:1526897","source":"smb","sourceObjectId":"1526897","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
 {"key":"smb:1526898","source":"smb","sourceObjectId":"1526898","objectClass":"carved-instrument","regionGroup":"egypt","culture":null,"medium":"Kupfer; Silber","score":70}
 {"key":"smb:1527219","source":"smb","sourceObjectId":"1527219","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"smb:1527146","source":"smb","sourceObjectId":"1527146","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1530627","source":"smb","sourceObjectId":"1530627","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1530591","source":"smb","sourceObjectId":"1530591","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Elfenbein","score":10}
 {"key":"smb:1530655","source":"smb","sourceObjectId":"1530655","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
@@ -13270,7 +13260,6 @@
 {"key":"smb:1525230","source":"smb","sourceObjectId":"1525230","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"score":40}
 {"key":"smb:1526812","source":"smb","sourceObjectId":"1526812","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":10}
 {"key":"smb:1526814","source":"smb","sourceObjectId":"1526814","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
-{"key":"smb:1527094","source":"smb","sourceObjectId":"1527094","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1722784","source":"smb","sourceObjectId":"1722784","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
 {"key":"smb:1722779","source":"smb","sourceObjectId":"1722779","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer; Silber","score":60}
 {"key":"smb:1722783","source":"smb","sourceObjectId":"1722783","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
@@ -14072,7 +14061,6 @@
 {"key":"smb:2402312","source":"smb","sourceObjectId":"2402312","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1521042","source":"smb","sourceObjectId":"1521042","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Marmor","score":10}
 {"key":"smb:1527683","source":"smb","sourceObjectId":"1527683","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"smb:1522515","source":"smb","sourceObjectId":"1522515","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
 {"key":"smb:1520662","source":"smb","sourceObjectId":"1520662","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1520371","source":"smb","sourceObjectId":"1520371","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Marmor","score":10}
 {"key":"smb:1525181","source":"smb","sourceObjectId":"1525181","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
@@ -14102,7 +14090,6 @@
 {"key":"smb:1854684","source":"smb","sourceObjectId":"1854684","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1870382","source":"smb","sourceObjectId":"1870382","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:2275942","source":"smb","sourceObjectId":"2275942","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
-{"key":"smb:2279137","source":"smb","sourceObjectId":"2279137","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:2275632","source":"smb","sourceObjectId":"2275632","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:2276134","source":"smb","sourceObjectId":"2276134","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:2275943","source":"smb","sourceObjectId":"2275943","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
@@ -14110,16 +14097,31 @@
 {"key":"smb:1525195","source":"smb","sourceObjectId":"1525195","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
 {"key":"smb:1525171","source":"smb","sourceObjectId":"1525171","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
 {"key":"smb:1525176","source":"smb","sourceObjectId":"1525176","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
-{"key":"smb:1525192","source":"smb","sourceObjectId":"1525192","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
 {"key":"smb:1521051","source":"smb","sourceObjectId":"1521051","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
-{"key":"smb:1525177","source":"smb","sourceObjectId":"1525177","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
-{"key":"smb:1525172","source":"smb","sourceObjectId":"1525172","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
-{"key":"smb:1525178","source":"smb","sourceObjectId":"1525178","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
-{"key":"smb:1525179","source":"smb","sourceObjectId":"1525179","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
-{"key":"smb:1525173","source":"smb","sourceObjectId":"1525173","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
 {"key":"smb:1521044","source":"smb","sourceObjectId":"1521044","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Marmor","score":60}
 {"key":"smb:1525410","source":"smb","sourceObjectId":"1525410","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1522868","source":"smb","sourceObjectId":"1522868","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1521061","source":"smb","sourceObjectId":"1521061","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Kupfer","score":60}
+{"key":"smb:1522515","source":"smb","sourceObjectId":"1522515","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522660","source":"smb","sourceObjectId":"1522660","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522572","source":"smb","sourceObjectId":"1522572","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"smb:1522661","source":"smb","sourceObjectId":"1522661","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522863","source":"smb","sourceObjectId":"1522863","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522819","source":"smb","sourceObjectId":"1522819","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522677","source":"smb","sourceObjectId":"1522677","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1523152","source":"smb","sourceObjectId":"1523152","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522866","source":"smb","sourceObjectId":"1522866","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1522867","source":"smb","sourceObjectId":"1522867","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1523159","source":"smb","sourceObjectId":"1523159","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1527094","source":"smb","sourceObjectId":"1527094","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
+{"key":"smb:1527146","source":"smb","sourceObjectId":"1527146","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
+{"key":"smb:1525179","source":"smb","sourceObjectId":"1525179","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
+{"key":"smb:1525192","source":"smb","sourceObjectId":"1525192","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
+{"key":"smb:1525177","source":"smb","sourceObjectId":"1525177","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
+{"key":"smb:1525173","source":"smb","sourceObjectId":"1525173","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
+{"key":"smb:2279137","source":"smb","sourceObjectId":"2279137","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
+{"key":"smb:1525172","source":"smb","sourceObjectId":"1525172","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
+{"key":"smb:1525178","source":"smb","sourceObjectId":"1525178","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Ebenholz","score":10}
 {"key":"smb:1724843","source":"smb","sourceObjectId":"1724843","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":30}
 {"key":"smb:1420518","source":"smb","sourceObjectId":"1420518","objectClass":"pottery","regionGroup":"north-africa","culture":null,"score":60}
 {"key":"smb:1724837","source":"smb","sourceObjectId":"1724837","objectClass":"pottery","regionGroup":"egypt","culture":null,"score":60}
@@ -14184,7 +14186,6 @@
 {"key":"smb:1375443","source":"smb","sourceObjectId":"1375443","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1415431","source":"smb","sourceObjectId":"1415431","objectClass":"other","regionGroup":"egypt","culture":null,"score":10}
 {"key":"smb:1414306","source":"smb","sourceObjectId":"1414306","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":10}
-{"key":"smb:1414298","source":"smb","sourceObjectId":"1414298","objectClass":"other","regionGroup":"egypt","culture":null,"score":3}
 {"key":"smb:1414302","source":"smb","sourceObjectId":"1414302","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":10}
 {"key":"smb:1414310","source":"smb","sourceObjectId":"1414310","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":10}
 {"key":"smb:1414463","source":"smb","sourceObjectId":"1414463","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":3}
@@ -14414,6 +14415,7 @@
 {"key":"smb:1891606","source":"smb","sourceObjectId":"1891606","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":10}
 {"key":"smb:2041608","source":"smb","sourceObjectId":"2041608","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Leinen","score":3}
 {"key":"smb:1435476","source":"smb","sourceObjectId":"1435476","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Elfenbein","score":60}
+{"key":"smb:1414298","source":"smb","sourceObjectId":"1414298","objectClass":"other","regionGroup":"egypt","culture":null,"score":3}
 {"key":"smb:2375451","source":"smb","sourceObjectId":"2375451","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
 {"key":"smb:2375452","source":"smb","sourceObjectId":"2375452","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
 {"key":"smb:2375472","source":"smb","sourceObjectId":"2375472","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":null,"score":40}
