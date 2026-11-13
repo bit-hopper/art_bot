@@ -3,7 +3,7 @@ import { normaliseMiaRecord } from "../src/adapters/mia.js";
 import { loadDenylist, loadProfile } from "../src/config.js";
 import { denyReason } from "../src/denylist.js";
 import type { PreparedImage } from "../src/image.js";
-import { conditionReason } from "../src/condition.js";
+import { conditionReason, uncannyReason } from "../src/condition.js";
 import { isPhotograph, photographPeopleReason } from "../src/people.js";
 import { readFileSync } from "node:fs";
 
@@ -36,6 +36,22 @@ describe("photographs", () => {
 
   it("fails closed: a detector that cannot load or run keeps the photograph out", async () => {
     expect(await photographPeopleReason(img, async () => { throw new Error("offline"); })).toMatch(/not checked.*offline/);
+  });
+});
+
+describe("uncanny, corpse-like objects (image check)", () => {
+  it("rejects at or above the threshold, passes below it, is off without one, and fails open", async () => {
+    expect(await uncannyReason(img, 0.08, async () => 0.1)).toMatch(/uncanny.*score 0\.10/);
+    expect(await uncannyReason(img, 0.08, async () => 0.08)).toMatch(/uncanny/);
+    expect(await uncannyReason(img, 0.08, async () => 0.074)).toBeNull();
+    expect(await uncannyReason(img, undefined, async () => 1)).toBeNull();
+    const errors: unknown[] = [];
+    expect(await uncannyReason(img, 0.08, async () => { throw new Error("offline"); }, { onError: (e) => errors.push(e) })).toBeNull();
+    expect(errors).toHaveLength(1);
+  });
+
+  it("is on in the shipped config", () => {
+    expect(deny.uncanny_image_threshold).toBe(0.08);
   });
 });
 

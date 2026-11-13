@@ -57,6 +57,7 @@ export function denyReason(a: Artwork, deny: Denylist): string | null {
   if (explicitTerm) return `explicit content "${explicitTerm}"`;
   const conditionTerm = firstTerm([a.title, a.objectType, a.medium, a.description], deny.condition_terms);
   if (conditionTerm) return `condition "${conditionTerm}"`;
+  if (deny.human_hair_terms?.length && matchesTerms([a.medium, a.title].filter(Boolean).join(" \n "), deny.human_hair_terms)) return "human hair";
   const strip = (s: string) => (deny.allowed_phrases ?? []).reduce((t, ph) => t.split(ph.toLowerCase()).join(" "), s.toLowerCase());
   const typeTokens = strip(a.objectType ?? "").toLowerCase().split(TOKEN_SPLIT);
   const tok = deny.blocked_type_tokens.find((t) => typeTokens.includes(t.toLowerCase()));

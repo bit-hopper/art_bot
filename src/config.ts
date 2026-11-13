@@ -148,6 +148,10 @@ export interface Denylist {
   explicit_terms?: string[];
   explicit_title_terms?: string[];
   condition_terms?: string[];
+  /** Owner 2026-11-12: no human hair. Blocked when the medium or title names it (museum wording, original language). */
+  human_hair_terms?: string[];
+  /** CLIP score (0 to 1) from which an image counts as uncanny (corpse-like, horror prop); unset or 0 turns the image check off. Fails open. */
+  uncanny_image_threshold?: number;
   /** Museum wording that gets the post a Bluesky "nudity" self-label (sensitive-media blur) instead of a block. */
   sensitive_nudity_terms?: string[];
   /** CLIP score (0 to 1) from which an image counts as corroded or encrusted; unset or 0 turns the image check off. */

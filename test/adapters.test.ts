@@ -359,6 +359,17 @@ describe("denylist", () => {
     expect(why({ medium: "Bronze with green patina", description: "A well-preserved bronze with a green patina" })).toBeNull();
   });
 
+  it("blocks anything made with human hair (smb:223559), but not plain or animal hair, nor a toothy boar mask", () => {
+    const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
+    const why = (o: Partial<typeof base>) => denyReason({ ...base, ...o }, deny);
+    const hair = "Holz, Leder, Textil, Schilffaser, Haar (menschlich)";
+    expect(why({ title: "menschlicher Kopf", medium: hair })).toBe("human hair");
+    expect(why({ title: "Kopfaufsatz in Form eines Büffels", medium: hair })).toBe("human hair");
+    expect(why({ title: "Mask", medium: "Wood, cloth, human hair" })).toBe("human hair");
+    expect(why({ title: "Maske", medium: "Holz, Haar (tierisch)" })).toBeNull();
+    expect(why({ title: "Maske", medium: "Wood (painted)", description: "with a row of bared teeth and tusks" })).toBeNull();
+  });
+
   it("lets Edo/Benin brass through the date rule (AIC 197666, made 2000-2008), but nothing else modern", () => {
     const base = normaliseMiaRecord(json("mia/sande-mask-1937.json"), profile);
     const why = (o: Partial<typeof base>) => denyReason({ ...base, ...o }, deny);

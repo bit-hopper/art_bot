@@ -47,6 +47,16 @@ condition_image_threshold: 0.6    # calibrated 2026-11-05 on the 582 posted imag
 condition_fail_closed_sources: [louvre, smb, met]   # owner 2026-11-06: corroded bronzes come from these; if the model cannot run, refuse the pick (the next hour retries) rather than post unchecked
 condition_terms: [corroded, corrosion, encrusted, encrustation, concretion, korrodiert, korrosion, verkrustet, verkrustung, corrodé, corrodée, incrusté, incrustée, concrétion, oxydé]
 
+# Human hair (owner, 2026-11-12: smb:223559, a Bafo "menschlicher Kopf" that "looks like a corpse"; "no human hair"). Supersedes the
+# 2026-11-0x ruling that hair as a decorative material was fine. Blocked whenever the medium or title names human hair, museum wording in
+# the original language (the check runs before translation). Plain "hair", "Haar" or animal hair is untouched. The look of the object
+# (teeth, a realistic face) is judged by the image check below, not by these words: a boar mask with teeth (smb Yoruba "Maske") must stay.
+human_hair_terms: ["haar (menschlich)", "haar (mensch)", "haare (menschlich)", "menschenhaar", "menschenhaare", "menschliches haar", "menschliche haare", "haar, menschlich", "human hair", "hair (human)", "hair, human", "cheveux humains", "cheveu humain", "cheveux (humains)"]
+
+# Image check for a corpse-like or horror-prop look (owner 2026-11-12: "looks like a corpse"; it must pass the boar mask smb Yoruba "Maske", 3mzqwg7yed424, which scores 0.005). Local CLIP, fails open. 0.08 sits between the target
+# (0.10 full photo, 0.099 crop, 0.086 thumbnail) and the highest of 49 other posts (a scarab, 0.074). Tune on more examples; 0 turns it off.
+uncanny_image_threshold: 0.08
+
 # Never post an object whose date text points entirely after this year (owner, 2026-10-14: 1956). Only 4-digit years are read:
 # the earliest one must be later than this. BCE dates, and dates that also name a century, are not judged.
 latest_year: 1956
