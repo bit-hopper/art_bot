@@ -173,8 +173,8 @@
 {"key":"mia:4264","source":"mia","sourceObjectId":"4264","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Mangbetu","medium":"Earthenware","score":60}
 {"key":"mia:4288","source":"mia","sourceObjectId":"4288","objectClass":"other","regionGroup":"sub-saharan","culture":"Zulu","medium":"Cotton and glass beads","score":10}
 {"key":"mia:4391","source":"mia","sourceObjectId":"4391","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bamana","medium":"Wood and metal","score":100}
-{"key":"mia:4429","source":"mia","sourceObjectId":"4429","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Baule","medium":"Wood, iron, natural fibers","score":90}
 {"key":"mia:4450","source":"mia","sourceObjectId":"4450","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","medium":"Brass","score":90}
+{"key":"mia:4429","source":"mia","sourceObjectId":"4429","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Baule","medium":"Wood, iron, natural fibers","score":90}
 {"key":"mia:4477","source":"mia","sourceObjectId":"4477","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Bronze","score":90}
 {"key":"mia:4476","source":"mia","sourceObjectId":"4476","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ewe","medium":"Wood and pigment","score":90}
 {"key":"mia:4540","source":"mia","sourceObjectId":"4540","objectClass":"other","regionGroup":"north-africa","culture":"Zemmour","medium":"Wool, silk, cotton, glass beads, sequins, weft-faced brocade","score":10}
@@ -188,16 +188,16 @@
 {"key":"mia:5276","source":"mia","sourceObjectId":"5276","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"probably Fipa or Rungu","medium":"Wood, metal, beads","score":40}
 {"key":"mia:5275","source":"mia","sourceObjectId":"5275","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","medium":"Wood and metal","score":40}
 {"key":"mia:5407","source":"mia","sourceObjectId":"5407","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","medium":"Cotton, strip woven, supplementary weft patterning, weft face patterning","score":10}
+{"key":"mia:5428","source":"mia","sourceObjectId":"5428","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Raffia, resist dyed","score":10}
 {"key":"mia:5438","source":"mia","sourceObjectId":"5438","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ait Jerrar Amazigh (Berber)","medium":"Silver, enamel, beads, amber","score":40}
 {"key":"mia:5436","source":"mia","sourceObjectId":"5436","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ida ou Nadif Amazigh (Berber )","medium":"Silver, cotton, silk, enamel","score":40}
-{"key":"mia:5428","source":"mia","sourceObjectId":"5428","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Raffia, resist dyed","score":10}
 {"key":"mia:5757","source":"mia","sourceObjectId":"5757","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gelatin silver print","score":10}
-{"key":"mia:5775","source":"mia","sourceObjectId":"5775","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Gurunsi","medium":"Bronze","score":40}
 {"key":"mia:5787","source":"mia","sourceObjectId":"5787","objectClass":"other","regionGroup":"north-africa","culture":"Beni Ourain Amazigh (Berber)","medium":"Cotton, linen, silk, wool, supplementary weft patterning","score":10}
-{"key":"mia:5865","source":"mia","sourceObjectId":"5865","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Luba","medium":"Terracotta, wire","score":60}
+{"key":"mia:5775","source":"mia","sourceObjectId":"5775","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Gurunsi","medium":"Bronze","score":40}
 {"key":"mia:5897","source":"mia","sourceObjectId":"5897","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","medium":"Wood, metal, ribbon","score":90}
-{"key":"mia:5911","source":"mia","sourceObjectId":"5911","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","medium":"Cotton, strip woven, supplementary weft patterning","score":10}
+{"key":"mia:5865","source":"mia","sourceObjectId":"5865","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Luba","medium":"Terracotta, wire","score":60}
 {"key":"mia:5895","source":"mia","sourceObjectId":"5895","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lobi","medium":"Wood","score":90}
+{"key":"mia:5911","source":"mia","sourceObjectId":"5911","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","medium":"Cotton, strip woven, supplementary weft patterning","score":10}
 {"key":"mia:5972","source":"mia","sourceObjectId":"5972","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Beta Israel (Falasha)","medium":"Silver, metal, string","score":40}
 {"key":"mia:5970","source":"mia","sourceObjectId":"5970","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Teke","medium":"Copper","score":40}
 {"key":"mia:8006","source":"mia","sourceObjectId":"8006","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton, indigo tie-dye","score":10}
@@ -301,12 +301,12 @@
 {"key":"mia:55405","source":"mia","sourceObjectId":"55405","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nok","medium":"Terra-cotta","score":90}
 {"key":"mia:60166","source":"mia","sourceObjectId":"60166","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Nok","medium":"Terra-cotta","score":90}
 {"key":"mia:60556","source":"mia","sourceObjectId":"60556","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Raffia, cut pile embroidery","score":10}
+{"key":"mia:60619","source":"mia","sourceObjectId":"60619","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","medium":"Wood, glass, metal, pigment, other materials","score":90}
 {"key":"mia:60558","source":"mia","sourceObjectId":"60558","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba and Ndengese","medium":"Raffia, cut pile embroidery","score":10}
+{"key":"mia:60614","source":"mia","sourceObjectId":"60614","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","medium":"Wood, brass tacks","score":90}
 {"key":"mia:60622","source":"mia","sourceObjectId":"60622","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kusu","medium":"Wood, animal skin and fur, other materials","score":90}
 {"key":"mia:60625","source":"mia","sourceObjectId":"60625","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","medium":"Wood, metal, beads, string","score":90}
 {"key":"mia:60621","source":"mia","sourceObjectId":"60621","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kuba","medium":"Wood, brass tacks","score":90}
-{"key":"mia:60619","source":"mia","sourceObjectId":"60619","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","medium":"Wood, glass, metal, pigment, other materials","score":90}
-{"key":"mia:60614","source":"mia","sourceObjectId":"60614","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Chokwe","medium":"Wood, brass tacks","score":90}
 {"key":"mia:62411","source":"mia","sourceObjectId":"62411","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Linen (?), wool (?)","score":3}
 {"key":"mia:62409","source":"mia","sourceObjectId":"62409","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Linen (?), wool (?)","score":3}
 {"key":"mia:62412","source":"mia","sourceObjectId":"62412","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Linen, wool","score":3}
@@ -319,20 +319,20 @@
 {"key":"mia:96243","source":"mia","sourceObjectId":"96243","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton, metallic thread, silk","score":10}
 {"key":"mia:97144","source":"mia","sourceObjectId":"97144","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","medium":"Synthetic, strip woven, supplementary weft patterning","score":10}
 {"key":"mia:97145","source":"mia","sourceObjectId":"97145","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","medium":"Cotton, strip woven, supplementary weft patterning","score":10}
-{"key":"mia:98095","source":"mia","sourceObjectId":"98095","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Silk, cotton (?), polyester, needlework","score":10}
 {"key":"mia:98129","source":"mia","sourceObjectId":"98129","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","medium":"Cotton","score":10}
 {"key":"mia:98130","source":"mia","sourceObjectId":"98130","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","medium":"Cotton","score":10}
+{"key":"mia:98095","source":"mia","sourceObjectId":"98095","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Silk, cotton (?), polyester, needlework","score":10}
 {"key":"mia:98341","source":"mia","sourceObjectId":"98341","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"Polyester, metallic thread","score":10}
+{"key":"mia:98500","source":"mia","sourceObjectId":"98500","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","medium":"Synthetic, silk, strip woven, supplementary weft patterning","score":10}
 {"key":"mia:98496","source":"mia","sourceObjectId":"98496","objectClass":"other","regionGroup":"sub-saharan","culture":"Ewe","medium":"Synthetic, silk, strip woven, supplementary weft patterning","score":10}
 {"key":"mia:98493","source":"mia","sourceObjectId":"98493","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","medium":"Synthetic, strip woven, supplementary weft patterning","score":10}
-{"key":"mia:98500","source":"mia","sourceObjectId":"98500","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante or Akan","medium":"Synthetic, silk, strip woven, supplementary weft patterning","score":10}
-{"key":"mia:101029","source":"mia","sourceObjectId":"101029","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gelatin silver print","score":10}
-{"key":"mia:101539","source":"mia","sourceObjectId":"101539","objectClass":"other","regionGroup":"sub-saharan","culture":"Benin","medium":"Bronze","score":10}
 {"key":"mia:99246","source":"mia","sourceObjectId":"99246","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Plant fibers, needlework","score":10}
 {"key":"mia:99250","source":"mia","sourceObjectId":"99250","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","medium":"Cotton","score":10}
+{"key":"mia:101029","source":"mia","sourceObjectId":"101029","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gelatin silver print","score":10}
+{"key":"mia:101539","source":"mia","sourceObjectId":"101539","objectClass":"other","regionGroup":"sub-saharan","culture":"Benin","medium":"Bronze","score":10}
 {"key":"mia:105200","source":"mia","sourceObjectId":"105200","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Wood","score":90}
-{"key":"mia:105987","source":"mia","sourceObjectId":"105987","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","medium":"Cotton, needlework","score":10}
 {"key":"mia:105989","source":"mia","sourceObjectId":"105989","objectClass":"sculpture","regionGroup":"egypt","culture":"Bedouin","medium":"Wool, cotton, synthetic fibers, needlework","score":90}
+{"key":"mia:105987","source":"mia","sourceObjectId":"105987","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","medium":"Cotton, needlework","score":10}
 {"key":"mia:105988","source":"mia","sourceObjectId":"105988","objectClass":"other","regionGroup":"egypt","culture":"Bedouin","medium":"Cotton, needlework","score":10}
 {"key":"mia:106003","source":"mia","sourceObjectId":"106003","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Mud cloth, pigment, printed","score":10}
 {"key":"mia:105994","source":"mia","sourceObjectId":"105994","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Velvet, metallic threads, beads, needlework","score":10}
@@ -346,21 +346,21 @@
 {"key":"mia:109916","source":"mia","sourceObjectId":"109916","objectClass":"other","regionGroup":"sub-saharan","culture":"Asante","medium":"Cotton","score":10}
 {"key":"mia:109919","source":"mia","sourceObjectId":"109919","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton, needlework","score":10}
 {"key":"mia:113068","source":"mia","sourceObjectId":"113068","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton","score":10}
-{"key":"mia:113290","source":"mia","sourceObjectId":"113290","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","medium":"Metal (copper?)","score":90}
 {"key":"mia:113351","source":"mia","sourceObjectId":"113351","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","medium":"Cotton","score":10}
 {"key":"mia:113357","source":"mia","sourceObjectId":"113357","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","medium":"Cotton","score":10}
 {"key":"mia:113347","source":"mia","sourceObjectId":"113347","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:113301","source":"mia","sourceObjectId":"113301","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Sapi","medium":"Stone","score":90}
 {"key":"mia:113308","source":"mia","sourceObjectId":"113308","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Grebo","medium":"Metal","score":90}
+{"key":"mia:113290","source":"mia","sourceObjectId":"113290","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","medium":"Metal (copper?)","score":90}
 {"key":"mia:113449","source":"mia","sourceObjectId":"113449","objectClass":"mask","regionGroup":"sub-saharan","culture":"Bassa","medium":"Wood","score":100}
 {"key":"mia:113412","source":"mia","sourceObjectId":"113412","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","medium":"Ivory, silver","score":40}
 {"key":"mia:113433","source":"mia","sourceObjectId":"113433","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Plant fibers, pigment","score":10}
-{"key":"mia:113455","source":"mia","sourceObjectId":"113455","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton ikat","score":10}
 {"key":"mia:113374","source":"mia","sourceObjectId":"113374","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","medium":"Cotton","score":10}
+{"key":"mia:113482","source":"mia","sourceObjectId":"113482","objectClass":"mask","regionGroup":"sub-saharan","culture":"Gola","medium":"Wood, plant fibers","score":100}
+{"key":"mia:113455","source":"mia","sourceObjectId":"113455","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton ikat","score":10}
+{"key":"mia:113458","source":"mia","sourceObjectId":"113458","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kissi","medium":"Stone","score":90}
 {"key":"mia:113495","source":"mia","sourceObjectId":"113495","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","medium":"Silver, wood (?)","score":40}
 {"key":"mia:113496","source":"mia","sourceObjectId":"113496","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Mende","medium":"Silver","score":40}
-{"key":"mia:113482","source":"mia","sourceObjectId":"113482","objectClass":"mask","regionGroup":"sub-saharan","culture":"Gola","medium":"Wood, plant fibers","score":100}
-{"key":"mia:113458","source":"mia","sourceObjectId":"113458","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kissi","medium":"Stone","score":90}
 {"key":"mia:113684","source":"mia","sourceObjectId":"113684","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:113810","source":"mia","sourceObjectId":"113810","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:113710","source":"mia","sourceObjectId":"113710","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
@@ -369,8 +369,8 @@
 {"key":"mia:113885","source":"mia","sourceObjectId":"113885","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton","score":10}
 {"key":"mia:114203","source":"mia","sourceObjectId":"114203","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Raffia","score":10}
 {"key":"mia:114177","source":"mia","sourceObjectId":"114177","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Plant fibers","score":10}
-{"key":"mia:114329","source":"mia","sourceObjectId":"114329","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","medium":"Raffia","score":10}
 {"key":"mia:114330","source":"mia","sourceObjectId":"114330","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","medium":"Plant fibers, wool","score":10}
+{"key":"mia:114329","source":"mia","sourceObjectId":"114329","objectClass":"other","regionGroup":"sub-saharan","culture":"Shoowa Kuba","medium":"Raffia","score":10}
 {"key":"mia:114401","source":"mia","sourceObjectId":"114401","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:114636","source":"mia","sourceObjectId":"114636","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","medium":"Cotton, shells","score":10}
 {"key":"mia:114637","source":"mia","sourceObjectId":"114637","objectClass":"other","regionGroup":"sub-saharan","culture":"Bobo","medium":"Cotton, shells","score":10}
@@ -384,11 +384,11 @@
 {"key":"mia:123054","source":"mia","sourceObjectId":"123054","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Digital inkjet print on Baryta paper","score":10}
 {"key":"mia:123303","source":"mia","sourceObjectId":"123303","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Inkjet print","score":10}
 {"key":"mia:123299","source":"mia","sourceObjectId":"123299","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Inkjet print","score":10}
+{"key":"mia:123388","source":"mia","sourceObjectId":"123388","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lega","medium":"Elephant ivory","score":100}
 {"key":"mia:123375","source":"mia","sourceObjectId":"123375","objectClass":"other","regionGroup":"sub-saharan","culture":"Senufo","medium":"Wood","score":10}
 {"key":"mia:123373","source":"mia","sourceObjectId":"123373","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Brass","score":10}
-{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","medium":"Ivory","score":40}
-{"key":"mia:123388","source":"mia","sourceObjectId":"123388","objectClass":"mask","regionGroup":"sub-saharan","culture":"Lega","medium":"Elephant ivory","score":100}
 {"key":"mia:123389","source":"mia","sourceObjectId":"123389","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Luba","medium":"Wood","score":90}
+{"key":"mia:123372","source":"mia","sourceObjectId":"123372","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Pende","medium":"Ivory","score":40}
 {"key":"mia:123528","source":"mia","sourceObjectId":"123528","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Dogon","medium":"Clay, wood, metal","score":90}
 {"key":"mia:124578","source":"mia","sourceObjectId":"124578","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:124506","source":"mia","sourceObjectId":"124506","objectClass":"other","regionGroup":"sub-saharan","culture":"Dogon","medium":"Cotton","score":10}
@@ -415,8 +415,8 @@
 {"key":"mia:129885","source":"mia","sourceObjectId":"129885","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","medium":"Cotton","score":10}
 {"key":"mia:129928","source":"mia","sourceObjectId":"129928","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129929","source":"mia","sourceObjectId":"129929","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
-{"key":"mia:129946","source":"mia","sourceObjectId":"129946","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129922","source":"mia","sourceObjectId":"129922","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
+{"key":"mia:129946","source":"mia","sourceObjectId":"129946","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129930","source":"mia","sourceObjectId":"129930","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:131365","source":"mia","sourceObjectId":"131365","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Color pigment print on hand-cut paper with hand-sculpted aluminum and copper wir","score":10}
 {"key":"mia:131867","source":"mia","sourceObjectId":"131867","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"medium":"Wood","score":90}
@@ -898,11 +898,11 @@
 {"key":"mia:123384","source":"mia","sourceObjectId":"123384","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamana","medium":"Wood, plant fibers, metal","score":10}
 {"key":"mia:123365","source":"mia","sourceObjectId":"123365","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Wood, pigments","score":90}
 {"key":"mia:123391","source":"mia","sourceObjectId":"123391","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Wood","score":10}
-{"key":"mia:123380","source":"mia","sourceObjectId":"123380","objectClass":"other","regionGroup":"sub-saharan","culture":"Luchazi or Lwena","medium":"Wood","score":10}
 {"key":"mia:123371","source":"mia","sourceObjectId":"123371","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Bamum","medium":"Brass","score":90}
 {"key":"mia:123410","source":"mia","sourceObjectId":"123410","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Kongo","medium":"Wood, brass, and iron","score":90}
 {"key":"mia:123403","source":"mia","sourceObjectId":"123403","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Leele","medium":"Wood","score":60}
 {"key":"mia:123399","source":"mia","sourceObjectId":"123399","objectClass":"other","regionGroup":"sub-saharan","culture":"Zela","medium":"Wood","score":10}
+{"key":"mia:123394","source":"mia","sourceObjectId":"123394","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Luba","medium":"Ivory","score":40}
 {"key":"mia:123395","source":"mia","sourceObjectId":"123395","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Mende","medium":"Ivory, metal","score":60}
 {"key":"mia:124579","source":"mia","sourceObjectId":"124579","objectClass":"other","regionGroup":"sub-saharan","culture":"Baule","medium":"Cotton","score":10}
 {"key":"mia:124676","source":"mia","sourceObjectId":"124676","objectClass":"other","regionGroup":"sub-saharan","culture":"Fulani","medium":"Wool","score":10}
@@ -912,28 +912,28 @@
 {"key":"mia:126181","source":"mia","sourceObjectId":"126181","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton","score":10}
 {"key":"mia:127610","source":"mia","sourceObjectId":"127610","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Topoke","medium":"Wood, plant fibers, pigments","score":40}
 {"key":"mia:127709","source":"mia","sourceObjectId":"127709","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Deep color etching","score":10}
-{"key":"mia:127712","source":"mia","sourceObjectId":"127712","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Deep color etching","score":10}
 {"key":"mia:127688","source":"mia","sourceObjectId":"127688","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":"Budja","medium":"Wood, plant fibers","score":40}
+{"key":"mia:127712","source":"mia","sourceObjectId":"127712","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Deep color etching","score":10}
 {"key":"mia:128333","source":"mia","sourceObjectId":"128333","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gelatin silver print","score":10}
 {"key":"mia:128337","source":"mia","sourceObjectId":"128337","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Gelatin silver print","score":10}
 {"key":"mia:129701","source":"mia","sourceObjectId":"129701","objectClass":"other-carved-cast","regionGroup":"sub-saharan","culture":null,"medium":"Metal, snakeskin (?)","score":40}
 {"key":"mia:129736","source":"mia","sourceObjectId":"129736","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Plant fibers","score":10}
 {"key":"mia:129775","source":"mia","sourceObjectId":"129775","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamileke","medium":"Plant fibers","score":10}
 {"key":"mia:129772","source":"mia","sourceObjectId":"129772","objectClass":"carved-instrument","regionGroup":"sub-saharan","culture":null,"medium":"Plant fibers","score":70}
-{"key":"mia:129873","source":"mia","sourceObjectId":"129873","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","medium":"Plant fibers","score":10}
 {"key":"mia:129886","source":"mia","sourceObjectId":"129886","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:129882","source":"mia","sourceObjectId":"129882","objectClass":"other","regionGroup":"sub-saharan","culture":"Bamenda","medium":"Plant fibers","score":10}
+{"key":"mia:129873","source":"mia","sourceObjectId":"129873","objectClass":"other","regionGroup":"sub-saharan","culture":"Kongo","medium":"Plant fibers","score":10}
 {"key":"mia:129884","source":"mia","sourceObjectId":"129884","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:129893","source":"mia","sourceObjectId":"129893","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Cotton, wood, cowrie shells","score":10}
 {"key":"mia:129897","source":"mia","sourceObjectId":"129897","objectClass":"other","regionGroup":"sub-saharan","culture":"Pende","medium":"Beads, plant fibers","score":10}
 {"key":"mia:129924","source":"mia","sourceObjectId":"129924","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
+{"key":"mia:129944","source":"mia","sourceObjectId":"129944","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129921","source":"mia","sourceObjectId":"129921","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
+{"key":"mia:129942","source":"mia","sourceObjectId":"129942","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129932","source":"mia","sourceObjectId":"129932","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129948","source":"mia","sourceObjectId":"129948","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129952","source":"mia","sourceObjectId":"129952","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
-{"key":"mia:129944","source":"mia","sourceObjectId":"129944","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129947","source":"mia","sourceObjectId":"129947","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
-{"key":"mia:129942","source":"mia","sourceObjectId":"129942","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:129953","source":"mia","sourceObjectId":"129953","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigments","score":10}
 {"key":"mia:131786","source":"mia","sourceObjectId":"131786","objectClass":"sculpture","regionGroup":"sub-saharan","culture":null,"medium":"Wood","score":108}
 {"key":"mia:132387","source":"mia","sourceObjectId":"132387","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"medium":"Iron","score":10}
@@ -1006,8 +1006,8 @@
 {"key":"mia:13086","source":"mia","sourceObjectId":"13086","objectClass":"other","regionGroup":"sub-saharan","culture":"Bassa","medium":"Wood","score":10}
 {"key":"mia:13473","source":"mia","sourceObjectId":"13473","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"Linen, silk, needlework","score":10}
 {"key":"mia:13475","source":"mia","sourceObjectId":"13475","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"Cotton, needlework","score":10}
-{"key":"mia:14152","source":"mia","sourceObjectId":"14152","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Coarse canvas panel with applied design","score":10}
 {"key":"mia:14160","source":"mia","sourceObjectId":"14160","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Coarse canvas panel with applied design","score":10}
+{"key":"mia:14152","source":"mia","sourceObjectId":"14152","objectClass":"other","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Coarse canvas panel with applied design","score":10}
 {"key":"mia:14736","source":"mia","sourceObjectId":"14736","objectClass":"other-carved-cast","regionGroup":"egypt","culture":"Ancient Egyptian","medium":"Gold","score":40}
 {"key":"mia:15050","source":"mia","sourceObjectId":"15050","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"silk embroidery on linen","score":10}
 {"key":"mia:15339","source":"mia","sourceObjectId":"15339","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"Embroidered silk on linen","score":10}
@@ -1075,10 +1075,10 @@
 {"key":"mia:33901","source":"mia","sourceObjectId":"33901","objectClass":"other","regionGroup":"north-africa","culture":null,"medium":"Velvet, silk, metallic thread, embroidered","score":10}
 {"key":"mia:41005","source":"mia","sourceObjectId":"41005","objectClass":"sculpture","regionGroup":"north-africa","culture":null,"medium":"Cotton, silk, sequins, embroidery","score":90}
 {"key":"mia:45796","source":"mia","sourceObjectId":"45796","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Tabwa","medium":"Wood, glass beads, cord","score":90}
-{"key":"mia:55222","source":"mia","sourceObjectId":"55222","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","medium":"Wood, beads","score":90}
 {"key":"mia:55207","source":"mia","sourceObjectId":"55207","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Koma","medium":"Terra-cotta","score":90}
 {"key":"mia:55203","source":"mia","sourceObjectId":"55203","objectClass":"pottery","regionGroup":"sub-saharan","culture":"Tiv","medium":"Terracotta","score":60}
 {"key":"mia:55273","source":"mia","sourceObjectId":"55273","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Natural pigment on bark","score":10}
+{"key":"mia:55222","source":"mia","sourceObjectId":"55222","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Asante","medium":"Wood, beads","score":90}
 {"key":"mia:60312","source":"mia","sourceObjectId":"60312","objectClass":"other","regionGroup":"sub-saharan","culture":"Hausa","medium":"Cotton, embroidery","score":10}
 {"key":"mia:60617","source":"mia","sourceObjectId":"60617","objectClass":"mask","regionGroup":"sub-saharan","culture":"Luba","medium":"Wood, cane, feathers, plant fibers, animal hide","score":100}
 {"key":"mia:60620","source":"mia","sourceObjectId":"60620","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Wood","score":10}
@@ -1313,11 +1313,11 @@
 {"key":"mia:28109","source":"mia","sourceObjectId":"28109","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Ewe","medium":"Wood, pigment","score":90}
 {"key":"mia:29308","source":"mia","sourceObjectId":"29308","objectClass":"other","regionGroup":"sub-saharan","culture":"Mangbetu","medium":"Brass","score":10}
 {"key":"mia:29307","source":"mia","sourceObjectId":"29307","objectClass":"other","regionGroup":"sub-saharan","culture":"Mangbetu","medium":"Bronze","score":10}
+{"key":"mia:29334","source":"mia","sourceObjectId":"29334","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"medium":"Cotton","score":10}
 {"key":"mia:29340","source":"mia","sourceObjectId":"29340","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"medium":"Cotton, silk, needlework","score":10}
 {"key":"mia:29341","source":"mia","sourceObjectId":"29341","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"medium":"Cotton, silk, needlework","score":10}
-{"key":"mia:29334","source":"mia","sourceObjectId":"29334","objectClass":"other","regionGroup":"unspecified-africa","culture":null,"medium":"Cotton","score":10}
-{"key":"mia:29764","source":"mia","sourceObjectId":"29764","objectClass":"other","regionGroup":"sub-saharan","culture":"Songhai","medium":"Cotton, weft patterning","score":10}
 {"key":"mia:29746","source":"mia","sourceObjectId":"29746","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Lobi","medium":"Bronze","score":90}
+{"key":"mia:29764","source":"mia","sourceObjectId":"29764","objectClass":"other","regionGroup":"sub-saharan","culture":"Songhai","medium":"Cotton, weft patterning","score":10}
 {"key":"mia:29924","source":"mia","sourceObjectId":"29924","objectClass":"pottery","regionGroup":"sub-saharan","culture":null,"medium":"Earthenware","score":60}
 {"key":"mia:29932","source":"mia","sourceObjectId":"29932","objectClass":"other-carved-cast","regionGroup":"north-africa","culture":"Ait Jerrar Amazigh (Berber)","medium":"Silver, enamel, beads, amber","score":40}
 {"key":"mia:30091","source":"mia","sourceObjectId":"30091","objectClass":"other","regionGroup":"sub-saharan","culture":"Akan","medium":"Brass","score":10}
@@ -1384,20 +1384,20 @@
 {"key":"mia:111179","source":"mia","sourceObjectId":"111179","objectClass":"other","regionGroup":"sub-saharan","culture":"Kalabari","score":10}
 {"key":"mia:113065","source":"mia","sourceObjectId":"113065","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Natural fiber (raffia?), cotton","score":10}
 {"key":"mia:113292","source":"mia","sourceObjectId":"113292","objectClass":"mask","regionGroup":"sub-saharan","culture":"Mano","medium":"Wood, animal fur, feathers, cotton, beads","score":120}
-{"key":"mia:113298","source":"mia","sourceObjectId":"113298","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","medium":"Metal","score":90}
 {"key":"mia:113348","source":"mia","sourceObjectId":"113348","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
-{"key":"mia:113375","source":"mia","sourceObjectId":"113375","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","medium":"Cotton","score":10}
 {"key":"mia:113358","source":"mia","sourceObjectId":"113358","objectClass":"other","regionGroup":"sub-saharan","culture":"Igbo","medium":"Cotton","score":10}
 {"key":"mia:113306","source":"mia","sourceObjectId":"113306","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Krahn","medium":"Metal","score":90}
+{"key":"mia:113298","source":"mia","sourceObjectId":"113298","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Djenne","medium":"Metal","score":90}
+{"key":"mia:113409","source":"mia","sourceObjectId":"113409","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigment","score":10}
+{"key":"mia:113375","source":"mia","sourceObjectId":"113375","objectClass":"other","regionGroup":"sub-saharan","culture":"Zarma","medium":"Cotton","score":10}
 {"key":"mia:113428","source":"mia","sourceObjectId":"113428","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigment","score":10}
 {"key":"mia:113429","source":"mia","sourceObjectId":"113429","objectClass":"other","regionGroup":"sub-saharan","culture":"Kuba","medium":"Plant fibers, pigment","score":10}
-{"key":"mia:113409","source":"mia","sourceObjectId":"113409","objectClass":"other","regionGroup":"sub-saharan","culture":"Mbuti","medium":"Plant fibers, pigment","score":10}
 {"key":"mia:113446","source":"mia","sourceObjectId":"113446","objectClass":"mask","regionGroup":"sub-saharan","culture":"Kono","medium":"Wood, cotton, plant fibers, feathers","score":100}
 {"key":"mia:113474","source":"mia","sourceObjectId":"113474","objectClass":"sculpture","regionGroup":"sub-saharan","culture":"Mano","medium":"Metal, beads, string","score":90}
 {"key":"mia:113469","source":"mia","sourceObjectId":"113469","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"medium":"Wood","score":100}
-{"key":"mia:113481","source":"mia","sourceObjectId":"113481","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Wood, gourd, plant fiber, animal hide, cowrie shells","score":10}
 {"key":"mia:113466","source":"mia","sourceObjectId":"113466","objectClass":"mask","regionGroup":"sub-saharan","culture":null,"medium":"Wood","score":100}
-{"key":"mia:113711","source":"mia","sourceObjectId":"113711","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
+{"key":"mia:113481","source":"mia","sourceObjectId":"113481","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Wood, gourd, plant fiber, animal hide, cowrie shells","score":10}
+{"key":"mia:113525","source":"mia","sourceObjectId":"113525","objectClass":"carved-instrument","regionGroup":"unspecified-africa","culture":null,"medium":"Ivory, silver","score":70}
 {"key":"mia:113711","source":"mia","sourceObjectId":"113711","objectClass":"other","regionGroup":"sub-saharan","culture":"Yoruba","medium":"Cotton","score":10}
 {"key":"mia:113757","source":"mia","sourceObjectId":"113757","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Cotton","score":10}
 {"key":"mia:113847","source":"mia","sourceObjectId":"113847","objectClass":"other","regionGroup":"sub-saharan","culture":null,"medium":"Carbon from candle smoke on paper","score":10}
