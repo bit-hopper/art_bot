@@ -11316,7 +11316,6 @@
 {"key":"met:573659","source":"met","sourceObjectId":"573659","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bread","score":10}
 {"key":"met:573660","source":"met","sourceObjectId":"573660","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bread","score":10}
 {"key":"met:573661","source":"met","sourceObjectId":"573661","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bread","score":10}
-{"key":"met:573674","source":"met","sourceObjectId":"573674","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Faience","score":90}
 {"key":"met:573717","source":"met","sourceObjectId":"573717","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Faience","score":10}
 {"key":"met:573734","source":"met","sourceObjectId":"573734","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Faience","score":40}
 {"key":"met:573735","source":"met","sourceObjectId":"573735","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Glazed steatite","score":40}
@@ -13347,6 +13346,7 @@
 {"key":"met:587606","source":"met","sourceObjectId":"587606","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Flint","score":40}
 {"key":"met:587609","source":"met","sourceObjectId":"587609","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Faience, string","score":40}
 {"key":"met:587882","source":"met","sourceObjectId":"587882","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Faience","score":40}
+{"key":"met:590423","source":"met","sourceObjectId":"590423","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Grit stone (sandstone)","score":10}
 {"key":"met:561712","source":"met","sourceObjectId":"561712","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Faience","score":90}
 {"key":"met:564544","source":"met","sourceObjectId":"564544","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"wood","score":90}
 {"key":"met:564545","source":"met","sourceObjectId":"564545","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"wood","score":90}
