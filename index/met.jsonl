@@ -7109,6 +7109,7 @@
 {"key":"met:554679","source":"met","sourceObjectId":"554679","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bronze or copper alloy","score":10}
 {"key":"met:554680","source":"met","sourceObjectId":"554680","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bronze or copper alloy","score":10}
 {"key":"met:554681","source":"met","sourceObjectId":"554681","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bronze or copper alloy","score":10}
+{"key":"met:554684","source":"met","sourceObjectId":"554684","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Travertine (Egyptian alabaster)","score":10}
 {"key":"met:554687","source":"met","sourceObjectId":"554687","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Faience, gold; hematite","score":10}
 {"key":"met:554688","source":"met","sourceObjectId":"554688","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Pottery, redware","score":60}
 {"key":"met:554689","source":"met","sourceObjectId":"554689","objectClass":"pottery","regionGroup":"egypt","culture":null,"medium":"Pottery, paint","score":60}
@@ -9961,7 +9962,6 @@
 {"key":"met:561566","source":"met","sourceObjectId":"561566","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561567","source":"met","sourceObjectId":"561567","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561568","source":"met","sourceObjectId":"561568","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
-{"key":"met:561569","source":"met","sourceObjectId":"561569","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561758","source":"met","sourceObjectId":"561758","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Steatite","score":40}
 {"key":"met:561771","source":"met","sourceObjectId":"561771","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Bone","score":10}
 {"key":"met:566525","source":"met","sourceObjectId":"566525","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Pottery","score":10}
@@ -12140,6 +12140,7 @@
 {"key":"met:852237","source":"met","sourceObjectId":"852237","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Glass","score":10}
 {"key":"met:852238","source":"met","sourceObjectId":"852238","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Glass","score":10}
 {"key":"met:968564","source":"met","sourceObjectId":"968564","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Glass, carnelia, lapis lazuli","score":40}
+{"key":"met:561569","source":"met","sourceObjectId":"561569","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561570","source":"met","sourceObjectId":"561570","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561571","source":"met","sourceObjectId":"561571","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
 {"key":"met:561572","source":"met","sourceObjectId":"561572","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Gold sheet","score":40}
@@ -13346,7 +13347,6 @@
 {"key":"met:587606","source":"met","sourceObjectId":"587606","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Flint","score":40}
 {"key":"met:587609","source":"met","sourceObjectId":"587609","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Faience, string","score":40}
 {"key":"met:587882","source":"met","sourceObjectId":"587882","objectClass":"other-carved-cast","regionGroup":"egypt","culture":null,"medium":"Faience","score":40}
-{"key":"met:590423","source":"met","sourceObjectId":"590423","objectClass":"other","regionGroup":"egypt","culture":null,"medium":"Grit stone (sandstone)","score":10}
 {"key":"met:561712","source":"met","sourceObjectId":"561712","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"Faience","score":90}
 {"key":"met:564544","source":"met","sourceObjectId":"564544","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"wood","score":90}
 {"key":"met:564545","source":"met","sourceObjectId":"564545","objectClass":"sculpture","regionGroup":"egypt","culture":null,"medium":"wood","score":90}
