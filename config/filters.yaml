@@ -30,6 +30,9 @@ profiles:
       high_interest:            # Egypt only: royal heads, statues, coffins, stelae and reliefs are always kept, other Egyptian objects (not pottery or masks) 3 times in 5
         other_accept: 0.6
         terms: [head, kopf, tête, bust, büste, buste, statue, coffin, sarcophagus, sarkophag, cercueil, sarcophage, stela, stele, stèle, relief, sphinx, naos]
+      new_kingdom:              # owner 2026-11-22: favour the New Kingdom (Dynasties 18 to 20, about 1550 to 1070 BCE); read from the record's date and culture
+        other_accept: 0.5       # Egypt only, not masks: a record dated to another period is kept 1 time in 2 (on top of the rules above); undated records are left alone
+        terms: ["new kingdom", "neues reich", "nouvel empire", "nuovo regno", amarna, ramesside, ramessid, ramessiden]
     force_mask_after_hours: 23   # owner 2026-10-14: at least one mask in every 24 hours (23 leaves room for a missed hour)
     classes:                  # object_class -> weight
       mask: 100

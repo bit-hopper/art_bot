@@ -1,6 +1,7 @@
 import { matchesTerms } from "./classify.js";
 import type { FilterProfile, TasteConfig } from "./config.js";
 import type { Ledger, LedgerRow } from "./ledger.js";
+import { hasDateInfo, isNewKingdom } from "./period.js";
 import type { Artwork, IndexRow, ObjectClass } from "./types.js";
 
 const FAIRNESS_WINDOW = 6;
@@ -37,6 +38,14 @@ function hasWholeWord(text: string, words: string[]): boolean {
 
 /** Chance (0 to 1) that a fetched record is kept at all; below 1 it is re-picked. The taste ladder (owner 2026-11-05). */
 export function keepProbability(a: Artwork, taste?: TasteConfig): number {
+  const base = baseKeepProbability(a, taste);
+  const nk = taste?.new_kingdom;
+  // Owner 2026-11-22: New Kingdom Egypt is favoured, so a dated Egyptian record from another period is kept less often.
+  if (nk && a.regionGroup === "egypt" && a.objectClass !== "mask" && hasDateInfo(a) && !isNewKingdom(a, nk.terms)) return base * nk.other_accept;
+  return base;
+}
+
+function baseKeepProbability(a: Artwork, taste?: TasteConfig): number {
   const li = taste?.low_interest;
   const hi = taste?.high_interest;
   const text = [a.title, a.objectType].filter(Boolean).join(" \n ");

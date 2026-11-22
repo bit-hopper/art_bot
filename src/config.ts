@@ -36,6 +36,12 @@ export interface TasteConfig {
    */
   high_interest?: { terms: string[]; other_accept: number };
   /**
+   * Egypt only, owner 2026-11-22: favour the New Kingdom. After the fetch, an Egyptian record (not a mask) whose date or period is
+   * stated and is not New Kingdom (see `isNewKingdom`) is multiplied by `other_accept` on top of the rules above; New Kingdom and
+   * undated records are untouched. `terms` are period and ruler names that mark a record as New Kingdom. Shares `low_interest.max_rejects`.
+   */
+  new_kingdom?: { other_accept: number; terms: string[] };
+  /**
    * Material at pick time, from the index row's `medium` (whole words; German terms for SMB). A medium naming one of `boost_terms` (cast
    * metal, ivory, stone) is drawn `boost` times as often; a catch-all (`other`) row naming one of `organic_terms` (fur, leather, raffia,
    * fibre) and no boost term is drawn `organic` times as often. Rows with no recorded medium are neutral.

@@ -319,6 +319,21 @@ describe("taste (owner 2026-11-05: whole, refined objects over small Egyptian pi
     expect(keepProbability(eg("Statuette des Hor-chebt"), taste)).toBe(0.6);
   });
 
+  it("favours the New Kingdom: a dated Egyptian record from another period is kept half as often (owner 2026-11-22)", () => {
+    const d = (title: string, dateDisplay: string | null, over: Partial<Artwork> = {}) => eg(title, { dateDisplay, ...over });
+    for (const nk of ["New Kingdom, Dynasty 18", "Nouvel Empire", "Neues Reich, 19. Dynastie", "XIXe dynastie", "Dynasty 20", "ca. 1390–1353 B.C.", "um 1300 v. Chr.", "Amarna Period", "Ramesside"]) {
+      expect(keepProbability(d("Statuette des Hor-chebt", nk), taste), nk).toBe(0.6);
+    }
+    for (const other of ["Late Period, Dynasty 26", "Ptolemaic Period, 332–30 B.C.", "Moyen Empire", "Third Intermediate Period, Dynasty 22, about 924–889 BCE", "ca. 1850–1700 B.C.", "Dynasty 21", "Old Kingdom, Dynasty 5", "Dynastie 25"]) {
+      expect(keepProbability(d("Statuette des Hor-chebt", other), taste), other).toBe(0.3);
+    }
+    expect(keepProbability(d("Statuette des Hor-chebt", null), taste)).toBe(0.6);                    // undated: left alone
+    expect(keepProbability(d("Coffin of Wah", "Middle Kingdom"), taste)).toBe(0.5);                  // heads and coffins are still kept less when not New Kingdom
+    expect(keepProbability(d("Coffin of Wah", "Dynasty 18"), taste)).toBe(1);
+    expect(keepProbability(d("Funerary Mask", "Ptolemaic Period", { objectClass: "mask" }), taste)).toBe(1);
+    expect(keepProbability(d("Female figurine", "Late Period", { regionGroup: "sub-saharan" }), taste)).toBe(1);
+  });
+
   it("keeps Egyptian shabtis and figurines 1 time in 10, but only in Egypt, and never an Edo/Benin one (owner 2026-11-06)", () => {
     expect(keepProbability(eg("Shabti of Siptah"), taste)).toBe(0.1);
     expect(keepProbability(eg("Ushabti of Seti I"), taste)).toBe(0.1);
